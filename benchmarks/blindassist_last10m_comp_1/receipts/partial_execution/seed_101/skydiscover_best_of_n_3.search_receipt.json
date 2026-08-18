@@ -1,0 +1,201 @@
+{
+  "arm": "skydiscover_best_of_n_3",
+  "best_program_id": "ad80835c-1a01-4042-a45f-6f6e3b8faaa0",
+  "budget": {
+    "ceilings": {
+      "evaluator_attempts": 10,
+      "generation_calls": 10,
+      "require_token_usage": true,
+      "total_tokens": 300000
+    },
+    "events": [
+      {
+        "call": 1,
+        "input_tokens": 23898,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1191,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 1,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ef73f146-9f7d-4f8b-b022-17bcbcd8bce4",
+        "status": "admitted"
+      },
+      {
+        "call": 2,
+        "input_tokens": 25732,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 980,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 2,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "fe14a47b-722e-43fc-b9cc-ede8706a8847",
+        "status": "admitted"
+      },
+      {
+        "call": 3,
+        "input_tokens": 27419,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 2447,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 3,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ad30df68-78ee-4c04-96c9-b276b0a3ff71",
+        "status": "admitted"
+      },
+      {
+        "call": 4,
+        "input_tokens": 27515,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 3643,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 4,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "c818b431-f539-45b5-a5fc-c4f421c025e2",
+        "status": "admitted"
+      },
+      {
+        "call": 5,
+        "input_tokens": 27163,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1845,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 5,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "0b0c72ab-21b2-4c74-ab51-5fda81998067",
+        "status": "admitted"
+      },
+      {
+        "call": 6,
+        "input_tokens": 27171,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1633,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 6,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "0af8214c-02c3-4e66-899b-503906b902f1",
+        "status": "admitted"
+      },
+      {
+        "call": 7,
+        "input_tokens": 27107,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1364,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 7,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "7bd9f6c9-6719-4e5d-90b0-8240d4f12988",
+        "status": "admitted"
+      },
+      {
+        "call": 8,
+        "input_tokens": 27330,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1927,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 8,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ab51faae-0509-4363-aaea-96338133a89b",
+        "status": "admitted"
+      },
+      {
+        "call": 9,
+        "input_tokens": 27173,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1231,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 9,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "2aee85c2-5c15-4d74-9d05-28948ae10991",
+        "status": "admitted"
+      },
+      {
+        "call": 10,
+        "input_tokens": 27410,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 2147,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 10,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "3619108a-1ff9-4227-8a71-d42c3c12ebf4",
+        "status": "admitted"
+      }
+    ],
+    "stop_reason": null,
+    "usage": {
+      "discarded_generation_calls": 0,
+      "evaluator_attempts": 10,
+      "generation_calls": 10,
+      "input_tokens": 267918,
+      "output_tokens": 18408,
+      "total_tokens": 286326
+    }
+  },
+  "candidate_count": 10,
+  "config_sha256": "0a2714e8c1ec03731ef8a9e15644ce5b0c6bbf6b965e28b5ec54cbe31c8c45a5",
+  "elapsed_seconds": 399.928297,
+  "evaluator_sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb",
+  "experiment_id": "L10M-COMP-1",
+  "hidden_evaluations": 0,
+  "initial_program_sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33",
+  "seed": 101
+}

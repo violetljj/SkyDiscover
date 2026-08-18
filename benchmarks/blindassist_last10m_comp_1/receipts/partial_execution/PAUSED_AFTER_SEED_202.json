@@ -1,0 +1,87 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "status": "PAUSED_AFTER_SEED_202",
+  "completed_seeds": [101, 202],
+  "next_seed": 303,
+  "seed_303_started": false,
+  "results_returned_to_search": false,
+  "claim_status": {
+    "overall_comparison_complete": false,
+    "skydiscover_incremental_value_all_three_primary_wins_possible": false,
+    "reason": "SkyDiscover lost the seed-101 primary paired comparison to Naked Codex. Seed 303 remains required for the frozen three-replicate comparison."
+  },
+  "results": {
+    "101": {
+      "skydiscover_best_of_n_3": {
+        "primary_behavioral_discovery": false,
+        "behavioral_anytime_auc": 0.0,
+        "first_behavioral_pass_attempt": null,
+        "best_discovered_substantive_score_delta": 0.0,
+        "generation_calls": 10,
+        "evaluator_attempts": 10,
+        "total_tokens": 286326
+      },
+      "naked_codex_incumbent_only": {
+        "primary_behavioral_discovery": true,
+        "behavioral_anytime_auc": 0.016,
+        "first_behavioral_pass_attempt": 3,
+        "best_discovered_substantive_score_delta": 0.02,
+        "generation_calls": 10,
+        "evaluator_attempts": 10,
+        "total_tokens": 268949
+      },
+      "evox": {
+        "primary_behavioral_discovery": true,
+        "behavioral_anytime_auc": 0.016,
+        "first_behavioral_pass_attempt": 3,
+        "best_discovered_substantive_score_delta": 0.02,
+        "generation_calls": 10,
+        "evaluator_attempts": 9,
+        "total_tokens": 260037
+      }
+    },
+    "202": {
+      "skydiscover_best_of_n_3": {
+        "primary_behavioral_discovery": true,
+        "behavioral_anytime_auc": 0.02,
+        "first_behavioral_pass_attempt": 1,
+        "best_discovered_substantive_score_delta": 0.02,
+        "generation_calls": 10,
+        "evaluator_attempts": 10,
+        "total_tokens": 279634
+      },
+      "naked_codex_incumbent_only": {
+        "primary_behavioral_discovery": true,
+        "behavioral_anytime_auc": 0.018,
+        "first_behavioral_pass_attempt": 2,
+        "best_discovered_substantive_score_delta": 0.02,
+        "generation_calls": 10,
+        "evaluator_attempts": 10,
+        "total_tokens": 275151
+      },
+      "evox": {
+        "primary_behavioral_discovery": true,
+        "behavioral_anytime_auc": 0.03,
+        "first_behavioral_pass_attempt": 1,
+        "best_discovered_substantive_score_delta": 0.03,
+        "generation_calls": 10,
+        "evaluator_attempts": 9,
+        "total_tokens": 264689
+      }
+    }
+  },
+  "receipt_sha256": {
+    "seed_101": {
+      "evox.search_receipt.json": "c8fac394040b3eac12485b5cd8a38c72527c47996930cea7b3071770aa6f705d",
+      "naked_codex_incumbent_only.search_receipt.json": "bdab7fd2c6db1a925f8fa8a7aea7979393ea234fe6047754dda32df58bbd0833",
+      "skydiscover_best_of_n_3.search_receipt.json": "6003964837c6cede255b6a620e6e1352d48d09bccce5183a586162c0e320d1aa",
+      "hidden_adjudication_receipt.json": "0ca3e7ce4cd43a6e868f53ab2517b885f1fba9e291c0b5fecda01706249a3bcc"
+    },
+    "seed_202": {
+      "evox.search_receipt.json": "02de45c3b6073043688aed59e56cde74570cb75265d970fbc41a916fce9565a9",
+      "naked_codex_incumbent_only.search_receipt.json": "222e58c7e38914c8ef64eea87ba06c5d90a7254c99ad84dda24dee83cb7700d1",
+      "skydiscover_best_of_n_3.search_receipt.json": "cb37072e263a60fef9b4ea09832ad4daebbb4bfe873fd529487e7db479a662fe",
+      "hidden_adjudication_receipt.json": "4d0c345aa1a201d05d5d7e2962746e93f1249f63c83395f3474d10f173cb334e"
+    }
+  }
+}
