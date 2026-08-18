@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from skydiscover.config import LLMModelConfig
+from skydiscover.execution_budget import BudgetExceeded, active_budget
 from skydiscover.llm.base import LLMInterface, LLMResponse
 
 logger = logging.getLogger("skydiscover.llm")
@@ -142,10 +143,18 @@ class CodexCliLLM(LLMInterface):
 
         last_error: Optional[Exception] = None
         for attempt in range(retries + 1):
+            ledger = active_budget()
+            event_id = (
+                ledger.start_generation(provider="codex-cli", model=self.model, attempt=attempt + 1)
+                if ledger
+                else None
+            )
             try:
                 text, run_metadata = await self._run_once(
                     prompt, timeout, kwargs.get("response_format")
                 )
+                if ledger is not None and event_id is not None:
+                    ledger.finish_generation(event_id, metadata=run_metadata)
                 metadata = {
                     "llm_provider": "codex-cli",
                     "llm_model": self.model,
@@ -154,7 +163,11 @@ class CodexCliLLM(LLMInterface):
                     **run_metadata,
                 }
                 return LLMResponse(text=text, metadata=metadata)
+            except BudgetExceeded:
+                raise
             except Exception as exc:
+                if ledger is not None and event_id is not None:
+                    ledger.finish_generation(event_id, error=f"{type(exc).__name__}: {exc}")
                 last_error = exc
                 if attempt >= retries:
                     raise

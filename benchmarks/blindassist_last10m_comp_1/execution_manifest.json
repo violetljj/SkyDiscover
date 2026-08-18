@@ -1,0 +1,25 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "frozen_at": "2026-08-19",
+  "hash_algorithm": "sha256",
+  "text_normalization": "crlf_to_lf",
+  "files": [
+    {"path": "benchmarks/blindassist_last10m_comp_1/protocol.json", "sha256": "d914c8e56d6f0d4d1cd482ba80925646731934b6ea6fbe8882923e9d9f0df647"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/generate_hidden_v4.py", "sha256": "dd1c172e25d6751763adfe7933b346b482e87fec7f4a68d6e8c7c1a1219dbab3"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/evaluator/scenarios/hidden_v4.json", "sha256": "8156580207a1d5fc06c8ded6797bcacfcd11407c65eada665408e77b36602cc9"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/configs/skydiscover.yaml", "sha256": "0a2714e8c1ec03731ef8a9e15644ce5b0c6bbf6b965e28b5ec54cbe31c8c45a5"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/configs/naked_codex.yaml", "sha256": "06b1a601b09d448e94989289a1426b266a57472ee74c9087cd47de10ecb3356d"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/configs/evox.yaml", "sha256": "e0494007d9bf18ea31eacc0f9fc4881278b8da216524a88537fa1f60a86542dd"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/harness.py", "sha256": "f780fd9a4f20f5bd694c4e9c6f99f701d24272f051c0a16ffaa062a292657733"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/receipts/2026-08-19_mechanical_preflight.json", "sha256": "9d023c0d45c37de5bdc4d4bfa36bc1e77d78375643f0f51885d4a227d4d4a224"},
+    {"path": "benchmarks/blindassist_last10m_comp_1/receipts/2026-08-19_hidden_v4_baseline_preflight.json", "sha256": "cb01cdbded54e9f0e0693566cb555501fc8e919e0b3bd99af58fb475ede5e5f4"},
+    {"path": "benchmarks/blindassist_last10m_v3/initial_program.py", "sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33"},
+    {"path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py", "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"},
+    {"path": "skydiscover/execution_budget.py", "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"},
+    {"path": "skydiscover/llm/codex_cli.py", "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"},
+    {"path": "skydiscover/evaluation/evaluator.py", "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"},
+    {"path": "skydiscover/search/incumbent_only/database.py", "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"},
+    {"path": "skydiscover/search/route.py", "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"},
+    {"path": "skydiscover/config.py", "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"}
+  ]
+}

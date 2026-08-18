@@ -15,6 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from skydiscover.config import EvaluatorConfig
 from skydiscover.evaluation.evaluation_result import EvaluationResult
 from skydiscover.evaluation.llm_judge import LLMJudge
+from skydiscover.execution_budget import active_budget
 from skydiscover.utils.async_utils import TaskPool
 from skydiscover.utils.metrics import format_metrics
 
@@ -108,6 +109,9 @@ class Evaluator:
             mode: ``"train"`` or ``"test"``.  Ignored by the Python evaluator
                   (the containerized evaluator passes it to evaluate.sh).
         """
+        ledger = active_budget()
+        if ledger is not None:
+            ledger.start_evaluation(program_id=program_id, mode=mode)
         start_time = time.time()
         label = f" {program_id}" if program_id else ""
 

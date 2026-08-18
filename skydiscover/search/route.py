@@ -24,6 +24,7 @@ from skydiscover.search.evox.controller import CoEvolutionController
 from skydiscover.search.evox.database.search_strategy_db import SearchStrategyDatabase
 from skydiscover.search.gepa_native.controller import GEPANativeController
 from skydiscover.search.gepa_native.database import GEPANativeDatabase
+from skydiscover.search.incumbent_only.database import IncumbentOnlyDatabase
 from skydiscover.search.openevolve_native.database import OpenEvolveNativeDatabase
 from skydiscover.search.registry import (
     _CONTROLLER_REGISTRY,
@@ -56,6 +57,7 @@ def get_discovery_controller(controller_input: DiscoveryControllerInput) -> Disc
 register_database("best_of_n", BestOfNDatabase)
 register_database("beam_search", BeamSearchDatabase)
 register_database("topk", TopKDatabase)
+register_database("incumbent_only", IncumbentOnlyDatabase)
 
 # AdaEvolve
 register_database("adaevolve", AdaEvolveDatabase)

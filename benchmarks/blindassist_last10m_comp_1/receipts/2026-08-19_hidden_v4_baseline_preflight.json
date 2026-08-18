@@ -1,0 +1,23 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "check": "hidden_v4_frozen_baseline_validity_only",
+  "candidate_policies_evaluated": 0,
+  "generator_seed": 40419,
+  "hidden_v4_sha256": "8156580207a1d5fc06c8ded6797bcacfcd11407c65eada665408e77b36602cc9",
+  "baseline_program_sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33",
+  "oracle3_evaluator_sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb",
+  "episode_count": 8,
+  "status": "PASS",
+  "baseline_metrics": {
+    "combined_score": 0.894375,
+    "validity": 1.0,
+    "task_success": 1.0,
+    "safe_termination": 1.0,
+    "path_efficiency": 0.8125,
+    "reacquisition_success": 1.0,
+    "unsafe_forward_count": 0.0,
+    "premature_arrival_count": 0.0,
+    "wrong_way_steps": 0.0
+  },
+  "claim": "The split is evaluable with the frozen baseline. No candidate or arm outcome was inspected before sealing."
+}

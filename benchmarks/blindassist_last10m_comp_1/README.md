@@ -5,11 +5,11 @@ acceptance run. It asks whether SkyDiscover's search structure adds discovery
 value beyond the same `gpt-5.6-sol` model used through a minimal incumbent-only
 control, and whether EvoX improves discovery rate, quality, or efficiency.
 
-This directory freezes the comparison design before hidden-v4 is materialized.
-It does not yet contain hidden-v4 and authorizes no arm execution. The execution
-freeze occurs only after a common budget-accounting harness passes synthetic
-preflight and a fresh hidden-v4 file and hash are added without changing this
-protocol.
+The mechanical design was frozen before hidden-v4 was materialized. The common
+budget-accounting harness subsequently passed synthetic preflight, and fresh
+hidden-v4 was generated from seed `40419`, checked only against the frozen
+baseline, and sealed in `execution_manifest.json`. Arm execution is now
+authorized only through the manifest-verifying harness.
 
 ## Arms
 
@@ -57,8 +57,10 @@ or feedback never cross arms or replicates.
 ## Evaluation boundary
 
 Search receives dev feedback only. After all arms in a block terminate, a
-blind adjudicator evaluates every generated candidate exactly once on fresh
-hidden-v4, in generation order. Hidden results are never returned to any arm.
+blind adjudicator evaluates every dev-admitted candidate exactly once on fresh
+hidden-v4, in generation order. Malformed, failed, or otherwise dev-inadmissible
+generation opportunities are padded with zero rather than recovered or retried
+during adjudication. Hidden results are never returned to any arm.
 The ten hidden adjudication attempts per arm are a separate, equal post-search
 budget and are not counted as search evaluator calls.
 

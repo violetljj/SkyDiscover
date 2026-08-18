@@ -1,0 +1,553 @@
+{
+  "arm_receipts": {
+    "evox": {
+      "ceilings": {
+        "evaluator_attempts": 10,
+        "generation_calls": 10,
+        "require_token_usage": true,
+        "total_tokens": 300000
+      },
+      "events": [
+        {
+          "call": 1,
+          "input_tokens": 20000,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 2,
+          "input_tokens": 20001,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 3,
+          "input_tokens": 20002,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 4,
+          "input_tokens": 20003,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 5,
+          "input_tokens": 20004,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 6,
+          "input_tokens": 20005,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 7,
+          "input_tokens": 20006,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 8,
+          "input_tokens": 20007,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 9,
+          "input_tokens": 20008,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 10,
+          "input_tokens": 20009,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "attempt": 1,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-0",
+          "status": "admitted"
+        },
+        {
+          "attempt": 2,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-1",
+          "status": "admitted"
+        },
+        {
+          "attempt": 3,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-2",
+          "status": "admitted"
+        },
+        {
+          "attempt": 4,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-3",
+          "status": "admitted"
+        },
+        {
+          "attempt": 5,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-4",
+          "status": "admitted"
+        },
+        {
+          "attempt": 6,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-5",
+          "status": "admitted"
+        },
+        {
+          "attempt": 7,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-6",
+          "status": "admitted"
+        }
+      ],
+      "stop_reason": null,
+      "usage": {
+        "discarded_generation_calls": 0,
+        "evaluator_attempts": 7,
+        "generation_calls": 10,
+        "input_tokens": 200045,
+        "output_tokens": 10000,
+        "total_tokens": 210045
+      }
+    },
+    "naked_codex_incumbent_only": {
+      "ceilings": {
+        "evaluator_attempts": 10,
+        "generation_calls": 10,
+        "require_token_usage": true,
+        "total_tokens": 300000
+      },
+      "events": [
+        {
+          "call": 1,
+          "input_tokens": 20000,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 2,
+          "input_tokens": 20001,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 3,
+          "input_tokens": 20002,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 4,
+          "input_tokens": 20003,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 5,
+          "input_tokens": 20004,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 6,
+          "input_tokens": 20005,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 7,
+          "input_tokens": 20006,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 8,
+          "input_tokens": 20007,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 9,
+          "input_tokens": 20008,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 10,
+          "input_tokens": 20009,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "attempt": 1,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-0",
+          "status": "admitted"
+        },
+        {
+          "attempt": 2,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-1",
+          "status": "admitted"
+        },
+        {
+          "attempt": 3,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-2",
+          "status": "admitted"
+        },
+        {
+          "attempt": 4,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-3",
+          "status": "admitted"
+        },
+        {
+          "attempt": 5,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-4",
+          "status": "admitted"
+        },
+        {
+          "attempt": 6,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-5",
+          "status": "admitted"
+        },
+        {
+          "attempt": 7,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-6",
+          "status": "admitted"
+        },
+        {
+          "attempt": 8,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-7",
+          "status": "admitted"
+        },
+        {
+          "attempt": 9,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-8",
+          "status": "admitted"
+        },
+        {
+          "attempt": 10,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-9",
+          "status": "admitted"
+        }
+      ],
+      "stop_reason": null,
+      "usage": {
+        "discarded_generation_calls": 0,
+        "evaluator_attempts": 10,
+        "generation_calls": 10,
+        "input_tokens": 200045,
+        "output_tokens": 10000,
+        "total_tokens": 210045
+      }
+    },
+    "skydiscover_best_of_n_3": {
+      "ceilings": {
+        "evaluator_attempts": 10,
+        "generation_calls": 10,
+        "require_token_usage": true,
+        "total_tokens": 300000
+      },
+      "events": [
+        {
+          "call": 1,
+          "input_tokens": 20000,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 2,
+          "input_tokens": 20001,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 3,
+          "input_tokens": 20002,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 4,
+          "input_tokens": 20003,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 5,
+          "input_tokens": 20004,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 6,
+          "input_tokens": 20005,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 7,
+          "input_tokens": 20006,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 8,
+          "input_tokens": 20007,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 9,
+          "input_tokens": 20008,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "call": 10,
+          "input_tokens": 20009,
+          "kind": "generation",
+          "model": "codex-cli/gpt-5.6-sol",
+          "output_tokens": 1000,
+          "provider": "synthetic",
+          "provider_attempt": 1,
+          "status": "accepted"
+        },
+        {
+          "attempt": 1,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-0",
+          "status": "admitted"
+        },
+        {
+          "attempt": 2,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-1",
+          "status": "admitted"
+        },
+        {
+          "attempt": 3,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-2",
+          "status": "admitted"
+        },
+        {
+          "attempt": 4,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-3",
+          "status": "admitted"
+        },
+        {
+          "attempt": 5,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-4",
+          "status": "admitted"
+        },
+        {
+          "attempt": 6,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-5",
+          "status": "admitted"
+        },
+        {
+          "attempt": 7,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-6",
+          "status": "admitted"
+        },
+        {
+          "attempt": 8,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-7",
+          "status": "admitted"
+        },
+        {
+          "attempt": 9,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-8",
+          "status": "admitted"
+        },
+        {
+          "attempt": 10,
+          "kind": "evaluation",
+          "mode": "train",
+          "program_id": "synthetic-9",
+          "status": "admitted"
+        }
+      ],
+      "stop_reason": null,
+      "usage": {
+        "discarded_generation_calls": 0,
+        "evaluator_attempts": 10,
+        "generation_calls": 10,
+        "input_tokens": 200045,
+        "output_tokens": 10000,
+        "total_tokens": 210045
+      }
+    }
+  },
+  "experiment_id": "L10M-COMP-1",
+  "hidden_materialized": false,
+  "preflight": "PASS"
+}

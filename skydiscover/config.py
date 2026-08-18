@@ -516,6 +516,7 @@ _DB_CONFIG_BY_TYPE: Dict[str, type] = {
     "beam_search": BeamSearchDatabaseConfig,
     "best_of_n": BestOfNDatabaseConfig,
     "topk": DatabaseConfig,
+    "incumbent_only": DatabaseConfig,
     "adaevolve": AdaEvolveDatabaseConfig,
     "openevolve_native": OpenEvolveNativeDatabaseConfig,
     "gepa_native": GEPANativeDatabaseConfig,

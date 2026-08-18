@@ -1,6 +1,6 @@
 {
   "experiment_id": "L10M-COMP-1",
-  "status": "MECHANICAL_PROTOCOL_FROZEN_PENDING_HIDDEN_V4",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
   "frozen_at": "2026-08-19",
   "source_benchmark": "L10M-ORACLE-3",
   "evaluator_semantics": "UNCHANGED_ORACLE_3",
@@ -29,7 +29,10 @@
   },
   "hidden_adjudication": {
     "split": "hidden-v4",
-    "materialized": false,
+    "materialized": true,
+    "sha256": "8156580207a1d5fc06c8ded6797bcacfcd11407c65eada665408e77b36602cc9",
+    "generator_seed": 40419,
+    "episode_count": 8,
     "attempts_per_arm_replicate": 10,
     "results_returned_to_search": false,
     "candidate_order": "generation_order"
@@ -52,8 +55,6 @@
     "divide_area_by": 10,
     "normalize_by_best_arm": false
   },
-  "execution_blockers": [
-    "common_budget_accounting_harness_preflight",
-    "fresh_hidden_v4_materialization_and_hash_freeze"
-  ]
+  "execution_blockers": [],
+  "execution_manifest": "execution_manifest.json"
 }
