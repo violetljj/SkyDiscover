@@ -153,7 +153,7 @@ def setup_search(
         config.llm.api_base = parent_models[0].api_base or config.llm.api_base
         config.llm.api_key = parent_models[0].api_key or config.llm.api_key
 
-    with open(initial_program_path, "r") as f:
+    with open(initial_program_path, "r", encoding="utf-8") as f:
         initial_program_solution = f.read()
 
     if not config.language:

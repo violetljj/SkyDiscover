@@ -1,0 +1,25 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "event": "pre_generation_evox_mechanical_failure",
+  "seed": 101,
+  "arm": "evox",
+  "failure": "UnicodeDecodeError from locale-default GBK while reading the UTF-8 built-in EvoX initial search strategy",
+  "failed_log_sha256": "b9b89d1a2699553426afea3aa14a80373359184c2cb23ee4bc665e9f64af5380",
+  "generation_calls": 0,
+  "dev_evaluator_attempts": 0,
+  "hidden_evaluator_attempts": 0,
+  "candidate_manifest_created": false,
+  "search_receipt_created": false,
+  "repair": "Open the existing strategy file with explicit UTF-8 encoding.",
+  "scientific_contract_changes": {
+    "arms": false,
+    "budgets": false,
+    "prompts": false,
+    "model": false,
+    "evaluator_semantics": false,
+    "hidden_v4": false,
+    "endpoints": false,
+    "claim_rules": false
+  },
+  "rerun_authorized": true
+}
