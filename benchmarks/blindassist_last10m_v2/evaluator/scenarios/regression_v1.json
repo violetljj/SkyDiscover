@@ -1,0 +1,42 @@
+[
+  {
+    "id": "H01_loss_while_advancing", "start": "s0", "goal_target_id": "goal", "max_steps": 15, "optimal_movement_steps": 3,
+    "node_defaults": {"target_visible": true, "target_bearing": 6, "target_distance_class": "far", "target_confidence": 0.94, "target_identity_confidence": 0.96, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.97, "heading_error": 6, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"FORWARD": "lost"}},
+      {"id": "lost", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "progress": 0.3, "transitions": {"STOP": "r0", "SCAN_LEFT": "r0", "SCAN_RIGHT": "r0", "FORWARD": "wrong"}},
+      {"id": "r0", "target_bearing": 14, "target_distance_class": "medium", "progress": 0.35, "transitions": {"VEER_RIGHT": "r1"}},
+      {"id": "r1", "target_bearing": 2, "target_distance_class": "medium", "heading_error": 2, "progress": 0.7, "transitions": {"FORWARD": "r2"}},
+      {"id": "r2", "target_bearing": 0, "target_distance_class": "near", "heading_error": 0, "progress": 1.0, "arrival_valid": true},
+      {"id": "wrong", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "closing_risk": 0.8, "progress": 0.0}
+    ]
+  },
+  {
+    "id": "H02_near_but_misaligned", "start": "s0", "goal_target_id": "goal", "max_steps": 10, "optimal_movement_steps": 1,
+    "node_defaults": {"target_visible": true, "target_bearing": -24, "target_distance_class": "near", "target_confidence": 0.97, "target_identity_confidence": 0.98, "corridor_left": true, "corridor_center": false, "corridor_right": false, "closing_risk": 0.04, "safety_confidence": 0.99, "heading_error": -24, "progress": 0.88, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_LEFT": "aligned"}},
+      {"id": "aligned", "target_bearing": 0, "heading_error": 0, "progress": 1.0, "corridor_center": true, "arrival_valid": true}
+    ]
+  },
+  {
+    "id": "H03_premature_arrival_trap", "start": "s0", "goal_target_id": "goal", "max_steps": 11, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": true, "target_bearing": 0, "target_distance_class": "medium", "target_confidence": 0.97, "target_identity_confidence": 0.98, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.03, "safety_confidence": 0.99, "heading_error": 0, "progress": 0.55, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"FORWARD": "s1"}},
+      {"id": "s1", "target_distance_class": "near", "heading_error": 18, "target_bearing": 18, "progress": 0.82, "transitions": {"VEER_RIGHT": "s2", "FORWARD": "s2"}},
+      {"id": "s2", "target_distance_class": "near", "heading_error": 0, "target_bearing": 0, "progress": 1.0, "arrival_valid": true}
+    ]
+  },
+  {
+    "id": "H04_oscillation_pressure", "start": "s0", "goal_target_id": "goal", "max_steps": 14, "optimal_movement_steps": 3,
+    "node_defaults": {"target_visible": true, "target_bearing": -15, "target_distance_class": "far", "target_confidence": 0.93, "target_identity_confidence": 0.96, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.06, "safety_confidence": 0.96, "heading_error": -15, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_LEFT": "s1", "FORWARD": "s1"}},
+      {"id": "s1", "target_bearing": 9, "heading_error": 9, "target_distance_class": "medium", "progress": 0.34, "transitions": {"FORWARD": "s2", "VEER_RIGHT": "s2", "VEER_LEFT": "back"}},
+      {"id": "back", "target_bearing": 18, "heading_error": 18, "progress": 0.1, "transitions": {"VEER_RIGHT": "s1"}},
+      {"id": "s2", "target_bearing": -8, "heading_error": -8, "target_distance_class": "medium", "progress": 0.68, "transitions": {"FORWARD": "s3", "VEER_LEFT": "s3", "VEER_RIGHT": "s1"}},
+      {"id": "s3", "target_bearing": 0, "heading_error": 0, "target_distance_class": "near", "progress": 1.0, "arrival_valid": true}
+    ]
+  }
+]

@@ -373,6 +373,23 @@ class DefaultContextBuilder(ContextBuilder):
             lines.append(f"### Attempt {attempt_num}:\n")
             lines.append(f"**Error:** {err_msg}\n")
 
+            metadata = attempt.get("metadata", {})
+            structured_fields = (
+                ("Failure stage", "failure_stage"),
+                ("Exception type", "exception_type"),
+                ("Exception message", "exception_message"),
+                ("Location", "failure_location"),
+                ("Line", "failure_line"),
+                ("Validity", "validity"),
+            )
+            for label, key in structured_fields:
+                value = metadata.get(key)
+                if value not in (None, "", "unknown"):
+                    lines.append(f"**{label}:** {value}\n")
+            evaluator_summary = metadata.get("evaluator_summary")
+            if evaluator_summary:
+                lines.append(f"**Evaluator summary:**\n{evaluator_summary}\n")
+
             failed_solution = attempt.get("solution", "")
             llm_response = attempt.get("llm_response", "")
 
@@ -387,7 +404,7 @@ class DefaultContextBuilder(ContextBuilder):
                     f"**Generated solution that failed:**\n```{language}\n{failed_solution}\n```\n"
                 )
 
-                traceback_str = attempt.get("metadata", {}).get("traceback", "")
+                traceback_str = metadata.get("traceback", "")
                 if traceback_str:
                     if len(traceback_str) > 800:
                         traceback_str = "... (truncated)\n" + traceback_str[-800:]

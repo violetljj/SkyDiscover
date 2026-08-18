@@ -35,6 +35,59 @@ from skydiscover.utils.code_utils import (
 logger = logging.getLogger(__name__)
 
 
+def _evaluation_failure_receipt(
+    metrics: Dict[str, Any], artifacts: Dict[str, Any]
+) -> Dict[str, Any]:
+    """Normalize evaluator failures into retry-safe, structured diagnostics."""
+    raw_error = next(
+        (
+            value
+            for value in (
+                metrics.get("error"),
+                artifacts.get("error"),
+                metrics.get("error_message"),
+            )
+            if isinstance(value, str) and value.strip()
+        ),
+        "Evaluation failed",
+    )
+    validity_failed = metrics.get("validity") in (0, -1)
+    default_type = "ValidityGateFailure" if validity_failed else "EvaluationError"
+    default_message = "Evaluator returned validity=0" if validity_failed else raw_error
+    exception_type = str(artifacts.get("exception_type") or default_type)
+    exception_message = str(artifacts.get("exception_message") or default_message)
+    if exception_type == "EvaluationError" and ":" in raw_error:
+        possible_type, possible_message = raw_error.split(":", 1)
+        if possible_type.strip().replace("_", "").isalnum():
+            exception_type = possible_type.strip()
+            exception_message = possible_message.strip()
+
+    evaluator_summary = artifacts.get("feedback") or artifacts.get("evaluator_summary")
+    if not isinstance(evaluator_summary, str) or not evaluator_summary.strip():
+        evaluator_summary = raw_error
+    evaluator_summary = evaluator_summary.strip()
+    if len(evaluator_summary) > 1200:
+        evaluator_summary = evaluator_summary[:1200] + "\n... (truncated)"
+
+    return {
+        "failure_stage": str(artifacts.get("failure_stage") or "evaluation"),
+        "exception_type": exception_type,
+        "exception_message": exception_message,
+        "failure_location": str(artifacts.get("failure_location") or "unknown"),
+        "failure_line": str(artifacts.get("failure_line") or "unknown"),
+        "validity": metrics.get("validity", artifacts.get("validity", "unknown")),
+        "evaluator_summary": evaluator_summary,
+        "traceback": str(artifacts.get("traceback") or artifacts.get("stderr") or ""),
+    }
+
+
+def _failure_receipt_message(receipt: Dict[str, Any]) -> str:
+    location = receipt["failure_location"]
+    line = receipt["failure_line"]
+    where = "" if location == "unknown" else f" at {location}:{line}"
+    return f"{receipt['exception_type']}: {receipt['exception_message']}{where}"
+
+
 @dataclass
 class DiscoveryControllerInput:
     """Input to the discovery controller"""
@@ -642,16 +695,8 @@ class DiscoveryController:
                         and (child_metrics.get("error") is not None or "error" in child_artifacts)
                     )
                 ):
-                    error_msg = (
-                        (
-                            child_metrics.get("error")
-                            if isinstance(child_metrics.get("error"), str)
-                            else None
-                        )
-                        or child_artifacts.get("error")
-                        or child_metrics.get("error_message")
-                        or "Evaluation failed (validity=0)"
-                    )
+                    failure_receipt = _evaluation_failure_receipt(child_metrics, child_artifacts)
+                    error_msg = _failure_receipt_message(failure_receipt)
 
                     logger.warning(
                         "Evaluation failed (attempt %s/%s): validity=%s, error=%s",
@@ -675,6 +720,7 @@ class DiscoveryController:
                                 "changes": changes_summary,
                                 "parent_metrics": parent.metrics,
                                 "error": error_msg,
+                                **failure_receipt,
                                 "attempt_number": retry + 1,
                             },
                         }

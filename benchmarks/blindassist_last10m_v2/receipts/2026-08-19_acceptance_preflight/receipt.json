@@ -1,0 +1,40 @@
+{
+  "benchmark_revision": "L10M-ORACLE-2",
+  "run_role": "consumed_evaluator_red_team_preflight",
+  "configured_iterations": 10,
+  "completed_iterations": 7,
+  "termination": "operator_interrupt_after_dev_gate_misclassification",
+  "model": "codex-cli/gpt-5.6-sol",
+  "codex_cli_version": "codex-cli 0.148.0-alpha.9",
+  "best_program_id": "f15a8b9c-6b20-4662-8726-cb76c7dc45a9",
+  "best_iteration": 1,
+  "best_program_sha256": "c6a174081f38628a9b0666f9232a3d9d84dfcd610eb73de000ea3dce9176ffe4",
+  "best_program_info_sha256": "ebf2302cdc68b7b9e4749d51e139f70244a0e2ff81235bac06b9db90650fe445",
+  "dev": {
+    "baseline_score": 0.918125,
+    "candidate_score": 0.93125,
+    "score_delta": 0.013125,
+    "delta_instruction": 0.013125,
+    "delta_substantive_scored_components": 0.0,
+    "reported_behavioral_improvement_detected": true
+  },
+  "hidden_v2": {
+    "consumed": true,
+    "baseline_score": 0.905,
+    "candidate_score": 0.92,
+    "score_delta": 0.015,
+    "delta_instruction": 0.015,
+    "delta_substantive_scored_components": 0.0,
+    "reported_heldout_improvement_detected": true,
+    "reported_behavioral_improvement_detected": true
+  },
+  "postmortem": {
+    "pipeline_correctness": "PASS",
+    "optimizer_found_score_signal": "PASS",
+    "heldout_score_improvement": "PASS",
+    "substantive_navigation_improvement": "NOT_ESTABLISHED",
+    "evaluator_robustness": "FAIL",
+    "evaluator_red_team": "PASS",
+    "cause": "The behavioral gate accepted an unscored mean-heading change while 100 percent of score delta came from instruction burden."
+  }
+}

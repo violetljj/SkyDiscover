@@ -1,0 +1,22 @@
+{
+  "benchmark_revision": "L10M-ORACLE-2",
+  "frozen_at": "2026-08-19",
+  "hash_algorithm": "sha256",
+  "splits": {
+    "dev": {
+      "file": "dev.json",
+      "role": "search",
+      "sha256": "42b558a28754413d9f41d4871f40b26cab2133ceac98b250f10e6c69117f4f02"
+    },
+    "hidden_v2": {
+      "file": "hidden.json",
+      "role": "heldout",
+      "sha256": "cbfb42a6542056dda2fa654ae3a8b14f512fbb28f7450762f170d00d55657373"
+    },
+    "hidden_v1_consumed": {
+      "file": "regression_v1.json",
+      "role": "regression",
+      "sha256": "fb1eb60b584fbadd03d8a6a2a42db9621abbd463dc12a4bda63ebf219e5bcb31"
+    }
+  }
+}

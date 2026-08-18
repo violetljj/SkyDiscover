@@ -1,0 +1,106 @@
+[
+  {
+    "id": "D01_straight_entrance", "start": "s0", "goal_target_id": "goal", "max_steps": 10, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": true, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.96, "target_identity_confidence": 0.98, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.99, "heading_error": 0, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"FORWARD": "s1"}},
+      {"id": "s1", "target_distance_class": "medium", "progress": 0.5, "transitions": {"FORWARD": "s2"}},
+      {"id": "s2", "target_distance_class": "near", "progress": 1.0, "arrival_valid": true}
+    ]
+  },
+  {
+    "id": "D02_left_entrance", "start": "s0", "goal_target_id": "goal", "max_steps": 11, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": true, "target_bearing": -30, "target_distance_class": "far", "target_confidence": 0.94, "target_identity_confidence": 0.96, "corridor_left": true, "corridor_center": true, "corridor_right": false, "closing_risk": 0.08, "safety_confidence": 0.98, "heading_error": -30, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_LEFT": "s1", "FORWARD": "wrong"}},
+      {"id": "s1", "target_bearing": -5, "target_distance_class": "medium", "heading_error": -5, "progress": 0.55, "corridor_right": true, "transitions": {"FORWARD": "s2"}},
+      {"id": "s2", "target_bearing": 0, "target_distance_class": "near", "heading_error": 0, "progress": 1.0, "arrival_valid": true},
+      {"id": "wrong", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "progress": -0.2, "transitions": {"SCAN_LEFT": "s0"}}
+    ]
+  },
+  {
+    "id": "D03_right_entrance", "start": "s0", "goal_target_id": "goal", "max_steps": 11, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": true, "target_bearing": 28, "target_distance_class": "far", "target_confidence": 0.95, "target_identity_confidence": 0.97, "corridor_left": false, "corridor_center": true, "corridor_right": true, "closing_risk": 0.07, "safety_confidence": 0.98, "heading_error": 28, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_RIGHT": "s1", "FORWARD": "wrong"}},
+      {"id": "s1", "target_bearing": 4, "target_distance_class": "medium", "heading_error": 4, "progress": 0.55, "corridor_left": true, "transitions": {"FORWARD": "s2"}},
+      {"id": "s2", "target_bearing": 0, "target_distance_class": "near", "heading_error": 0, "progress": 1.0, "arrival_valid": true},
+      {"id": "wrong", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "progress": -0.2, "transitions": {"SCAN_RIGHT": "s0"}}
+    ]
+  },
+  {
+    "id": "D04_similar_targets", "start": "s0", "goal_target_id": "goal", "max_steps": 14, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": false, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.0, "target_identity_confidence": 0.0, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.98, "heading_error": 0, "progress": 0, "truth_target_id": null, "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"SCAN_LEFT": "decoy"}},
+      {"id": "decoy", "target_visible": true, "target_bearing": -18, "target_confidence": 0.90, "target_identity_confidence": 0.45, "truth_target_id": "decoy", "transitions": {"SCAN_RIGHT": "goal0", "VEER_LEFT": "wrong"}},
+      {"id": "goal0", "target_visible": true, "target_bearing": 20, "target_confidence": 0.94, "target_identity_confidence": 0.96, "truth_target_id": "goal", "heading_error": 20, "transitions": {"VEER_RIGHT": "goal1"}},
+      {"id": "goal1", "target_visible": true, "target_distance_class": "medium", "target_confidence": 0.97, "target_identity_confidence": 0.98, "truth_target_id": "goal", "progress": 0.55, "transitions": {"FORWARD": "goal2"}},
+      {"id": "goal2", "target_visible": true, "target_distance_class": "near", "target_confidence": 0.98, "target_identity_confidence": 0.99, "truth_target_id": "goal", "progress": 1.0, "arrival_valid": true},
+      {"id": "wrong", "target_visible": true, "target_distance_class": "near", "target_confidence": 0.96, "target_identity_confidence": 0.55, "truth_target_id": "decoy", "progress": 0.2}
+    ]
+  },
+  {
+    "id": "D05_glass_decoy", "start": "s0", "goal_target_id": "goal", "max_steps": 14, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": false, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.0, "target_identity_confidence": 0.0, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.97, "heading_error": 0, "progress": 0, "truth_target_id": null, "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"SCAN_LEFT": "glass"}},
+      {"id": "glass", "target_visible": true, "target_bearing": -22, "target_confidence": 0.72, "target_identity_confidence": 0.35, "truth_target_id": "glass", "transitions": {"SCAN_RIGHT": "g0"}},
+      {"id": "g0", "target_visible": true, "target_bearing": 18, "target_confidence": 0.93, "target_identity_confidence": 0.94, "truth_target_id": "goal", "heading_error": 18, "transitions": {"VEER_RIGHT": "g1"}},
+      {"id": "g1", "target_visible": true, "target_distance_class": "medium", "target_confidence": 0.96, "target_identity_confidence": 0.97, "truth_target_id": "goal", "progress": 0.5, "transitions": {"FORWARD": "g2"}},
+      {"id": "g2", "target_visible": true, "target_distance_class": "near", "target_confidence": 0.98, "target_identity_confidence": 0.99, "truth_target_id": "goal", "progress": 1.0, "arrival_valid": true}
+    ]
+  },
+  {
+    "id": "D06_brief_occlusion", "start": "s0", "goal_target_id": "goal", "max_steps": 14, "optimal_movement_steps": 3,
+    "node_defaults": {"target_visible": true, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.96, "target_identity_confidence": 0.97, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.98, "heading_error": 0, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"FORWARD": "lost"}},
+      {"id": "lost", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "progress": 0.34, "transitions": {"STOP": "r0", "SCAN_LEFT": "r0", "SCAN_RIGHT": "r0", "FORWARD": "danger"}},
+      {"id": "r0", "target_bearing": -8, "target_distance_class": "medium", "progress": 0.4, "transitions": {"FORWARD": "r1"}},
+      {"id": "r1", "target_distance_class": "medium", "progress": 0.7, "transitions": {"FORWARD": "r2"}},
+      {"id": "r2", "target_distance_class": "near", "progress": 1.0, "arrival_valid": true},
+      {"id": "danger", "target_visible": false, "target_confidence": 0.0, "target_identity_confidence": 0.0, "truth_target_id": null, "closing_risk": 0.95, "progress": 0.1}
+    ]
+  },
+  {
+    "id": "D07_obstacle_detour", "start": "s0", "goal_target_id": "goal", "max_steps": 12, "optimal_movement_steps": 3,
+    "node_defaults": {"target_visible": true, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.95, "target_identity_confidence": 0.97, "corridor_left": false, "corridor_center": false, "corridor_right": true, "closing_risk": 0.55, "safety_confidence": 0.94, "heading_error": 0, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_RIGHT": "s1", "FORWARD": "hazard"}},
+      {"id": "s1", "target_bearing": -8, "target_distance_class": "medium", "corridor_left": true, "corridor_center": true, "progress": 0.35, "transitions": {"FORWARD": "s2"}},
+      {"id": "s2", "target_distance_class": "medium", "corridor_center": true, "closing_risk": 0.05, "progress": 0.7, "transitions": {"FORWARD": "s3"}},
+      {"id": "s3", "target_distance_class": "near", "closing_risk": 0.02, "progress": 1.0, "arrival_valid": true},
+      {"id": "hazard", "closing_risk": 0.95, "safety_confidence": 0.3, "progress": -0.1}
+    ]
+  },
+  {
+    "id": "D08_safety_dip", "start": "s0", "goal_target_id": "goal", "max_steps": 13, "optimal_movement_steps": 2,
+    "node_defaults": {"target_visible": true, "target_bearing": 0, "target_distance_class": "far", "target_confidence": 0.96, "target_identity_confidence": 0.98, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.98, "heading_error": 0, "progress": 0, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"FORWARD": "dip"}},
+      {"id": "dip", "target_distance_class": "medium", "safety_confidence": 0.42, "progress": 0.45, "transitions": {"STOP": "clear", "FORWARD": "hazard", "VEER_LEFT": "hazard", "VEER_RIGHT": "hazard"}},
+      {"id": "clear", "target_distance_class": "medium", "safety_confidence": 0.96, "progress": 0.45, "transitions": {"FORWARD": "goal"}},
+      {"id": "goal", "target_distance_class": "near", "progress": 1.0, "arrival_valid": true},
+      {"id": "hazard", "closing_risk": 0.95, "safety_confidence": 0.15, "progress": 0.2}
+    ]
+  },
+  {
+    "id": "D09_moderate_right_shortcut", "start": "s0", "goal_target_id": "goal", "max_steps": 11, "optimal_movement_steps": 1,
+    "node_defaults": {"target_visible": true, "target_bearing": 10, "target_distance_class": "medium", "target_confidence": 0.96, "target_identity_confidence": 0.98, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.04, "safety_confidence": 0.98, "heading_error": 10, "progress": 0.4, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_RIGHT": "goal", "FORWARD": "detour"}},
+      {"id": "detour", "target_bearing": 6, "heading_error": 6, "progress": 0.68, "transitions": {"FORWARD": "goal", "VEER_RIGHT": "goal"}},
+      {"id": "goal", "target_bearing": 0, "target_distance_class": "near", "heading_error": 0, "progress": 1.0, "arrival_valid": true}
+    ]
+  },
+  {
+    "id": "D10_moderate_left_shortcut", "start": "s0", "goal_target_id": "goal", "max_steps": 11, "optimal_movement_steps": 1,
+    "node_defaults": {"target_visible": true, "target_bearing": -11, "target_distance_class": "medium", "target_confidence": 0.95, "target_identity_confidence": 0.97, "corridor_left": true, "corridor_center": true, "corridor_right": true, "closing_risk": 0.05, "safety_confidence": 0.98, "heading_error": -11, "progress": 0.4, "truth_target_id": "goal", "transitions": {}},
+    "nodes": [
+      {"id": "s0", "transitions": {"VEER_LEFT": "goal", "FORWARD": "detour"}},
+      {"id": "detour", "target_bearing": -5, "heading_error": -5, "progress": 0.67, "transitions": {"FORWARD": "goal", "VEER_LEFT": "goal"}},
+      {"id": "goal", "target_bearing": 0, "target_distance_class": "near", "heading_error": 0, "progress": 1.0, "arrival_valid": true}
+    ]
+  }
+]
