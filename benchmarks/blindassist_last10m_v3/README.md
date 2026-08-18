@@ -86,6 +86,10 @@ must not be compared across evaluator revisions.
 
 ## Frozen acceptance outcome
 
+The canonical adjudicated claim for this run is:
+
+`SUBSTANTIVE_POLICY_IMPROVEMENT_ESTABLISHED_WITHIN_L10M_ORACLE_3`
+
 The 2026-08-19 fixed-budget run completed all ten iterations. The final best
 improved hidden-v3 from `0.879167` to `0.935000`. Path efficiency improved from
 `0.791667` to `1.000000`; scored behavioral components contributed `0.033333`
@@ -96,9 +100,16 @@ On dev, the same best improved path efficiency from `0.90` to `1.00`, but its
 substantive share was `49.2308%`, below the frozen 50% threshold; the dev
 behavioral gate therefore remains FAIL. No threshold was changed after seeing
 the result. The full receipt and exact best program are stored under
-`receipts/2026-08-19_acceptance/`.
+`receipts/2026-08-19_acceptance/`. The original receipt remains unchanged; the
+claim upgrade and its source hash are recorded separately in
+`claim_adjudication.json`.
 
 This establishes a meaningful navigation search result only inside the
 L10M-ORACLE-3 oracle-graph contract. It is sufficient to justify a separately
 frozen Naked Codex/EvoX comparison, but does not itself establish general
 superiority or deployment safety.
+
+Hidden-v3 is consumed. It must not be used again as heldout evidence or as a
+target for further search. The next causal question is preregistered under
+`benchmarks/blindassist_last10m_comp_1/`; no real BlindAssist navigation-policy
+optimization is authorized by this result.

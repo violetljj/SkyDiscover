@@ -1,0 +1,26 @@
+{
+  "source_run": "outputs/l10m_oracle3_acceptance_20260819_r1",
+  "source_benchmark": "L10M-ORACLE-3",
+  "model": "codex-cli/gpt-5.6-sol",
+  "codex_cli_version": "codex-cli 0.148.0-alpha.9",
+  "usage_definition": "input_tokens + output_tokens; reasoning_output_tokens is a reported subset and is not added again",
+  "generation_calls": [
+    {"iteration": 1, "input_tokens": 25732, "output_tokens": 1272, "reasoning_output_tokens": 485},
+    {"iteration": 2, "input_tokens": 26413, "output_tokens": 952, "reasoning_output_tokens": 133},
+    {"iteration": 3, "input_tokens": 27634, "output_tokens": 975, "reasoning_output_tokens": 120},
+    {"iteration": 4, "input_tokens": 27594, "output_tokens": 2661, "reasoning_output_tokens": 1779},
+    {"iteration": 5, "input_tokens": 28189, "output_tokens": 1267, "reasoning_output_tokens": 516},
+    {"iteration": 6, "input_tokens": 27608, "output_tokens": 2692, "reasoning_output_tokens": 1788},
+    {"iteration": 7, "input_tokens": 27624, "output_tokens": 1236, "reasoning_output_tokens": 516},
+    {"iteration": 8, "input_tokens": 27517, "output_tokens": 1730, "reasoning_output_tokens": 1034},
+    {"iteration": 9, "input_tokens": 27539, "output_tokens": 2076, "reasoning_output_tokens": 1215},
+    {"iteration": 10, "input_tokens": 28191, "output_tokens": 2353, "reasoning_output_tokens": 1552}
+  ],
+  "totals": {
+    "input_tokens": 274041,
+    "output_tokens": 17214,
+    "input_plus_output_tokens": 291255,
+    "reasoning_output_tokens_reported_subset": 9138
+  },
+  "selected_ceiling": 300000
+}

@@ -1,0 +1,25 @@
+{
+  "benchmark_revision": "L10M-ORACLE-3",
+  "adjudicated_at": "2026-08-19",
+  "source_receipt": "receipt.json",
+  "source_receipt_sha256": "7787699ae26302d7fe0805da97fb2261146a155a4c889c78ef7d3bd2e3c9cc9f",
+  "canonical_claim": "SUBSTANTIVE_POLICY_IMPROVEMENT_ESTABLISHED_WITHIN_L10M_ORACLE_3",
+  "basis": {
+    "hidden_v3_consumed": true,
+    "path_efficiency_baseline": 0.791667,
+    "path_efficiency_candidate": 1.0,
+    "score_delta": 0.055833,
+    "substantive_score_delta": 0.033333,
+    "substantive_score_share": 0.597018,
+    "predeclared_minimum_share": 0.5,
+    "validity_preserved": true,
+    "task_success_preserved": true,
+    "safe_termination_preserved": true
+  },
+  "discordant_dev_result": {
+    "behavioral_improvement_detected": false,
+    "substantive_score_share": 0.492308,
+    "interpretation": "Preserved as evidence of possible episode-composition dependence."
+  },
+  "claim_ceiling": "A substantive policy improvement within one frozen L10M-ORACLE-3 oracle-graph hidden revision; not evidence of stable general improvement, search-system incremental value, real-world BlindAssist safety, or deployment readiness."
+}

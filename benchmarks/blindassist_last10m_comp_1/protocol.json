@@ -1,0 +1,59 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "status": "MECHANICAL_PROTOCOL_FROZEN_PENDING_HIDDEN_V4",
+  "frozen_at": "2026-08-19",
+  "source_benchmark": "L10M-ORACLE-3",
+  "evaluator_semantics": "UNCHANGED_ORACLE_3",
+  "initial_program": "BYTE_IDENTICAL_ORACLE_3_BASELINE",
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "arms": [
+    "skydiscover_best_of_n_3",
+    "naked_codex_incumbent_only",
+    "evox"
+  ],
+  "replicates": {
+    "count": 3,
+    "local_seeds": [101, 202, 303],
+    "arm_order": [
+      ["skydiscover_best_of_n_3", "naked_codex_incumbent_only", "evox"],
+      ["naked_codex_incumbent_only", "evox", "skydiscover_best_of_n_3"],
+      ["evox", "skydiscover_best_of_n_3", "naked_codex_incumbent_only"]
+    ]
+  },
+  "search_ceilings_per_arm_replicate": {
+    "generation_calls": 10,
+    "dev_evaluator_attempts": 10,
+    "total_tokens_input_plus_output": 300000,
+    "provider_retries_per_failed_generation": 1
+  },
+  "hidden_adjudication": {
+    "split": "hidden-v4",
+    "materialized": false,
+    "attempts_per_arm_replicate": 10,
+    "results_returned_to_search": false,
+    "candidate_order": "generation_order"
+  },
+  "primary_endpoint": "any_hidden_candidate_passes_oracle_3_substantive_behavioral_gate",
+  "secondary_endpoints": [
+    "final_best_hidden_substantive_score_delta",
+    "final_best_hidden_raw_score",
+    "behavioral_anytime_auc",
+    "tokens_to_first_behavioral_pass",
+    "generation_calls",
+    "dev_evaluator_attempts",
+    "total_tokens_input_plus_output",
+    "wall_time"
+  ],
+  "behavioral_anytime_auc": {
+    "y": "best_so_far_hidden_substantive_score_delta",
+    "x": "hidden_adjudication_attempt_1_through_10",
+    "invalid_or_missing_value": 0.0,
+    "divide_area_by": 10,
+    "normalize_by_best_arm": false
+  },
+  "execution_blockers": [
+    "common_budget_accounting_harness_preflight",
+    "fresh_hidden_v4_materialization_and_hash_freeze"
+  ]
+}

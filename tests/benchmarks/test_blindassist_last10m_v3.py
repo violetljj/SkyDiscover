@@ -79,6 +79,22 @@ def test_frozen_manifest_and_baseline_match_checked_in_inputs():
     assert (manifest_path.parent / "regression_v2.json").read_bytes() == V2_HIDDEN_PATH.read_bytes()
 
 
+def test_claim_adjudication_is_bound_to_unchanged_acceptance_receipt():
+    receipt_dir = BENCHMARK / "receipts" / "2026-08-19_acceptance"
+    receipt_path = receipt_dir / "receipt.json"
+    adjudication = json.loads((receipt_dir / "claim_adjudication.json").read_text(encoding="utf-8"))
+    assert (
+        adjudication["source_receipt_sha256"]
+        == hashlib.sha256(receipt_path.read_bytes()).hexdigest()
+    )
+    assert (
+        adjudication["canonical_claim"]
+        == "SUBSTANTIVE_POLICY_IMPROVEMENT_ESTABLISHED_WITHIN_L10M_ORACLE_3"
+    )
+    assert adjudication["basis"]["hidden_v3_consumed"] is True
+    assert adjudication["discordant_dev_result"]["behavioral_improvement_detected"] is False
+
+
 def test_viewpoint_action_changes_future_observation(evaluator):
     scenario = evaluator._load_scenarios("train")[1]
     nodes = {node["id"]: node for node in scenario["nodes"]}
