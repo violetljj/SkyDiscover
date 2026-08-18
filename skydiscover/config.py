@@ -643,7 +643,7 @@ class Config:
         config_path = Path(path)
         config_dir = config_path.parent
 
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             raw = f.read()
         config_dict = yaml.safe_load(_expand_env_vars(raw))
 
@@ -658,7 +658,7 @@ class Config:
                 file_path = config_dir / system_message
                 try:
                     if file_path.exists() and file_path.is_file():
-                        with open(file_path, "r") as f:
+                        with open(file_path, "r", encoding="utf-8") as f:
                             config_dict["prompt"]["system_message"] = f.read()
                 except OSError:
                     logger.debug("Could not read system_message from %s", file_path, exc_info=True)
@@ -667,7 +667,7 @@ class Config:
 
     def to_yaml(self, path: Union[str, Path]) -> None:
         """Save configuration to a YAML file"""
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             yaml.dump(self.to_dict(), f, default_flow_style=False)
 
     @classmethod

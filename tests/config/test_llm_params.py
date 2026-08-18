@@ -5,11 +5,9 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from skydiscover.config import LLMConfig, LLMModelConfig
+from skydiscover.config import Config, LLMConfig, LLMModelConfig
 
-_OPENAI_DEFAULT_API_BASE: str = next(
-    f.default for f in fields(LLMConfig) if f.name == "api_base"
-)
+_OPENAI_DEFAULT_API_BASE: str = next(f.default for f in fields(LLMConfig) if f.name == "api_base")
 
 
 class TestLLMConfigDefaults:
@@ -33,6 +31,15 @@ class TestLLMConfigDefaults:
         cfg = LLMConfig(name="test-model", temperature=None, top_p=None)
         assert cfg.temperature is None
         assert cfg.top_p is None
+
+    def test_yaml_is_read_as_utf8(self, tmp_path):
+        config_path = tmp_path / "unicode.yaml"
+        config_path.write_text(
+            "prompt:\n  system_message: 'Target ratio ≈ 0.9'\n",
+            encoding="utf-8",
+        )
+        cfg = Config.from_yaml(config_path)
+        assert cfg.context_builder.system_message == "Target ratio ≈ 0.9"
 
 
 class TestApiBaseRouting:
