@@ -140,7 +140,7 @@ class MonitorServer:
         self._thread.start()
         # Wait until TCP port is actually bound (up to 5s)
         self._ready_event.wait(timeout=5)
-        logger.debug(f"Monitor server started → http://localhost:{self.port}/")
+        logger.debug(f"Monitor server started at http://localhost:{self.port}/")
 
     def stop(self) -> None:
         """Signal the server to stop and wait for the thread to finish."""

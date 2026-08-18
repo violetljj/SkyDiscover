@@ -26,7 +26,7 @@ class TemplateManager:
 
     def _load_from_directory(self, directory: Path) -> None:
         for txt_file in directory.glob("*.txt"):
-            with open(txt_file, "r") as f:
+            with open(txt_file, "r", encoding="utf-8") as f:
                 self.templates[txt_file.stem] = f.read()
 
     def get_template(self, name: str) -> str:

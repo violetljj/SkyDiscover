@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 # ═══════════════════════════════════════════════════════════════════════
 
 _PROVIDERS: Dict[str, tuple] = {
+    "codex-cli": (None, []),
     "openai": ("https://api.openai.com/v1", ["OPENAI_API_KEY"]),
     "azure": ("https://api.openai.com/v1", ["AZURE_API_KEY", "OPENAI_API_KEY"]),
     "gemini": (
@@ -130,6 +131,7 @@ class LLMModelConfig:
     api_base: Optional[str] = None
     api_key: Optional[str] = None
     name: Optional[str] = None
+    codex_executable: Optional[str] = None
 
     # Custom LLM client
     init_client: Optional[Callable] = None
@@ -203,7 +205,7 @@ class LLMConfig(LLMModelConfig):
                 if model.api_key is None:
                     model.api_key = _resolve_api_key_from_env(env_vars)
                 # Strip provider prefix so the API receives the bare model name
-                if "/" in model.name and provider != "openai":
+                if "/" in model.name and provider not in {"openai", "codex-cli"}:
                     model.name = bare_name
 
         # Update models with shared configuration values
@@ -217,6 +219,7 @@ class LLMConfig(LLMModelConfig):
             "retries": self.retries,
             "retry_delay": self.retry_delay,
             "reasoning_effort": self.reasoning_effort,
+            "codex_executable": self.codex_executable,
         }
         self.update_model_params(shared_config)
 
@@ -761,6 +764,7 @@ class Config:
                 "timeout": self.llm.timeout,
                 "retries": self.llm.retries,
                 "retry_delay": self.llm.retry_delay,
+                "codex_executable": self.llm.codex_executable,
             },
             "prompt": {
                 "template": self.context_builder.template,
@@ -921,15 +925,16 @@ def apply_overrides(
         for spec in specs:
             provider, model_name, default_api_base, env_vars = _parse_model_spec(spec)
             effective_base = api_base or default_api_base
-            if effective_base is None:
+            if effective_base is None and provider != "codex-cli":
                 raise ValueError(
                     f"Provider '{provider}' requires an explicit api_base.\n"
                     f"Example: model='{spec}', api_base='http://localhost:8000/v1'"
                 )
             resolved_key = _resolve_api_key_from_env(env_vars)
+            effective_name = spec if provider == "codex-cli" else model_name
             models.append(
                 LLMModelConfig(
-                    name=model_name,
+                    name=effective_name,
                     api_base=effective_base,
                     api_key=resolved_key,
                 )
@@ -972,6 +977,7 @@ def apply_overrides(
                 "retries": config.llm.retries,
                 "retry_delay": config.llm.retry_delay,
                 "reasoning_effort": config.llm.reasoning_effort,
+                "codex_executable": config.llm.codex_executable,
             },
             overwrite=True,
         )

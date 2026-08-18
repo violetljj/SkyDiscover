@@ -341,9 +341,10 @@ class Runner:
 
         if not summary_model and self.config.llm.models:
             first = self.config.llm.models[0]
-            summary_model = first.name
-            summary_api_base = summary_api_base or first.api_base
-            summary_api_key = summary_api_key or first.api_key
+            if not (first.name or "").lower().startswith("codex-cli/"):
+                summary_model = first.name
+                summary_api_base = summary_api_base or first.api_base
+                summary_api_key = summary_api_key or first.api_key
 
         if not summary_model:
             logger.warning(

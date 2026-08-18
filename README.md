@@ -287,6 +287,21 @@ prompt:
 
 API keys (OPENAI_API_KEY, GEMINI_API_KEY, etc.) are resolved from environment variables automatically. 
 
+To reuse an authenticated Codex CLI instead of an API key:
+
+```bash
+codex login status
+uv run skydiscover-run initial_program.py evaluator.py \
+  --config configs/codex_cli.yaml \
+  --model codex-cli/gpt-5.6-sol \
+  --search best_of_n \
+  --iterations 5
+```
+
+The Codex CLI provider runs `codex exec` in an isolated, read-only temporary
+workspace and reuses the saved Codex/ChatGPT login. See
+[`configs/codex_cli.yaml`](configs/codex_cli.yaml) for the complete template.
+
 ### 📊 Live Monitor & Human Feedback
 
 Add `monitor: { enabled: true }` to your config. The dashboard URL prints at run start — scatter plot of all programs, code diffs, metrics, and AI summaries. A **Human Feedback** panel lets you steer evolution in real time.
@@ -341,13 +356,16 @@ result = discover_solution(
 <details>
 <summary><b>Model providers</b></summary>
 
-Any [LiteLLM](https://docs.litellm.ai/)-compatible model works using `provider/model` format:
+Any [LiteLLM](https://docs.litellm.ai/)-compatible model works using
+`provider/model` format. The authenticated Codex CLI is also available as a
+separate local provider:
 
 ```bash
 --model gpt-5                                               # OpenAI (default)
 --model gemini/gemini-3-pro-preview                          # Gemini
 --model anthropic/claude-sonnet-4-20250514                   # Anthropic
 --model ollama/llama3 --api-base http://localhost:11434/v1   # Local (Ollama, vLLM, etc.)
+--model codex-cli/gpt-5.6-sol                                # Saved Codex CLI login
 ```
 
 Multi-model pools with weighted sampling are supported in config:

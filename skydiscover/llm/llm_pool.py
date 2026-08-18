@@ -7,6 +7,7 @@ from typing import Any, Dict, List
 
 from skydiscover.config import LLMModelConfig
 from skydiscover.llm.base import LLMResponse
+from skydiscover.llm.codex_cli import CodexCliLLM, is_codex_cli_model
 from skydiscover.llm.openai import OpenAILLM
 
 logger = logging.getLogger("skydiscover.llm")
@@ -30,10 +31,7 @@ class LLMPool:
             raise ValueError("LLMPool model weights must sum to a positive value")
         self.weights = [w / total for w in self.weights]
 
-        self.models = [
-            model_cfg.init_client(model_cfg) if model_cfg.init_client else OpenAILLM(model_cfg)
-            for model_cfg in models_cfg
-        ]
+        self.models = [self._init_model(model_cfg) for model_cfg in models_cfg]
         self.random_state = random.Random()
 
         # Logging
@@ -45,6 +43,14 @@ class LLMPool:
                 parts = ", ".join(f"{c.name}={w:.2f}" for c, w in zip(models_cfg, self.weights))
                 logger.debug(f"Pool weights: {parts}")
                 logger._logged_pools.add(pool_key)
+
+    @staticmethod
+    def _init_model(model_cfg: LLMModelConfig):
+        if model_cfg.init_client:
+            return model_cfg.init_client(model_cfg)
+        if is_codex_cli_model(model_cfg.name):
+            return CodexCliLLM(model_cfg)
+        return OpenAILLM(model_cfg)
 
     def _sample_model(self):
         """

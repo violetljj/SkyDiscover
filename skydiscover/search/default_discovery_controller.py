@@ -21,6 +21,7 @@ from skydiscover.context_builder.evox import EvoxContextBuilder
 from skydiscover.evaluation import create_evaluator
 from skydiscover.evaluation.llm_judge import LLMJudge
 from skydiscover.llm.base import LLMResponse
+from skydiscover.llm.codex_cli import is_codex_cli_model
 from skydiscover.llm.llm_pool import LLMPool
 from skydiscover.search.base_database import Program, ProgramDatabase
 from skydiscover.search.utils.discovery_utils import SerializableResult, build_image_content
@@ -68,6 +69,11 @@ class DiscoveryController:
 
         self.shutdown_event = mp.Event()
         self.early_stopping_triggered = False
+
+        if self.config.agentic.enabled and any(
+            is_codex_cli_model(model.name) for model in self.config.llm.models
+        ):
+            raise ValueError("Codex CLI models cannot be combined with SkyDiscover agentic mode")
 
         self.llms = LLMPool(self.config.llm.models)
         self.evaluator_llms = LLMPool(self.config.llm.evaluator_models)
@@ -359,12 +365,12 @@ class DiscoveryController:
     def _finalize_discovery(self) -> Optional[Program]:
         if self.shutdown_event.is_set():
             logger.info(
-                f"✅ Discovery process completed "
+                f"Discovery process completed "
                 f"(search strategy = {self.database.name}) - Shutdown requested"
             )
         else:
             logger.info(
-                f"✅ Discovery process completed "
+                f"Discovery process completed "
                 f"(search strategy = {self.database.name}) - Maximum iterations reached"
             )
         return self.database.get_best_program()
@@ -415,7 +421,7 @@ class DiscoveryController:
                 parent_id=None,
                 metrics=eval_result.metrics,
                 iteration_found=iteration,
-                metadata={"changes": "Generated from scratch"},
+                metadata={"changes": "Generated from scratch", **result.metadata},
                 artifacts=eval_result.artifacts or {},
             )
 
@@ -491,6 +497,7 @@ class DiscoveryController:
             )
 
             image_path = None  # set by image mode or evaluator
+            generation_metadata: Dict[str, Any] = {}
             eval_time = 0.0
 
             # Build prompt with parent and context programs
@@ -532,6 +539,7 @@ class DiscoveryController:
                             program_id=child_id,
                         )
                         llm_response = result.text or ""
+                        generation_metadata = result.metadata or {}
                         image_path = result.image_path
                         if image_path:
                             child_solution = result.text or "(image generated)"
@@ -544,6 +552,7 @@ class DiscoveryController:
                     else:
                         result = await self._call_llm(prompt["system"], prompt["user"])
                         llm_response = result.text
+                        generation_metadata = result.metadata or {}
                     llm_generation_time = time.time() - llm_start
                 except Exception as e:
                     logger.error(f"LLM generation failed: {e}")
@@ -677,7 +686,10 @@ class DiscoveryController:
                         "All %s retry attempts failed. Final error: %s", retry_times, error_msg
                     )
                     iteration_time = time.time() - iteration_start
-                    failed_extra = {"failed_attempts": failed_attempts}
+                    failed_extra = {
+                        "failed_attempts": failed_attempts,
+                        **generation_metadata,
+                    }
                     if image_path:
                         failed_extra["image_path"] = image_path
                     failed_child_program = self._create_child_program(
@@ -708,7 +720,7 @@ class DiscoveryController:
                     )
                 break
 
-            extra_meta = {}
+            extra_meta = dict(generation_metadata)
             if image_path:
                 extra_meta["image_path"] = image_path
             child_program = self._create_child_program(
@@ -984,7 +996,7 @@ class DiscoveryController:
             ):
                 if verbose:
                     logger.warning(
-                        "⚠️  No 'combined_score' metric found in evaluation results. "
+                        "No 'combined_score' metric found in evaluation results. "
                         "Using 0.0 for discovery process guidance. "
                         "For better solution discovery results, please modify your evaluator to return a 'combined_score' "
                         "metric that properly weights different aspects of program performance."
@@ -992,4 +1004,4 @@ class DiscoveryController:
                 self._warned_about_combined_score = True
 
         if self.database.best_program_id == child_program.id and verbose:
-            logger.info(f"🌟 New best solution found at iteration {iteration}")
+            logger.info(f"New best solution found at iteration {iteration}")

@@ -51,9 +51,10 @@ def start_monitor(
 
         if not summary_model and config.llm.models:
             first = config.llm.models[0]
-            summary_model = first.name
-            summary_api_base = summary_api_base or first.api_base
-            summary_api_key = summary_api_key or first.api_key
+            if not (first.name or "").lower().startswith("codex-cli/"):
+                summary_model = first.name
+                summary_api_base = summary_api_base or first.api_base
+                summary_api_key = summary_api_key or first.api_key
 
         if not summary_model:
             logger.warning(
@@ -78,7 +79,7 @@ def start_monitor(
             feedback_mode = getattr(config, "human_feedback_mode", "append")
             feedback_reader = HumanFeedbackReader(feedback_path, mode=feedback_mode)
             monitor_server.set_feedback_reader(feedback_reader)
-            logger.debug("Human feedback enabled — file: %s", feedback_path)
+            logger.debug("Human feedback enabled - file: %s", feedback_path)
         except Exception as exc:
             logger.warning("Failed to set up human feedback: %s", exc)
 

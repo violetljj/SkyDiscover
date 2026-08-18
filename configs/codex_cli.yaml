@@ -1,0 +1,38 @@
+# Use an authenticated Codex CLI as the candidate generator.
+# Run `codex login status` before starting. No API key is required.
+max_iterations: 10
+checkpoint_interval: 5
+log_level: "INFO"
+random_seed: 42
+
+llm:
+  models:
+    - name: "codex-cli/gpt-5.6-sol"
+      weight: 1.0
+  reasoning_effort: "medium"
+  timeout: 900
+  retries: 1
+  retry_delay: 5
+  # Optional when Codex is not discoverable automatically:
+  # codex_executable: "C:/path/to/codex.exe"
+
+search:
+  type: "best_of_n"
+  database:
+    best_of_n: 3
+  num_context_programs: 2
+
+prompt:
+  system_message: |
+    You are an expert helping improve programs through evidence-driven iteration.
+
+evaluator:
+  timeout: 360
+  max_retries: 1
+  cascade_evaluation: false
+
+monitor:
+  enabled: false
+
+diff_based_generation: false
+max_solution_length: 60000

@@ -14,6 +14,7 @@ All settings are YAML. Environment variables can be referenced with `${VAR}` syn
 | **openevolve_native.yaml** | OpenEvolve Native | Native port of OpenEvolve's island-based MAP-Elites search with ring migration |
 | **llm_judge.yaml** | - | Demonstrates LLM-as-a-judge evaluation (uses gpt-4o-mini for both generation and judging) |
 | **human_in_the_loop.yaml** | Top-K | Enables the live monitor dashboard and human-in-the-loop feedback |
+| **codex_cli.yaml** | Best-of-N | Uses an authenticated Codex CLI instead of a model API key |
 
 Each file is a ready-to-copy template. Fill in the **system_message** with your problem description and you're good to go.
 
@@ -60,6 +61,27 @@ llm:
 | DeepSeek | `deepseek-chat` or `deepseek/deepseek-chat` | DEEPSEEK_API_KEY |
 | Mistral | `mistral-large` or `mistral/mistral-large` | MISTRAL_API_KEY |
 | Ollama / vLLM | `ollama/llama3`, `vllm/my-model` | — |
+| Codex CLI | `codex-cli/gpt-5.6-sol` | Saved `codex login` session |
+
+### Codex CLI provider
+
+Use the non-interactive Codex CLI as the candidate generator while keeping
+SkyDiscover's search database and evaluator in control:
+
+```bash
+codex login status
+uv run skydiscover-run initial_program.py evaluator.py \
+  --config configs/codex_cli.yaml \
+  --search best_of_n \
+  --iterations 5
+```
+
+No model API key is required. Each generation uses an ephemeral `codex exec`
+session in an empty temporary working directory with a read-only sandbox. Set
+`llm.codex_executable` or `SKYDISCOVER_CODEX_EXECUTABLE` if `codex` cannot be
+discovered automatically. Codex CLI models are text-only, cannot be combined
+with `--agentic`, and do not automatically provide monitor AI summaries; set an
+explicit API-backed `monitor.summary_model` if summaries are needed.
 
 <details>
 <summary><b>Single model, multi-model pool, separate pools, and API override examples</b></summary>

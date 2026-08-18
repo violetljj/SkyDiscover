@@ -1,7 +1,7 @@
 """Base LLM interface."""
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 
@@ -15,6 +15,7 @@ class LLMResponse:
 
     text: str = ""
     image_path: Optional[str] = None
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
 
 class LLMInterface(ABC):

@@ -85,7 +85,7 @@ class Evaluator:
             return
         if not hasattr(module, "evaluate_stage1"):
             logger.warning(
-                f"cascade_evaluation is true but {self.evaluation_file} has no evaluate_stage1 — will fall back to direct evaluation"
+                f"cascade_evaluation is true but {self.evaluation_file} has no evaluate_stage1; will fall back to direct evaluation"
             )
         elif not hasattr(module, "evaluate_stage2"):
             logger.warning(f"{self.evaluation_file} has evaluate_stage1 but no evaluate_stage2")
@@ -119,7 +119,7 @@ class Evaluator:
                     temp_path = f.name
             except OSError as e:
                 if e.errno == errno.ENOSPC:
-                    logger.error("Disk full — cannot create temp file")
+                    logger.error("Disk full - cannot create temp file")
                     return EvaluationResult(metrics={"error": 0.0, "disk_space_error": True})
                 raise
 
