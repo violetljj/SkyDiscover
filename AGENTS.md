@@ -80,3 +80,38 @@ silently substituting evidence.
   credentials are unavailable, or task ownership is ambiguous.
 - Do not rewrite history, force-push, or open a pull request unless explicitly
   requested.
+
+## Official upstream isolation
+
+SkyDiscover is expected to absorb updates from the official project regularly.
+Keep official history, local integration, and task development visibly separate
+so upstream synchronization remains safe and auditable.
+
+- Treat `upstream` as the read-only official repository and `origin` as the
+  writable project fork. Never push branches, tags, or other refs to `upstream`.
+- Treat `upstream/main` as an immutable official baseline. Do not place local
+  commits on it, rewrite it, or represent a local integration branch as an
+  official branch.
+- Keep local project development on focused `codex/<task>` branches created from
+  the current project integration branch. Push task branches only to `origin`.
+- Keep official-update integration separate from feature work. An upstream-sync
+  commit or branch must contain only the official update and necessary conflict
+  resolutions; it must not include unrelated local features, experiments,
+  generated outputs, or cleanup.
+- Before integrating an official update, require a clean or explicitly isolated
+  worktree, run `git fetch --prune upstream`, inspect the commit graph and numeric
+  divergence, and stop if branch ownership or the intended integration target is
+  ambiguous.
+- Integrate upstream changes through an isolated synchronization branch or
+  worktree, validate the affected surface, and only then update the project
+  integration branch. Do not merge upstream directly into an active task branch.
+- Keep local feature commits narrowly scoped and independently reviewable so
+  they can be rebased, replayed, dropped, or repaired without modifying official
+  commits or benchmark evidence.
+- Do not reset `origin/main` to `upstream/main`, rename the integration branch,
+  change the remote default branch, rebase published project history, or perform
+  any other migration without explicit user authorization and a verified
+  rollback plan.
+- Before every push, verify that the destination remote is `origin`, the target
+  branch is intentional, and the remote is not unexpectedly divergent. Stop
+  rather than automatically merging, rebasing, or force-pushing.
