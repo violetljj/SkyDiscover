@@ -149,6 +149,20 @@ so upstream synchronization remains safe and auditable.
 - Integrate upstream changes through an isolated synchronization branch or
   worktree, validate the affected surface, and only then update the project
   integration branch. Do not merge upstream directly into an active task branch.
+- Treat an official synchronization as incomplete if the validated result exists
+  only in a temporary branch or worktree. When the update has no unresolved
+  conflicts, the relevant validation passes, evidence boundaries remain intact,
+  branch ownership is clear, and `origin/main` has not unexpectedly diverged,
+  immediately integrate the update into local `main` and push `origin/main`.
+  Do not wait for a separate user request to perform that final integration.
+- After pushing a successful official update, fetch or inspect the remote and
+  verify numeric `HEAD...origin/main` parity. If any admission condition fails,
+  leave `main` unchanged and report the exact blocker instead of forcing the
+  synchronization through.
+- Do not inject the new `main` into an already running experiment or iterative
+  campaign. Keep the active run on its frozen commit; make the updated official
+  functionality available to new work immediately, and update existing task
+  branches only at a safe checkpoint or before their next run.
 - Keep local feature commits narrowly scoped and independently reviewable so
   they can be rebased, replayed, dropped, or repaired without modifying official
   commits or benchmark evidence.
