@@ -45,7 +45,7 @@
   },
   "direct_replicates": {
     "count_per_arm_instance": 6,
-    "local_seeds": [1801, 1802, 1803, 1804, 1805, 1806],
+    "local_seeds": [1811, 1812, 1813, 1814, 1815, 1816],
     "component_1_local_seeds_disjoint": true,
     "provider_sampling_seed_claimed": false,
     "aggregation": "best_consumed_validation_primary_value_across_common_complete_seeds_within_instance",

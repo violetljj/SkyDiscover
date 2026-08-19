@@ -8,7 +8,7 @@
   "formal_arm_runs": 0,
   "model_calls": 0,
   "new_seeds_disjoint": true,
-  "protocol_sha256": "26fac48c0609074a72a29090af0ee167a21618b9cf9ad0d5effecf9ef6d591be",
+  "protocol_sha256": "286fd60bd00bb5a9e976dbb2398e5893dbf9969826cd3cd93b2fc97a4cf04f29",
   "reused_component_file_hashes": {
     "arm_prompts.json": "46dd417f6fccf1bf750ed653e11569d7b489d028267167913c251e7dc449fa29",
     "candidate_guard.py": "958f8cc9b430550d346e42760bf372850f3a2d2edf3ea548f7f2bdff40abb7f3",

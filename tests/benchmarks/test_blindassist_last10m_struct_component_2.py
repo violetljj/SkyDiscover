@@ -81,7 +81,10 @@ def test_protocol_keeps_exact_four_arms_and_original_three_factorial_questions()
         "simple_arm_contrasts_for_fresh_admission",
     }
     assert protocol["component_1_outcomes_in_formal_estimand"] is False
-    assert set(protocol["direct_replicates"]["local_seeds"]).isdisjoint(range(1701, 1707))
+    assert protocol["direct_replicates"]["local_seeds"] == [1811, 1812, 1813, 1814, 1815, 1816]
+    assert set(protocol["direct_replicates"]["local_seeds"]).isdisjoint(
+        set(range(1701, 1707)) | {1801}
+    )
     assert protocol["remote_execution"]["architecture"] == (
         "LOCAL_CONTROL_PLANE_REMOTE_EVALUATION_DATA_PLANE"
     )
@@ -132,7 +135,7 @@ def test_remote_worker_protocol_canary_is_zero_model_and_returns_evaluator_shape
 
 def test_two_infrastructure_blocks_across_instances_are_complete_case_evaluable(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    for instance, seed in (("instance_01", 1801), ("instance_02", 1801)):
+    for instance, seed in (("instance_01", 1811), ("instance_02", 1811)):
         block = run_root / "units" / instance / f"seed_{seed}"
         for path in block.rglob("*"):
             if path.is_file():
@@ -151,7 +154,7 @@ def test_two_infrastructure_blocks_across_instances_are_complete_case_evaluable(
 
 def test_two_missing_blocks_in_one_instance_fail_five_of_six_gate(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    for seed in (1801, 1802):
+    for seed in (1811, 1812):
         block = run_root / "units" / "instance_01" / f"seed_{seed}"
         for file in block.rglob("*"):
             if file.is_file():
@@ -164,7 +167,7 @@ def test_two_missing_blocks_in_one_instance_fail_five_of_six_gate(tmp_path: Path
 
 def test_terminal_arm_failure_is_retained_as_zero_not_deleted(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    _write_block(run_root, "instance_01", 1801, failed_arm="progress_only")
+    _write_block(run_root, "instance_01", 1811, failed_arm="progress_only")
     result = analysis.analyze(run_root)
     assert result["status"] == "EVALUABLE"
     assert result["complete_blocks"] == 72
@@ -181,15 +184,15 @@ def test_scheduler_pairs_never_share_an_instance():
 
 
 def test_started_validation_without_receipt_is_never_retried(tmp_path: Path):
-    _write_block(tmp_path, "instance_01", 1801)
-    block = tmp_path / "units" / "instance_01" / "seed_1801"
+    _write_block(tmp_path, "instance_01", 1811)
+    block = tmp_path / "units" / "instance_01" / "seed_1811"
     (block / "consumed_validation.json").unlink()
     (block / "validation_started.json").write_text("{}", encoding="utf-8")
     assert (
         execute._block_state(
             tmp_path / "units",
             "instance_01",
-            1801,
+            1811,
             ["raw_control", "progress_only", "moves_only", "progress_moves"],
         )
         == "validation_in_doubt"
