@@ -339,7 +339,10 @@ if root.exists():
 blocking_locks = [
     path
     for path in locks
-    if not ("/venvs/" in path and path.endswith("/.lock"))
+    if not any(
+        marker in path
+        for marker in ("/venvs/", "/uv-cache/", "/bootstrap-tools/")
+    )
 ]
 cpu_max = read_text("/sys/fs/cgroup/cpu.max")
 cpuset = read_text("/sys/fs/cgroup/cpuset.cpus.effective")
