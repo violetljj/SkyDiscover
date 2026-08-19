@@ -42,6 +42,23 @@ documented in `README.md` or the benchmark's own README.
 - Keep claims proportional to the evidence. A smoke test, reused task, or single
   benchmark result does not establish general superiority.
 
+## Blind-run monitoring
+
+- Blind discipline prohibits feeding hidden outcomes back into the run or using
+  interim results to change code, budgets, samples, stopping rules, retries, or
+  rerun decisions. It does not prohibit read-only inspection of sealed scores.
+- For long-running evaluated work, monitor both execution health and scoring
+  health. Read-only inspection of sealed interim scores can detect failures such
+  as all-zero or constant output, missing fields, arm collapse, evaluator wiring
+  errors, or implausible score distributions before the entire run is spent.
+- Clearly label partial score summaries as interim and keep the preregistered
+  complete-cohort analysis authoritative. Continue the frozen run unless its
+  protocol already defines an applicable stopping condition or an actual
+  integrity failure makes continuation invalid.
+- Apply evidence safeguards according to the risk they control. Do not withhold
+  useful diagnostics merely to preserve a stronger form of operator blindness
+  that the frozen protocol did not require.
+
 ## Validation
 
 Run the narrowest checks that cover the changed surface:
