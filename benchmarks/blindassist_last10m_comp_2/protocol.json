@@ -1,0 +1,93 @@
+{
+  "experiment_id": "L10M-COMP-2",
+  "status": "DESIGN_FROZEN_PENDING_FRESH_COHORT",
+  "frozen_at": "2026-08-19",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "consumed_development_evidence": ["L10M-COMP-1"],
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "experimental_unit": "fresh_instance",
+  "arms": ["naked_codex", "evox", "sky_evox"],
+  "instances": {
+    "count": 12,
+    "generator_seed": 2081902,
+    "candidate_pool_limit": 240,
+    "episodes_per_split": 8,
+    "headroom_rule": {
+      "information_time": "pre_treatment_frozen_initial_policy_only",
+      "initial_validity_equals": 1.0,
+      "initial_task_success_equals": 1.0,
+      "initial_safe_termination_equals": 1.0,
+      "development_initial_score_strictly_below": 0.91,
+      "hidden_initial_score_strictly_below": 0.91
+    }
+  },
+  "nested_replicates": {
+    "count_per_instance": 2,
+    "local_seeds": [411, 733],
+    "provider_sampling_seed_claimed": false
+  },
+  "search_ceilings_per_arm_instance_replicate": {
+    "generation_calls": 10,
+    "dev_evaluator_attempts": 10,
+    "total_tokens_input_plus_output": 300000,
+    "provider_retries_per_failed_generation": 1
+  },
+  "hidden_adjudication": {
+    "attempts_per_arm_instance_replicate": 10,
+    "candidate_order": "generation_order",
+    "results_returned_to_search": false,
+    "invalid_missing_or_failed_value": 0.0
+  },
+  "estimands": {
+    "delta_e": "instance_mean_seed_best_hidden_substantive_delta_evox_minus_naked",
+    "delta_h": "instance_mean_seed_best_hidden_substantive_delta_sky_evox_minus_evox"
+  },
+  "primary_analysis": {
+    "instance_aggregate": "arithmetic_mean_of_two_paired_replicate_differences",
+    "location_statistic": "arithmetic_mean_across_instances",
+    "test": "exact_instance_level_sign_flip",
+    "assumption": "instance_effects_are_independent_and_centered_effects_are_sign_exchangeable",
+    "one_sided_alpha": 0.05,
+    "delta_e_minimum_meaningful_effect": 0.005,
+    "delta_h_minimum_meaningful_effect": 0.005,
+    "tie_interval_inclusive": [-0.005, 0.005],
+    "fixed_sequence": ["G1_DELTA_E", "G2_DELTA_H"]
+  },
+  "g2_decision_semantics": {
+    "superiority": "delta_h_gt_0.005",
+    "equivalence": "two_one_sided_sign_flip_tests_within_minus_0.005_plus_0.005",
+    "meaningful_harm": "delta_h_lt_minus_0.005",
+    "failed_superiority_alone_means": "INCONCLUSIVE_NOT_EQUIVALENT"
+  },
+  "sky_evox_intervention": {
+    "allowed_difference": "initial_solution_database_file_only",
+    "standard_evox_initial_database": "skydiscover/search/evox/database/initial_search_strategy.py",
+    "sky_evox_initial_database": "benchmarks/blindassist_last10m_comp_2/search_strategies/sky_best_of_three_initial.py",
+    "initial_parent_routing": "reuse_current_best_for_three_candidate_additions",
+    "initial_context_routing": "top_program_context_excluding_parent",
+    "unchanged_after_initialization": [
+      "evox_controller",
+      "strategy_switch_rule",
+      "strategy_scoring",
+      "strategy_migration",
+      "variation_operator_generation",
+      "prompt_and_model",
+      "budgets_and_termination"
+    ]
+  },
+  "failure_semantics": {
+    "analysis_population": "intention_to_treat_all_12_frozen_instances",
+    "invalid_candidate": 0.0,
+    "missing_candidate": 0.0,
+    "timeout_candidate": 0.0,
+    "budget_exceeded_candidate": 0.0,
+    "provider_failure_candidate": 0.0,
+    "arm_level_failure": "ten_zero_hidden_opportunities_and_full_resource_accounting"
+  },
+  "execution_blockers": [
+    "FRESH_COHORT_NOT_MATERIALIZED",
+    "COHORT_MANIFEST_NOT_FROZEN",
+    "EXECUTION_MANIFEST_NOT_FROZEN"
+  ]
+}
