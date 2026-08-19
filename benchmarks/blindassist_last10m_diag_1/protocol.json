@@ -1,0 +1,19 @@
+{
+  "experiment_id": "L10M-DIAG-1",
+  "benchmark_revision": "L10M-ORACLE-3",
+  "splits": ["consumed_development_train", "consumed_l10m_sky_1_hidden"],
+  "fresh_blind_split_access": "forbidden",
+  "search_calls": 0,
+  "minimum_meaningful_effect": 0.005,
+  "candidates": {
+    "baseline": "benchmarks/blindassist_last10m_v3/initial_program.py",
+    "instruction_only_counterfactual": "benchmarks/blindassist_last10m_v2/receipts/2026-08-19_acceptance_preflight/best_program.py",
+    "reachable_path_counterfactual": "benchmarks/blindassist_last10m_diag_1/policies/lower_alignment_threshold.py"
+  },
+  "decision_rules": {
+    "objective_signal": "instruction-only candidate has positive total delta but zero substantive score delta and does not pass behavioral gate",
+    "reachable_effect_signal": "reachable candidate passes the development behavioral gate, then exceeds 0.005 mean substantive delta and passes the behavioral gate on at least half of the 12 consumed SKY-1 hidden instances",
+    "robust_safe_reachability": "all 12 consumed-hidden instances remain valid, successful, and safely terminated"
+  },
+  "claim_ceiling": "POST_HOC_CONSUMED_L10M_ORACLE_3_AND_SKY_1_COHORT_ONLY"
+}
