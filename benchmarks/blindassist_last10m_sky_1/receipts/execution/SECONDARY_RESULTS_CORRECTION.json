@@ -1,0 +1,12 @@
+{
+  "correction_scope": "naked_codex.mean_best_substantive_delta_only",
+  "corrected_value": 0.006666666666666667,
+  "error": "The descriptive closeout averaged two all-negative arm summaries without applying the preregistered ITT zero floor.",
+  "experiment_id": "L10M-SKY-1",
+  "original_receipt": "SECONDARY_RESULTS.json",
+  "original_receipt_sha256": "c4beca6c68cd3f53dd437ba62deed6b89fc587f2a44c6f53b3f105d3638f4948",
+  "original_value": 0.0013455,
+  "primary_gate_override_authority": false,
+  "primary_result_affected": false,
+  "status": "DESCRIPTIVE_SECONDARY_CORRECTION"
+}

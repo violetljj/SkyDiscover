@@ -44,6 +44,14 @@ def _candidate_token_map(budget: dict[str, Any]) -> dict[str, int]:
     return result
 
 
+def _itt_best_substantive_delta(result: dict[str, Any]) -> float:
+    """Apply the preregistered zero floor to an arm's best hidden outcome."""
+    return max(
+        0.0,
+        float(result.get("best_discovered_substantive_score_delta", 0.0) or 0.0),
+    )
+
+
 def closeout(source_root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     protocol = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
     if not FINAL_RESULT_PATH.is_file():
@@ -120,9 +128,7 @@ def closeout(source_root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
                         "primary_behavioral_discovery": bool(
                             result["primary_behavioral_discovery"]
                         ),
-                        "best_substantive_delta": float(
-                            result["best_discovered_substantive_score_delta"] or 0.0
-                        ),
+                        "best_substantive_delta": _itt_best_substantive_delta(result),
                         "anytime_auc": float(result["behavioral_anytime_auc"]),
                         "tokens": int(budget["usage"]["total_tokens"]),
                         "generation_calls": int(budget["usage"]["generation_calls"]),

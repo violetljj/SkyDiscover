@@ -77,3 +77,33 @@ every executable/configuration dependency must then be hash-bound by an
 execution manifest before any treatment call is authorized. Search receipts,
 hidden receipts, the frozen primary analysis, and descriptive closeout are
 create-once artifacts.
+
+## Frozen outcome
+
+The completed trial contains 12 fresh instances, two nested seeds, 48 completed
+arm runs, and 24 hidden paired adjudications. No arm-level failure occurred and
+no hidden result was returned to search. Every arm remained within the frozen
+ceilings; the observed maxima were 10 generation calls, 10 development
+evaluations, and 259,323 input-plus-output tokens.
+
+The frozen instance-level result is `DELTA_SKY = +0.00125`, below the
+preregistered `+0.005` minimum meaningful effect. The one-sided exact test has
+`p = 1.0`, with 3 wins, 6 ties, and 3 losses. Superiority was not established.
+The separate frozen tests also established neither equivalence nor meaningful
+harm. The architecture decision is therefore
+`SKY_DIRECT_SEARCH_VALUE_NOT_ESTABLISHED`.
+
+This result closes the planned route before Sky mechanism ablations. It does
+not establish that SkyDiscover is generally ineffective; it says that this
+frozen `best_of_n=3` Sky treatment did not establish direct incremental search
+value over the Naked loop on this fresh L10M graph family. Under the planned
+decision policy, the next work should diagnose the benchmark objective and
+search space, rather than add EvoX, Ada, Shinka, or more search-framework
+mechanisms.
+
+The first descriptive secondary closeout omitted the preregistered ITT zero
+floor when summarizing two all-negative Naked blocks. The original create-once
+secondary receipt remains immutable. `SECONDARY_RESULTS_CORRECTION.json`
+records the corrected Naked mean best substantive delta (`0.006666666667`) and
+explicitly has no primary-gate authority. The frozen primary analysis already
+applied the zero floor and is unaffected.

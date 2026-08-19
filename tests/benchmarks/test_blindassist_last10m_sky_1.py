@@ -12,12 +12,13 @@ PROTOCOL_PATH = BENCHMARK / "protocol.json"
 
 sys.path.insert(0, str(BENCHMARK))
 import analysis  # noqa: E402
+import closeout  # noqa: E402
 import generate_cohort  # noqa: E402
 import harness  # noqa: E402
 
 from skydiscover.config import load_config  # noqa: E402
-from skydiscover.search.best_of_n.database import BestOfNDatabase  # noqa: E402
 from skydiscover.search.base_database import Program  # noqa: E402
+from skydiscover.search.best_of_n.database import BestOfNDatabase  # noqa: E402
 
 
 def test_protocol_is_a_two_arm_fresh_instance_trial():
@@ -116,3 +117,27 @@ def test_frozen_execution_manifest_and_cohort_files_match_when_authorized():
     for record in cohort["instances"]:
         assert harness._scenario_path(record, "dev").is_file()
         assert harness._scenario_path(record, "hidden").is_file()
+
+
+def test_closeout_applies_preregistered_itt_zero_floor():
+    assert (
+        closeout._itt_best_substantive_delta({"best_discovered_substantive_score_delta": -0.0675})
+        == 0.0
+    )
+    assert (
+        closeout._itt_best_substantive_delta({"best_discovered_substantive_score_delta": 0.02})
+        == 0.02
+    )
+
+
+def test_frozen_primary_result_records_no_direct_sky_value():
+    result = json.loads(
+        (BENCHMARK / "receipts" / "execution" / "FINAL_RESULT.json").read_text(encoding="utf-8")
+    )
+    delta = result["DELTA_SKY"]
+    assert delta["observed_mean"] == 0.0012499999999999998
+    assert delta["one_sided_exact_p"] == 1.0
+    assert delta["superiority_established"] is False
+    assert delta["equivalence_established"] is False
+    assert delta["meaningful_harm_established"] is False
+    assert result["architecture_decision"] == "SKY_DIRECT_SEARCH_VALUE_NOT_ESTABLISHED"

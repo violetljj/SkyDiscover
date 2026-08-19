@@ -1,0 +1,377 @@
+{
+  "archived_receipts": [
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_419/hidden_adjudication.json",
+      "sha256": "4d30c7de1013166afb960650beadc01a7f2919a6193cf2f567e13811d3a1ff5e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_419/naked_codex.search_receipt.json",
+      "sha256": "69894e7bbcd82926d36e11984191842d9a7a6074290b010357bfec7ee66afbea"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_419/sky_search.search_receipt.json",
+      "sha256": "95d540ada16d4c94e47f353f119037b22fe11111d7a7181af19881e2b1c4c23e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_811/hidden_adjudication.json",
+      "sha256": "c3785bcb6a82384d56f3daa20b683332e94a65aab2e58e2d05ca7027e0abbeb8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_811/naked_codex.search_receipt.json",
+      "sha256": "fc24f751a1881a816f43820358cd628a1126e5c529edf46e1d28d8af359be178"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_811/sky_search.search_receipt.json",
+      "sha256": "0637236808248a43cdef7aa42e4e1444de36da2ac815d86bee91a43c18ed41ab"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_419/hidden_adjudication.json",
+      "sha256": "ee6644b7212c9ebb3213d87290b5e1123f05036786abd34f9b5d1d150e0eb545"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_419/naked_codex.search_receipt.json",
+      "sha256": "cf94818a3b4bee06825e82210a2dde63584b598369e88672093ed900183b79b3"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_419/sky_search.search_receipt.json",
+      "sha256": "e234a3b68b7247dc1d5c57f59d5bbadc24ae82546fa8c7d9bece76733bd37047"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_811/hidden_adjudication.json",
+      "sha256": "e0e53a88d46a988d1c135382d1cb685a6fe877323934c033eac4b50361e08fac"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_811/naked_codex.search_receipt.json",
+      "sha256": "7bd248b115dc0fa2184d0ed723bb7567f31e18f7baacd30a7650fe9f4ccd7aec"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_811/sky_search.search_receipt.json",
+      "sha256": "e170ff53d2a0bee25c387afb80e9a08c2488d5d3788baf7c98aecd89c5fefdbf"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_419/hidden_adjudication.json",
+      "sha256": "6759390ab12977ad800080f6330501fe51fb6e941e0b7734114ba54a6d1e6328"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_419/naked_codex.search_receipt.json",
+      "sha256": "6d97036d0eb7cb609f1fc25317676254719407a6eb2708aec36608b7d6bd1578"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_419/sky_search.search_receipt.json",
+      "sha256": "8c0e19424c45524d4b13b9b67d02efcfaae4107028ea50b4f8dbb8304cf11645"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_811/hidden_adjudication.json",
+      "sha256": "2e34ceca57b7f897f52f8d6043c31b373a18d55be77aa411ba2e1ee2bdb8d6fe"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_811/naked_codex.search_receipt.json",
+      "sha256": "9caedce7e371affd83a384a51459d2856905b31b2af3a8540611db30778bd6ad"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_811/sky_search.search_receipt.json",
+      "sha256": "600a40822ede1c66666d95acd0b792edf469cbd7b4bea14fc6740490133b81dc"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_419/hidden_adjudication.json",
+      "sha256": "fa6856bb2bfc75d1548e4efadd27284d0c569d94e61491ee6a25714e86c76a5c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_419/naked_codex.search_receipt.json",
+      "sha256": "05ad701fa4240eec77139abffd2ca6b68ef3239059337f9d10c3fc0316b94d3a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_419/sky_search.search_receipt.json",
+      "sha256": "a74f4a11216bb45e0d9fa69812fa70092e9d68ed91f8e54a4f54a26fc434475c"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_811/hidden_adjudication.json",
+      "sha256": "0fafcb35af7d144549d99cff9acf072f80249d49522700c7c45046ab333a58f8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_811/naked_codex.search_receipt.json",
+      "sha256": "19658c3509e8977d6a9f138feda8e218d9a8dfab6d39d9cdd1df2beeebacf214"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_811/sky_search.search_receipt.json",
+      "sha256": "48d75bfce96aaf960aca50af5b4662f900f14e2927d53d130b06f30804d2fa75"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_419/hidden_adjudication.json",
+      "sha256": "e2e3fa7164111037d770939ca4580822053776f6c8f617b9207a03e3b9924666"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_419/naked_codex.search_receipt.json",
+      "sha256": "385161861c27d72a2cadce689bccb0f6b9d057515a9ab03dba4f8c6c7727b17f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_419/sky_search.search_receipt.json",
+      "sha256": "29f9aba16269512d1e2bee43a7fb8dc34912a8c7148c2686f2f43a9eb897cf85"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_811/hidden_adjudication.json",
+      "sha256": "736b5503e6b5c94682951822d91fb2c9da4bd784dd96274677a06ed0caa3b606"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_811/naked_codex.search_receipt.json",
+      "sha256": "8c8d03f0949803ae07932e7e7c9ccee0ccf02e724d151debc0fce5429ea1be60"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_811/sky_search.search_receipt.json",
+      "sha256": "489632b9bb40c7994efafb71bb8e095ced5e5ba24449c7ca2ed64e5a7f2ab06e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_419/hidden_adjudication.json",
+      "sha256": "6c332061a9c4d73d782ecf5d050eff3fb3a50a82aa7f3bf4e491920cf4bf22ae"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_419/naked_codex.search_receipt.json",
+      "sha256": "22299e089053d22bf7537d8c36a9470fd725a2c79c8991e75cc4b3cc43bb4b15"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_419/sky_search.search_receipt.json",
+      "sha256": "ed0bba61bd57ab24378dac2c9259808c7fbd853702b89ce3b104ad2d126e630f"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_811/hidden_adjudication.json",
+      "sha256": "5a2cd8f73f7804645ec9fa2f36e6ff94578fd8ac913fa76635eb93b5daf49072"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_811/naked_codex.search_receipt.json",
+      "sha256": "b334b37b8bf48905314797e45075bf628e79d957d7b0e542c8953e9d69b158f2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_811/sky_search.search_receipt.json",
+      "sha256": "93fcc05e0873df0e4816bba2b1a7400de7d9115a1aa5be47661ca93a4738aeaa"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_419/hidden_adjudication.json",
+      "sha256": "8d031891279cb0ac91e183c74130a9235e43d6aa57aa92736900318c00ea985b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_419/naked_codex.search_receipt.json",
+      "sha256": "0c90c8ee7468401c268a742db3369e20c6c5e1558d1e9b9292f85a3521813844"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_419/sky_search.search_receipt.json",
+      "sha256": "5c6a93a227f889c8d09ffbc6f559ebd182aeedcd65ea2537d3893c156b4f5789"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_811/hidden_adjudication.json",
+      "sha256": "0e61456811a19052753bc46ba0d34b65753dfc269028ab662f4575fbf89ba14d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_811/naked_codex.search_receipt.json",
+      "sha256": "fd8f8cb9221d2430285f76f9d8162d9e682427eecaf0b00969740e7a5f0bb5a5"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_811/sky_search.search_receipt.json",
+      "sha256": "ed8c24bc3a46c87a681f3ba50d554d68b6d3ccce92b9a11e09b9bbec181546b8"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_419/hidden_adjudication.json",
+      "sha256": "470f8e0f18666835c7055afe83a5b92820b8bfe98899056d92e0228f980f7bc1"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_419/naked_codex.search_receipt.json",
+      "sha256": "f3cbe18835535fc3b9d3b4ef43919afda3fefc1bdb9fd6d6d351c3258cdd263b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_419/sky_search.search_receipt.json",
+      "sha256": "23e301bcb42b434c4ac4604458731e528d0f00e7c18c68ebbd98df6322d6ea93"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_811/hidden_adjudication.json",
+      "sha256": "ad23ae882c5b3e50c66ceb6ad697437d6766b2b99e5fe4e9d6dee9301af832f2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_811/naked_codex.search_receipt.json",
+      "sha256": "cb4cac1fd27e69b603c8054fd1bc232d1d52106e3c68b4f61635561599517718"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_811/sky_search.search_receipt.json",
+      "sha256": "205455799d1b01c991984b4fd9abbbc272f49d4b75711c0144bc6757728bc074"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_419/hidden_adjudication.json",
+      "sha256": "070c65da5ece11d85305096ce7e436b759f8638bac64b1c59996d64f6d37a9d1"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_419/naked_codex.search_receipt.json",
+      "sha256": "99532f801c281a3cd714fc1eefe172810e95f9154ecf2c757746cccc60d36b6f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_419/sky_search.search_receipt.json",
+      "sha256": "509f391447115b086f09bc23a19d56dcd091ecd758bd95b0e9ecc43b77ef58ea"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_811/hidden_adjudication.json",
+      "sha256": "b84a235f21991790518f191b21c5c4619779be38b8c52667242151f846f7fe76"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_811/naked_codex.search_receipt.json",
+      "sha256": "bd6387503955f01a321dd6907dadca08f749d03d3b2358bc9ab5a9477d96a592"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_811/sky_search.search_receipt.json",
+      "sha256": "9155a0ee8af57eb0f720656642a140110f6298990b804a88c2e2fb1cde23b19f"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_419/hidden_adjudication.json",
+      "sha256": "344ad2a7d9c73b35af7a851669af13c650dd2689514bae64174a862aa0f7e5ae"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_419/naked_codex.search_receipt.json",
+      "sha256": "bf92d9766beb24c43c7c81f05f397a00ee680921d98e97ef55d368a3fdd4cfa1"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_419/sky_search.search_receipt.json",
+      "sha256": "0e094be8c0464317d498cd817acf16776c868b787c62df6be005a3e9dd7968ac"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_811/hidden_adjudication.json",
+      "sha256": "f970d4560590d2380b926acf89a6148c5d9116f7f96b91ed4148c8070ac732b4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_811/naked_codex.search_receipt.json",
+      "sha256": "3138aac2e4b602996537452ba28ac9b8531c3765fe012c3c88efd4efcfa5d6ee"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_811/sky_search.search_receipt.json",
+      "sha256": "c6cb89212f8e275e22a7d979c553c024d2928b105b0ac18f289bc98d551f5f71"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_419/hidden_adjudication.json",
+      "sha256": "7a92c44508c8f31bd9ee1361748364415ff4bec93f1a77fc14a53c3353f2d976"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_419/naked_codex.search_receipt.json",
+      "sha256": "d95689d3ed5e666e94b87a09656df397a73917617dadc0640666ad8afda00c5e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_419/sky_search.search_receipt.json",
+      "sha256": "bc988acd32354cbfd9cb77b6e4af80c23b08804edc4e8662b6b66a67c817b2f8"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_811/hidden_adjudication.json",
+      "sha256": "9d85a65143c43d1b140f407c3f2f1279eabd61791b8745ca7ff2090889488b0b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_811/naked_codex.search_receipt.json",
+      "sha256": "5eb4ff1447a58da7c2891506ed2885c343d736c4ad6b0938364b66679a86ec75"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_811/sky_search.search_receipt.json",
+      "sha256": "95e6f3e3f925a939e71a6cc71fb221d047b0b6c428c5f06c0325a2cb5b0d33bb"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_419/hidden_adjudication.json",
+      "sha256": "6a4f0e19ab2db41cb32994c6de2b9b2e22e56d4413829a894536fafe116f511e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_419/naked_codex.search_receipt.json",
+      "sha256": "87c28a0f9834cc8925a2801a30f1264b8d79d7bdf155f1e71c39b388d5866783"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_419/sky_search.search_receipt.json",
+      "sha256": "954dc1375298f18c76f74c556e5ced82f806ce140fc88851aac6723b80e2457f"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_811/hidden_adjudication.json",
+      "sha256": "20572093802913751e360ba4f229fb9e178525ad9f75f27f5a0c502bb25d2a9a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_811/naked_codex.search_receipt.json",
+      "sha256": "0407dfdbaa9d5c2920d0d29e85e88d14c7ef96af4f1d3863f6bd1b21e2140137"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_811/sky_search.search_receipt.json",
+      "sha256": "f44d58159e014b1db6b67267a378ab40874e760b4fe4755f3a8cfccda3676fe0"
+    }
+  ],
+  "arm_level_failures": 0,
+  "candidate_manifests_local_only": 48,
+  "experiment_id": "L10M-SKY-1",
+  "hidden_adjudication_receipts": 24,
+  "hidden_results_returned_to_search_blocks": 0,
+  "max_evaluator_attempts": 10,
+  "max_generation_calls": 10,
+  "max_total_tokens": 259323,
+  "model_outputs_committed": false,
+  "orchestration_events": [],
+  "primary_result_sha256": "a78490f30c792d9bbd9b1341af10201f25729f5edd0153ed2b07da286da46267",
+  "search_receipts": 48,
+  "status": "COMPLETE"
+}

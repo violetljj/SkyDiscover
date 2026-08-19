@@ -1,0 +1,120 @@
+{
+  "DELTA_SKY": {
+    "equivalence_established": false,
+    "equivalence_lower_p": 0.02001953125,
+    "equivalence_upper_p": 0.09765625,
+    "losses": 3,
+    "meaningful_harm_established": false,
+    "meaningful_harm_p": 1.0,
+    "minimum_meaningful_effect": 0.005,
+    "observed_mean": 0.0012499999999999998,
+    "one_sided_exact_p": 1.0,
+    "superiority_established": false,
+    "ties": 6,
+    "wins": 3
+  },
+  "analysis_unit": "fresh_instance",
+  "architecture_decision": "SKY_DIRECT_SEARCH_VALUE_NOT_ESTABLISHED",
+  "claim_ceiling": "WITHIN_FROZEN_L10M_SKY_1_GRAPH_FAMILY_ONLY",
+  "estimand": "instance_mean_seed_best_hidden_substantive_delta_sky_minus_naked",
+  "experiment_id": "L10M-SKY-1",
+  "instance_count": 12,
+  "instance_results": [
+    {
+      "instance_effect": -0.01,
+      "instance_id": "instance_01",
+      "replicate_effects": [
+        -0.02,
+        0.0
+      ]
+    },
+    {
+      "instance_effect": -0.01,
+      "instance_id": "instance_02",
+      "replicate_effects": [
+        0.0,
+        -0.02
+      ]
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_03",
+      "replicate_effects": [
+        -0.01,
+        0.01
+      ]
+    },
+    {
+      "instance_effect": -0.01,
+      "instance_id": "instance_04",
+      "replicate_effects": [
+        -0.02,
+        0.0
+      ]
+    },
+    {
+      "instance_effect": 0.01,
+      "instance_id": "instance_05",
+      "replicate_effects": [
+        0.01,
+        0.01
+      ]
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_06",
+      "replicate_effects": [
+        0.01,
+        -0.01
+      ]
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_07",
+      "replicate_effects": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "instance_effect": 0.005,
+      "instance_id": "instance_08",
+      "replicate_effects": [
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "instance_effect": 0.01,
+      "instance_id": "instance_09",
+      "replicate_effects": [
+        0.01,
+        0.01
+      ]
+    },
+    {
+      "instance_effect": 0.004999999999999999,
+      "instance_id": "instance_10",
+      "replicate_effects": [
+        0.0,
+        0.009999999999999998
+      ]
+    },
+    {
+      "instance_effect": 0.015,
+      "instance_id": "instance_11",
+      "replicate_effects": [
+        0.01,
+        0.02
+      ]
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_12",
+      "replicate_effects": [
+        -0.01,
+        0.01
+      ]
+    }
+  ]
+}

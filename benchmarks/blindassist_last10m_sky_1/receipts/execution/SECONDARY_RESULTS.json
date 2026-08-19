@@ -1,0 +1,64 @@
+{
+  "arms": {
+    "naked_codex": {
+      "blocks": 24,
+      "mean_behavioral_anytime_auc": 0.0036666666666666666,
+      "mean_best_substantive_delta": 0.0013455,
+      "mean_candidate_safe_termination": 1.0,
+      "mean_candidate_task_success": 0.9085069444444445,
+      "mean_cost_effectiveness_curve": {
+        "0": 0.0,
+        "100000": 0.0025,
+        "150000": 0.002916666666666667,
+        "200000": 0.005833333333333334,
+        "250000": 0.006666666666666667,
+        "300000": 0.006666666666666667,
+        "50000": 0.0020833333333333333
+      },
+      "mean_evaluator_attempts": 9.916666666666666,
+      "mean_generation_calls": 10,
+      "mean_tokens": 227667.83333333334,
+      "mean_tokens_to_first_behavioral_pass_when_reached": 120910.4,
+      "primary_behavioral_discoveries": 10,
+      "real_hidden_candidates": 238,
+      "total_tokens": 5464028,
+      "valid_hidden_candidate_rate": 0.3739495798319328
+    },
+    "sky_search": {
+      "blocks": 24,
+      "mean_behavioral_anytime_auc": 0.005833333333333334,
+      "mean_best_substantive_delta": 0.007916666666666667,
+      "mean_candidate_safe_termination": 0.9958333333333333,
+      "mean_candidate_task_success": 0.916724537037037,
+      "mean_cost_effectiveness_curve": {
+        "0": 0.0,
+        "100000": 0.005833333333333334,
+        "150000": 0.007083333333333333,
+        "200000": 0.007916666666666667,
+        "250000": 0.007916666666666667,
+        "300000": 0.007916666666666667,
+        "50000": 0.003333333333333333
+      },
+      "mean_evaluator_attempts": 9.916666666666666,
+      "mean_generation_calls": 10,
+      "mean_tokens": 247242.25,
+      "mean_tokens_to_first_behavioral_pass_when_reached": 94883.23076923077,
+      "primary_behavioral_discoveries": 13,
+      "real_hidden_candidates": 238,
+      "total_tokens": 5933814,
+      "valid_hidden_candidate_rate": 0.48739495798319327
+    }
+  },
+  "experiment_id": "L10M-SKY-1",
+  "primary_gate_override_authority": false,
+  "status": "DESCRIPTIVE_SECONDARY_ONLY",
+  "token_grid": [
+    0,
+    50000,
+    100000,
+    150000,
+    200000,
+    250000,
+    300000
+  ]
+}

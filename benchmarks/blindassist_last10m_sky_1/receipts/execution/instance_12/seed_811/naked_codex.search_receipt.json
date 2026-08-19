@@ -1,0 +1,199 @@
+{
+  "arm": "naked_codex",
+  "best_program_id": "ff5a3698-4b63-4167-b83c-5912e2536d79",
+  "budget": {
+    "ceilings": {
+      "evaluator_attempts": 10,
+      "generation_calls": 10,
+      "require_token_usage": true,
+      "total_tokens": 300000
+    },
+    "events": [
+      {
+        "call": 1,
+        "input_tokens": 20262,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1821,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 1,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "158e174f-7cec-4c7e-8fcf-240a829d7aa5",
+        "status": "admitted"
+      },
+      {
+        "call": 2,
+        "input_tokens": 21173,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1772,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 2,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "5dffc640-f318-4060-b164-4f31bb8eda8f",
+        "status": "admitted"
+      },
+      {
+        "call": 3,
+        "input_tokens": 21966,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1271,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 3,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "205bacfe-9743-4ce8-81f5-800f7ca0d35f",
+        "status": "admitted"
+      },
+      {
+        "call": 4,
+        "input_tokens": 21972,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1775,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 4,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "fd5b4177-ba74-4e6a-939c-f72b34a7d372",
+        "status": "admitted"
+      },
+      {
+        "call": 5,
+        "input_tokens": 21976,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1263,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 5,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "977adc22-aa6a-49b7-b318-6cadbaa69c0d",
+        "status": "admitted"
+      },
+      {
+        "call": 6,
+        "input_tokens": 21972,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1318,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 6,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ae7bbd40-8939-46fe-aab1-3c5dc119694c",
+        "status": "admitted"
+      },
+      {
+        "call": 7,
+        "input_tokens": 21976,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1813,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 7,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ff5a3698-4b63-4167-b83c-5912e2536d79",
+        "status": "admitted"
+      },
+      {
+        "call": 8,
+        "input_tokens": 22168,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1535,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "accepted"
+      },
+      {
+        "attempt": 8,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "ac7d59cb-5c7c-420e-a202-4eceeeeba303",
+        "status": "admitted"
+      },
+      {
+        "call": 9,
+        "error": "RuntimeError: Codex CLI reported a failed turn: {\"type\": \"error\", \"message\": \"Reconnecting... waiting for network (Connection failed: error sending request)\"}",
+        "input_tokens": 0,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 0,
+        "provider": "codex-cli",
+        "provider_attempt": 1,
+        "status": "failed"
+      },
+      {
+        "call": 10,
+        "input_tokens": 22170,
+        "kind": "generation",
+        "model": "gpt-5.6-sol",
+        "output_tokens": 1671,
+        "provider": "codex-cli",
+        "provider_attempt": 2,
+        "status": "accepted"
+      },
+      {
+        "attempt": 9,
+        "kind": "evaluation",
+        "mode": "train",
+        "program_id": "e16fc2ac-415d-45a9-a81a-8f2912eef5bd",
+        "status": "admitted"
+      }
+    ],
+    "stop_reason": "generation_call_ceiling",
+    "usage": {
+      "discarded_generation_calls": 0,
+      "evaluator_attempts": 9,
+      "generation_calls": 10,
+      "input_tokens": 195635,
+      "output_tokens": 14239,
+      "total_tokens": 209874
+    }
+  },
+  "candidate_count": 9,
+  "config_sha256": "e8c52201be388549a94cf2477e44bd61cb4b4feda8277c916bbb308dc2dfa4a4",
+  "dev_sha256": "3f997d301b9c4397205a833c7beee38988b0a4770874ae2f2e252b14e9ba42be",
+  "elapsed_seconds": 654.012592,
+  "error": null,
+  "evaluator_sha256": "30d1315478bc376a32a59899421b33354740c9adfbba039f71cc761d033a4ba1",
+  "experiment_id": "L10M-SKY-1",
+  "hidden_evaluations": 0,
+  "initial_program_sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33",
+  "instance_id": "instance_12",
+  "seed": 811,
+  "status": "COMPLETED"
+}
