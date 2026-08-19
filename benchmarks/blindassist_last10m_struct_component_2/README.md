@@ -5,6 +5,11 @@ It reuses the consumed 12-instance development cohort, but uses new seeds,
 execution units, manifests, locks, receipts, and output roots. No COMPONENT-1
 candidate, score, or receipt is an input to the formal estimand.
 
+The first engineering attempt at this protocol reached eight terminal
+generation units before a validation-import integrity defect was detected. It
+is sealed as `ENGINEERING_ABORT_NO_ESTIMAND`; those units are not retried or
+included. This frozen attempt uses a new manifest, run root, and seeds.
+
 | Arm | Progress memory | Move proposals |
 | --- | --- | --- |
 | `raw_control` | OFF | OFF |

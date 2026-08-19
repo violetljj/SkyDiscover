@@ -15,6 +15,8 @@ from typing import Any
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 BASE_DIR = ROOT / "benchmarks/blindassist_last10m_struct_component_1"
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 
 
 def _load(name: str, path: Path):
