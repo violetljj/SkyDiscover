@@ -1,0 +1,502 @@
+{
+  "candidate_audit": [
+    {
+      "admitted": true,
+      "candidate_index": 1,
+      "dev_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 525278004,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 920358534,
+      "instance_seed": 1973187863
+    },
+    {
+      "admitted": true,
+      "candidate_index": 2,
+      "dev_initial": {
+        "combined_score": 0.90625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 459673694,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 863236348,
+      "instance_seed": 921966685
+    },
+    {
+      "admitted": true,
+      "candidate_index": 3,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 979591993,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 1215015061,
+      "instance_seed": 826683538
+    },
+    {
+      "admitted": true,
+      "candidate_index": 4,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 235668052,
+      "hidden_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 411485098,
+      "instance_seed": 1444203677
+    },
+    {
+      "admitted": true,
+      "candidate_index": 5,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 944436815,
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 1462340215,
+      "instance_seed": 761732169
+    },
+    {
+      "admitted": true,
+      "candidate_index": 6,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 430766761,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 892724223,
+      "instance_seed": 1155016347
+    },
+    {
+      "admitted": true,
+      "candidate_index": 7,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 1266885656,
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 2006748589,
+      "instance_seed": 676617808
+    },
+    {
+      "admitted": true,
+      "candidate_index": 8,
+      "dev_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 1956914131,
+      "hidden_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 817152188,
+      "instance_seed": 1349111341
+    },
+    {
+      "admitted": true,
+      "candidate_index": 9,
+      "dev_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 1013988250,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 1534260654,
+      "instance_seed": 964599690
+    },
+    {
+      "admitted": true,
+      "candidate_index": 10,
+      "dev_initial": {
+        "combined_score": 0.90625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 555566801,
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 339633880,
+      "instance_seed": 1906295366
+    },
+    {
+      "admitted": true,
+      "candidate_index": 11,
+      "dev_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 1526866509,
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 648896347,
+      "instance_seed": 1489656133
+    },
+    {
+      "admitted": true,
+      "candidate_index": 12,
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_seed": 594202966,
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_seed": 1844126398,
+      "instance_seed": 1649383175
+    }
+  ],
+  "experiment_id": "L10M-COMP-2",
+  "instances": [
+    {
+      "dev_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_01/dev.json",
+      "dev_seed": 525278004,
+      "dev_sha256": "0b325c24a4b3977f727f71473bc6f40aa64572d775968397a07a740ac971e74c",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_01/hidden.json",
+      "hidden_seed": 920358534,
+      "hidden_sha256": "2cccb3320f8ac42d8c60f57a895d520588c80a41da5c803125dddb282aa75446",
+      "instance_id": "instance_01",
+      "instance_seed": 1973187863
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.90625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_02/dev.json",
+      "dev_seed": 459673694,
+      "dev_sha256": "41a75570a8e4c024b7a29e2d8a187a2c5077031c3c2269f0c72d004c8c48264c",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_02/hidden.json",
+      "hidden_seed": 863236348,
+      "hidden_sha256": "70c3ff0dca060318d5175259c3c0a5d393418f70ad16566aade9efc32c099aaa",
+      "instance_id": "instance_02",
+      "instance_seed": 921966685
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_03/dev.json",
+      "dev_seed": 979591993,
+      "dev_sha256": "c450f863e2d67e79b2b0010b43271f922bc2766269b40bc9bbe9a3d067ff2c19",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_03/hidden.json",
+      "hidden_seed": 1215015061,
+      "hidden_sha256": "c031951914d3b8ac6a2d92d85b44186151f1c39186311effda3e2e71e9a3b65a",
+      "instance_id": "instance_03",
+      "instance_seed": 826683538
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_04/dev.json",
+      "dev_seed": 235668052,
+      "dev_sha256": "7f8cf8972c897abae626173fc904b8b28e50c9cbdf7f88e1afa31018288464eb",
+      "hidden_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_04/hidden.json",
+      "hidden_seed": 411485098,
+      "hidden_sha256": "86adf13a5e2fe49fdfaf458c071e0df97dc5b09a5fdc9518bb27c0594876af59",
+      "instance_id": "instance_04",
+      "instance_seed": 1444203677
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_05/dev.json",
+      "dev_seed": 944436815,
+      "dev_sha256": "4b24a7376d2c22501cbb9ce6fa849bad119f0c3e386ec5a755714501e793b66e",
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_05/hidden.json",
+      "hidden_seed": 1462340215,
+      "hidden_sha256": "fa91558efdaf779e566e3eae676934c9bf0b26f562762d647c8334c5c1c5454e",
+      "instance_id": "instance_05",
+      "instance_seed": 761732169
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_06/dev.json",
+      "dev_seed": 430766761,
+      "dev_sha256": "7596089069405a658a11773c5ed8a12e363bbdbd8c2d2a62646e650760e9282d",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_06/hidden.json",
+      "hidden_seed": 892724223,
+      "hidden_sha256": "b89cd71103c7d291ea1e60a293077915707f9cf3808e4bc8ce5c98284cff0cdd",
+      "instance_id": "instance_06",
+      "instance_seed": 1155016347
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_07/dev.json",
+      "dev_seed": 1266885656,
+      "dev_sha256": "9ab207674d09770f3beb87ceb5e998f74a6cd3b618c06b21f0ac06f69ac1300c",
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_07/hidden.json",
+      "hidden_seed": 2006748589,
+      "hidden_sha256": "e2167ecdc6da1fde617c4c0c5ad4cce5c9f658a1821d5da554cb56c877bc78ef",
+      "instance_id": "instance_07",
+      "instance_seed": 676617808
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_08/dev.json",
+      "dev_seed": 1956914131,
+      "dev_sha256": "5f45b595fd395a100ad0354cf463c8f5ced3c106af447ce8b14e9fb0e1a35d14",
+      "hidden_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_08/hidden.json",
+      "hidden_seed": 817152188,
+      "hidden_sha256": "841613af4a53b52c99d55f2a690bb873e92354de1b7820976daf01026b4fef19",
+      "instance_id": "instance_08",
+      "instance_seed": 1349111341
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_09/dev.json",
+      "dev_seed": 1013988250,
+      "dev_sha256": "869b8b32dd64ee676f4da15e7079128fb686fdf61b215479478e1804bf2a7bb2",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_09/hidden.json",
+      "hidden_seed": 1534260654,
+      "hidden_sha256": "279e34f62294634e8b875d53df13fbefe3c17aecd5e7e763f47bf7d85366dd75",
+      "instance_id": "instance_09",
+      "instance_seed": 964599690
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.90625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_10/dev.json",
+      "dev_seed": 555566801,
+      "dev_sha256": "c2313d1a84fa04c12c897e8ae98836f44b15a83fa7b0cfef5d80719d38dc166d",
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_10/hidden.json",
+      "hidden_seed": 339633880,
+      "hidden_sha256": "e7726cf23e9dccd9b4569cea389908615a9592ad060171f159a8b278ddd96f11",
+      "instance_id": "instance_10",
+      "instance_seed": 1906295366
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.908125,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_11/dev.json",
+      "dev_seed": 1526866509,
+      "dev_sha256": "11b1cbe1a1eef2c3b9b797de6882799c7b8e8ce7a01e1212391ff38f3cff33d0",
+      "hidden_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_11/hidden.json",
+      "hidden_seed": 648896347,
+      "hidden_sha256": "a4b7829d4d944044f6a588c8743b41d1b4ffa018c73b8e799a8f3dd97e1cf6ec",
+      "instance_id": "instance_11",
+      "instance_seed": 1489656133
+    },
+    {
+      "dev_initial": {
+        "combined_score": 0.894375,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "dev_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_12/dev.json",
+      "dev_seed": 594202966,
+      "dev_sha256": "0ea2f56dbafb649e5c3f259ad4ad2b0f6171fb2100e3387b49ab9116da101fa1",
+      "hidden_initial": {
+        "combined_score": 0.89625,
+        "safe_termination": 1.0,
+        "task_success": 1.0,
+        "validity": 1.0
+      },
+      "hidden_path": "benchmarks/blindassist_last10m_comp_2/cohort/instance_12/hidden.json",
+      "hidden_seed": 1844126398,
+      "hidden_sha256": "b02d3b9f1161fa7bc01bca92afc64e88681270c59d1dd32f9abf5cfe09e9b40c",
+      "instance_id": "instance_12",
+      "instance_seed": 1649383175
+    }
+  ],
+  "protocol_sha256": "ad7a4ea62ff54dd671eff7cd36c3279835f593eb2b747d6419278083d96f699c",
+  "status": "FRESH_COHORT_MATERIALIZED_PRE_TREATMENT",
+  "treatment_runs_observed": 0
+}

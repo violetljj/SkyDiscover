@@ -1,6 +1,6 @@
 {
   "experiment_id": "L10M-COMP-2",
-  "status": "DESIGN_FROZEN_PENDING_FRESH_COHORT",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
   "frozen_at": "2026-08-19",
   "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
   "consumed_development_evidence": ["L10M-COMP-1"],
@@ -21,6 +21,10 @@
       "development_initial_score_strictly_below": 0.91,
       "hidden_initial_score_strictly_below": 0.91
     }
+  },
+  "cohort_manifest": {
+    "path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json",
+    "sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68"
   },
   "nested_replicates": {
     "count_per_instance": 2,
@@ -85,9 +89,6 @@
     "provider_failure_candidate": 0.0,
     "arm_level_failure": "ten_zero_hidden_opportunities_and_full_resource_accounting"
   },
-  "execution_blockers": [
-    "FRESH_COHORT_NOT_MATERIALIZED",
-    "COHORT_MANIFEST_NOT_FROZEN",
-    "EXECUTION_MANIFEST_NOT_FROZEN"
-  ]
+  "execution_blockers": [],
+  "execution_manifest": "benchmarks/blindassist_last10m_comp_2/execution_manifest.json"
 }

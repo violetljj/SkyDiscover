@@ -23,7 +23,7 @@ from skydiscover.search.registry import load_database_from_file  # noqa: E402
 def test_protocol_uses_fresh_instances_and_nested_replicates():
     protocol = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
     assert protocol["experiment_id"] == "L10M-COMP-2"
-    assert protocol["status"] == "DESIGN_FROZEN_PENDING_FRESH_COHORT"
+    assert protocol["status"] == "EXECUTION_PROTOCOL_FROZEN"
     assert protocol["experimental_unit"] == "fresh_instance"
     assert protocol["instances"]["count"] == 12
     assert protocol["nested_replicates"] == {
@@ -112,3 +112,13 @@ def test_common_harness_preflight_applies_equal_budget_ceilings():
         assert arm_receipt["usage"]["generation_calls"] == 10
         assert arm_receipt["usage"]["evaluator_attempts"] == 10
         assert arm_receipt["usage"]["total_tokens"] < 300000
+
+
+def test_frozen_execution_manifest_and_cohort_files_match():
+    harness._validate_execution_manifest()
+    cohort = json.loads((BENCHMARK / "cohort_manifest.json").read_text(encoding="utf-8"))
+    assert cohort["treatment_runs_observed"] == 0
+    assert len(cohort["instances"]) == 12
+    for record in cohort["instances"]:
+        assert harness._scenario_path(record, "dev").is_file()
+        assert harness._scenario_path(record, "hidden").is_file()

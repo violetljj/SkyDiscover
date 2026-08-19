@@ -1,0 +1,32 @@
+{
+  "experiment_id": "L10M-COMP-2",
+  "frozen_at": "2026-08-19",
+  "hash_algorithm": "sha256",
+  "text_normalization": "crlf_to_lf",
+  "cohort_files_bound_transitively_by": "cohort_manifest.json",
+  "files": [
+    {"path": "benchmarks/blindassist_last10m_comp_2/protocol.json", "sha256": "3fe5d4b6346806b0ccb123cc5988bd9622480ee91b7b114490d8530fe91b0234"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json", "sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/generate_cohort.py", "sha256": "580c97b95b9ec10af799245f2552cbc97737cbc3667dd98eb743a8d3166d51de"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/evaluator.py", "sha256": "3a2da012f16084f95783e721de76417db109137b8f1b8b846a574fd1c602c8be"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/harness.py", "sha256": "a5543c02f74923c5c0c456640ee5e3f68d2aea4cffea83740273684a673836a6"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/analysis.py", "sha256": "783e3d915b9fb9d35926c6c1b79de2dad9b6d91dc431a68605313c02f8eb9e5e"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/mechanical_preflight.json", "sha256": "f46be630373c4de244ee255976165ef6faaabee26fbd3e7eebf5d9459f6bf9d7"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/configs/naked_codex.yaml", "sha256": "e8c52201be388549a94cf2477e44bd61cb4b4feda8277c916bbb308dc2dfa4a4"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/configs/evox.yaml", "sha256": "9af5ea487659344dff0d4c08c7b51c5e92906a8f6a47d0a7f457fd681379a83f"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/configs/sky_evox.yaml", "sha256": "a0f35a535bffe82fa9d7fe905ff0b448dc72741b49b937d1ea4bad595d2e6e5f"},
+    {"path": "benchmarks/blindassist_last10m_comp_2/search_strategies/sky_best_of_three_initial.py", "sha256": "66ed3366c5619afbae9cf1fb1a38e8a8436ac34397e1e9635c81d3cc579e7bc6"},
+    {"path": "benchmarks/blindassist_last10m_v3/initial_program.py", "sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33"},
+    {"path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py", "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"},
+    {"path": "skydiscover/execution_budget.py", "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"},
+    {"path": "skydiscover/llm/codex_cli.py", "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"},
+    {"path": "skydiscover/evaluation/evaluator.py", "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"},
+    {"path": "skydiscover/search/incumbent_only/database.py", "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"},
+    {"path": "skydiscover/search/evox/controller.py", "sha256": "7a90ecb95f679bf81c7104a69504c74d67e367faef62d93ac74aeeb613360709"},
+    {"path": "skydiscover/search/evox/database/initial_search_strategy.py", "sha256": "09a97eed7ef7efc12960b786b32678dc537268a3b6d886d5a536add4d760dcb5"},
+    {"path": "skydiscover/search/evox/database/search_strategy_evaluator.py", "sha256": "edae1d2b8f9c042ff79facf0e07fe0e7ca9022ee4a1dfc88fcfb5b28766f6fb6"},
+    {"path": "skydiscover/search/route.py", "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"},
+    {"path": "skydiscover/search/registry.py", "sha256": "f234e0287e3313459f3704e693d9be2b2f3aed69e31c6c360275a84bd8db7137"},
+    {"path": "skydiscover/config.py", "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"}
+  ]
+}

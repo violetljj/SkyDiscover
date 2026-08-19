@@ -110,8 +110,12 @@ def _eligible(result: dict[str, float], ceiling: float) -> bool:
 
 def build_cohort() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     protocol = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
-    if protocol["status"] != "DESIGN_FROZEN_PENDING_FRESH_COHORT":
-        raise RuntimeError("cohort generation requires the design-frozen protocol state")
+    if protocol["status"] not in {
+        "DESIGN_FROZEN_PENDING_FRESH_COHORT",
+        "FRESH_COHORT_FROZEN_PENDING_EXECUTION_MANIFEST",
+        "EXECUTION_PROTOCOL_FROZEN",
+    }:
+        raise RuntimeError("unsupported protocol state for deterministic cohort reproduction")
     spec = protocol["instances"]
     headroom = spec["headroom_rule"]
     rng = random.Random(spec["generator_seed"])
@@ -162,6 +166,9 @@ def build_cohort() -> tuple[list[dict[str, Any]], dict[str, Any]]:
 
 
 def materialize(output_root: Path) -> dict[str, Any]:
+    protocol = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
+    if protocol["status"] != "DESIGN_FROZEN_PENDING_FRESH_COHORT":
+        raise RuntimeError("new cohort materialization requires the design-frozen protocol state")
     if output_root.exists():
         raise FileExistsError(f"refusing to replace cohort root: {output_root}")
     cohort, audit = build_cohort()
