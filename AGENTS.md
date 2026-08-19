@@ -62,85 +62,25 @@ If a required check depends on unavailable credentials, services, containers,
 hardware, or private data, report that limitation rather than fabricating or
 silently substituting evidence.
 
-## Long-running work supervision
-
-Long experiments, iterative discovery campaigns, benchmark runs, downloads,
-builds, and remote jobs must be actively supervised from launch to a verified
-terminal state. Starting a process is not evidence that it is healthy or that it
-completed.
-
-- Before launch, define the expected terminal condition, progress indicators,
-  log and output locations, checkpoint or resume mechanism, resource ownership,
-  and the first health-check point.
-- Immediately after launch, verify that the intended process is alive, logs or
-  outputs are being created in the task-owned location, progress has begun, and
-  no startup error or early exit occurred.
-- Continue monitoring until success, a diagnosed failure, or an explicit user
-  handoff. Use tool-native or event-driven waits and risk-appropriate intervals;
-  do not abandon a job merely because it is expected to run for a long time.
-- Judge health from multiple signals when available: process state and exit
-  code, log growth, output timestamps and sizes, iteration counters, checkpoints,
-  resource use, and application-specific receipts. A live PID alone is not
-  sufficient evidence of progress.
-- Choose monitoring cadence according to failure cost and expected stage
-  duration. Check sooner during startup and stage transitions, then use longer
-  bounded waits during stable work. Avoid both unattended execution and noisy
-  high-frequency polling.
-- Every new long-running iterative or discovery workflow must provide or reuse a
-  read-only progress summarizer before the run is left in a stable waiting
-  phase. The summarizer may inspect processes, logs, checkpoints, manifests,
-  artifacts, and receipts, but it must not modify authoritative inputs, run
-  outputs, checkpoints, locks, receipts, evaluator state, or process state.
-- Emit progress summaries at startup verification, meaningful stage boundaries,
-  periodic monitoring wakeups, abnormal-state detection, and termination. Each
-  summary must report at least: completed work over declared total and percent,
-  the active shard/item and current iteration when observable, the latest
-  activity timestamp and its age, failed work count with failure classes, and an
-  estimated remaining time.
-- Derive completion and failure counts from authoritative artifacts rather than
-  wrapper-process counts, and distinguish started, completed, adjudicated, and
-  failed units so nested launchers are not double-counted. Keep monitoring data
-  outside evidence-bearing results unless the protocol explicitly defines it.
-- Base remaining-time estimates on observed completed-unit durations and active
-  concurrency when possible. Label sparse-sample estimates as provisional,
-  update them as evidence accumulates, and report `unknown` instead of inventing
-  an estimate when progress evidence is insufficient or heterogeneous.
-- Treat missing progress, stalled timestamps, repeated errors, unexpected
-  resource changes, or absent checkpoints as an investigation trigger. Inspect
-  evidence before restarting so a slow job is not mistaken for a hung job and a
-  failed job is not duplicated.
-- Do not silently restart, duplicate, or resume a long-running job when doing so
-  could overwrite outputs, consume a one-shot benchmark, violate blind-test
-  isolation, or run two writers against the same state. Revalidate ownership and
-  resume safety first.
-- Preserve usable checkpoints and record the last confirmed progress before any
-  recovery action. After the same failure recurs twice without new evidence,
-  change the diagnostic approach or report the actual blocker instead of
-  repeating the same run.
-- Do not start work that is likely to outlive the available supervision window
-  unless a durable monitor, wakeup, or explicit handoff has been arranged. A
-  handoff must include the exact process or job identity, paths, latest progress,
-  expected next event, and safe stop or resume instructions.
-- At termination, verify the exit status and required artifacts or receipts,
-  report the last successful stage and any evidence gap, and clean up only the
-  exact task-owned resources.
-
 ## Git hygiene
 
 - Inspect `git status` before editing and before delivery.
 - Never discard or overwrite unrelated user changes.
-- Keep tasks isolated: establish task-owned paths before editing, do not mix
-  unrelated changes into the same commit, and use separate branches or
-  worktrees for concurrent tasks when their write scopes could overlap.
+- Use `codex/<task>` branches for ordinary code, feature, and experiment work.
+  Small clean documentation, configuration, or governance changes may use the
+  intended integration branch directly. Use a separate worktree when active WIP,
+  processes, concurrent work, or rollback risk requires physical isolation.
 - Keep task-specific outputs, caches, checkpoints, temporary files, processes,
   ports, and external resources isolated. Clean up only resources owned by the
   current task.
-- At the end of every successfully completed task that changes tracked project
-  files, automatically stage only task-owned paths, create a focused commit,
-  and push the current branch without waiting for a separate request.
-- Before pushing, verify the upstream relationship and stop rather than merge,
-  rebase, force-push, or include overlapping work when the remote has diverged,
-  credentials are unavailable, or task ownership is ambiguous.
+- At the end of a meaningful completed change, stage only task-owned paths,
+  create a focused commit, and push to `origin` without waiting for a separate
+  request. Consecutive clarifications to one governance change may share a
+  single delivery; intermediate edits do not each require a commit.
+- Use one pre-push check: verify staged scope, destination remote and branch,
+  upstream relationship, credentials, and numeric divergence. Stop rather than
+  merge, rebase, force-push, or absorb unrelated work when any result is unsafe
+  or ambiguous.
 - Do not rewrite history, force-push, or open a pull request unless explicitly
   requested.
 
@@ -150,45 +90,28 @@ SkyDiscover is expected to absorb updates from the official project regularly.
 Keep official history, local integration, and task development visibly separate
 so upstream synchronization remains safe and auditable.
 
-- Treat `upstream` as the read-only official repository and `origin` as the
-  writable project fork. Never push branches, tags, or other refs to `upstream`.
-- Treat `upstream/main` as an immutable official baseline. Do not place local
-  commits on it, rewrite it, or represent a local integration branch as an
-  official branch.
-- Keep local project development on focused `codex/<task>` branches created from
-  the current project integration branch. Push task branches only to `origin`.
+- Treat `upstream` as the read-only official repository, `upstream/main` as the
+  immutable official baseline, and `origin` as the writable project fork. Never
+  push branches, tags, or other refs to `upstream`.
 - Keep official-update integration separate from feature work. An upstream-sync
   commit or branch must contain only the official update and necessary conflict
   resolutions; it must not include unrelated local features, experiments,
   generated outputs, or cleanup.
-- Before integrating an official update, require a clean or explicitly isolated
-  worktree, run `git fetch --prune upstream`, inspect the commit graph and numeric
-  divergence, and stop if branch ownership or the intended integration target is
-  ambiguous.
-- Integrate upstream changes through an isolated synchronization branch or
-  worktree, validate the affected surface, and only then update the project
-  integration branch. Do not merge upstream directly into an active task branch.
+- Before integration, run `git fetch --prune upstream`, inspect the graph and
+  numeric divergence, and validate the affected surface. A clean inactive
+  `main` may integrate directly; use an isolated branch or worktree when WIP,
+  active processes, conflicts, concurrent work, or ownership uncertainty exists.
 - Treat an official synchronization as incomplete if the validated result exists
-  only in a temporary branch or worktree. When the update has no unresolved
-  conflicts, the relevant validation passes, evidence boundaries remain intact,
-  branch ownership is clear, and `origin/main` has not unexpectedly diverged,
-  immediately integrate the update into local `main` and push `origin/main`.
-  Do not wait for a separate user request to perform that final integration.
-- After pushing a successful official update, fetch or inspect the remote and
-  verify numeric `HEAD...origin/main` parity. If any admission condition fails,
-  leave `main` unchanged and report the exact blocker instead of forcing the
-  synchronization through.
+  only in temporary state. If conflicts are resolved, relevant validation passes,
+  evidence boundaries remain intact, ownership is clear, and `origin/main` has
+  not diverged unexpectedly, immediately update and push `origin/main` without a
+  second user request, then verify numeric parity. Otherwise leave `main`
+  unchanged and report the exact blocker.
 - Do not inject the new `main` into an already running experiment or iterative
   campaign. Keep the active run on its frozen commit; make the updated official
   functionality available to new work immediately, and update existing task
   branches only at a safe checkpoint or before their next run.
-- Keep local feature commits narrowly scoped and independently reviewable so
-  they can be rebased, replayed, dropped, or repaired without modifying official
-  commits or benchmark evidence.
 - Do not reset `origin/main` to `upstream/main`, rename the integration branch,
   change the remote default branch, rebase published project history, or perform
   any other migration without explicit user authorization and a verified
   rollback plan.
-- Before every push, verify that the destination remote is `origin`, the target
-  branch is intentional, and the remote is not unexpectedly divergent. Stop
-  rather than automatically merging, rebasing, or force-pushing.
