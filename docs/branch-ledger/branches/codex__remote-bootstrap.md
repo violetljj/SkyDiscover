@@ -3,7 +3,7 @@
 - Status: `ready_for_review`
 - Owner: project work branch
 - Base: `main` at `1b34d32543ab2060d7abf8be7e6dbcb2c3375678`
-- Head reviewed for this record: `a74d2c2ae53c05bef7e21727a298b1288c4cde7b`
+- Head reviewed for this record: `0e8a664` (local-control clarification delivery)
 - Integration target: `main`
 - Integrated commit: `not integrated`
 
