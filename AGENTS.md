@@ -39,6 +39,18 @@ documented in `README.md` or the benchmark's own README.
 - Treat evaluators, benchmark inputs, expected results, receipts, and blind-test
   data as evidence boundaries. Do not modify them to improve reported results
   unless the task explicitly requires correcting the evaluation protocol.
+- Treat `main` as the stable project integration baseline, not an archive of
+  every experiment. Only selectively integrate reusable implementation code,
+  tests, and concise experiment summaries after they have been reviewed and
+  validated.
+- Keep frozen experiment protocols, cohorts, hidden inputs, execution
+  manifests, receipts, and detailed result artifacts on their task branches or
+  immutable tags. Do not wholesale-merge an experimental branch into `main`
+  merely to preserve its evidence; link to the source branch or commit instead.
+- When an experiment yields a durable project change, create an isolated
+  integration branch from the latest `origin/main`, select only the intended
+  paths or commits, validate them, and then merge deliberately. Preserve the
+  original experiment branch and evidence boundary.
 - Keep claims proportional to the evidence. A smoke test, reused task, or single
   benchmark result does not establish general superiority.
 
