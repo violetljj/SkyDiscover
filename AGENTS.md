@@ -62,6 +62,50 @@ If a required check depends on unavailable credentials, services, containers,
 hardware, or private data, report that limitation rather than fabricating or
 silently substituting evidence.
 
+## Long-running work supervision
+
+Long experiments, iterative discovery campaigns, benchmark runs, downloads,
+builds, and remote jobs must be actively supervised from launch to a verified
+terminal state. Starting a process is not evidence that it is healthy or that it
+completed.
+
+- Before launch, define the expected terminal condition, progress indicators,
+  log and output locations, checkpoint or resume mechanism, resource ownership,
+  and the first health-check point.
+- Immediately after launch, verify that the intended process is alive, logs or
+  outputs are being created in the task-owned location, progress has begun, and
+  no startup error or early exit occurred.
+- Continue monitoring until success, a diagnosed failure, or an explicit user
+  handoff. Use tool-native or event-driven waits and risk-appropriate intervals;
+  do not abandon a job merely because it is expected to run for a long time.
+- Judge health from multiple signals when available: process state and exit
+  code, log growth, output timestamps and sizes, iteration counters, checkpoints,
+  resource use, and application-specific receipts. A live PID alone is not
+  sufficient evidence of progress.
+- Choose monitoring cadence according to failure cost and expected stage
+  duration. Check sooner during startup and stage transitions, then use longer
+  bounded waits during stable work. Avoid both unattended execution and noisy
+  high-frequency polling.
+- Treat missing progress, stalled timestamps, repeated errors, unexpected
+  resource changes, or absent checkpoints as an investigation trigger. Inspect
+  evidence before restarting so a slow job is not mistaken for a hung job and a
+  failed job is not duplicated.
+- Do not silently restart, duplicate, or resume a long-running job when doing so
+  could overwrite outputs, consume a one-shot benchmark, violate blind-test
+  isolation, or run two writers against the same state. Revalidate ownership and
+  resume safety first.
+- Preserve usable checkpoints and record the last confirmed progress before any
+  recovery action. After the same failure recurs twice without new evidence,
+  change the diagnostic approach or report the actual blocker instead of
+  repeating the same run.
+- Do not start work that is likely to outlive the available supervision window
+  unless a durable monitor, wakeup, or explicit handoff has been arranged. A
+  handoff must include the exact process or job identity, paths, latest progress,
+  expected next event, and safe stop or resume instructions.
+- At termination, verify the exit status and required artifacts or receipts,
+  report the last successful stage and any evidence gap, and clean up only the
+  exact task-owned resources.
+
 ## Git hygiene
 
 - Inspect `git status` before editing and before delivery.
