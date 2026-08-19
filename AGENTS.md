@@ -51,6 +51,11 @@ documented in `README.md` or the benchmark's own README.
   separate. Use Docker or another container backend only when preflight confirms
   that runtime is available; the portable baseline is the detected Python plus
   lockfile-backed uv environment.
+- Treat the remote host as an execution-only worker. Codex Desktop/CLI, model
+  provider calls, source editing, Git operations, experiment control, evidence
+  aggregation, and final adjudication remain local. Do not install, invoke, or
+  route the project's Codex CLI through the remote host; remote processes may
+  execute only the already-staged project code and explicitly scoped evaluators.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
