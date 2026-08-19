@@ -3,7 +3,7 @@
 - Status: `ready_for_review`
 - Owner: project work branch
 - Base: `main` at `1b34d32543ab2060d7abf8be7e6dbcb2c3375678`
-- Head reviewed for this record: `a1d3b91` (local-control/remote-evaluation boundary)
+- Head reviewed for this record: `f3da4a5` (immutable environment reuse target)
 - Integration target: `main`
 - Integrated commit: `not integrated`
 
