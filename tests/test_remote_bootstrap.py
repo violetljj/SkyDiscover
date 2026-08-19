@@ -125,6 +125,7 @@ def test_preflight_builds_remote_python_without_formatting_it(
 
     assert "payload = {" in captured_script
     assert '"cpu_count_visible": min(cpu_limits)' in captured_script
+    assert 'if path.name != "uv.lock"' in captured_script
     assert result["endpoint"] == "root@example.test"
 
 

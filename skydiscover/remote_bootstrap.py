@@ -330,7 +330,11 @@ relevant_processes = [
 locks = []
 manifests = []
 if root.exists():
-    locks = [str(path) for path in root.glob("**/*.lock")][:50]
+    locks = [
+        str(path)
+        for path in root.glob("**/*.lock")
+        if path.name != "uv.lock"
+    ][:50]
     manifests = [str(path) for path in root.glob("**/manifests/*.json")][:50]
 cpu_max = read_text("/sys/fs/cgroup/cpu.max")
 cpuset = read_text("/sys/fs/cgroup/cpuset.cpus.effective")
@@ -478,7 +482,7 @@ if [ ! -x "$UV_BIN" ]; then
   exit 21
 fi
 export UV_PROJECT_ENVIRONMENT={shlex.quote(layout.venv_dir)}
-"$UV_BIN" sync --frozen --quiet --project {shlex.quote(layout.source_dir)} {uv_extra_args}
+"$UV_BIN" sync --frozen --quiet --python "$PYTHON_BIN" --project {shlex.quote(layout.source_dir)} {uv_extra_args}
 export SKYDISCOVER_MANIFEST_SEED={shlex.quote(json.dumps(manifest_seed, sort_keys=True))}
 export SKYDISCOVER_UV_BIN="$UV_BIN"
 export SKYDISCOVER_MANIFEST_PREFIX={shlex.quote(_MANIFEST_PREFIX)}
