@@ -138,6 +138,7 @@ def test_preflight_builds_remote_python_without_formatting_it(
     assert "payload = {" in captured_script
     assert '"cpu_count_visible": min(cpu_limits)' in captured_script
     assert 'if path.name != "uv.lock"' in captured_script
+    assert '"blocking_locks": blocking_locks' in captured_script
     assert result["endpoint"] == "root@example.test"
 
 
@@ -175,6 +176,7 @@ def test_bootstrap_stops_before_transfer_when_task_root_is_active(
         lambda endpoint, remote_root, timeout: {
             "hostname": "worker",
             "locks": [f"{remote_root}/active.lock"],
+            "blocking_locks": [f"{remote_root}/active.lock"],
             "relevant_processes": [],
         },
     )

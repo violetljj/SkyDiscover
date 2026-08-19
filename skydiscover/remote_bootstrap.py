@@ -336,6 +336,11 @@ if root.exists():
         if path.name != "uv.lock"
     ][:50]
     manifests = [str(path) for path in root.glob("**/manifests/*.json")][:50]
+blocking_locks = [
+    path
+    for path in locks
+    if not ("/venvs/" in path and path.endswith("/.lock"))
+]
 cpu_max = read_text("/sys/fs/cgroup/cpu.max")
 cpuset = read_text("/sys/fs/cgroup/cpuset.cpus.effective")
 cpu_limits = [value for value in (os.cpu_count(), cpuset_count(cpuset), quota_count(cpu_max)) if value]
@@ -358,6 +363,7 @@ payload = {
     "remote_root": str(root),
     "remote_root_exists": root.exists(),
     "locks": locks,
+    "blocking_locks": blocking_locks,
     "manifests": manifests,
     "relevant_processes": relevant_processes,
     "container_runtimes": [
@@ -606,7 +612,7 @@ def bootstrap(
     layout = _layout(remote_root, task_id, commit, environment_key)
 
     inspection = preflight(endpoint, layout.task_root, timeout=min(timeout, 60))
-    if inspection.get("locks") or inspection.get("relevant_processes"):
+    if inspection.get("blocking_locks") or inspection.get("relevant_processes"):
         raise BootstrapError(
             "remote task root has active processes or locks; choose a new task id or wait "
             "for the existing task to reach a terminal state"
