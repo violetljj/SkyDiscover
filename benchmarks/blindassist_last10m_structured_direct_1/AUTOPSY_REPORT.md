@@ -25,13 +25,36 @@ without changing, re-evaluating, or retrying any unit.
 
 ## Interpretation boundary
 
-The receipts support a narrower conclusion: the package-level result is not
-explained by a consistently separable single contract in this cohort. Because
-the generated candidates are compositional and nearly all selected candidates
-contain the same contract families, no component-level causal claim is
-admissible. The next fresh experiment, if authorized, should therefore be a
-pre-registered single-mechanism contrast (for example Raw Direct plus a
-minimal progress contract), not another full-package comparison.
+The receipts support exactly three conclusions:
+
+1. Structured Direct's package-level value remains unestablished: the effect is
+   `+0.001667`, the win/tie/loss count is `2/9/1`, and robust-safe coverage is
+   only `10/12`.
+2. Structured mechanisms did enter the selected candidates: progress memory is
+   present in `11/12` and move proposals in `10/12`. The null package result
+   therefore cannot be explained as simple non-adoption of those mechanisms.
+3. No component-level attribution is admissible. Safety, tracking, progress,
+   moves, and termination were almost always changed together, so individual
+   benefits, harms, and interactions are not identified.
+
+This closes `L10M-STRUCT-AUTOPSY-1`; further post-hoc dissection of this sealed
+cohort is not warranted. The next admissible mechanism screen is
+`L10M-STRUCT-COMPONENT-1`, a preregistered 2x2 contrast on consumed/development
+tasks only:
+
+| Arm | Progress memory | Move proposals |
+| --- | --- | --- |
+| A Raw control | OFF | OFF |
+| B Progress only | ON | OFF |
+| C Moves only | OFF | ON |
+| D Progress + Moves | ON | ON |
+
+All other bytes and experimental conditions should be held fixed as far as the
+four toggles permit, including safety, tracking, termination, generation
+budget, model, candidate count, selection, and evaluator. No new broad
+Structured package search is justified. Fresh tasks remain reserved until at
+least one of B, C, or D shows a clear, stable, robust-safe gain on the consumed
+screen.
 
 Run from the repository root:
 
