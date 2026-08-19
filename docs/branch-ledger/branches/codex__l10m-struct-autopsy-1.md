@@ -44,7 +44,7 @@ established.
 
 ## Important commits
 
-- `pending`: add receipt-only autopsy and report.
+- `9df7a87`: add receipt-only autopsy and report.
 
 ## Integration notes
 
