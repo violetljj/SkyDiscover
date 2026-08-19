@@ -1,0 +1,958 @@
+{
+  "arms": {
+    "evox_structured": {
+      "behavioral_anytime_auc": 0.03,
+      "behavioral_anytime_curve": [
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "best_discovered_robust_safe": true,
+      "best_discovered_substantive_score_delta": 0.03,
+      "first_behavioral_pass_attempt": 1,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": "0c03f0e0-4af8-4dcc-9240-2ec8ef950d6b",
+          "combined_score": 0.931875,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.931875,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.375,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.734524,
+            "path_efficiency": 1.0,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.0375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.03,
+            "substantive_score_share": 0.8,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.03,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.0375,
+            "delta_instruction": 0.0075,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.03,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.0375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "63925ad5a33b8485d6ece4a963ccf582b9fbe7d1fbab4e0ad0a2da988ec98e5a",
+          "status": "success"
+        },
+        {
+          "attempt": 2,
+          "candidate_id": "05d70587-fe8f-4eae-91f2-2c3e56d9d2d1",
+          "combined_score": 0.0,
+          "metrics": {
+            "arrival_quality": 0.75,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.0,
+            "final_heading_error": 1.5,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 6.75,
+            "instruction_flip_rate": 0.020032,
+            "mean_heading_error": 5.695312,
+            "path_efficiency": 0.75,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": -0.894375,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": -0.130401,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 0.75,
+            "timeout_rate": 0.25,
+            "unsafe_forward_count": 0.0,
+            "validity": 0.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {
+            "delta_arrival": -0.04,
+            "delta_component_sum": -0.158526,
+            "delta_instruction": -0.028125,
+            "delta_oscillation": -0.000401,
+            "delta_path": -0.01,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": -0.08,
+            "delta_target_switch": 0.0,
+            "delta_total_score": -0.894375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "40ede5eaf454df4f541d9e7e8327c1827839524d196c0d6e0b11f815b2943f9a",
+          "status": "success"
+        },
+        {
+          "attempt": 3,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 4,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 5,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 6,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        }
+      ],
+      "primary_behavioral_discovery": true,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 6,
+          "generation_calls": 6,
+          "require_token_usage": true,
+          "total_tokens": 180000
+        },
+        "events": [
+          {
+            "call": 1,
+            "input_tokens": 18762,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 5,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 2,
+            "input_tokens": 18760,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 5,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 3,
+            "input_tokens": 22710,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 652,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 4,
+            "input_tokens": 20800,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1932,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 1,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "0c03f0e0-4af8-4dcc-9240-2ec8ef950d6b",
+            "status": "admitted"
+          },
+          {
+            "call": 5,
+            "input_tokens": 22637,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1867,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 2,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "05d70587-fe8f-4eae-91f2-2c3e56d9d2d1",
+            "status": "admitted"
+          },
+          {
+            "call": 6,
+            "input_tokens": 22219,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 2001,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 3,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "6c966024-d57b-4699-ac56-c54e73d24730",
+            "status": "admitted"
+          }
+        ],
+        "stop_reason": "generation_call_ceiling",
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 3,
+          "generation_calls": 6,
+          "input_tokens": 125888,
+          "output_tokens": 6462,
+          "total_tokens": 132350
+        }
+      },
+      "search_status": "COMPLETED"
+    },
+    "naked_structured": {
+      "behavioral_anytime_auc": 0.016666666667,
+      "behavioral_anytime_curve": [
+        0.0,
+        0.02,
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "best_discovered_robust_safe": true,
+      "best_discovered_substantive_score_delta": 0.02,
+      "first_behavioral_pass_attempt": 2,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": "046f97c9-fe99-4d93-9690-c094c5d03ee8",
+          "combined_score": 0.89625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.89625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.770982,
+            "path_efficiency": 0.8125,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.001875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.0,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.001875,
+            "delta_instruction": 0.001875,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.0,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.001875,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "6c0d22cc1626560b0574dd926a31e1c6641af1d10d84eb8e2a2f6cf09650e6a7",
+          "status": "success"
+        },
+        {
+          "attempt": 2,
+          "candidate_id": "377f7e99-3ac9-4390-b51b-6ba70513cf05",
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.802232,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.025625,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.780488,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.02,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.025625,
+            "delta_instruction": 0.005625,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.02,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.025625,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "cbe645afa147d6525f3ac579d09d5e8c561c3e838bb6d09b0eb4045d6bd83fa9",
+          "status": "success"
+        },
+        {
+          "attempt": 3,
+          "candidate_id": "60149bb3-be3c-4475-9d31-6dd2f7c5650f",
+          "combined_score": 0.0,
+          "metrics": {
+            "arrival_quality": 0.875,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.0,
+            "final_heading_error": 0.5,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 5.5,
+            "instruction_flip_rate": 0.010417,
+            "mean_heading_error": 5.286979,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 0.875,
+            "score_delta": -0.894375,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": -0.075208,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 0.875,
+            "timeout_rate": 0.125,
+            "unsafe_forward_count": 0.0,
+            "validity": 0.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {
+            "delta_arrival": -0.02,
+            "delta_component_sum": -0.084583,
+            "delta_instruction": -0.009375,
+            "delta_oscillation": -0.000208,
+            "delta_path": 0.01,
+            "delta_reacquisition": 0.0,
+            "delta_safety": -0.025,
+            "delta_success": -0.04,
+            "delta_target_switch": 0.0,
+            "delta_total_score": -0.894375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "ad7bd1460cfe8f204e54d34222a46e269cdec495d40b9ac2690fde9038e42217",
+          "status": "success"
+        },
+        {
+          "attempt": 4,
+          "candidate_id": "30d522f3-7bf5-4dab-bed1-110177d3cbab",
+          "combined_score": 0.895,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.895,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.802232,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 0.875,
+            "score_delta": 0.000625,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": -0.005,
+            "substantive_score_share": -8.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.000625,
+            "delta_instruction": 0.005625,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.02,
+            "delta_reacquisition": 0.0,
+            "delta_safety": -0.025,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.000625,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "67e21d923a5d7fbd299bab0b8d4ab6115059e2277f1baf68b2823ffa7298a9b0",
+          "status": "success"
+        },
+        {
+          "attempt": 5,
+          "candidate_id": "dbedcf7d-b464-444e-96f8-6d66108a8654",
+          "combined_score": 0.89625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.89625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.770982,
+            "path_efficiency": 0.8125,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.001875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.0,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.001875,
+            "delta_instruction": 0.001875,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.0,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.001875,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "7bb0ca6de793d041a0a8e24f8e438a0762bf249922d7d34d18d9eaea1bdac449",
+          "status": "success"
+        },
+        {
+          "attempt": 6,
+          "candidate_id": "c1ea0d78-57cf-48ef-8b08-5c0c7f7a5b0c",
+          "combined_score": 0.0,
+          "metrics": {
+            "arrival_quality": 0.875,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.0,
+            "final_heading_error": 0.5,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 5.5,
+            "instruction_flip_rate": 0.010417,
+            "mean_heading_error": 5.286979,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": -0.894375,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": -0.050208,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 0.875,
+            "timeout_rate": 0.125,
+            "unsafe_forward_count": 0.0,
+            "validity": 0.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {
+            "delta_arrival": -0.02,
+            "delta_component_sum": -0.059583,
+            "delta_instruction": -0.009375,
+            "delta_oscillation": -0.000208,
+            "delta_path": 0.01,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": -0.04,
+            "delta_target_switch": 0.0,
+            "delta_total_score": -0.894375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "d1bc19a00a48bb41d694be640b929ca5dc95bcd473fa5d249c311224ce1326d2",
+          "status": "success"
+        }
+      ],
+      "primary_behavioral_discovery": true,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 6,
+          "generation_calls": 6,
+          "require_token_usage": true,
+          "total_tokens": 180000
+        },
+        "events": [
+          {
+            "call": 1,
+            "input_tokens": 20800,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1312,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 1,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "046f97c9-fe99-4d93-9690-c094c5d03ee8",
+            "status": "admitted"
+          },
+          {
+            "call": 2,
+            "input_tokens": 21599,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1905,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 2,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "377f7e99-3ac9-4390-b51b-6ba70513cf05",
+            "status": "admitted"
+          },
+          {
+            "call": 3,
+            "input_tokens": 22555,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1336,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 3,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "60149bb3-be3c-4475-9d31-6dd2f7c5650f",
+            "status": "admitted"
+          },
+          {
+            "call": 4,
+            "input_tokens": 22557,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1665,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 4,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "30d522f3-7bf5-4dab-bed1-110177d3cbab",
+            "status": "admitted"
+          },
+          {
+            "call": 5,
+            "input_tokens": 22557,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1728,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 5,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "dbedcf7d-b464-444e-96f8-6d66108a8654",
+            "status": "admitted"
+          },
+          {
+            "call": 6,
+            "input_tokens": 22555,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1486,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 6,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "c1ea0d78-57cf-48ef-8b08-5c0c7f7a5b0c",
+            "status": "admitted"
+          }
+        ],
+        "stop_reason": null,
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 6,
+          "generation_calls": 6,
+          "input_tokens": 132623,
+          "output_tokens": 9432,
+          "total_tokens": 142055
+        }
+      },
+      "search_status": "COMPLETED"
+    },
+    "sky_evox_structured": {
+      "behavioral_anytime_auc": 0.01,
+      "behavioral_anytime_curve": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "best_discovered_robust_safe": true,
+      "best_discovered_substantive_score_delta": 0.01,
+      "first_behavioral_pass_attempt": 1,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": "bb2fcec9-03c4-4f6a-af02-b8477fce9b4e",
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.786607,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.01375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.727273,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.01,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.01375,
+            "delta_instruction": 0.00375,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.01,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.01375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "f73bf9b4b7befff6ce2745271a0b3108bb6e23f5175ef542a00ae24fc15fab15",
+          "status": "success"
+        },
+        {
+          "attempt": 2,
+          "candidate_id": "a213c299-8f89-4b12-b3c1-7af9a1b3aeb4",
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.786607,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.01375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.727273,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.01,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.01375,
+            "delta_instruction": 0.00375,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.01,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.01375,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "ea6f0f571d57e8eb1ea32d5e2b207fe8cda0351b9e2cf13630d3b56c284f857b",
+          "status": "success"
+        },
+        {
+          "attempt": 3,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 4,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 5,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        },
+        {
+          "attempt": 6,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        }
+      ],
+      "primary_behavioral_discovery": true,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 6,
+          "generation_calls": 6,
+          "require_token_usage": true,
+          "total_tokens": 180000
+        },
+        "events": [
+          {
+            "call": 1,
+            "input_tokens": 18762,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 5,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 2,
+            "input_tokens": 18758,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 5,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 3,
+            "input_tokens": 22716,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 508,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "call": 4,
+            "input_tokens": 20798,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 2020,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 1,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "bb2fcec9-03c4-4f6a-af02-b8477fce9b4e",
+            "status": "admitted"
+          },
+          {
+            "call": 5,
+            "input_tokens": 22636,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1171,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 2,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "a213c299-8f89-4b12-b3c1-7af9a1b3aeb4",
+            "status": "admitted"
+          },
+          {
+            "call": 6,
+            "input_tokens": 22004,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1362,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 3,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "405d4035-f360-4bbe-ba5f-baea9448ead9",
+            "status": "admitted"
+          }
+        ],
+        "stop_reason": "generation_call_ceiling",
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 3,
+          "generation_calls": 6,
+          "input_tokens": 125674,
+          "output_tokens": 5071,
+          "total_tokens": 130745
+        }
+      },
+      "search_status": "COMPLETED"
+    }
+  },
+  "experiment_id": "L10M-STRUCT-SEARCH-1",
+  "hidden_sha256": "5fc4aa4497cc226c845bad8a0aa67f6643aca437dad69ac6342c24c03e7768d1",
+  "instance_id": "instance_08",
+  "results_returned_to_search": false,
+  "seed": 947
+}

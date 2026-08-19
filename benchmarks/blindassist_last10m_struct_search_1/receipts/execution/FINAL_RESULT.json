@@ -1,0 +1,185 @@
+{
+  "G0_ABSOLUTE_SEARCHABILITY": {
+    "arms": {
+      "evox_structured": {
+        "mean_substantive_score_delta": 0.004166666666666667,
+        "qualifies": false,
+        "robust_safe_instances": 8
+      },
+      "naked_structured": {
+        "mean_substantive_score_delta": 0.01,
+        "qualifies": false,
+        "robust_safe_instances": 9
+      },
+      "sky_evox_structured": {
+        "mean_substantive_score_delta": 0.005,
+        "qualifies": false,
+        "robust_safe_instances": 9
+      }
+    },
+    "established": false
+  },
+  "G1_DELTA_E": {
+    "established": false,
+    "losses": 4,
+    "minimum_meaningful_effect": 0.005,
+    "observed_mean": -0.005833333333333334,
+    "one_sided_exact_p": 1.0,
+    "ties": 7,
+    "wins": 1
+  },
+  "G2_DELTA_H": {
+    "equivalence_established": false,
+    "equivalence_lower_p": null,
+    "equivalence_upper_p": null,
+    "losses": 2,
+    "meaningful_harm_established": false,
+    "meaningful_harm_p": null,
+    "minimum_meaningful_effect": 0.005,
+    "observed_mean": 0.0008333333333333336,
+    "one_sided_exact_p": null,
+    "superiority_established": false,
+    "tested": false,
+    "ties": 8,
+    "wins": 2
+  },
+  "analysis_unit": "fresh_instance",
+  "architecture_decision": "STRUCTURED_TEMPORAL_SEARCHABILITY_NOT_ESTABLISHED",
+  "claim_ceiling": "AUTOMATED_SEARCH_VALUE_WITHIN_AN_EXPERT_DESIGNED_STRUCTURED_TEMPORAL_LANGUAGE_AND_ONE_FROZEN_L10M_GRAPH_FAMILY_ONLY",
+  "experiment_id": "L10M-STRUCT-SEARCH-1",
+  "instance_count": 12,
+  "instance_results": [
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_01",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": -0.02,
+      "instance_effect_h": 0.02,
+      "instance_id": "instance_02",
+      "replicate_effects_e": [
+        -0.02
+      ],
+      "replicate_effects_h": [
+        0.02
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_03",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": -0.02,
+      "instance_effect_h": 0.02,
+      "instance_id": "instance_04",
+      "replicate_effects_e": [
+        -0.02
+      ],
+      "replicate_effects_h": [
+        0.02
+      ]
+    },
+    {
+      "instance_effect_e": -0.02,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_05",
+      "replicate_effects_e": [
+        -0.02
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": -0.02,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_06",
+      "replicate_effects_e": [
+        -0.02
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_07",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": 0.009999999999999998,
+      "instance_effect_h": -0.019999999999999997,
+      "instance_id": "instance_08",
+      "replicate_effects_e": [
+        0.009999999999999998
+      ],
+      "replicate_effects_h": [
+        -0.019999999999999997
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_09",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_10",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": 0.0,
+      "instance_id": "instance_11",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        0.0
+      ]
+    },
+    {
+      "instance_effect_e": 0.0,
+      "instance_effect_h": -0.01,
+      "instance_id": "instance_12",
+      "replicate_effects_e": [
+        0.0
+      ],
+      "replicate_effects_h": [
+        -0.01
+      ]
+    }
+  ]
+}

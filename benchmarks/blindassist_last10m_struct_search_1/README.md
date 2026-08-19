@@ -30,3 +30,26 @@ readiness, general navigation performance, or unconstrained machine discovery.
 changed executable source hashes, so the execution manifest binds the repeated
 post-format `mechanical_preflight_v2.json`; the first receipt has no execution
 authority.
+
+## Frozen outcome
+
+All 36 arm units and 12 paired hidden adjudications completed with six calls per
+arm, no arm failures, no `in_doubt` calls, and no hidden feedback returned to
+search. The frozen primary analysis did not establish searchability:
+
+- EvoX Structured: mean substantive delta `+0.0041667`, below the strict
+  `> +0.005` gate;
+- Sky+EvoX Structured: mean `+0.0050000`, equal to rather than greater than the
+  gate, and only 10/12 instances had a robust-safe candidate at the best primary
+  value;
+- EvoX minus Naked: `-0.0058333`, exact one-sided `p=1.0` under the frozen test.
+
+The architecture decision is
+`STRUCTURED_TEMPORAL_SEARCHABILITY_NOT_ESTABLISHED`. The original primary JSON
+reported robust-safe counts of Naked 9, EvoX 8, and Sky+EvoX 9 because its
+generation-order tie-break selected unsafe zero-value candidates over equally
+scored safe candidates. The post-treatment audit found the intended counts were
+12, 12, and 10. This defect does not change the decision because EvoX still
+misses the mean gate and Sky+EvoX still misses both its strict mean and 12/12
+safety requirements. The frozen primary result remains unmodified; the audit
+has no override authority and no unit was rerun.

@@ -97,3 +97,36 @@ def test_mechanical_preflight_passed_before_execution_manifest_freeze():
     assert receipt["status"] == "MECHANICAL_PREFLIGHT_PASS"
     assert receipt["sealed_files_verified"] == 24
     assert receipt["initial_program_sha256"] != receipt["diag_2_oracle_sha256"]
+
+
+def test_frozen_result_does_not_establish_searchability():
+    result = json.loads(
+        (BENCHMARK / "receipts/execution/FINAL_RESULT.json").read_text(encoding="utf-8")
+    )
+    assert result["G0_ABSOLUTE_SEARCHABILITY"]["established"] is False
+    assert result["G1_DELTA_E"]["established"] is False
+    assert result["G1_DELTA_E"]["one_sided_exact_p"] == 1.0
+    assert result["architecture_decision"] == "STRUCTURED_TEMPORAL_SEARCHABILITY_NOT_ESTABLISHED"
+
+
+def test_execution_audit_preserves_primary_and_documents_invariant_tie_defect():
+    audit = json.loads(
+        (BENCHMARK / "receipts/execution/EXECUTION_AUDIT.json").read_text(encoding="utf-8")
+    )
+    assert audit["formal_arm_statuses"] == {"COMPLETED": 36}
+    assert audit["search_receipts"] == 36
+    assert audit["hidden_adjudication_receipts"] == 12
+    assert audit["hidden_results_returned_to_search_blocks"] == 0
+    defect = audit["tie_break_defect"]
+    assert defect["recorded_robust_safe_counts"] == {
+        "evox_structured": 8,
+        "naked_structured": 9,
+        "sky_evox_structured": 9,
+    }
+    assert defect["intended_safe_tie_counts"] == {
+        "evox_structured": 12,
+        "naked_structured": 12,
+        "sky_evox_structured": 10,
+    }
+    assert defect["decision_invariant"] is True
+    assert audit["primary_override_authority"] is False
