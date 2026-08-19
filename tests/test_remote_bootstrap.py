@@ -159,6 +159,9 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
     assert "manifest.update(" in script
     assert '"completed_at_utc":' in script
     assert "SKYDISCOVER_BOOTSTRAP_MANIFEST=" in script
+    assert "TASK_TOOLS_DIR=" in script
+    assert "UV_CACHE_DIR=" in script
+    assert "pip install --user" not in script
 
 
 def test_bootstrap_stops_before_transfer_when_task_root_is_active(

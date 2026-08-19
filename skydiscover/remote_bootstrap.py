@@ -472,25 +472,24 @@ def _install_script(
         "task_root": layout.task_root,
         "source_dir": layout.source_dir,
         "venv_dir": layout.venv_dir,
+        "tools_dir": posixpath.join(layout.task_root, "bootstrap-tools"),
+        "uv_cache_dir": posixpath.join(layout.task_root, "uv-cache"),
         "manifest_path": layout.manifest_path,
     }
     shell_header = f"""
 set -eu
 {_python_locator_shell()}
 mkdir -p {shlex.quote(posixpath.dirname(layout.manifest_path))}
-if [ {shlex.quote("yes" if uv_version is not None else "no")} = "yes" ]; then
-  "$PYTHON_BIN" -m pip install --user --disable-pip-version-check {shlex.quote(uv_requirement)}
-  UV_BIN="$HOME/.local/bin/uv"
-elif command -v uv >/dev/null 2>&1; then
-  UV_BIN=$(command -v uv)
-elif [ -x "$HOME/.local/bin/uv" ]; then
-  UV_BIN="$HOME/.local/bin/uv"
-else
-  "$PYTHON_BIN" -m pip install --user --disable-pip-version-check {shlex.quote(uv_requirement)}
-  UV_BIN="$HOME/.local/bin/uv"
+TASK_TOOLS_DIR={shlex.quote(posixpath.join(layout.task_root, "bootstrap-tools"))}
+export UV_CACHE_DIR={shlex.quote(posixpath.join(layout.task_root, "uv-cache"))}
+mkdir -p "$UV_CACHE_DIR"
+if [ ! -x "$TASK_TOOLS_DIR/bin/uv" ]; then
+  "$PYTHON_BIN" -m venv "$TASK_TOOLS_DIR"
+  "$TASK_TOOLS_DIR/bin/python" -m pip install --disable-pip-version-check {shlex.quote(uv_requirement)}
 fi
+UV_BIN="$TASK_TOOLS_DIR/bin/uv"
 if [ ! -x "$UV_BIN" ]; then
-  echo "uv installation did not produce an executable at $UV_BIN" >&2
+  echo "task-local uv installation did not produce an executable at $UV_BIN" >&2
   exit 21
 fi
 export UV_PROJECT_ENVIRONMENT={shlex.quote(layout.venv_dir)}

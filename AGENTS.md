@@ -61,6 +61,12 @@ documented in `README.md` or the benchmark's own README.
   local workspace authoritative for source control and evidence; bring back and
   verify required outputs, checkpoints, receipts, and provenance before treating
   remote execution as complete.
+- Assume the remote host is shared with other projects. Never install packages
+  into global Python/Conda environments, mutate global shell startup files, or
+  share writable pip/uv caches, temporary roots, ports, locks, or process groups.
+  Use the bootstrap tool's task-owned tool environment and cache, and remove or
+  terminate only exact resources created by the current task; never perform
+  broad cleanup or kill processes belonging to another project.
 - For iterative or high-frequency evaluation, do not use a fresh SSH/SCP session
   for every operation or repeatedly transfer the repository or Git bundle. Stage
   the frozen code, protocol, and environment once, then use a persistent SSH

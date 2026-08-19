@@ -43,7 +43,7 @@ The command:
 1. resolves the requested local Git commit;
 2. streams that commit once with `git archive` over SSH;
 3. locates the remote Python installation, including AutoDL Miniconda;
-4. installs `uv` for the remote user when it is absent;
+4. creates a task-local bootstrap-tools environment and installs `uv` there;
 5. runs `uv sync --frozen` in a content-addressed virtual environment; and
 6. atomically writes a remote manifest and a matching local manifest under
    `.runs/remote-bootstrap/`.
