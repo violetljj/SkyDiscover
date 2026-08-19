@@ -128,6 +128,10 @@ See [Dependency extras](#dependency-extras) for install commands per benchmark.
 
 **Prerequisites:** Python >= 3.10, [uv](https://docs.astral.sh/uv/)
 
+For a mutable AutoDL or SSH execution host, use the
+[remote bootstrap tool](docs/remote-execution.md) to preflight, stage, and verify
+an isolated lockfile-backed environment.
+
 ```bash
 # Install
 uv sync
