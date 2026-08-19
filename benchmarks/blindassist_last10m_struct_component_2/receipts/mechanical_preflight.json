@@ -1,0 +1,21 @@
+{
+  "codex_cli_login": "CHATGPT_AUTHENTICATED",
+  "codex_cli_sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410",
+  "codex_cli_version": "codex-cli 0.148.0",
+  "complete_block_gate": "70_OF_72_AND_5_OF_6_PER_INSTANCE",
+  "component_1_results_imported": false,
+  "experiment_id": "L10M-STRUCT-COMPONENT-2",
+  "formal_arm_runs": 0,
+  "model_calls": 0,
+  "new_seeds_disjoint": true,
+  "protocol_sha256": "da73880bfad14e73de88fcdfbaad690d0b3ff77ca95d242d1a3ed4a8fc74c33a",
+  "reused_component_file_hashes": {
+    "arm_prompts.json": "46dd417f6fccf1bf750ed653e11569d7b489d028267167913c251e7dc449fa29",
+    "candidate_guard.py": "958f8cc9b430550d346e42760bf372850f3a2d2edf3ea548f7f2bdff40abb7f3",
+    "config.yaml": "d788ef42190072e154e4a1bcfe15de6c7022a87a1b4f0a50a41675d67292249a",
+    "evaluator.py": "3edc01979923bc0c3566fbffb173579257f2cbe0bc53955e8bdb73bec9e5640c",
+    "initial_program.py": "d11aadba546a35871e71598b56936db578db9ca102e2d3c49da1f2d7eb7e9cfd"
+  },
+  "status": "MECHANICAL_PREFLIGHT_PASS",
+  "synthetic_budget_preflight": "PASS"
+}
