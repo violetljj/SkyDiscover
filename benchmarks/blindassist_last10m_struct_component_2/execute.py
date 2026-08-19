@@ -58,7 +58,7 @@ def _blocks() -> list[tuple[str, int]]:
     ]
 
 
-def init_run(run_root: Path) -> dict[str, Any]:
+def init_run(run_root: Path, remote_manifest_path: Path) -> dict[str, Any]:
     protocol = _protocol()
     if protocol["status"] != "EXECUTION_PROTOCOL_FROZEN" or protocol["execution_blockers"]:
         raise RuntimeError("formal launch blocked until protocol and manifest are frozen")
@@ -68,9 +68,15 @@ def init_run(run_root: Path) -> dict[str, Any]:
     run_root = run_root.resolve()
     if run_root.exists() and any(run_root.iterdir()):
         raise FileExistsError(f"formal run root must be new and empty: {run_root}")
+    remote_manifest = json.loads(remote_manifest_path.read_text(encoding="utf-8"))
+    if remote_manifest.get("source_commit") != state["head"]:
+        raise RuntimeError("remote bootstrap source commit does not equal frozen HEAD")
+    if remote_manifest.get("status") != "ready":
+        raise RuntimeError("remote bootstrap manifest is not ready")
     run_root.mkdir(parents=True, exist_ok=True)
     (run_root / "units").mkdir()
     (run_root / "logs").mkdir()
+    _write_once(run_root / "remote_manifest.json", remote_manifest)
     locked = subprocess.run(
         [
             "git",
@@ -112,6 +118,7 @@ def init_run(run_root: Path) -> dict[str, Any]:
             "frozen_head": state["head"],
             "frozen_tracked_tree": state["tracked_tree"],
             "component_1_results_imported": False,
+            "remote_manifest": str(run_root / "remote_manifest.json"),
             "assignments": assignments,
         },
     )
@@ -249,9 +256,11 @@ def main() -> int:
     for name in ("init", "run", "closeout"):
         command = sub.add_parser(name)
         command.add_argument("--run-root", type=Path, required=True)
+        if name == "init":
+            command.add_argument("--remote-manifest", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "init":
-        result = init_run(args.run_root)
+        result = init_run(args.run_root, args.remote_manifest)
     elif args.command == "run":
         result = asyncio.run(run_pending(args.run_root))
     else:

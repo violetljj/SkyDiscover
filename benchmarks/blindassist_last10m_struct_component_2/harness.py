@@ -7,7 +7,9 @@ import argparse
 import asyncio
 import importlib.util
 import json
+import os
 import sys
+import tempfile
 import time
 from pathlib import Path
 from typing import Any
@@ -33,6 +35,7 @@ base = _load("l10m_struct_component_2_base_harness", BASE_DIR / "harness.py")
 integrity = _load("l10m_struct_component_2_integrity", HERE / "integrity.py")
 base.PROTOCOL_PATH = HERE / "protocol.json"
 base.EXECUTION_MANIFEST_PATH = HERE / "execution_manifest.json"
+base.DEV_EVALUATOR = HERE / "evaluator.py"
 base.DEV_SCENARIO_ENV = "L10M_STRUCT_COMPONENT_2_DEV_SCENARIOS"
 base.ARM_ENV = "L10M_STRUCT_COMPONENT_2_ARM"
 
@@ -45,7 +48,22 @@ async def run_arm(
     arm: str, instance_id: str, seed: int, output_root: Path, lock_path: Path
 ) -> dict[str, Any]:
     integrity.verify(lock_path, output_root, f"arm:{instance_id}:{seed}:{arm}")
-    return await base.run_arm(arm, instance_id, seed, output_root)
+    run_root = output_root.resolve().parent
+    values = {
+        "L10M_STRUCT_COMPONENT_2_REMOTE_MANIFEST": str(run_root / "remote_manifest.json"),
+        "L10M_STRUCT_COMPONENT_2_REMOTE_JOURNAL_ROOT": str(run_root / "dispatch"),
+        "L10M_STRUCT_COMPONENT_2_REMOTE_WORKER_ID": f"generation_{instance_id}_{seed}_{arm}",
+    }
+    old = {key: os.environ.get(key) for key in values}
+    try:
+        os.environ.update(values)
+        return await base.run_arm(arm, instance_id, seed, output_root)
+    finally:
+        for key, previous in old.items():
+            if previous is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = previous
 
 
 def _zero_row(status: str, error: str | None) -> dict[str, Any]:
@@ -60,6 +78,42 @@ def _zero_row(status: str, error: str | None) -> dict[str, Any]:
         "primary_substantive_value": 0.0,
         "failure_semantics": "TERMINAL_ARM_FAILURE_ITT_ZERO_NOT_MISSING",
     }
+
+
+def _remote_validation(
+    solution: str,
+    validation_path: Path,
+    arm: str,
+    output_root: Path,
+    instance_id: str,
+    seed: int,
+) -> dict[str, Any]:
+    evaluator = _load("l10m_struct_component_2_remote_evaluator", HERE / "evaluator.py")
+    run_root = output_root.resolve().parent
+    values = {
+        "L10M_STRUCT_COMPONENT_2_HIDDEN_SCENARIOS": str(validation_path),
+        "L10M_STRUCT_COMPONENT_2_ARM": arm,
+        "L10M_STRUCT_COMPONENT_2_REMOTE_MANIFEST": str(run_root / "remote_manifest.json"),
+        "L10M_STRUCT_COMPONENT_2_REMOTE_JOURNAL_ROOT": str(run_root / "dispatch"),
+        "L10M_STRUCT_COMPONENT_2_REMOTE_WORKER_ID": f"adjudication_{instance_id}_{seed}",
+    }
+    old = {key: os.environ.get(key) for key in values}
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".py", encoding="utf-8", delete=False
+    ) as handle:
+        handle.write(solution)
+        candidate_path = Path(handle.name)
+    try:
+        os.environ.update(values)
+        return evaluator.evaluate(str(candidate_path), "test")
+    finally:
+        evaluator.close_clients()
+        candidate_path.unlink(missing_ok=True)
+        for key, previous in old.items():
+            if previous is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = previous
 
 
 def adjudicate_block(
@@ -96,12 +150,6 @@ def adjudicate_block(
             "rerun_if_in_doubt": False,
         },
     )
-    try:
-        evaluator = base._load_validation_evaluator(validation_path)
-    except Exception as exc:
-        raise RuntimeError(
-            f"systemic evaluator integrity failure: {type(exc).__name__}: {exc}"
-        ) from exc
     arm_results = {}
     for arm in protocol["arms"]:
         search, manifest = inputs[arm]
@@ -111,7 +159,9 @@ def adjudicate_block(
         else:
             candidate = candidates[0]
             try:
-                result = base._evaluate_validation(evaluator, candidate["solution"], arm)
+                result = _remote_validation(
+                    candidate["solution"], validation_path, arm, output_root, instance_id, seed
+                )
                 robust_safe = base._robust_safe(result["metrics"])
                 value = (
                     max(0.0, float(result["metrics"].get("substantive_score_delta", 0.0) or 0.0))

@@ -12,6 +12,10 @@ PATHS = [
     "benchmarks/blindassist_last10m_struct_component_2/protocol.json",
     "benchmarks/blindassist_last10m_struct_component_2/README.md",
     "benchmarks/blindassist_last10m_struct_component_2/integrity.py",
+    "benchmarks/blindassist_last10m_struct_component_2/transport.py",
+    "benchmarks/blindassist_last10m_struct_component_2/remote_worker.py",
+    "benchmarks/blindassist_last10m_struct_component_2/evaluator.py",
+    "benchmarks/blindassist_last10m_struct_component_2/transport_canary.py",
     "benchmarks/blindassist_last10m_struct_component_2/harness.py",
     "benchmarks/blindassist_last10m_struct_component_2/analysis.py",
     "benchmarks/blindassist_last10m_struct_component_2/progress.py",
@@ -42,8 +46,10 @@ def _sha256(path: Path) -> str:
 
 def build() -> dict[str, object]:
     protocol = json.loads((HERE / "protocol.json").read_text(encoding="utf-8"))
-    if protocol["status"] != "EXECUTION_PROTOCOL_FROZEN" or protocol["execution_blockers"]:
-        raise RuntimeError("protocol must be execution-frozen without blockers")
+    if protocol["status"] != "EXECUTION_PROTOCOL_FROZEN":
+        raise RuntimeError("protocol must be execution-frozen")
+    if set(protocol["execution_blockers"]) - {"REMOTE_TRANSPORT_CANARY_PENDING"}:
+        raise RuntimeError("protocol has an unrecognized execution blocker")
     receipt = json.loads((HERE / "receipts/mechanical_preflight.json").read_text(encoding="utf-8"))
     if receipt["status"] != "MECHANICAL_PREFLIGHT_PASS" or receipt["formal_arm_runs"] != 0:
         raise RuntimeError("mechanical preflight is not admissible")

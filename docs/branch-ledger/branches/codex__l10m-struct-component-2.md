@@ -1,6 +1,6 @@
 # `codex/l10m-struct-component-2`
 
-- Status: `execution_protocol_frozen_pending_detached_formal_launch`
+- Status: `remote_transport_canary_pending_bootstrap`
 - Owner: project work branch
 - Base: `codex/l10m-struct-component-1` at `8859aec`
 - Integration target: `main`, after the full L10M dependency chain
@@ -34,6 +34,9 @@ implementation and hardened execution integrity.
   the latter remains an ITT zero.
 - Added detached-head, tracked-tree, worktree-lock, and execution-lock checks.
 - Bounded concurrency to two blocks with no same-instance overlap.
+- Added the local-control/remote-evaluation data plane: persistent JSONL worker,
+  local dispatch journal, idempotency keys, local receipt authority, and a
+  zero-model transport canary.
 
 ## Current evidence and claim ceiling
 
@@ -46,6 +49,7 @@ implementation and hardened execution integrity.
 
 ## Readiness and disposition
 
-Mechanical preflight and final execution manifest are frozen with zero model
-calls and zero formal arm runs. Commit, push, detached formal execution, and
-closeout remain pending.
+The first local engineering attempt is sealed as `ENGINEERING_ABORT_NO_ESTIMAND`
+after 8 terminal generation units and no factorial block. Those units are not
+rerun. The remote transport implementation has 9 focused tests passing; remote
+bootstrap, verify, and the actual zero-model transport canary remain pending.

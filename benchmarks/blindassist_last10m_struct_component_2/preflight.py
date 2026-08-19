@@ -35,6 +35,7 @@ def run() -> dict[str, object]:
     protocol = json.loads((HERE / "protocol.json").read_text(encoding="utf-8"))
     assert protocol["status"] in {
         "DESIGN_FROZEN_PENDING_MECHANICAL_PREFLIGHT",
+        "MECHANICAL_PREFLIGHT_PASSED_PENDING_EXECUTION_MANIFEST",
         "EXECUTION_PROTOCOL_FROZEN",
     }
     assert protocol["arms"] == ["raw_control", "progress_only", "moves_only", "progress_moves"]

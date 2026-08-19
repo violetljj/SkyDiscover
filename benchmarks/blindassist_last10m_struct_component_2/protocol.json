@@ -119,6 +119,19 @@
     "arms_per_active_block": 4,
     "same_instance_blocks_concurrent": false
   },
+  "remote_execution": {
+    "architecture": "LOCAL_CONTROL_PLANE_REMOTE_EVALUATION_DATA_PLANE",
+    "codex_generation_local": true,
+    "remote_codex_cli_forbidden": true,
+    "local_evidence_authority": true,
+    "persistent_worker_channel_required": true,
+    "transport_canary_required_before_formal_run": true,
+    "endpoint": "root@connect.westb.seetacloud.com",
+    "port": 24564,
+    "remote_root": "/root/skydiscover_runs/l10m_struct_component_2",
+    "worker_parallelism_rule": "up_to_process_visible_cpu_with_headroom_and_no_nested_oversubscription",
+    "remote_receipt_authority": "local_controller_validates_and_creates_terminal_receipt"
+  },
   "failure_and_recovery": {
     "create_once": true,
     "interrupted_external_call": "in_doubt_and_counted_against_budget",
@@ -131,6 +144,6 @@
     "concurrent_writers_per_unit": 1,
     "read_only_progress_summary_required": true
   },
-  "execution_blockers": [],
+  "execution_blockers": ["REMOTE_TRANSPORT_CANARY_PENDING"],
   "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
 }

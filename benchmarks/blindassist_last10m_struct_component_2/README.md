@@ -48,6 +48,12 @@ commit until closeout. The launcher and every block, arm, adjudication,
 analysis, and closeout entry check detached HEAD, frozen commit and tree,
 tracked-tree cleanliness, and the external execution lock. Drift fails closed.
 
+Generation remains local. CPU-heavy dev and hidden evaluation runs through the
+task-owned AutoDL persistent worker channel. The local controller journals each
+dispatch and validates the remote response before creating the local terminal
+receipt. The remote worker never runs Codex CLI, edits Git, controls the
+experiment, or becomes evidence authority.
+
 At most two blocks may be active concurrently, never two seeds from the same
 instance; all four arms of an active block are dispatched together. A started
 unit without a terminal receipt is `in_doubt`, consumes budget, and is never

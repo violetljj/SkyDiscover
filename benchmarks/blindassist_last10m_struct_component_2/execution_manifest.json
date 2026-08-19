@@ -2,30 +2,118 @@
   "component_1_results_imported": false,
   "experiment_id": "L10M-STRUCT-COMPONENT-2",
   "files": [
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/protocol.json", "sha256": "5870796c6a6d321568fc7b46d4068a4ae46a5fb947262fb4c02a63f95de7708e"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/README.md", "sha256": "cd92d521e530f078ad31708f7204dc4000ee3a5290ccc3b35d11525aaa4def37"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/integrity.py", "sha256": "5cb74eb7b3bdec181882b64ee919d973d70c31756c10ee0a947ebbd4ace184fb"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/harness.py", "sha256": "f35e5cfd6a80b81b443e6d46a24c886a8ed6de8bf165954cdf096c113980ef9a"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/analysis.py", "sha256": "37e5243ed4ce513b8c8b2fd1c4e86e64495bb34f5799555de44542e8b4d50ff2"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/progress.py", "sha256": "0f3413c18989c31ae09c2da0e97e01d1c6fd534951a8537cf4cdeb5e4a5f1ca4"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/execute.py", "sha256": "e71ddb3510c1f0cb0bd8dc1965ab65ba5d32740ffe32e4a30444f09f16eda1b1"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/preflight.py", "sha256": "dca7664f5e18f388c51eef81778473a537d24b2bf3b86a8197cc03e0c8526dd2"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_2/receipts/mechanical_preflight.json", "sha256": "12ece286b3af809058981beffc30bd4d2f7530e563ba92aabe349f5c785b762c"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/initial_program.py", "sha256": "d11aadba546a35871e71598b56936db578db9ca102e2d3c49da1f2d7eb7e9cfd"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/arm_prompts.json", "sha256": "46dd417f6fccf1bf750ed653e11569d7b489d028267167913c251e7dc449fa29"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/config.yaml", "sha256": "d788ef42190072e154e4a1bcfe15de6c7022a87a1b4f0a50a41675d67292249a"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/candidate_guard.py", "sha256": "958f8cc9b430550d346e42760bf372850f3a2d2edf3ea548f7f2bdff40abb7f3"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/evaluator.py", "sha256": "3edc01979923bc0c3566fbffb173579257f2cbe0bc53955e8bdb73bec9e5640c"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/harness.py", "sha256": "18f85b74b05824cacd0b879d80c0cdb7fb98b586a34c59f28f811df4212534d0"},
-    {"path": "benchmarks/blindassist_last10m_struct_component_1/analysis.py", "sha256": "581d44d24a65fd1d609885def269a1c0bb0f7427d07e386e72aab372987995ba"},
-    {"path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json", "sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68"},
-    {"path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py", "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"},
-    {"path": "skydiscover/execution_budget.py", "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"},
-    {"path": "skydiscover/llm/codex_cli.py", "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"},
-    {"path": "skydiscover/evaluation/evaluator.py", "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"},
-    {"path": "skydiscover/search/incumbent_only/database.py", "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"},
-    {"path": "skydiscover/search/route.py", "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"},
-    {"path": "skydiscover/config.py", "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"}
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/protocol.json",
+      "sha256": "95a819207f804541c1d5d822aae36ea88f1af37da59b56427c35cfed197c4277"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/README.md",
+      "sha256": "95efd88c0f261f4ac1ca4c973235d0b506a615c0294727b73f75e1ab2f97ae25"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/integrity.py",
+      "sha256": "5cb74eb7b3bdec181882b64ee919d973d70c31756c10ee0a947ebbd4ace184fb"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/transport.py",
+      "sha256": "29b1ce7a6c856d7a340126425e441c1eb65bf653dd9239a9606aab22b7450b6b"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/remote_worker.py",
+      "sha256": "b988e4d3cde18456c274988973df4260ffd87106a21afdc5957054d3adaf519e"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/evaluator.py",
+      "sha256": "f5b34c9e1c61bbf22c3c5191633ab3e62c3d8cbc716b124d955a244d651023ed"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/transport_canary.py",
+      "sha256": "570b03472fe92e1b095fa9fffdce810ad162334a74a58a555248531b96c62e18"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/harness.py",
+      "sha256": "7a6495204e060d67c1629ee51a76d6de3630b3c041fcd57a5ca59541fca634e8"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/analysis.py",
+      "sha256": "37e5243ed4ce513b8c8b2fd1c4e86e64495bb34f5799555de44542e8b4d50ff2"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/progress.py",
+      "sha256": "0f3413c18989c31ae09c2da0e97e01d1c6fd534951a8537cf4cdeb5e4a5f1ca4"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/execute.py",
+      "sha256": "8ff55896a5eda218d546c78a9c1604f971a94d9f2b9201406dcaaa4e5128152d"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/preflight.py",
+      "sha256": "f42d9c6d4d03e8509a4965b20426fe9d572fe0e1e39348ab13d40ed42a5fca13"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_2/receipts/mechanical_preflight.json",
+      "sha256": "b814056322d4f98796a05c775e7a0dd2d3e3aab90eadd7f42b860882c506fc68"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/initial_program.py",
+      "sha256": "d11aadba546a35871e71598b56936db578db9ca102e2d3c49da1f2d7eb7e9cfd"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/arm_prompts.json",
+      "sha256": "46dd417f6fccf1bf750ed653e11569d7b489d028267167913c251e7dc449fa29"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/config.yaml",
+      "sha256": "d788ef42190072e154e4a1bcfe15de6c7022a87a1b4f0a50a41675d67292249a"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/candidate_guard.py",
+      "sha256": "958f8cc9b430550d346e42760bf372850f3a2d2edf3ea548f7f2bdff40abb7f3"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/evaluator.py",
+      "sha256": "3edc01979923bc0c3566fbffb173579257f2cbe0bc53955e8bdb73bec9e5640c"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/harness.py",
+      "sha256": "18f85b74b05824cacd0b879d80c0cdb7fb98b586a34c59f28f811df4212534d0"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_struct_component_1/analysis.py",
+      "sha256": "581d44d24a65fd1d609885def269a1c0bb0f7427d07e386e72aab372987995ba"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json",
+      "sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py",
+      "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"
+    },
+    {
+      "path": "skydiscover/execution_budget.py",
+      "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"
+    },
+    {
+      "path": "skydiscover/llm/codex_cli.py",
+      "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"
+    },
+    {
+      "path": "skydiscover/evaluation/evaluator.py",
+      "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"
+    },
+    {
+      "path": "skydiscover/search/incumbent_only/database.py",
+      "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"
+    },
+    {
+      "path": "skydiscover/search/route.py",
+      "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"
+    },
+    {
+      "path": "skydiscover/config.py",
+      "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"
+    }
   ],
   "formal_arm_runs_observed_before_freeze": 0,
   "hash_algorithm": "sha256",

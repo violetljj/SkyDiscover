@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -81,6 +82,11 @@ def test_protocol_keeps_exact_four_arms_and_original_three_factorial_questions()
     }
     assert protocol["component_1_outcomes_in_formal_estimand"] is False
     assert set(protocol["direct_replicates"]["local_seeds"]).isdisjoint(range(1701, 1707))
+    assert protocol["remote_execution"]["architecture"] == (
+        "LOCAL_CONTROL_PLANE_REMOTE_EVALUATION_DATA_PLANE"
+    )
+    assert protocol["remote_execution"]["codex_generation_local"] is True
+    assert protocol["remote_execution"]["remote_codex_cli_forbidden"] is True
 
 
 def test_execution_manifest_binds_new_engineering_and_unchanged_mechanism_files():
@@ -88,6 +94,40 @@ def test_execution_manifest_binds_new_engineering_and_unchanged_mechanism_files(
     manifest = json.loads((BENCHMARK / "execution_manifest.json").read_text(encoding="utf-8"))
     assert manifest["formal_arm_runs_observed_before_freeze"] == 0
     assert manifest["component_1_results_imported"] is False
+
+
+def test_remote_worker_protocol_canary_is_zero_model_and_returns_evaluator_shape():
+    protocol = json.loads((BENCHMARK / "protocol.json").read_text(encoding="utf-8"))
+    cohort = json.loads(
+        (ROOT / "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    source = (
+        (ROOT / "benchmarks/blindassist_last10m_struct_component_1/initial_program.py")
+        .read_text(encoding="utf-8")
+        .replace("# CANDIDATE-TAG: initial", "# CANDIDATE-TAG: generated", 1)
+    )
+    scenario = ROOT / cohort["instances"][0]["dev_path"]
+    request = {
+        "request_id": "local-worker-canary",
+        "candidate_source": source,
+        "arm": "raw_control",
+        "mode": "train",
+        "scenarios": json.loads(scenario.read_text(encoding="utf-8")),
+    }
+    completed = subprocess.run(
+        [sys.executable, str(BENCHMARK / "remote_worker.py")],
+        input=json.dumps(request) + "\n",
+        capture_output=True,
+        text=True,
+        check=True,
+        timeout=60,
+    )
+    response = json.loads(completed.stdout.strip())
+    assert response["status"] == "COMPLETED"
+    assert response["request_id"] == "local-worker-canary"
+    assert "metrics" in response["result"]
 
 
 def test_two_infrastructure_blocks_across_instances_are_complete_case_evaluable(tmp_path: Path):
