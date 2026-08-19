@@ -66,6 +66,21 @@ silently substituting evidence.
 
 - Inspect `git status` before editing and before delivery.
 - Never discard or overwrite unrelated user changes.
+- Every project-owned work branch must have a durable record under
+  `docs/branch-ledger/branches/`, using the branch name with `/` replaced by
+  `__` as the filename. Create it with the branch's first meaningful commit;
+  update it only at material scope/status changes and before handoff, integration,
+  abandonment, or deletion. Do not create empty placeholder records.
+- Each branch record must state its purpose, base branch and base commit,
+  task-owned scope, dependencies, work performed, current status, evidence-backed
+  result and claim ceiling, validation, important commits, integration target and
+  readiness/blockers, and final disposition. Use `unknown` or `not run` rather
+  than inventing missing historical facts.
+- Keep one file per branch so concurrent branches do not edit a shared status
+  table. Review the branch record together with its diff before integration;
+  integration is incomplete until the record reflects the integrated commit or
+  exact blocker. Preserve completed records after branch deletion as project
+  history.
 - Use `codex/<task>` branches for ordinary code, feature, and experiment work.
   Small clean documentation, configuration, or governance changes may use the
   intended integration branch directly. Use a separate worktree when active WIP,
