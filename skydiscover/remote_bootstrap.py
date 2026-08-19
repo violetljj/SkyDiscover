@@ -382,6 +382,12 @@ print(json.dumps(payload, sort_keys=True))
     return payload
 
 
+def _git_archive_command(commit: str) -> list[str]:
+    """Build a Git archive command that preserves committed LF bytes on Windows."""
+
+    return ["git", "-c", "core.autocrlf=false", "archive", "--format=tar", commit]
+
+
 def _stream_git_archive(
     endpoint: RemoteEndpoint,
     repo: Path,
@@ -394,7 +400,7 @@ def _stream_git_archive(
 set -eu
 mkdir -p {shlex.quote(source_dir)}
 """
-    archive_command = ["git", "archive", "--format=tar", commit]
+    archive_command = _git_archive_command(commit)
     _run_remote(endpoint, prepare_script, timeout=min(timeout, 60))
 
     archive: subprocess.Popen[bytes] | None = None
@@ -558,7 +564,7 @@ manifest.update(
 )
 path = Path(manifest["manifest_path"])
 temporary = path.with_suffix(path.suffix + ".tmp")
-temporary.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\\n", encoding="utf-8")
+temporary.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 os.replace(temporary, path)
 print(os.environ["SKYDISCOVER_MANIFEST_PREFIX"] + json.dumps(manifest, sort_keys=True))
 """

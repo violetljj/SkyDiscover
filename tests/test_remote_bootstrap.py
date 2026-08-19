@@ -13,6 +13,7 @@ from skydiscover.remote_bootstrap import (
     _endpoint_from_args,
     _environment_key,
     _extract_prefixed_json,
+    _git_archive_command,
     _layout,
     _validate_remote_root,
     _validate_task_id,
@@ -33,6 +34,17 @@ def test_build_ssh_command_is_noninteractive_and_kept_alive() -> None:
     assert "ServerAliveCountMax=3" in command
     assert command[-3:] == ["root@example.test", "bash", "-s"]
     assert command[command.index("-p") + 1] == "24564"
+
+
+def test_git_archive_disables_windows_autocrlf() -> None:
+    assert _git_archive_command("abc") == [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "archive",
+        "--format=tar",
+        "abc",
+    ]
 
 
 def test_run_remote_sends_lf_bytes_on_windows(monkeypatch: pytest.MonkeyPatch) -> None:
