@@ -17,8 +17,12 @@ class RemoteEvaluationError(RuntimeError):
 
 
 class RemoteEvaluationClient:
-    def __init__(self, manifest_path: Path, journal_root: Path, worker_id: str):
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    def __init__(self, manifest_path: Path | dict[str, Any], journal_root: Path, worker_id: str):
+        manifest = (
+            json.loads(manifest_path.read_text(encoding="utf-8"))
+            if isinstance(manifest_path, Path)
+            else manifest_path
+        )
         self.manifest = manifest
         self.journal_root = journal_root / worker_id
         self.journal_root.mkdir(parents=True, exist_ok=True)

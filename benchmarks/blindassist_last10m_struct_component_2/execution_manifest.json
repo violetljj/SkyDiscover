@@ -16,7 +16,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/transport.py",
-      "sha256": "29b1ce7a6c856d7a340126425e441c1eb65bf653dd9239a9606aab22b7450b6b"
+      "sha256": "9ff9da5691eaaa7f956cc9a9104e5fa24a6671286e5a68a9e2ad51c52718881a"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/remote_worker.py",
