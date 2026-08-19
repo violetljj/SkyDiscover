@@ -86,6 +86,25 @@ completed.
   duration. Check sooner during startup and stage transitions, then use longer
   bounded waits during stable work. Avoid both unattended execution and noisy
   high-frequency polling.
+- Every new long-running iterative or discovery workflow must provide or reuse a
+  read-only progress summarizer before the run is left in a stable waiting
+  phase. The summarizer may inspect processes, logs, checkpoints, manifests,
+  artifacts, and receipts, but it must not modify authoritative inputs, run
+  outputs, checkpoints, locks, receipts, evaluator state, or process state.
+- Emit progress summaries at startup verification, meaningful stage boundaries,
+  periodic monitoring wakeups, abnormal-state detection, and termination. Each
+  summary must report at least: completed work over declared total and percent,
+  the active shard/item and current iteration when observable, the latest
+  activity timestamp and its age, failed work count with failure classes, and an
+  estimated remaining time.
+- Derive completion and failure counts from authoritative artifacts rather than
+  wrapper-process counts, and distinguish started, completed, adjudicated, and
+  failed units so nested launchers are not double-counted. Keep monitoring data
+  outside evidence-bearing results unless the protocol explicitly defines it.
+- Base remaining-time estimates on observed completed-unit durations and active
+  concurrency when possible. Label sparse-sample estimates as provisional,
+  update them as evidence accumulates, and report `unknown` instead of inventing
+  an estimate when progress evidence is insufficient or heterogeneous.
 - Treat missing progress, stalled timestamps, repeated errors, unexpected
   resource changes, or absent checkpoints as an investigation trigger. Inspect
   evidence before restarting so a slow job is not mistaken for a hung job and a
