@@ -44,6 +44,24 @@ documented in `README.md` or the benchmark's own README.
   local workspace authoritative for source control and evidence; bring back and
   verify required outputs, checkpoints, receipts, and provenance before treating
   remote execution as complete.
+- For iterative or high-frequency evaluation, do not use a fresh SSH/SCP session
+  for every operation or repeatedly transfer the repository or Git bundle. Stage
+  the frozen code, protocol, and environment once, then use a persistent SSH
+  channel or long-lived remote worker per evaluation slot. Send only the minimal
+  per-iteration payload, such as the candidate hash and code, seed, and request
+  identifier, and use keepalives plus bounded reconnection to recover the same
+  remote job.
+- Journal each external dispatch before sending it and after completion, assign
+  an idempotency key, and create evaluation receipts atomically. After a channel
+  loss, query the existing remote job and receipt before taking further action.
+  If dispatch may have occurred but consumption cannot be proved either way,
+  classify the attempt as `in_doubt`, count it conservatively against the frozen
+  budget, and do not rerun it automatically.
+- A series of successful SSH probes establishes only momentary reachability, not
+  the reliability of a high-frequency short-connection design. Routine work may
+  fall back to local execution after remote failure, but an active frozen or
+  evidence-critical experiment must not silently change execution environments;
+  stop or resume it only under its preregistered recovery rules.
 - Do not leave the rented host idle after its work reaches a terminal state;
   remind the user to shut it down in the AutoDL console.
 
