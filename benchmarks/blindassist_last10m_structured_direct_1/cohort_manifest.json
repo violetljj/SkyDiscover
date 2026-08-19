@@ -1,0 +1,94 @@
+{
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "instances": [
+    {
+      "dev_path": "instance_01/dev.json",
+      "dev_sha256": "2211281d25dca2fd06bdc42b72fd6a8dde43f63fbc6ae40377ca702a5de74780",
+      "hidden_path": "instance_01/hidden.json",
+      "hidden_sha256": "374fba675a16fefe2dc807b79d385047f1c91fccd33086d7c14e90d067a630fd",
+      "instance_id": "instance_01"
+    },
+    {
+      "dev_path": "instance_02/dev.json",
+      "dev_sha256": "37b7d6fb5fd0bea58eef5b234f87de3d113c108412feaf4e8ccf4a55975c1889",
+      "hidden_path": "instance_02/hidden.json",
+      "hidden_sha256": "85ccfc869b7a2956cee5862bc33811698a60d2f681b5dce7d30969f8c2b113bc",
+      "instance_id": "instance_02"
+    },
+    {
+      "dev_path": "instance_03/dev.json",
+      "dev_sha256": "4164db7bbf211bb63ab0680df75b84e50be8a991ab6c32aaf71d0e41fefbf7c3",
+      "hidden_path": "instance_03/hidden.json",
+      "hidden_sha256": "959e5324bc7fe314b2f4da87e9769db3e3bc76500d775e572dae7c18dba37b5c",
+      "instance_id": "instance_03"
+    },
+    {
+      "dev_path": "instance_04/dev.json",
+      "dev_sha256": "d57925dbbd1b1f1cd06b1e1fe72bf7fd598bada326a96bb225fd1188bbe5059a",
+      "hidden_path": "instance_04/hidden.json",
+      "hidden_sha256": "06fb5a5e6f7e47c4822502cad75b8fe41b428d755bffd107cc7577c9efb71122",
+      "instance_id": "instance_04"
+    },
+    {
+      "dev_path": "instance_05/dev.json",
+      "dev_sha256": "56bdcb9f9ce8abc88a01d4e1472ac9ed50983c92a0bfbc21863436eb53fe9763",
+      "hidden_path": "instance_05/hidden.json",
+      "hidden_sha256": "89c03c5d05bc142f6dcad1419201f294fdb0a58ebaed45812aba2208a8443252",
+      "instance_id": "instance_05"
+    },
+    {
+      "dev_path": "instance_06/dev.json",
+      "dev_sha256": "00b57198c9b92736400fb86024d76bc2d05defb4121f5f971092ffe51b2a0a9c",
+      "hidden_path": "instance_06/hidden.json",
+      "hidden_sha256": "81c566bde4cb014542f855957de3d753fe1acef26442ac02dc63f779780d88c4",
+      "instance_id": "instance_06"
+    },
+    {
+      "dev_path": "instance_07/dev.json",
+      "dev_sha256": "48d39f4df0b610a8eb5c075ce35b7add4a1e0dc72b17c858dd23bbcb94aa9b49",
+      "hidden_path": "instance_07/hidden.json",
+      "hidden_sha256": "593b3f59f3633becb75ce5e6ad7f25982f0cdea76c5cc9cb07cd67e161b2c150",
+      "instance_id": "instance_07"
+    },
+    {
+      "dev_path": "instance_08/dev.json",
+      "dev_sha256": "9d13906237e88bdc2c008651fcaf7ac73b9df9d16b79bb05dc5fe896571fa358",
+      "hidden_path": "instance_08/hidden.json",
+      "hidden_sha256": "ba97a4e861daee95102a59e8fc28407a773295f3fa4c4098c538120271cd122c",
+      "instance_id": "instance_08"
+    },
+    {
+      "dev_path": "instance_09/dev.json",
+      "dev_sha256": "8aec930ea5e42a3b44bf8548b752c265b4ea1acdfefe30559cb7c79d9bda2800",
+      "hidden_path": "instance_09/hidden.json",
+      "hidden_sha256": "2d9faeaca7e7581b2c59fbad92b6326b0e640f62c5d7087138babb8397671806",
+      "instance_id": "instance_09"
+    },
+    {
+      "dev_path": "instance_10/dev.json",
+      "dev_sha256": "ca2190163c7c924ef771659c3a765699e4ef3c9dbcc6a0aeaabeb987cf68f130",
+      "hidden_path": "instance_10/hidden.json",
+      "hidden_sha256": "6c66fe72ce6cd96124cebc9fa4ece87d09ec1c2e29f9bea3d23aee6c1315b047",
+      "instance_id": "instance_10"
+    },
+    {
+      "dev_path": "instance_11/dev.json",
+      "dev_sha256": "73710692016282bf7012d33dc3f436c79e3d16a4b7febd0c4c898df14f884ebf",
+      "hidden_path": "instance_11/hidden.json",
+      "hidden_sha256": "c563b0abd9157b8e623e5443f995797e0e18b881a202d72727fdb2b2aa96d4cc",
+      "instance_id": "instance_11"
+    },
+    {
+      "dev_path": "instance_12/dev.json",
+      "dev_sha256": "5b04916262e9a2afd16e9028423b1aeead6eea51921714b3f57e28420232e0e5",
+      "hidden_path": "instance_12/hidden.json",
+      "hidden_sha256": "54dca5ae40e801ec27ff082c7e3208494dd59d72c3470fc98edcff29390f51a2",
+      "instance_id": "instance_12"
+    }
+  ],
+  "private_paths_are_relative_to_sealed_root": true,
+  "private_seed_disclosed": false,
+  "protocol_sha256": "1cdcfa71c0fa8d591d372cb99c1ba5e65a28efd3a274f3ea60342b86f5f39257",
+  "status": "FRESH_COHORT_MATERIALIZED_PRE_TREATMENT",
+  "treatment_runs_observed": 0
+}

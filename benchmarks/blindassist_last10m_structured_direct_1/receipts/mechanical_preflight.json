@@ -1,0 +1,18 @@
+{
+  "candidate_guard": "PASS_BOTH_INTERFACES",
+  "codex_cli_login": "CHATGPT_AUTHENTICATED",
+  "codex_cli_sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410",
+  "codex_cli_version": "codex-cli 0.148.0",
+  "cohort_manifest_sha256": "6facbf9f1eb5e5e77a75b132b8c47e92553ef3430bbd0c0a560caee7c54202f9",
+  "diag_2_oracle_sha256": "9324e0772f5f4cadf57aa14586f9a74dbaeb0e5c72bd502ee76546058d8af29a",
+  "direct_replicates_per_arm_instance": 6,
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "fresh_start_generation_calls_per_unit": 1,
+  "instance_count": 12,
+  "oracle_seed_excluded": true,
+  "protocol_sha256": "861398b68a243951fa282c6d027d6c5383bff3ba5237d1692da56656ca6fccd2",
+  "raw_initial_program_sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33",
+  "sealed_files_verified": 24,
+  "status": "MECHANICAL_PREFLIGHT_PASS",
+  "structured_initial_program_sha256": "d10dc4b142dd58611aadf4a460c1d123d4622d55953b038eb48f24a0e3c7f155"
+}

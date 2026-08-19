@@ -1,0 +1,1870 @@
+{
+  "archived_receipts": [
+    {
+      "kind": "frozen_primary_result",
+      "path": "receipts/execution/FINAL_RESULT.json",
+      "sha256": "b47415e75e1c568fa0ba8b5ff8bfddacdecc04be2802fcd05acf9d49fec3a2c5"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1301/hidden_adjudication.json",
+      "sha256": "182dee183941dc4cc2d837219bd751ad051b00d408949abef81438b4b9cae9de"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "ebecef74e9bd7bc69066e090a4dc217afabfdc167b828ab8f27177be7153271e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "f960f00632b998147f427db79657d19fa60b39578bd386bff274028e8fca10ec"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "20a96d7c12f36eed71418f9eb96e8f64f415579c1d52898f13c5c9cf66be531e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "4679ce8ba602b3c3eb0b83e55f5cf7920e44240d6ae8622ca6aef5446b03a9bc"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1302/hidden_adjudication.json",
+      "sha256": "fb59cb62301eeac2d5db1904a23fa8fe8f795a63c1db4ab4c0ad0ca5d16adf19"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "81be55035d1cbada4df5dff5d7aa27b238f638c87081a760d0aee1ec1c9d0110"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "92edcf16eb14e358fc73c39773de7eae54d1351f271a8f04bfdb50873b2690e8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1303/hidden_adjudication.json",
+      "sha256": "b442aa2b8a7ea87630a2be6eb80bda21ca8a1672cd06f8c2d88b42861a91391d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "689f98458382452d38bdb4fba211b30d180f062eee5646f22ff9438fd774985b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "95e1ec8de45c8b81fc9b923c79d8550805f0927b91cb530bbefa9035a05b18ae"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1304/hidden_adjudication.json",
+      "sha256": "1ef34f1810550faa0d6439f7fdd2b491b64225eddffc29f3e54564edc071e786"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "71038db5bf647ef33b9696dabda7501717791a297625b0e1087d9b5afe9b3256"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "8af23b8256bffc3f20c1cfea91cb209b9348a08730ef24b12c7fd04c62553c3b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "32d301923156a2c03ac22f40ef0c4fc110ef6f2ef848bcd7571d7a5d5316c6a4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1305/hidden_adjudication.json",
+      "sha256": "53e9971594bcd14364981f7eea75eba05110c9a3f37b1af535f49f2f15fd4efa"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "390a741fe5174363f525acd0b63dc751ee427f23f91473f3d8aaebad2d943bf0"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "3b6c724cac44411f90611cc5e4a2b7b484980cd241e922f6d86e1de911c1afe9"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "c6599b66d143cb0c0183d9503b3f25b6bd769966f61e65389b8199eec9c0ffd8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "f7947692aeabbecb9ace4aeaf975ab02082153b8468d87f4176ea1add80d998a"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_1306/hidden_adjudication.json",
+      "sha256": "3852846621f7120afe306094b8bbbbe2875db6bd9794c35b84c229fec34a0d3e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "1f9f7209e390426415d03bf28eefd64b37334bc37918cb6ea41f693df3f2b948"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "bf509ab140bc96ae6d5347f6e1b3113c7c5a9e645e63e24f795b965b3d1fd1b9"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "0497d8a7b1a2e16bddb307c4fb8723359bdaf74f99883e39e94cd8fe899cca53"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_01/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "dcdd0fdbbd6c929ba81f0fccd0fdd54409256268a876f585f8190305c8168883"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1301/hidden_adjudication.json",
+      "sha256": "7b427fc49812d6ce237f47bdccc8cf7d740d10d1989dff684b869f4ce5ab7ef2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "1476836028b0c4a7e61d8f917a47979734a327887e976ee42b297231bd66b912"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "16489b8f286375944cbee34f34eb34a9d6f59539f2646056194f6acf75b47c2f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "8e50a12c5057b430cb21f205eb34ea90606b513448265262e6217bb95b7e79f3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "80a8ca84237ef0d5d1e4c58096769324b3a7cfe7f4960d90cf63ed2c8b761d5e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1302/hidden_adjudication.json",
+      "sha256": "5fa0d57508475df83a688ba90c0f17ad060a44e18eb11e676115fa37cbd4f74d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "995655a7cf4aa10759b054141e9691b1f850725552d00eb9d6bf4bae3c885601"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "b10f482c17dc393dfa5e475d8a3789856a9cec4f29600926e9d251e137521455"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "65286ae695b5abd5ecadfe11dea74e322f4e296a4778b11c44b331d908ae9567"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "36b9271552ecf9a411a614a0179c9466ac4450161bc54b8c630e432ce4d5324d"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1303/hidden_adjudication.json",
+      "sha256": "933cfbf57844b1ea9f7b2709190649006063193a54d9e4402d3e0529b711fa30"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "ef218f4a912bcf7e3ef45efe3da0a6de80b46cd5195bf9d8d617bb63b0aa0b05"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "e6c251be66a888fb5f2d3dfa91e2d68a45b0116e3eab7388e2873e1f138be1ad"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "9635d53c77dc144e6031af91f6992ab7acdec3372829c0bf6f20452832ee5637"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "c0c037d7056556c7947af3f8da27be2b376a05c32bb484e55412873457281802"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1304/hidden_adjudication.json",
+      "sha256": "7e0a021fbed53d180a4ade6fa1d74576e9b16aa7b821e35b4e3d302e3925f482"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "e131d1d011357103ed003c26c5e8f5fdc9ad57505c0fb79b9343beae9257ff74"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "3d3cd0c4af46cc6acd9d66136c4cb45fc3343bbc159b4cba0031f4af6f7c85db"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "4cd44874dec0faf140afc306632198d347bef59f0fa15eb418116ef1689aedac"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "7cda1aebe90b5eb1fc0a7db3ab8dbb63691837d4a6f56c52ba892a3ba49ac6fd"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1305/hidden_adjudication.json",
+      "sha256": "6a7d2c854e778b28e3e9475d45ddd3db5c1c69c2b380892b44433484ec8ba574"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "7454fbbaf5cbfd4f24f0cec60ad297d7fd768efdb9a0e67ca7ab65a2cb17a6b6"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "249225ea84b04e4ddcaf40489cfa025a4a88031adaea6bd714dcc517e995c904"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "0f839c48445575ea95890ad28b9f9b877e2ee924bc0f0dc6cbedbd95b39af708"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "9eadbd007247d793830116caa1fe6905683054d663464afe76940fd97f6d77b7"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_1306/hidden_adjudication.json",
+      "sha256": "a6ce7dc31b14745f1f9e73cf992a5ae9582f644e97b74661bd90c235ca68614d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "38efd2aaf14e42364eb3e00971ae950c2b352012115ff0acfb0a39a970306f0b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "c7169a7f7e8f65d918316aa8d90c4db8606c46266ca13103c577451b2aa6f000"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "c6991d56eedf16be27a5e4ecb6143c21ec05479c16e077e3d511a0f0fd0be6c3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_02/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "820fa4b477ddc9e313a027ffe7f14740a14a2289e93870ecad086723084a0eaf"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1301/hidden_adjudication.json",
+      "sha256": "8337fbb6e5b54bc8ec84c37a535f616bc28f0f955a8beff8cb3a88882cef5930"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "56da150b9a44c943d0e39fadcc50fe3093dad6003e39ef9659d5295488ae9f6f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "c6494f57ea6af4b2f5d0553693f357edb0d8e7c000850c98eee4b6f039686bce"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "283282420892ad802160cdbc959afa1b15a10e35e2a05bc6ee464649368bb1da"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "2ced2d9b0724d49a0f76006e2129f5af2726422a6d6bf36ed95d9f9a412380c6"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1302/hidden_adjudication.json",
+      "sha256": "3437527fa7b51e652bd93e2c07cc623f0c839a68c4e87e85d992bc448e63348e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "0a5482832c1bb6df9f157390057fc6f84fb2df96171bf57adce85f10fe0b11ca"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "4f5caa61b433f65789bf4a259f3e7f569e0a848da44e2294bb18e37b647954a6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "baf087ea05aa0c45d1926a228891970576e74a754b2081ecd63c821b2fcccded"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "28ed2c1372fb2eae8f78713225a8ebcfe23f485248f2853888f20d0fda8dd2a0"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1303/hidden_adjudication.json",
+      "sha256": "5464a4fc7ffb85fe74ddfdb5b3fb36ebe820785baba4a4e021ba1c025d9cd4a4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "e5c541af69c81cad6a56f15d287d4cc7230999c52c30179366ced92d93fd3d7a"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "e340442ab2834bbf68dc2f0064e9494a6e9472fb7952ebefc14b8ad5beaab21b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "d6356935992b1f9508597f2ec1cdb95cad8fd5abe9245ad0b6ac2e5e912998c2"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "adca647cd9af1107deb14bb08c2867b0be535bab90f9b4da89434c4d4dae130b"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1304/hidden_adjudication.json",
+      "sha256": "0ab0fcc7524a03ed0e5d15e0c563175d0c2f850df7f2edde74f3a6852279b70d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "8c577f7115836e896b01a5cd5f9e52442fc70355097932ade240fbb6564c46a7"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "9f9b947b29a708b809f759043befa21e9a3dbd9d38ba144a4e5d02d88f74e4eb"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "08be17a4e82b1219e39b7aec2919f3491ff415fb94d50a47587794edfee3ae4f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "12b0c668038e156ed94d728b0cf643cd05f9d16769312932587b92603dce1750"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1305/hidden_adjudication.json",
+      "sha256": "45bf63373ec12c6eb84e9a1f7d3f63be47f6ed06916be73af03e3032faeb68ea"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "954f7573fe4042a82ea78ff9fd872318f501331c0f118f7ad82b4c786001696c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "01ad73f1da9d05b4d24d76be28839b41f5f012bb57dbcd49a1434ba287290d16"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "5e30c32db4facd1012223eaf3a70e5157e8d162b84e06121c064ef03eec9e835"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "59d818a0c8cedce3d65c9eec33e90f3cdb8730b38f5ccf46e8adc24200664a6b"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_1306/hidden_adjudication.json",
+      "sha256": "c84c72bfc98674c708854bdd0c61963a62c06d62501cf9c0bc5d403df1e242c6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "5691558be2a987a5d1a36aab26537846c444197f45fd9f7dc391a1f13ef401e8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "123a91e01fca7eefa3240ba9f6745c2d03011ade5cbd23f1036b48080fc74b36"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "e951edc8b19391ec5c380a8075db6b595da900f60a7f7fee1bdd4f135771a139"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_03/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "146dc3f01eeec76f435b02f1ac0f14159df9bff4134f425603733a9661eef6f5"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1301/hidden_adjudication.json",
+      "sha256": "478918e4e38f13e216b091fad92ed2033a626284a60fb2aa409599194230be88"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "9ac59a0296290eff387e5bc9fa3251ba323fa24c45d9e9f26f1b5f87db2f8fc1"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "133f70ae5c871ac164a4c26e2ec3a90f5baccd7a87fbfb516fbd0a4d3727d9df"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "0a4e6fe47dfcf3a17258969ecfb7d318874f813249555fcb84d04bdf95cf0be8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "7edb2d825ae27dd85e9fa153572c16af6b4e4cbefeafc1b9a2aec9b9adfd8fd6"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1302/hidden_adjudication.json",
+      "sha256": "c38aa8855fdd412eda007028d725757a28a0f7df67ad9b2b6f75fd283ec16d3d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "d46fb0f22852984522ce2b3eb3e3b9b44a85b381c8a3aab317c05d60fe6d3459"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "fa3245d3afabbbde0d36fe1961aa831ea58128cdcfeb23fe7708f21317dfc4a8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "146687d14d9068ab0faff107994c34764a7e88a1f9c565246d9fc622ffceebe5"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "3891d10857e3df117bfc7779ffd0a29022b233b33781afd6e9bec5cc03725df4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1303/hidden_adjudication.json",
+      "sha256": "436034cf65b797d13610d072bb9cb5a2c583d5406c138989ccfba300ac5acdeb"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "c786c1a9cd9e641458dad589bf9fc5f5718b10e4fbdc5afa057bfaf9f4e0b0cf"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "829f8f4f7deee6ef2900d636fe88f4d7aaa55b9bbbc33c91b0ac8c3a7d5fd46b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "33f638773029b857048a19d770125d1e61ad5e02eb7fd2d7c686eb226f4d1bbe"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "b6aa4674941446a4a42e8854dcbbe3bfd67a55e2ca11dc466642d090e532b090"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1304/hidden_adjudication.json",
+      "sha256": "151f283838c55c3fabd8d2f4299c95dc97740ac402393101ff1b75a6b2253f0e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "d155b2d84cb9080426b4d6e25c69bba162411b0b7453ec0d37c8aff346ad5a54"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "8191e9d9b062f2b9d5845dfc6558c658c23185faba10092e91cd5a6228f36cc1"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "ac15f098fa8b5cc9a88fbcc6719194741e15625f1037fdd81321372a5029ac31"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "2ce557364a816dbf77c17b3ed53229b52dc101c573991419625bfa8d0dd67d25"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1305/hidden_adjudication.json",
+      "sha256": "38a467fe903e077d97dcd3477c6757a594ad272249df935649c17ff2b49f3f8f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "21582bfdc557b1aee7f0356ce1c78b68415b37694cc8054e8d99bd0af42f4fe8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "38e0695494946e9fb5cd2cb33a0694822dbd7a900d784876d046f877ecebb29f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "39070b236881812b3876f58c5655534fa58a18621d0a93087b4b33da6977a409"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "f7c8e4a9ccd858f82763d453af2d211815e50876a0ada47383295ad579ca0677"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_1306/hidden_adjudication.json",
+      "sha256": "3fab74745f18b26c6718338b1584e0dbdaa6df097664be39f6ef7ec8c1456fd4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "02156a870511503dfc20269a54a855eac9842f4ba73ba6dd7dc690d5779786ef"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "fa9cc94697849605aef21eabcb9b342535c09fae2fb26e52b3c1d97c6266845e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "da1be2586037ee437a590f7fb550d04791e17700cdaf1acd9d5a94e803a679b1"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_04/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "3243fc226c3fa0a8780e965a97d3ea9d62cdc554e650463147b509f17bf90177"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1301/hidden_adjudication.json",
+      "sha256": "8baef70ed84b733b897e427aa8948ec1223999ed76f7ed3dc4a7d305f2c7d974"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "b6535243b524ab32fd6ec8acbb41fe9229572e799afc7b6d0c6c0d43f8652e4e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "e60461eb0b199e3d7efc615bb13bc3ffec69a0a6794457c0b5b07d0ca64bafae"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "8cd44a761c1036853d5ec796bab7ed73a41e4632e0c57355113a5a339799f0b3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "d3d347c0132198e6b908ef2b3ef949938678ab82b86a1a32fe243b81d421a104"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1302/hidden_adjudication.json",
+      "sha256": "2f7a69cacf69e5fc7716159e512e0dd0d79386d747dac61f362bf396a9d2f686"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "d1ffdcb51601921aa27b867baba0ef978763d3bc82169187bbe509093e2d4dcb"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "65575a50fbb424223b73f07fb40f0c61172cf159e40d1e6426bf3c8121140512"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "18c368d0560f2a1fae2267c59635e1087831ce4a7f745bb20e4957c4bd8fd92b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "57d784a37d566f491d61b5096221475731456bf450f5abe7961f1d87062729d6"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1303/hidden_adjudication.json",
+      "sha256": "c8b94e86e7fc0fe9120a23aaf2cb0427fdc6bdcef2d225d9f16669d832dfe3cd"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "36434410c3b9d78211449d9718b8ae1816a0242a87473659225a1371b5c7116e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "cd3a526b1a2ad812f8ab5df28fc5e767a45b9329abfa0ea153ed7e138e21cb93"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "05e253e808250674446f57b3a53ff71dd6a5f1acc7cc70207e63618ae6736905"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "04cd2a2492240a659c99912cd7d20077db0424ade5b2912e7dea7bf3e6acf130"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1304/hidden_adjudication.json",
+      "sha256": "6a4d02c27e611fcaf87424d9801a8fe54aaac37cb01e8ee87c052375afbde356"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "311ad1d7cf9870986ddfaedbfe046a94f402a718db941b3e9f2306e19fb1ee04"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "e4c7c68d504086b2f3e40605105ccd225d023affefde4ce0b2a269c16eb6a983"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "6f9f2d881dd51c33bc48defe79a17338c87d49d973fb58573e6413737459c6a3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "5970bcebd1d1113ef2ce67e5f31170b368bb7df1704384663d68f2177777d4ff"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1305/hidden_adjudication.json",
+      "sha256": "06a59b3b90b07d083dc112b1c4b883efb650aec6d3829a0b6ad8ed24fed42349"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "d31c80bb43778628eda18eddcfb4f9536e821a1610a10166458782cc554da0d8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "b58236b16d212261c45dd48ed808137a7b6a2ac2e1d860e761cccd361ae4f27c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "2646f3bbadb91620f3bce842d6ae4853b75aba777a131648afb08a166035f21d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "cad11cc17827a0b61ea52a518dbe9348a00b08b801f3434ed48fb1b12899ecba"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_1306/hidden_adjudication.json",
+      "sha256": "c0f1b3c33f716921d3c3a188a77ced5784e2665273ca52988ea98e48f300c36b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "2172a494b423c1a9388b32ff6898bc3e9fbdcacdd7c2d517f89b7113b545263a"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "f439b9e42c6aa056391db6d893a6adf4b70f096a09c83ce7ac00b66154c04fb8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "d1b3df03c52fc725264f40b8b58906d69044d209acbc3db67dab6bc067485e63"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_05/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "0c8141fa7f5526726b2c713c28efa70f89bc706bfcb5d6e80029e1f659bfb2fe"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1301/hidden_adjudication.json",
+      "sha256": "e69f06ebf5a98990d7b1a057035700a4218f38d991fe0a5f268d6b57deb0d97d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "a64fe0c3cc0afaafb8c3f89558d4942f0bb686ed646ecfc5172ee5cfc9b742a8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "020afe9e9ae882f2267d08987109f0134a83d6520bab1f27a2071058da408df2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "c6792a67dbaf7ebd14478759bf1ddf3eec2c512ce05d63f8405324bd4a6455be"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "90f16866cbaacc5acdaa3eb7032aa839021093a55ec3ed0afbe2187621a27f6b"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1302/hidden_adjudication.json",
+      "sha256": "8df74892464149fa57875a0b7e5ddb5f2096f2541aeed371332ba0c60519e3a3"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "3426924de03fb507b5be2a90e431efbb02dc128e988efb9ec5efdd79ef08d9a1"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "1b9e28a083770ce0fe62c8b2a6d0c0af2e6ea5249095073309c2c1c2db32662c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "65f18df95d5e9a761b90826111c2c2909a0555a9686c96bcc1dd1a5a3e65515e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "cc5afeba2d9f1b366129df990e830962209044399c7b741da92d99c20bb73e6f"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1303/hidden_adjudication.json",
+      "sha256": "21b4806d38855b0e48d67c0ef776e539b041324c10c165f3102ebf632b0d88e8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "9ee8cc99605a63f8e97676c194e080a66718176890462f76de2a7e0132a11794"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "043813816f3913d5284c61e7ad9fb0a1aee2a954a0b7fbd1732da5409468a578"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "69b123c5eaecdc21f3019f00fb29696b85097a1ce71f50def9c7f176020bc684"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "8f2fb6d645516d4fd06385d440b4fef8f15fb86da14f208509eba7c62f21ea88"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1304/hidden_adjudication.json",
+      "sha256": "ca3adf8ff34ca5defaa65e42b5cc059cc30579048934b3949af188aa92a00843"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "7acce6ba80cedc234983ee8deb795f13e8dfd966704f455c9217bb11a4974f00"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "380d3bd3e0b0877de3dc4cda20b7131f2a05b753b265512aa75f0725db8c3500"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "41689a28a666fee241a30dd0aeeac78ce6139428715ec3c4d3e9b0694b6cc78d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "f540a6e5b586bb14b9e872c73d9a99151debe1ff00f6673bdbdbef6e1be29763"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1305/hidden_adjudication.json",
+      "sha256": "170bf3b84eb02b33cd1046e73b8d3740faee1fa3c9c6b9824f8ee6c92584e9f8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "38ecae57680768f41c0a314b6eaf91d7e6642c725511aae40471ed9db21601c3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "b17cbd808ac6a15601319d61169b360f6749e696033d5b5621712a73473dab16"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "44d6eac4d76a5e11300cd29d1cf7359b068740811db39059176e391d0ab6fc1b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "41619aa9a78e10f9c78619f33bf1174f72f2c1072d8eb427125931194c27c4d5"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_1306/hidden_adjudication.json",
+      "sha256": "2630dbc464876c02d098b36c48eb9a3490d09c8c37bd9e6443efd75ad7b3712c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "5142ec3cf8f2e3f51dbf25e822433040b0535489cdedc0a84ed745e366f3b98a"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "7b5e3e1e2d18d586b5f5a4364753e649956aad950dd08c686a91610b6759cab3"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "1e264636ed07d461983ff44b830dc148186f54aabe1eac5f419bc77b2b85d733"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_06/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "8736fa4684accad29231af68ed116e07cf6cc909ca017c848778f355f12d2318"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1301/hidden_adjudication.json",
+      "sha256": "538823b81795e97c735b8f060e8de5d4f8d95c5fd6aa49d52501ab76b09d6cbe"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "3f3fa77de0ef5965cf2d41f102550df4e10806aace81a4d34fd707bee300ab20"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "5ae18463ea7dfbe36c9cf4cac7720f817ec3993538336d3ec3d041ef5b2143d8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "8a2bfe4c4a858bd8fc54491a49b8d7b0e9f3ecb05063e08d291011ae8c010fd4"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "9aa2a7bc14863c7a437fc688791c1c964872624b415d0c976c83877b42a0d8bd"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1302/hidden_adjudication.json",
+      "sha256": "0c7bb378a3a1b8b84cfaa48e3cf6c2f6c4293cf4b709aacdd25e560f061409ac"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "46e460429965b6d0de9620f15210a68137f42205e2f09773fe2db9f93d82cee9"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "ef8322b4496f1eaf316de1025e366991e92aab963834335aef0e0208c2311ec5"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "b96ba416578197e43db08a1230dde8e27af28ebec7418338748169c91baaeb8f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "46a33e9530f3eb9a2d39beb72c5cc468fc39e90b888926ed1e49e6f1630f1d5c"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1303/hidden_adjudication.json",
+      "sha256": "92175f8ffe685a81dda304cfd56d5da3a81b802a8f76101894ec71a9fc712641"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "2754591f7f71f89379b96ba8191a787274a4a55e93f7ba2c8a07d8915018101e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "7e23a92383eb79e6f48f1a29d4b4ce444fc4c99eb9adf5e3ba0de9260b4e9888"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "3dc545db21ffc95b6b95db5ef1be368eda3da0cae0204bb4047ae3a4ac6abf92"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "a9833813d0e7ff8d40b6f8f0643913766d03527f1007f2c33ce6cc193eef1683"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1304/hidden_adjudication.json",
+      "sha256": "52ef7622d60c67c32fcb2ca6bc424801df1a91a1799a7e58f4bd53d505cebf5e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "2ec2fc3416df7df09f88d956de1f870c84360b5f5bc7768ad83a18de0fab5a90"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "2b9cbf8c03fc2d5f710219846cc76c05b562a249ac062e66ab89123ff78def9d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "3ed2774671bbdb720afdcb7b131cd9713aeef58fe5cce8d9e755dd10cf8ddc27"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "95a80e19a75519c742aaa4cd4dc2212a09fbcccb5501db66143604f9df6a0e7d"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1305/hidden_adjudication.json",
+      "sha256": "a4ee3a192ca2cea1e1721894b1725975df5fa7690b69f3a4ef9ee36618c4c8ae"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "5c90652e4f9274b25d9e63e9bcafeb07a2c37ce363a49d693c7b22c875c36dd1"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "542d207e3dca03c949236efea7d74fb3efded49ffe2ac832735a2dcd95abb5f9"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "b40262242b03996d91219e29cd06526b601c4427e784d2293842829e1d0d19d4"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "ac527e3dfeb6ed77e6f4cbeccf5873847db579a3a374a08d95c751eb60d13181"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_1306/hidden_adjudication.json",
+      "sha256": "423a6b3ad5febb87e2927ce6c1086c257f66d955a6740f74ed4af89df6290a52"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "0f0e36f204888ffc0c83fde3d2ddc818440abaf0c74e248f590bc2fb0d4705ed"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "13e5d6f29cb0069237bf883230169938cc8eba04db08048738b45ed5493e8084"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "d24ff0328c3ab84a54a414ef392639849cba05671b749e78a2d11f05f1dfd46f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_07/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "ad211a82dcba4781fae8ee4c73c0954b2b66a29db98c2f709c1bf01fc2ef98a0"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1301/hidden_adjudication.json",
+      "sha256": "76960996cf05680b4a9334b24a9531e6cda49f338a742c7aa6fd53f887e8da25"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "e30f8dd4639f4c4fed79c7de39a7ff8e18b70b91b7a3e4b9381d55c702ba2799"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "f84ffbd6f34838234fc2a82ff8a6b14a01d81e496f2c4f23f337bb31f5550f0f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "6b86df86decc2efa708e1d1388ca181d82960736f1c0ce35720e274f61bdb6b8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "7046184c13d3c34e2a6da27fe6da8b447a2b01c154b756a38588fbaf0fecc8bc"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1302/hidden_adjudication.json",
+      "sha256": "acfda461581d522bc1c9d9640e99b4d4fcfedb971ceba55bbbc7ed9f5cb74b33"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "4fc30ab58e9ff907d3d7e7a204c5737b80b15b3e0145878c1ee560e5180d0f78"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "d5f97096911efe5bcc54e6e34619993ba7c08fb6b3bbc31317bc37e5c4ac4ae8"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "b2bff3335cf38d5e1c3d370bdfdeb5ab570d7287173bf43fc422491c10c44bf5"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "bef686bd129ae3aeff272922b7010e231ac163a156160fd1b1dff83f33e66a71"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1303/hidden_adjudication.json",
+      "sha256": "bc4f4063f0ebe1c6559023ad8b820006013555f1ec1d9155d9b9da9c5c1e79bd"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "515e147406277316d441c5f06fbb9af4fe08016d6799e4bc02c79990a3be33a4"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "788eb0666d7bbf3f0659e1f574eb124a50e763d085f95274c2516acd6956566c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "d0dd2b500a7e9e44429c78e8877011bbb00b867a9c827ebf6fe7a13f0f656c64"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "5d533bb1c1b010253d30ccfab71fa29d123bda2e62c866a74633ba5cc812f57e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1304/hidden_adjudication.json",
+      "sha256": "17e3549b1fab53b7e143770875dece96a864a21a2c81ff92fe824fe36b56393e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "32c40b26e0bad92a37def19f336ac7e574ea273a5bd7828dc8134c808f902504"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "77bf5085b33f4645db2dcd16b241d6b29c9ae0998eb4265d757ad45a05045986"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "69bb4879203551d6b0bf48875d562f340633ecf87f2fdc4d37db20fe91954585"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "84754a310f716fb197662ab60f27996a5212eb36aa35c104f95ad2584bb076ce"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1305/hidden_adjudication.json",
+      "sha256": "725a51c795bede4baf3fc4e06c01cc9be0f33bbd7f653f45ff3be2e9ef1a1e59"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "046c25ef746950358d96f22c515c6110b1b39b8eb660ebc447fa476ff57d7f0f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "49de93e1ba1b79541bd872a1eec1371cf463b349626a57415b5b702442f207e2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "7be58850c6eccc4af405c0282ce40cc5bfdbed1d72a7ca3c546f47f138b0b72b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "0694026d20733454380a1611ec634c89b560f932c646cd68ec6ced832da653fa"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_1306/hidden_adjudication.json",
+      "sha256": "f956136e93a8d9ab18d1105d0bae1b58fc7ac9bc4a55f98b611fb5c1c9b08749"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "2370cc4740f2321671952c69dfecc23f1829605f9bfe30c158e999bc411a1141"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "98c1150f5884fc8e7d9a70a707895b79eb63abf4fbcb40643a76f3ada6a2afed"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "16b3b4906320ce498b137be759ef65cc8c160d363c49bfbe7e042c62019213cc"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_08/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "5e21d89a86166ad781d180dd1b6bd5ddd7fe490e51188f0ff7908d3e7407ef1d"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1301/hidden_adjudication.json",
+      "sha256": "4717357b05a06c99b0a1f5239265ad7490de732cc0f7c4943ccac7ca3bbfd9cb"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "03e3c3c6bf2983ad3e40d924186f67426824e554c87b1e27c063304f05c1805e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "6f828609c8380506c7aa1ec6b1c617860197d2c540bca5e154a79c074251602a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "b5ab32f9e91584ce70f7e2a0378bf74dc1b182c442709e8722d494718f5c625a"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "9464c8062cf6992c880965da357b7771a781b8f79b618c49201b58444ba89bad"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1302/hidden_adjudication.json",
+      "sha256": "7662cd20142f2ad466a84dc671c9e2a9164e7ef682ee1f484e97d4a604eadd53"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "7286967f9184974585858f489407dfca8e766cf3f0f3248f90d2804bc71deccd"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "1e2e4073a77a05ad84f3780f9e5bf0cf5cf2eccbee3373fc57346b464c07b795"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "3c7fca4dd82b34569352643a055b05dd686762e0412d82430958b577bf00f1af"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "c4fe045e03a4a17534f6a4c0e166c253cb0e62cd9a864411f354633b03e2baa4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1303/hidden_adjudication.json",
+      "sha256": "b8f84e0a61cc0a265350fecb50465830905e754185ad8c7a163f063d41a4e0a4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "0b6502607239090bb1fe4acdb6f5a26a150bf2477d5212321a4c188367806a7f"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "a79acb03c3af2e6fce98cc8894a955f251bb00c61f1303c670a9c4bf9d944788"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "75492b33cace057c09ab6834d0113e3f531abf36d84fcc7c07c5154e43bd324a"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "10a51fdda4d036fb490d083bd9ab5646d8f6f5f92e83d966aee3d9591dec3ae0"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1304/hidden_adjudication.json",
+      "sha256": "010bba2a5e9c3bd83dcd3b4b1820a50e298537aa08b6cce51fc2194dad2470b4"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "5eaaa800b701ab2976a9f9788745d693fca9bf832fa78af399fd8f8a082452e6"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "238fef9c66d8d5b4c8aeb307c5faab81517a155e7e28e75f011f11d8a6d57038"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "7c4ca9305fd028b1bea16592f6b04fccd5581d8f1d6ba6c90c4bea3eac85cc75"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "64daee65a5f7bfa286f5d1dd3816f88d64dcd051d74ea9c41a41da6bf2bf7ea7"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1305/hidden_adjudication.json",
+      "sha256": "36a1df659c096db95198c3e6eb11845459444536b5764826232819105dc66e48"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "f3351ccf83308354dc2e3b659f93e0eda31d91ac9a2572f1a6fbc273ef6bfd8d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "4efc2c31fdfe235b9ce2a2a1529bb8943b4e981901f7284f443abd8af1fbe320"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "d9b145444331746a6965e5fe58b279845cd17a070a331d06522fe4f3be9f637d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "98db715cdebbb7f8601957ccbe298beff420ff0bda398327784937809a3600b7"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_1306/hidden_adjudication.json",
+      "sha256": "c6bb6909c6318acf015237c310aa98226d26cec2153240cc1fa63159b0e6838b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "c70042c02bfbcd882dbb1637d2a540a6cb48cd5f1039c77122db82d2338aeb28"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "6dc119f820318225a87b84f4043f21a3361d72c57a031c7c8ad7374fc1683820"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "179d980de4f229c571c2ed1bb6eade90121ce76a78f2e8a8aac18c87a0ebfa33"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_09/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "7424cf49c14805155fbe4d51e9e97426459f7e9b5cbf9e99f936d014055acbd7"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1301/hidden_adjudication.json",
+      "sha256": "c7ce8787f14835b45c0ef6c80dfaa9de9ea057afc5070cad1da19a81e9b17eac"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "4910976bd010c7b7c6bb40edb59c4e88629ee308558371c3ac41dc8bbcc35208"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "f68e94cbe3eceeb45066eeb4c8699750ff43487ede30e34664f025fd1b55cf33"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "a1e7a74fed020f36d3bf38b5ce8ac5adcc3f40380ec3915c8d31b635529f6080"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "1bac0753370e0043f5ce0df5ddc72282a01c73b2b76f029cacbcaf554061682e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1302/hidden_adjudication.json",
+      "sha256": "81c534dea11cdbd7fbfa5d29eeb4fb378cc4340c1beadfb6ee86095c3d47e968"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "537b8abe6e5acfa23802a5f20d59a4da8b491fa0a6eb9e67ff9a72e48bfad6a3"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "1ca68da8f51b1e8ba80a748886641b3e9dcc18e609acab0827b659de55d09e3b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "06b4bdc96ec8b71a32d1f05a4e474c53aff7373fc46e6bd7ac18643dd4507f62"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "00c2483f54ad992f091a99272e504e863bf83850747858f7beef78ed7b0fa603"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1303/hidden_adjudication.json",
+      "sha256": "4e94bd9cac12525c280636ab6ae89709e69d6f12fb121919e88427e4825dd512"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "71e7c281a0cc2c5467e2f5f89b6f00f266c3349cd94a04aff92a6537d40fab14"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "7e0fbabfd35022cf3a36d421601f41040ff6014be024ea5750a6083b2ba2d345"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "12c5d1ce22e9773e53d5b2eb04d114332df9b4c02e141aa01c4af8d5a8079ac6"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "e975a8a8db701807d69c5758312e06414a21b38d0ded49b6bdb8f2c7bd5b7377"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1304/hidden_adjudication.json",
+      "sha256": "6578feb6721916c67b04b3854f3b479650bb107cfaebbf8362958e5bfb7399a9"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "8859f44f341203231ef0e9a5a89d82f63f3d847e890dcae33900716f2975c37c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "47026bd11eae52cec4c32c90fb199cf62e96df88507037616a8f6b18cae08f64"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "0a08885e9e731f82960b56ed72aae1d4b3d2985cf99e029385fedf9ca42c1778"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "b898f96523317829ddb64c82d107db40c73eeaa2c80010ade016cac7b7e02ba4"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1305/hidden_adjudication.json",
+      "sha256": "b73619d2655f14195630ebe0c23899bfbd4cdbcaeab82f6036d8cc1729246d15"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "93b52a45f9f43f9fffe63680880c4bbddfb2eb576695b34d47adc3cca43b9fb7"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "b0dabc0767926861f9980ed720680196aa3af6d7b204aebdbdcf66aee7304c17"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "63f35a555f2a04c9238375a0562b8c6052a9ea1c241c98d2fdb6f253c0a19b6c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "a4ffd56563cd55dd85d9b50cb40b894aacf95580356250de2aca68c13c4f8efa"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_1306/hidden_adjudication.json",
+      "sha256": "23e9ee5d93b6aac9bd0f7d002a0aee2e5f53f585425ee8d2338d0328b19f3cb0"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "abc067dce6d8a95263befde2c7f114b06c7d4450bf76d6347d97d389ec4a904e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "f9ad67701c940ac9688fc6f4fa684bf375bf9c66c430593ca2fa45dc0f9db7ad"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "5d734159acd9f3626a0bc96a669d2ac65834939da6ee90a5c6a6f69280ecf29d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_10/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "aed416c3414487d6aca12022d4db83d5d4c46fb23ed39bf810835123edef32f9"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1301/hidden_adjudication.json",
+      "sha256": "36f70582a5ccc63c7a654cc75ab1265c1af19bb7f2c98c0e6611e769deba65fd"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "0b02c0db9e044d9cadc96192edab8e92b39ce17ceff4943817807a5da0c4a535"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "c3c594d08eb92e01973d2f9a79927f99834138a0ad758787ba12a69bda4ae217"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "e3819cab0a7d94343f02dbd3573a45c94b41bf9d50fe738786c3dcaa1af7a86b"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "d7dea80c1aea934063b3293ad1bcd6d6047d260a6608c36e36ff2c2fe876bb8c"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1302/hidden_adjudication.json",
+      "sha256": "45764596e953a552210d8793742d771fca59fc615a0b2f6b43f97b7feb003925"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "0922d7643bd13f883389fb8b546fe4009409f244870254a649e9193b99308197"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "2f2658fff085f78daf9c4ae8ac02781626cb9364987c6742b3e15944f653f442"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "9ad5f1a2c5ea88385bcf5cbc628db14ae55fc48ded65542346c1e67823d45f1c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "fa2f05b1422bfc074b286fe07fa8366b81c8f0315b399df90af26464bb1c23ca"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1303/hidden_adjudication.json",
+      "sha256": "2ac5bf976a70e3ff03ac18b5cd23220f439a2c6a14c20211cf3c5324f9b27436"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "1759b216299bba64d0c75cd4ef824f05e46b1ad6d9159bb9edc283d3d8c3c005"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "444c851d03d4635d20d2f7565b5e619b259333bfe5426197206119def6dc7732"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "50d22e3ed04ce305bda6aac5296c12188403041da9e16619b5695df8a8ce6458"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "26fcb53e8c8c299f2fe6cff438ffbd97753b49d717905d4bee5375fbbd6884c1"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1304/hidden_adjudication.json",
+      "sha256": "abbf0da90c0147bd2bc8cecfa1297e23da53f997e7635dc367686b2e3c981dca"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "4bf7de1b23a799358f0aa80b911bb1ac5d0adaeb34abb1484a2a5e8a1201c2e1"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "3505eb8725feb4ab854df177dc1074fbcff3d465b00b057e571611fec7a04905"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "3b78554b4fc9939107bd63420135ed88ee86d3c51e38de69dd71754878a52529"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "a4c213bc72af6eeebbde30385a3d27c43aad9e54f21656bab6232ff6887a2b18"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1305/hidden_adjudication.json",
+      "sha256": "0675d77d309f21215515d03e9220e2da9ccf9ae6667ccdf0f229bd843cbc004d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "a405429661dbc873010653a51409c0129555ee44fa197b089736cba0a03a9f4c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "3b14773d193d1519918bb70d9bc6f9f53121c9d644cd35660ba63c2ac20445fb"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "a1a561eccbedce148ee5de5c84e5b2689087583adb04034bea30bbd119094dbf"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "f225679c39c3e05b8efbb773a06c03fc15bddd776bb26adb4d9b6e48766d47cc"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_1306/hidden_adjudication.json",
+      "sha256": "bbe869346aaf9dad4ee9d78f5ede575df02e3aec81b4e90942fb17066474936d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "6bf3f2ed542fc015a724a34637c4de288bbda30bbeeb97e9f850ba7588192623"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "89c9e1844833d1cab623019a6259ed09a6624ce01f5719d0119b595d41ed9cde"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "6811aa445ef13b1865fda68a6bb90027783048c5dcdbf4f14cd49b1155b94aa0"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_11/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "f61dec07365da3b5fcf17f20159f7139930d13ea700cf09ecd2900335ae15d95"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1301/hidden_adjudication.json",
+      "sha256": "7c7dd915d9f5f0c865c848ea44bf723c6c7608db2ef5bff4c1fa504589b5f488"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1301/raw_direct/search_receipt.json",
+      "sha256": "24c82f4e39743ddaf92fb3d9322d2c0e2221b3c3e426a943b51eba95fdc83b44"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1301/raw_direct/candidate_manifest.json",
+      "sha256": "0553371436a4a8605fdcce8dd896fc42f257e85e34cd2115d4d78fbbd46d0c3b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1301/structured_direct/search_receipt.json",
+      "sha256": "e3376488cc3268b09e8215d7174fa73a8761aee6619bd495426605649198cb9d"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1301/structured_direct/candidate_manifest.json",
+      "sha256": "63103df9c3ce3933fd134975e89d189b1aa72a7a36f8416424c0714b571932aa"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1302/hidden_adjudication.json",
+      "sha256": "849606e1fac80fe51a37c57d67c7cd0303a933068ac9d0413767ed95bd5b2f2f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1302/raw_direct/search_receipt.json",
+      "sha256": "0ad0a0b541ee6dc2a2761dfe95dc302c003b3f074db60bd87cdd2662a80b9677"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1302/raw_direct/candidate_manifest.json",
+      "sha256": "f7ef1b2dd2d2e3265f3c0736bcf3dea3345f2155435d26f3b1d16b4638152828"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1302/structured_direct/search_receipt.json",
+      "sha256": "6254bd359aa427eff9ed6f938468d1d24cf7fd7af5588a21ff45e127c866f860"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1302/structured_direct/candidate_manifest.json",
+      "sha256": "d216d7848d1c2b59ba421d61d95cd67a403cf5ee69c40999effda6a9af604645"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1303/hidden_adjudication.json",
+      "sha256": "afe6477939cb5405772078efb03636a25fcee889386f102f107c5c49aecfaac0"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1303/raw_direct/search_receipt.json",
+      "sha256": "040dd38b993fd70c5fe818b816cac74cffddf14b23908419dcce777900ae8058"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1303/raw_direct/candidate_manifest.json",
+      "sha256": "f20592ab8e841dae7d56b54d277b7fff7b52d4810e28d4f9fd518592b9136bc2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1303/structured_direct/search_receipt.json",
+      "sha256": "88ab84e76b1e949f5ccc046add03e88810cbe735def0e87644977b29ae03a0d6"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1303/structured_direct/candidate_manifest.json",
+      "sha256": "16c620bd88d1dcc712d9e00872f1daa93c22975adf4552e3a11af055f26aba53"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1304/hidden_adjudication.json",
+      "sha256": "2df0df884a61974e3739721b68e4f58ee372b93400aa7af06cd2137d2a2c4aaa"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1304/raw_direct/search_receipt.json",
+      "sha256": "8026ab9b9d9ede3f515d519cbda87ba35826412ed3c3042235fac09001e3467e"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1304/raw_direct/candidate_manifest.json",
+      "sha256": "3ad5c2d1d14533516ea8fe7cbfe1351f992e418e45f53918cbbc7d77ecff672a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1304/structured_direct/search_receipt.json",
+      "sha256": "10c45a964706c48998faf7c85dd20df2061cb4bc0e4e158046311dd9b4e19a0c"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1304/structured_direct/candidate_manifest.json",
+      "sha256": "84437330193fd52ca7fda0c1f507d1cb327c19157c21e9eddda96da3e06bfaef"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1305/hidden_adjudication.json",
+      "sha256": "5dcbff37d637b1e7d5c6d3d3ca9692962fd8b681c5bf5fcbb54eafe7db606a71"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1305/raw_direct/search_receipt.json",
+      "sha256": "651aa165990fd96fd17538703f086377c1d16891e28e90894918ecc53557f524"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1305/raw_direct/candidate_manifest.json",
+      "sha256": "b5fe65cb565160b1b48baa723c90b42a36bfcfbe6d99231f4372670a71317d6f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1305/structured_direct/search_receipt.json",
+      "sha256": "df1aa3aa3f6bc37812edd087a393d2efb71013c26051bfefe67b34de92475e48"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1305/structured_direct/candidate_manifest.json",
+      "sha256": "a57bc1fbe3421209552a4208b02bac913841373c62e05e629faa6716b3694627"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_1306/hidden_adjudication.json",
+      "sha256": "be83ab2404eeaeac1740e36937de3aaf58334620d9b1cec5841034526311c0cb"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1306/raw_direct/search_receipt.json",
+      "sha256": "901de79c9e8a2a378815e74d1ead5f1c1d2b0b1fc4c4bb4af9f474758d22d225"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1306/raw_direct/candidate_manifest.json",
+      "sha256": "26817f73087c0c78594970a670650ad0c90f98047883db450a740c85b04a071b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_1306/structured_direct/search_receipt.json",
+      "sha256": "76daadc3fb4864f0f255da27b47df9161ee72f05bf63482a540a5416790b1cd8"
+    },
+    {
+      "kind": "candidate_manifest",
+      "path": "receipts/execution/instance_12/seed_1306/structured_direct/candidate_manifest.json",
+      "sha256": "dc321b8332665e1eb580d9f9dfdc97534c46d3cca2d56eafeb5f7a561db6bc21"
+    }
+  ],
+  "candidate_manifests": 144,
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "formal_arm_statuses": {
+    "ARM_FAILED_ITT": 6,
+    "COMPLETED": 138
+  },
+  "hidden_adjudication_receipts": 72,
+  "hidden_results_returned_to_generation_blocks": 0,
+  "in_doubt_search_units": [
+    {
+      "arm": "raw_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1302
+    },
+    {
+      "arm": "structured_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1302
+    },
+    {
+      "arm": "raw_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1303
+    },
+    {
+      "arm": "structured_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1303
+    },
+    {
+      "arm": "raw_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1304
+    },
+    {
+      "arm": "structured_direct",
+      "error": "in_doubt external generation call; no retry authorized",
+      "instance_id": "instance_01",
+      "seed": 1304
+    }
+  ],
+  "launcher_incident": {
+    "affected_units": 6,
+    "cause": "initial visible Start-Process launcher was terminated by console control handling before receipts",
+    "recovery": "affected units sealed as ARM_FAILED_ITT; no retry; remaining units completed with hidden CreateNoWindow launcher"
+  },
+  "model_outputs_committed": false,
+  "primary_architecture_decision": "STRUCTURED_DIRECT_VALUE_NOT_ESTABLISHED_SAFETY_GATE_FAILED",
+  "primary_override_authority": false,
+  "primary_result_sha256": "b47415e75e1c568fa0ba8b5ff8bfddacdecc04be2802fcd05acf9d49fec3a2c5",
+  "search_receipts": 144,
+  "status": "COMPLETE_WITH_LAUNCHER_INCIDENTS",
+  "total_tokens_by_arm": {
+    "raw_direct": 1545341,
+    "structured_direct": 1544344
+  }
+}

@@ -1,0 +1,1182 @@
+{
+  "STRUCTURED_DIRECT_INCREMENT": {
+    "established": false,
+    "losses": 1,
+    "minimum_meaningful_effect": 0.005,
+    "observed_mean": 0.0016666666666666663,
+    "one_sided_exact_p": 1.0,
+    "structured_safety_gate_passed": false,
+    "ties": 9,
+    "wins": 2
+  },
+  "analysis_unit": "fresh_instance",
+  "architecture_decision": "STRUCTURED_DIRECT_VALUE_NOT_ESTABLISHED_SAFETY_GATE_FAILED",
+  "arm_summaries": {
+    "raw_direct": {
+      "mean_substantive_score_delta": 0.005,
+      "robust_safe_instances": 10
+    },
+    "structured_direct": {
+      "mean_substantive_score_delta": 0.006666666666666666,
+      "robust_safe_instances": 10
+    }
+  },
+  "claim_ceiling": "CAUSAL_VALUE_OF_THE_SKY_STRUCTURED_GENERATION_PACKAGE_WITHIN_ONE_FROZEN_L10M_GRAPH_FAMILY_ONLY",
+  "estimand": "instance_best_of_six_structured_direct_minus_raw_direct_hidden_substantive_delta",
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "instance_count": 12,
+  "instance_results": [
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_01",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "ARM_FAILED_ITT"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": false,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": false,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_02",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": false,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": false,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_03",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 6,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.01,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 6,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_04",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 5,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 2,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_05",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.019999999999999997,
+      "instance_id": "instance_06",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.03,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.00025,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 4,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.03,
+          "replicate_index": 3,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_07",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.01,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 2,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.01,
+      "instance_id": "instance_08",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.02,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 4,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.02,
+          "replicate_index": 3,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_09",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 4,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_10",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.01,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.01,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": 0.0,
+      "instance_id": "instance_11",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    },
+    {
+      "instance_effect": -0.01,
+      "instance_id": "instance_12",
+      "replicates": {
+        "raw_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.01,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          }
+        ],
+        "structured_direct": [
+          {
+            "primary_value": 0.0,
+            "replicate_index": 1,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 2,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 3,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 4,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 5,
+            "robust_safe": true,
+            "search_status": "COMPLETED"
+          },
+          {
+            "primary_value": 0.0,
+            "replicate_index": 6,
+            "robust_safe": false,
+            "search_status": "COMPLETED"
+          }
+        ]
+      },
+      "selected": {
+        "raw_direct": {
+          "primary_value": 0.01,
+          "replicate_index": 5,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        },
+        "structured_direct": {
+          "primary_value": 0.0,
+          "replicate_index": 1,
+          "robust_safe": true,
+          "search_status": "COMPLETED"
+        }
+      }
+    }
+  ]
+}

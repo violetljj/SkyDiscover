@@ -1,0 +1,105 @@
+{
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "external_cohort_files_bound_transitively_by": "cohort_manifest.json",
+  "files": [
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/protocol.json",
+      "sha256": "861398b68a243951fa282c6d027d6c5383bff3ba5237d1692da56656ca6fccd2"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/cohort_manifest.json",
+      "sha256": "6facbf9f1eb5e5e77a75b132b8c47e92553ef3430bbd0c0a560caee7c54202f9"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/structured_initial_program.py",
+      "sha256": "d10dc4b142dd58611aadf4a460c1d123d4622d55953b038eb48f24a0e3c7f155"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/candidate_guard.py",
+      "sha256": "5f823ce989e3e6dde136254d389dde64316bb504d832ff1dc489953c0849bea5"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/evaluator.py",
+      "sha256": "00378cd9b74f154087dd403fd26b1af47393c78bf9dba39ff5e8a3027e5c631c"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/generate_cohort.py",
+      "sha256": "50f4a172f3c2ab50506356ebf6ee6f404a39766dd73eec42c1f63238c5e0e662"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/harness.py",
+      "sha256": "0b08c9952aac160622ee5c89c7ac5c02cf29e92498eb784f6ef948e7836950d0"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/analysis.py",
+      "sha256": "5283e680a65b0e7856fa43e685480d98c2068b078cad637efbcb0f36aaa59828"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/preflight.py",
+      "sha256": "12fa32729daec27d748193d5f0fbf65e84a6c11f15ddd9687a116fed97d8a664"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/receipts/mechanical_preflight.json",
+      "sha256": "8d2346e61a461ffeceb74450df16a5804ddb70fa7ae4b8111dc92faf483cc58c"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/configs/raw_direct.yaml",
+      "sha256": "0b103e74160edf8ceb667bfa55bfae03bc9f043e85eabbd8f715b57781bcf835"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_structured_direct_1/configs/structured_direct.yaml",
+      "sha256": "0c0c0d7a683bee206a85ac1e61775fdb417d81c189471250ff1635a57378e620"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/initial_program.py",
+      "sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py",
+      "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"
+    },
+    {
+      "path": "skydiscover/execution_budget.py",
+      "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"
+    },
+    {
+      "path": "skydiscover/llm/codex_cli.py",
+      "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"
+    },
+    {
+      "path": "skydiscover/evaluation/evaluator.py",
+      "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"
+    },
+    {
+      "path": "skydiscover/search/incumbent_only/database.py",
+      "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"
+    },
+    {
+      "path": "skydiscover/search/evox/controller.py",
+      "sha256": "8acd68674eeb0334e0cec424192c01d6d176342ec524065b704bcfdfe9449dc5"
+    },
+    {
+      "path": "skydiscover/search/evox/database/initial_search_strategy.py",
+      "sha256": "09a97eed7ef7efc12960b786b32678dc537268a3b6d886d5a536add4d760dcb5"
+    },
+    {
+      "path": "skydiscover/search/evox/database/search_strategy_evaluator.py",
+      "sha256": "edae1d2b8f9c042ff79facf0e07fe0e7ca9022ee4a1dfc88fcfb5b28766f6fb6"
+    },
+    {
+      "path": "skydiscover/search/route.py",
+      "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"
+    },
+    {
+      "path": "skydiscover/search/registry.py",
+      "sha256": "f234e0287e3313459f3704e693d9be2b2f3aed69e31c6c360275a84bd8db7137"
+    },
+    {
+      "path": "skydiscover/config.py",
+      "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "status": "EXECUTION_MANIFEST_FROZEN",
+  "text_normalization": "crlf_to_lf"
+}

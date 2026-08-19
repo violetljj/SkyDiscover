@@ -1,0 +1,40 @@
+language: python
+max_iterations: 1
+checkpoint_interval: 1
+log_level: "INFO"
+random_seed: 1301
+max_parallel_iterations: 1
+diff_based_generation: false
+max_solution_length: 30000
+
+llm:
+  models:
+    - name: "codex-cli/gpt-5.6-sol"
+      codex_executable: "E:/codex-tools/bin/codex.exe"
+      weight: 1.0
+  reasoning_effort: "medium"
+  max_tokens: 12000
+  timeout: 900
+  retries: 0
+  retry_delay: 5
+
+search:
+  type: "incumbent_only"
+  num_context_programs: 0
+
+prompt:
+  system_message: |-
+    Improve only the Last10mPolicy decide(observation, memory) EVOLVE-BLOCK.
+    Preserve its exact three-value interface and use no imports, files, network,
+    processes, hidden topology, or oracle action sequence. Safety is a hard
+    gate. Produce a conservative, stable, target-driven closed-loop policy from
+    current observations and bounded JSON-serializable memory.
+
+evaluator:
+  timeout: 60
+  max_retries: 0
+  cascade_evaluation: false
+  inject_evaluator_context: false
+
+monitor:
+  enabled: false

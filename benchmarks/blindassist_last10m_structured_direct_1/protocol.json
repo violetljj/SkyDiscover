@@ -1,0 +1,96 @@
+{
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
+  "frozen_at": "2026-08-19",
+  "dependency_head": "cbf609ab505abba720f6109358fd64d76cbf4f99",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "consumed_development_evidence": ["L10M-COMP-1", "L10M-COMP-2", "L10M-SKY-1", "L10M-DIAG-1", "L10M-DIAG-2", "L10M-STRUCT-SEARCH-1"],
+  "experimental_unit": "fresh_instance",
+  "arms": ["raw_direct", "structured_direct"],
+  "instances": {
+    "count": 12,
+    "generator_seed": "sealed_private_create_once",
+    "candidate_pool_limit": 400,
+    "episodes_per_split": 8,
+    "headroom_rule": {
+      "information_time": "pre_treatment_raw_initial_policy_only",
+      "initial_validity_equals": 1.0,
+      "initial_task_success_equals": 1.0,
+      "initial_safe_termination_equals": 1.0,
+      "development_initial_score_strictly_below": 0.91,
+      "hidden_initial_score_strictly_below": 0.91
+    }
+  },
+  "direct_replicates": {
+    "count_per_arm_instance": 6,
+    "local_seeds": [1301, 1302, 1303, 1304, 1305, 1306],
+    "provider_sampling_seed_claimed": false,
+    "aggregation": "best_hidden_primary_value_across_six_fresh_start_candidates",
+    "arm_order": "alternate_by_instance_index_plus_replicate_index"
+  },
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "provider_executable": {
+    "path": "E:/codex-tools/bin/codex.exe",
+    "required_version": "codex-cli 0.148.0",
+    "sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410"
+  },
+  "generation_ceilings_per_arm_instance_replicate": {
+    "generation_calls": 1,
+    "dev_evaluator_attempts": 1,
+    "hidden_adjudication_attempts": 1,
+    "total_tokens_input_plus_output": 35000,
+    "provider_retries_after_failed_generation": 0
+  },
+  "direct_generation_definition": {
+    "fresh_initial_program_for_every_candidate": true,
+    "search_type": "incumbent_only",
+    "max_iterations": 1,
+    "num_context_programs": 0,
+    "inject_evaluator_context": false,
+    "candidate_or_score_history_visible": false,
+    "temporal_search_between_candidates": false
+  },
+  "treatment_contrast": {
+    "raw_direct": "raw Last10mPolicy representation and raw-policy generation instruction",
+    "structured_direct": "six named Sky structured contracts and structured-generation instruction",
+    "common": "model, effort, budgets, fresh-start rule, evaluator, cohort, safety boundary, adjudication and failure semantics",
+    "estimand_scope": "structured_generation_package_not_an_individual_contract"
+  },
+  "hidden_adjudication": {
+    "candidate_order": "one_candidate_per_fresh_start_replicate",
+    "results_returned_to_generation": false,
+    "invalid_missing_failed_timeout_unsafe_value": 0.0,
+    "best_candidate_tie_break": "higher_primary_value_then_robust_safe_then_lower_replicate_index"
+  },
+  "primary_endpoint": {
+    "arm_score": "instance_best_hidden_substantive_score_delta_with_unsafe_invalid_missing_timeout_or_failure_scored_zero",
+    "effect": "structured_direct_minus_raw_direct",
+    "minimum_meaningful_effect": 0.005,
+    "test": "exact_instance_level_sign_flip",
+    "one_sided_alpha": 0.05,
+    "structured_safety_gate": {"robust_safe_instances_equals": 12},
+    "decision_rule": "mean_effect_strictly_greater_than_margin_and_p_at_most_alpha_and_structured_safety_gate_passes",
+    "tie_interval_inclusive": [-0.005, 0.005]
+  },
+  "secondary_endpoints": ["arm_mean_hidden_substantive_score_delta", "arm_robust_safe_instance_count", "per_replicate_hidden_primary_values", "generation_and_evaluation_failure_counts"],
+  "failure_semantics": {
+    "analysis_population": "intention_to_treat_all_12_frozen_instances",
+    "invalid_missing_timeout_budget_provider_or_safety_failure_score": 0.0,
+    "interrupted_external_call": "in_doubt_and_counted_against_budget",
+    "rerun_after_terminal_or_in_doubt_unit": "forbidden"
+  },
+  "recovery": {
+    "task_level": "skip_only_units_with_valid_create_once_terminal_receipts",
+    "iteration_level": "not_applicable_one_generation_call_per_unit",
+    "maximum_lost_work": "one_single_call_arm_replicate",
+    "concurrent_writers_per_unit": 1
+  },
+  "hidden_boundary": {
+    "cohort_root": "external_private_path_supplied_by_environment",
+    "generation_access": "development_split_only",
+    "adjudication_order": "after_both_paired_arms_for_a_replicate_are_terminal",
+    "results_returned_to_generation": false
+  },
+  "claim_ceiling": "CAUSAL_VALUE_OF_THE_SKY_STRUCTURED_GENERATION_PACKAGE_WITHIN_ONE_FROZEN_L10M_GRAPH_FAMILY_ONLY"
+}

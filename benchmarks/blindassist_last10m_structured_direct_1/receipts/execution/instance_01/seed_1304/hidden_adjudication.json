@@ -1,0 +1,117 @@
+{
+  "arms": {
+    "raw_direct": {
+      "behavioral_anytime_auc": 0.0,
+      "behavioral_anytime_curve": [
+        0.0
+      ],
+      "best_discovered_robust_safe": false,
+      "best_discovered_substantive_score_delta": 0.0,
+      "first_behavioral_pass_attempt": null,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        }
+      ],
+      "primary_behavioral_discovery": false,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "require_token_usage": true,
+          "total_tokens": 35000
+        },
+        "events": [
+          {
+            "call": 1,
+            "error": "launcher process terminated during external call",
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "in_doubt"
+          }
+        ],
+        "stop_reason": "in_doubt_external_call",
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 0,
+          "generation_calls": 1,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "search_status": "ARM_FAILED_ITT"
+    },
+    "structured_direct": {
+      "behavioral_anytime_auc": 0.0,
+      "behavioral_anytime_curve": [
+        0.0
+      ],
+      "best_discovered_robust_safe": false,
+      "best_discovered_substantive_score_delta": 0.0,
+      "first_behavioral_pass_attempt": null,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": null,
+          "combined_score": 0.0,
+          "metrics": {
+            "behavioral_improvement_detected": 0.0,
+            "substantive_score_delta": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": false,
+          "score_attribution": {},
+          "status": "itt_zero_invalid_missing_or_arm_failure"
+        }
+      ],
+      "primary_behavioral_discovery": false,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "require_token_usage": true,
+          "total_tokens": 35000
+        },
+        "events": [
+          {
+            "call": 1,
+            "error": "launcher process terminated during external call",
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "in_doubt"
+          }
+        ],
+        "stop_reason": "in_doubt_external_call",
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 0,
+          "generation_calls": 1,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "search_status": "ARM_FAILED_ITT"
+    }
+  },
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "hidden_sha256": "374fba675a16fefe2dc807b79d385047f1c91fccd33086d7c14e90d067a630fd",
+  "instance_id": "instance_01",
+  "results_returned_to_generation": false,
+  "seed": 1304
+}

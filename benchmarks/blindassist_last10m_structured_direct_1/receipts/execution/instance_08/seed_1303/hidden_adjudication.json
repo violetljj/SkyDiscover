@@ -1,0 +1,201 @@
+{
+  "arms": {
+    "raw_direct": {
+      "behavioral_anytime_auc": 0.0,
+      "behavioral_anytime_curve": [
+        0.0
+      ],
+      "best_discovered_robust_safe": true,
+      "best_discovered_substantive_score_delta": 0.0,
+      "first_behavioral_pass_attempt": null,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": "c88d3757-259d-4f7f-9dd7-4235bd92ee23",
+          "combined_score": 0.898125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.898125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.15878,
+            "path_efficiency": 0.8125,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.001875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.0,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.0,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.001875,
+            "delta_instruction": 0.001875,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.0,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.001875,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "5374128a60096b8e11feaf57ba6b554afa7e6e56e1627865c60ddf3fbe7ec617",
+          "status": "success"
+        }
+      ],
+      "primary_behavioral_discovery": false,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "require_token_usage": true,
+          "total_tokens": 35000
+        },
+        "events": [
+          {
+            "call": 1,
+            "input_tokens": 20935,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1734,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 1,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "c88d3757-259d-4f7f-9dd7-4235bd92ee23",
+            "status": "admitted"
+          }
+        ],
+        "stop_reason": null,
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "input_tokens": 20935,
+          "output_tokens": 1734,
+          "total_tokens": 22669
+        }
+      },
+      "search_status": "COMPLETED"
+    },
+    "structured_direct": {
+      "behavioral_anytime_auc": 0.02,
+      "behavioral_anytime_curve": [
+        0.02
+      ],
+      "best_discovered_robust_safe": true,
+      "best_discovered_substantive_score_delta": 0.02,
+      "first_behavioral_pass_attempt": 1,
+      "hidden_attempts": [
+        {
+          "attempt": 1,
+          "candidate_id": "a0871277-13fb-4e73-a884-e89e604eb535",
+          "combined_score": 0.921875,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.921875,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.375,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.28378,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.025625,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.780488,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "primary_substantive_value": 0.02,
+          "robust_safe": true,
+          "score_attribution": {
+            "delta_arrival": 0.0,
+            "delta_component_sum": 0.025625,
+            "delta_instruction": 0.005625,
+            "delta_oscillation": 0.0,
+            "delta_path": 0.02,
+            "delta_reacquisition": 0.0,
+            "delta_safety": 0.0,
+            "delta_success": 0.0,
+            "delta_target_switch": 0.0,
+            "delta_total_score": 0.025625,
+            "delta_wrong_way": 0.0
+          },
+          "solution_sha256": "4c4d0cb35e44c892ace452584e900abe0b82e44d3a2cc5be5afd4310d3da3940",
+          "status": "success"
+        }
+      ],
+      "primary_behavioral_discovery": true,
+      "search_budget": {
+        "ceilings": {
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "require_token_usage": true,
+          "total_tokens": 35000
+        },
+        "events": [
+          {
+            "call": 1,
+            "input_tokens": 21083,
+            "kind": "generation",
+            "model": "gpt-5.6-sol",
+            "output_tokens": 1833,
+            "provider": "codex-cli",
+            "provider_attempt": 1,
+            "status": "accepted"
+          },
+          {
+            "attempt": 1,
+            "kind": "evaluation",
+            "mode": "train",
+            "program_id": "a0871277-13fb-4e73-a884-e89e604eb535",
+            "status": "admitted"
+          }
+        ],
+        "stop_reason": null,
+        "usage": {
+          "discarded_generation_calls": 0,
+          "evaluator_attempts": 1,
+          "generation_calls": 1,
+          "input_tokens": 21083,
+          "output_tokens": 1833,
+          "total_tokens": 22916
+        }
+      },
+      "search_status": "COMPLETED"
+    }
+  },
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "hidden_sha256": "ba97a4e861daee95102a59e8fc28407a773295f3fa4c4098c538120271cd122c",
+  "instance_id": "instance_08",
+  "results_returned_to_generation": false,
+  "seed": 1303
+}

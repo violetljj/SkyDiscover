@@ -1,0 +1,45 @@
+{
+  "status": "ARM_FAILED_ITT",
+  "instance_id": "instance_01",
+  "evaluator_sha256": "not_recorded_launcher_abort",
+  "arm": "structured_direct",
+  "initial_program_sha256": "not_recorded_launcher_abort",
+  "best_program_id": null,
+  "experiment_id": "L10M-STRUCT-DIRECT-1",
+  "hidden_evaluations": 0,
+  "error": "in_doubt external generation call; no retry authorized",
+  "elapsed_seconds": 0,
+  "dev_sha256": "2211281d25dca2fd06bdc42b72fd6a8dde43f63fbc6ae40377ca702a5de74780",
+  "config_sha256": "not_recorded_launcher_abort",
+  "budget": {
+    "events": [
+      {
+        "model": "gpt-5.6-sol",
+        "provider_attempt": 1,
+        "call": 1,
+        "error": "launcher process terminated during external call",
+        "kind": "generation",
+        "status": "in_doubt",
+        "provider": "codex-cli"
+      }
+    ],
+    "usage": {
+      "evaluator_attempts": 0,
+      "output_tokens": 0,
+      "discarded_generation_calls": 0,
+      "generation_calls": 1,
+      "input_tokens": 0,
+      "total_tokens": 0
+    },
+    "ceilings": {
+      "require_token_usage": true,
+      "evaluator_attempts": 1,
+      "total_tokens": 35000,
+      "generation_calls": 1
+    },
+    "stop_reason": "in_doubt_external_call"
+  },
+  "seed": 1302,
+  "candidate_count": 0
+}
+
