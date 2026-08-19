@@ -40,6 +40,17 @@ documented in `README.md` or the benchmark's own README.
 - Before dispatch, perform a read-only preflight of SSH access, active jobs and
   locks, CPU and memory pressure, disk space, and required runtimes. Do not
   disturb work already running on the host.
+- Use the project tool `uv run skydiscover-remote-bootstrap preflight` for that
+  inspection. After a new endpoint, Python/OS image, or task environment is
+  selected, run `bootstrap` once for the exact commit and requested extras, then
+  run `verify` before launching work. Do not hand-copy a virtual environment or
+  repeat bootstrap for every candidate iteration.
+- Treat `bootstrap` as environment preparation only; it must not be used as the
+  experiment or evaluation transport. Start a persistent worker/channel only
+  after verification, and keep its task IDs, receipts, and reconnect semantics
+  separate. Use Docker or another container backend only when preflight confirms
+  that runtime is available; the portable baseline is the detected Python plus
+  lockfile-backed uv environment.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
