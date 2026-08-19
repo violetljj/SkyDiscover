@@ -29,6 +29,8 @@ machine.
 - Added Windows-safe LF transport and committed-byte archive hashing.
 - Added guidance for persistent evaluation channels and Docker as an optional
   backend only when the remote runtime is actually available.
+- Clarified that the intended next layer is a local-control/remote-evaluation
+  transport; this branch does not implement or claim that channel.
 
 ## Result and claim ceiling
 
@@ -53,4 +55,6 @@ it does not establish remote experiment reliability or scientific performance.
 
 Integrate the focused implementation and documentation into `main` after review.
 Keep remote validation directories, manifests, and caches outside the repository;
-they are task-owned execution evidence, not source changes.
+they are task-owned execution evidence, not source changes. A future evaluator
+transport should land as a separate focused component and pass a zero-model-call
+transport canary before formal use.

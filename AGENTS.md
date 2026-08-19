@@ -56,6 +56,20 @@ documented in `README.md` or the benchmark's own README.
   aggregation, and final adjudication remain local. Do not install, invoke, or
   route the project's Codex CLI through the remote host; remote processes may
   execute only the already-staged project code and explicitly scoped evaluators.
+- The intended architecture is a local control plane and a remote evaluation
+  data plane: the local frozen controller/protocol, Codex generation, candidate
+  store, dispatch journal, evidence ledger, analysis, and closeout remain local;
+  only CPU-heavy evaluator workers run remotely. A remote worker may receive
+  candidate source, scenario/arm, seed, and idempotency key, and may return
+  metrics, artifact hashes, and a receipt, but the local controller validates the
+  response and remains the authority that creates terminal receipts.
+- A persistent evaluator channel is a separate engineering component from
+  bootstrap. The current `remote-bootstrap` tool only prepares and verifies an
+  environment; it does not implement this transport and must not be presented
+  as if it does. Before a formal experiment uses remote evaluation, implement
+  the worker/dispatch protocol and pass a zero-model-call transport canary.
+  Preserve sealed failed generation units and do not resume them merely because
+  the transport later becomes available.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
