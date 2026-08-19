@@ -1,0 +1,119 @@
+{
+  "experiment_id": "L10M-COMP-1",
+  "status": "COMPLETED",
+  "completed_seeds": [101, 202, 303],
+  "hidden_split": "hidden-v4",
+  "hidden_v4_sha256": "8156580207a1d5fc06c8ded6797bcacfcd11407c65eada665408e77b36602cc9",
+  "results_returned_to_search": false,
+  "primary_endpoint": "any_hidden_candidate_passes_oracle_3_substantive_behavioral_gate",
+  "claim_ceiling": "COMPARATIVE_SIGNAL_DETECTED_WITHIN_L10M_COMP_1",
+  "external_validity_ceiling": "Results apply only to the frozen L10M-COMP-1 oracle-graph benchmark and do not establish general search-system, model, navigation-policy, or algorithm superiority.",
+  "claim_decisions": {
+    "SEARCH_SYSTEM_INCREMENTAL_VALUE_ESTABLISHED_WITHIN_L10M_COMP_1": {
+      "established": false,
+      "sky_vs_naked_primary_paired_wins": 0,
+      "ties": 2,
+      "losses": 1,
+      "reason": "SkyDiscover did not beat Naked Codex on the primary endpoint in all three paired replicates."
+    },
+    "EVOX_INCREMENTAL_VALUE_ESTABLISHED_WITHIN_L10M_COMP_1": {
+      "established": false,
+      "evox_vs_sky_primary_paired_wins": 1,
+      "ties": 2,
+      "losses": 0,
+      "reason": "EvoX did not beat SkyDiscover on the primary endpoint in all three paired replicates; secondary endpoints cannot override the failed primary rule."
+    }
+  },
+  "primary_results_by_seed": {
+    "101": {
+      "skydiscover_best_of_n_3": false,
+      "naked_codex_incumbent_only": true,
+      "evox": true
+    },
+    "202": {
+      "skydiscover_best_of_n_3": true,
+      "naked_codex_incumbent_only": true,
+      "evox": true
+    },
+    "303": {
+      "skydiscover_best_of_n_3": true,
+      "naked_codex_incumbent_only": true,
+      "evox": true
+    }
+  },
+  "aggregate_results": {
+    "skydiscover_best_of_n_3": {
+      "primary_successes": 2,
+      "replicates": 3,
+      "mean_behavioral_anytime_auc": 0.012,
+      "mean_final_best_hidden_substantive_delta": 0.013333,
+      "mean_final_best_hidden_raw_score": 0.918958,
+      "total_search_tokens": 861955,
+      "mean_search_tokens": 287318.333
+    },
+    "naked_codex_incumbent_only": {
+      "primary_successes": 3,
+      "replicates": 3,
+      "mean_behavioral_anytime_auc": 0.016,
+      "mean_final_best_hidden_substantive_delta": 0.02,
+      "mean_final_best_hidden_raw_score": 0.924375,
+      "total_search_tokens": 825455,
+      "mean_search_tokens": 275151.667
+    },
+    "evox": {
+      "primary_successes": 3,
+      "replicates": 3,
+      "mean_behavioral_anytime_auc": 0.021333,
+      "mean_final_best_hidden_substantive_delta": 0.023333,
+      "mean_final_best_hidden_raw_score": 0.927083,
+      "total_search_tokens": 795001,
+      "mean_search_tokens": 265000.333
+    }
+  },
+  "qualifying_candidate_guardrails": {
+    "validity": 1.0,
+    "task_success": 1.0,
+    "safe_termination": 1.0,
+    "note": "Every replicate-level qualifying best substantive candidate retained all three frozen guardrails."
+  },
+  "interpretation": {
+    "sky_vs_naked": "Naked Codex succeeded in all three replicates while SkyDiscover succeeded in two. The frozen experiment does not establish incremental value from the SkyDiscover search structure.",
+    "evox_vs_sky": "EvoX produced one primary win and two ties versus SkyDiscover, with higher mean anytime AUC and lower token use, but this remains a comparative signal because the all-three primary-win rule failed.",
+    "model_baseline": "Naked Codex succeeding in all three replicates shows that GPT-5.6-sol itself could readily discover qualifying changes under the matched budget in this benchmark."
+  },
+  "seed_303_results": {
+    "skydiscover_best_of_n_3": {
+      "primary_behavioral_discovery": true,
+      "behavioral_anytime_auc": 0.016,
+      "first_behavioral_pass_attempt": 3,
+      "best_discovered_substantive_score_delta": 0.02,
+      "generation_calls": 10,
+      "evaluator_attempts": 10,
+      "total_tokens": 295995
+    },
+    "naked_codex_incumbent_only": {
+      "primary_behavioral_discovery": true,
+      "behavioral_anytime_auc": 0.014,
+      "first_behavioral_pass_attempt": 4,
+      "best_discovered_substantive_score_delta": 0.02,
+      "generation_calls": 10,
+      "evaluator_attempts": 10,
+      "total_tokens": 281355
+    },
+    "evox": {
+      "primary_behavioral_discovery": true,
+      "behavioral_anytime_auc": 0.018,
+      "first_behavioral_pass_attempt": 2,
+      "best_discovered_substantive_score_delta": 0.02,
+      "generation_calls": 10,
+      "evaluator_attempts": 9,
+      "total_tokens": 270275
+    }
+  },
+  "seed_303_receipt_sha256": {
+    "evox.search_receipt.json": "62e233f123a74a0d3558ad84d65f5d4e3298fca10e483a9acefa5e197ea446b2",
+    "naked_codex_incumbent_only.search_receipt.json": "b3b0475cc9d30cefe140a7ebc314ddb6613aab5eade4f73eebbe7c8e8432fe7b",
+    "skydiscover_best_of_n_3.search_receipt.json": "b9b214fa3adc9bdc73771671d0a21776f220e399dacfd715f6d83235b1589981",
+    "hidden_adjudication_receipt.json": "51ffcebcf945a006eda7165218939726a12d48af0c0c26c86c25bba53f61631f"
+  }
+}
