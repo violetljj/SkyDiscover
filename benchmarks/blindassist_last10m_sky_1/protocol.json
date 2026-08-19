@@ -1,0 +1,94 @@
+{
+  "experiment_id": "L10M-SKY-1",
+  "status": "DESIGN_FROZEN_PENDING_FRESH_COHORT",
+  "frozen_at": "2026-08-19",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "consumed_development_evidence": ["L10M-COMP-1", "L10M-COMP-2"],
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "experimental_unit": "fresh_instance",
+  "arms": ["naked_codex", "sky_search"],
+  "instances": {
+    "count": 12,
+    "generator_seed": 2081903,
+    "candidate_pool_limit": 240,
+    "episodes_per_split": 8,
+    "headroom_rule": {
+      "information_time": "pre_treatment_frozen_initial_policy_only",
+      "initial_validity_equals": 1.0,
+      "initial_task_success_equals": 1.0,
+      "initial_safe_termination_equals": 1.0,
+      "development_initial_score_strictly_below": 0.91,
+      "hidden_initial_score_strictly_below": 0.91
+    }
+  },
+  "nested_replicates": {
+    "count_per_instance": 2,
+    "local_seeds": [419, 811],
+    "provider_sampling_seed_claimed": false,
+    "arm_order": "alternate_by_instance_index_plus_replicate_index"
+  },
+  "search_ceilings_per_arm_instance_replicate": {
+    "generation_calls": 10,
+    "dev_evaluator_attempts": 10,
+    "total_tokens_input_plus_output": 300000,
+    "provider_retries_per_failed_generation": 1
+  },
+  "hidden_adjudication": {
+    "attempts_per_arm_instance_replicate": 10,
+    "candidate_order": "generation_order",
+    "results_returned_to_search": false,
+    "invalid_missing_or_failed_value": 0.0
+  },
+  "estimand": "instance_mean_seed_best_hidden_substantive_delta_sky_minus_naked",
+  "primary_analysis": {
+    "instance_aggregate": "arithmetic_mean_of_two_paired_replicate_differences",
+    "location_statistic": "arithmetic_mean_across_instances",
+    "test": "exact_instance_level_sign_flip",
+    "assumption": "instance_effects_are_independent_and_centered_effects_are_sign_exchangeable",
+    "one_sided_alpha": 0.05,
+    "minimum_meaningful_effect": 0.005,
+    "tie_interval_inclusive": [-0.005, 0.005]
+  },
+  "decision_semantics": {
+    "superiority": "delta_sky_gt_0.005",
+    "equivalence": "two_one_sided_sign_flip_tests_within_minus_0.005_plus_0.005",
+    "meaningful_harm": "delta_sky_lt_minus_0.005",
+    "failed_superiority_alone_means": "VALUE_NOT_ESTABLISHED_NOT_EQUIVALENT"
+  },
+  "sky_intervention": {
+    "search_type": "best_of_n",
+    "best_of_n": 3,
+    "num_context_programs": 2,
+    "inject_evaluator_context": true,
+    "parent_routing": "reuse_sampled_parent_for_three_candidate_additions_then_resample_current_best",
+    "history_routing": "up_to_two_ranked_program_contexts"
+  },
+  "naked_control": {
+    "search_type": "incumbent_only",
+    "num_context_programs": 0,
+    "inject_evaluator_context": false,
+    "parent_routing": "current_incumbent_only"
+  },
+  "common_outer_platform": [
+    "runner",
+    "budget_ledger",
+    "development_evaluator",
+    "hidden_adjudicator",
+    "receipt_format"
+  ],
+  "failure_semantics": {
+    "analysis_population": "intention_to_treat_all_12_frozen_instances",
+    "invalid_candidate": 0.0,
+    "missing_candidate": 0.0,
+    "timeout_candidate": 0.0,
+    "budget_exceeded_candidate": 0.0,
+    "provider_failure_candidate": 0.0,
+    "arm_level_failure": "ten_zero_hidden_opportunities_and_full_resource_accounting"
+  },
+  "execution_blockers": [
+    "fresh_cohort_not_materialized",
+    "execution_manifest_not_frozen"
+  ],
+  "execution_manifest": "benchmarks/blindassist_last10m_sky_1/execution_manifest.json"
+}
