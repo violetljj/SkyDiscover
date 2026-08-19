@@ -101,3 +101,46 @@ never returned to search.
 The Codex backend runs ephemerally in a separate read-only temporary directory
 and receives candidate context only through its prompt. This is an
 application-level blind boundary, not hostile same-user OS isolation.
+
+## Frozen outcome
+
+COMP-2 completed all 72 assigned arm runs and all 24 paired hidden
+adjudications with zero arm-level failures. No search process received hidden
+results. The maximum observed use in any arm was 10 generation calls, 10
+development evaluator attempts, and 235,474 tokens, all within the frozen
+ceilings.
+
+G1 did **not** establish EvoX incremental value:
+
+- observed instance-level mean `Delta_E = 0.0020833`;
+- minimum meaningful effect `delta_E = 0.005`;
+- exact one-sided sign-flip `p = 1.0` under the frozen rule;
+- instance distribution: `2 wins / 9 ties / 1 loss` using the frozen tie band.
+
+Because G1 failed, fixed-sequence gatekeeping did not open G2. Therefore the
+experiment makes no formal superiority, equivalence, or harm decision for the
+Sky best-of-three initialization. Its descriptive mean was
+`Delta_H = -0.0041667` with `0 wins / 9 ties / 3 losses`, but that result has no
+G2 claim authority.
+
+Descriptive secondary endpoints were:
+
+| Arm | Behavioral discoveries | Mean best substantive delta | Mean anytime AUC | Total tokens |
+| --- | ---: | ---: | ---: | ---: |
+| Naked Codex | 9/24 | 0.004583 | 0.002375 | 5,397,087 |
+| EvoX | 11/24 | 0.006667 | 0.005333 | 5,505,782 |
+| Sky + EvoX | 5/24 | 0.002500 | 0.001917 | 5,452,750 |
+
+EvoX retains a descriptive positive lead over Naked Codex, including better
+anytime behavior, but the gain is below the preregistered minimum meaningful
+effect and does not establish incremental value. The architecture verdict is
+`EVOX_INCREMENTAL_VALUE_NOT_ESTABLISHED_G2_NOT_TESTED`; this experiment does
+not authorize replacing Sky-native search with EvoX or retaining the tested
+Sky+EvoX composition as a proven gain layer.
+
+The external-validity ceiling is the frozen parameterized
+L10M-ORACLE-3 graph family. These independently seeded parameterizations do not
+establish performance over unrelated navigation tasks or broader search
+domains. Primary details are in `receipts/execution/FINAL_RESULT.json`;
+descriptive endpoints and receipt hashes are in `SECONDARY_RESULTS.json` and
+`EXECUTION_AUDIT.json`.

@@ -122,3 +122,16 @@ def test_frozen_execution_manifest_and_cohort_files_match():
     for record in cohort["instances"]:
         assert harness._scenario_path(record, "dev").is_file()
         assert harness._scenario_path(record, "hidden").is_file()
+
+
+def test_completed_result_preserves_fixed_sequence_gatekeeping():
+    result_path = BENCHMARK / "receipts" / "execution" / "FINAL_RESULT.json"
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    assert result["instance_count"] == 12
+    assert result["G1_DELTA_E"]["established"] is False
+    assert result["G1_DELTA_E"]["observed_mean"] < 0.005
+    assert result["G2_DELTA_H"]["tested"] is False
+    assert result["G2_DELTA_H"]["one_sided_exact_p"] is None
+    assert result["architecture_decision"] == (
+        "EVOX_INCREMENTAL_VALUE_NOT_ESTABLISHED_G2_NOT_TESTED"
+    )

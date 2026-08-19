@@ -1,0 +1,505 @@
+{
+  "archived_receipts": [
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_411/hidden_adjudication.json",
+      "sha256": "2a32b7362202e20ce55b958058dac10957f68725926753484f83233217b4df8f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_411/naked_codex.search_receipt.json",
+      "sha256": "12b73913f0a6e82b02ff2a07b24848de4d9df5178c3aef3f341030c54bdb00ff"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_411/evox.search_receipt.json",
+      "sha256": "3e68581522142edd482cb5d25cf368be187dd79f7b8bcb7c7f54955bb308af87"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_411/sky_evox.search_receipt.json",
+      "sha256": "cb1629acdee9d858e4f8d8713d1d118e50691f735efc7a41386cc8e57c6b10ba"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_01/seed_733/hidden_adjudication.json",
+      "sha256": "706daf9485a3ea3639a394f01a438f33064927e44ca77c476d3c81233e816330"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_733/naked_codex.search_receipt.json",
+      "sha256": "66c79d88936c087d4a052e4cdd91c0e2c998efd15d93513b974c93d250986520"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_733/evox.search_receipt.json",
+      "sha256": "9755d576aa4355618d63a60718534b5ca0770bf04acde573bfe3ef5432c5a8d7"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_01/seed_733/sky_evox.search_receipt.json",
+      "sha256": "8e16096bc36e5f2bd5caee72234e54f32e84f65f7e51fc812f0840d595089c71"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_411/hidden_adjudication.json",
+      "sha256": "231e7a042fa2edf5b1d99c87faab8d4220bf720cecf943a12ad52b91b331b868"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_411/naked_codex.search_receipt.json",
+      "sha256": "e98e803c0f84f3943d28ad7a8716000eb77572ffb2067f36b809ecef58083d4a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_411/evox.search_receipt.json",
+      "sha256": "ad2cc5679d9953b37fc6ae1578bd26dc2e4ad1c7503420b19e3a9f984be10e06"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_411/sky_evox.search_receipt.json",
+      "sha256": "48eb37c1cf4163057d71b394b12b62e36852d3b39c8f005aa004cc6a493eeb99"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_02/seed_733/hidden_adjudication.json",
+      "sha256": "d1571c72b8a3db4fa910081621eb9d883c01007f2c674cd03d96127386bbe79d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_733/naked_codex.search_receipt.json",
+      "sha256": "1b36ac1c52e94cf07aca137819e146bc6acccedb5d6815b67ed6940db9a85a89"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_733/evox.search_receipt.json",
+      "sha256": "0ae16baba9f16767fddf84445f5e4a8a35f1ea671aa7f8145032dddf0dc6a680"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_02/seed_733/sky_evox.search_receipt.json",
+      "sha256": "2378f2cf838b41a74232e60dd6bbac1c4083c47f83e35a7b19eca40639c5d4aa"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_411/hidden_adjudication.json",
+      "sha256": "b175d06c2425fdadea17e1b18086254bc9dface5793d8ae6e03fc1d0c3fd6399"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_411/naked_codex.search_receipt.json",
+      "sha256": "f7a9af379b8d230d79bb0e61d79c2fe9755df8b2756c502362e782789c94ea1b"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_411/evox.search_receipt.json",
+      "sha256": "9ab785afbf5372cc57faa08ad974a803cf934e7aaa2d5eae07c9b7699986ce0a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_411/sky_evox.search_receipt.json",
+      "sha256": "6037bfecae098514bdc5d15e0070dcd7a6b01db5ea1628c9f439ef0a5e8add9e"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_03/seed_733/hidden_adjudication.json",
+      "sha256": "47ca3a613c79afa7c464a073def07768c5daf4ef3478877c519adb8ee1bc154f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_733/naked_codex.search_receipt.json",
+      "sha256": "14287d9a9c04c563bbfa522934a8fb8dbd0ec59f7a358ec824c67270b5a0854a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_733/evox.search_receipt.json",
+      "sha256": "1a4e34fb9189b7989f19a9a762dbbdd472f984094cf49fbebdf0abc808f8a94e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_03/seed_733/sky_evox.search_receipt.json",
+      "sha256": "2bedd7edba423b7b9a98390ac4346c67dced72f94defd15a0646ead9dd94d736"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_411/hidden_adjudication.json",
+      "sha256": "74afae3ba854cc23e1987ed537bcaffe9d3126980839533ccddbab6f448ffcc2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_411/naked_codex.search_receipt.json",
+      "sha256": "dfec101712d2de36437f9d675e296f0da88df0f0d0cd118ea50f2c1eb659e345"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_411/evox.search_receipt.json",
+      "sha256": "88a09857e10a3eabaea25af3bdfb8232ea0c33d7445c3f21d4240e6a7b7cc909"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_411/sky_evox.search_receipt.json",
+      "sha256": "7b41e3a566d1277aeb4db365d5e2a50824d073fa0380ed598dba22af05e0556c"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_04/seed_733/hidden_adjudication.json",
+      "sha256": "89a68d0a9d5bd1bfa14eac241b1bbe5c0527332e0d97b135937c729e2b089911"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_733/naked_codex.search_receipt.json",
+      "sha256": "b87b1ecdbcf547676739f3dafbd84f503833ddc6ea381ef3291673d9e5509748"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_733/evox.search_receipt.json",
+      "sha256": "c2c6404eb561883d6e91106dab7a096f9738e9bae6d8f86dbac84810bcc0fa69"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_04/seed_733/sky_evox.search_receipt.json",
+      "sha256": "5bdef6645039ccec57893d8f037b13adc7faf68c1ffa00153ed78cadd5cdc0fe"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_411/hidden_adjudication.json",
+      "sha256": "396dbfb7f09db8e6d565b10dde1c4cb9892bf72c5588c1254c0da4abe2e7f244"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_411/naked_codex.search_receipt.json",
+      "sha256": "0b0ab1448bfbe9ae380049eee03014d3f5a99dd754eb284e239ad181951e90af"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_411/evox.search_receipt.json",
+      "sha256": "f79892c01ef458c84cdd1f18a0020fc75ed925d6acac478347d6381f5f5bbec3"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_411/sky_evox.search_receipt.json",
+      "sha256": "3c4c7a5582afed16d6cf855b40e2940d085e354438bda9001aa769d5f66369ec"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_05/seed_733/hidden_adjudication.json",
+      "sha256": "ff803f38600cdd38974c08f4ff3f37686367c828c561457bbba71ee42a69819c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_733/naked_codex.search_receipt.json",
+      "sha256": "d26459725b4713495896cb9f4b1ed8f4467c9ec7da0f31b3fbabb7f9e411f12f"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_733/evox.search_receipt.json",
+      "sha256": "8619d07634455c6e7db9132fcd58be1ecc40133c6b279f66e1b6c1d0f06f1bd6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_05/seed_733/sky_evox.search_receipt.json",
+      "sha256": "225191d437144ed13280f0917a3cb062d5dec6dcccbc1e2e0d07f49a66cbf1fb"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_411/hidden_adjudication.json",
+      "sha256": "f8256a2674d8246bd676134d8b54ddee8e1ed9e9d25a36dc99bcca060e7bcbb0"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_411/naked_codex.search_receipt.json",
+      "sha256": "3888d1a5b5468c6937de2d222430b123c9caf0ebdf434a20192cd5c081b61856"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_411/evox.search_receipt.json",
+      "sha256": "0d87f185958312fe017d2672d7ef4a708173957d79e36f9bef674daf51aae932"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_411/sky_evox.search_receipt.json",
+      "sha256": "d54b842cc03abcd76a66a7dab45c8b824d54bb72ce0f2388777071e606c1440b"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_06/seed_733/hidden_adjudication.json",
+      "sha256": "92ca3a32ce7b3c67ea391b86559517b85f0be01496e5237cff3a3aa25ad5053e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_733/naked_codex.search_receipt.json",
+      "sha256": "cdc83930f2c9c33673eb1ee0479fb2e9d59971d76faeba22278b5d8504e9525c"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_733/evox.search_receipt.json",
+      "sha256": "7b3c3758e8c9e9f59eb853c3bbc1ff6935958b4d9fdbc5ff962ee2485833503d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_06/seed_733/sky_evox.search_receipt.json",
+      "sha256": "59d46a0dac7ab629e264dabcc58022dff44760c3c7c650252af83075c2748fe8"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_411/hidden_adjudication.json",
+      "sha256": "f76b28a8b708c98e3b7fef8e966237256f6be6f58811b919f1638abbba01bdd6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_411/naked_codex.search_receipt.json",
+      "sha256": "0b2e9df6ef0a2cdfedb975e1403fec986bb6d9a8e3dcc474699ae5df4303713d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_411/evox.search_receipt.json",
+      "sha256": "e9ced4c0aeb94ae7e861ef3a42d1bc85c786a1eab4b09d0ec730600a660c93c7"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_411/sky_evox.search_receipt.json",
+      "sha256": "00d96f6340cea6eefe3b7d35c5c696db79558b81d2c85e0855c027c7283797b3"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_07/seed_733/hidden_adjudication.json",
+      "sha256": "a804be04094eec9fe5b6145442e4a7acf804c36c6b6af33a392e4bc11f73b17e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_733/naked_codex.search_receipt.json",
+      "sha256": "c614bc653f32020a035d95769ff27172091231846403f463d9bc72a3a0fd92ee"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_733/evox.search_receipt.json",
+      "sha256": "001079d2a3ac0d4bf19514a218df9c5c0861b2ac7c66fec040bd32a6f13640aa"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_07/seed_733/sky_evox.search_receipt.json",
+      "sha256": "3f38b44f348a34370dde1ce29cdbdcc1de7a6b0115dac9a8f8b5a8794575e703"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_411/hidden_adjudication.json",
+      "sha256": "813450e733f97e259b3ff2329dbaa11472d74ed721242035e05782588fdefcb6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_411/naked_codex.search_receipt.json",
+      "sha256": "a1e3b4bd7e94a0ef1ccbc6933c3f9d05404dd2cbb3cca733f565cb58423a1b48"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_411/evox.search_receipt.json",
+      "sha256": "973206f32bb9d7b6fc47618ddd7bed4d224afd21001a6a9ff0bc5719e8e39c63"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_411/sky_evox.search_receipt.json",
+      "sha256": "5dd7fb30ad9ef47a946d7ae45c05f4578172af81cca135dbe8c492d419103e15"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_08/seed_733/hidden_adjudication.json",
+      "sha256": "d56cb7038e88c20cf0276ea35559d505919de15887bbcdfb44b135d56ebb5951"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_733/naked_codex.search_receipt.json",
+      "sha256": "2b31ef7041f2d607d3dad9f713f7c24e9fad364416e9f760203508dc684289f2"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_733/evox.search_receipt.json",
+      "sha256": "a6a14371b1175af8961c48da511be87ecf0cd05885e6ae672a8062303ad66a89"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_08/seed_733/sky_evox.search_receipt.json",
+      "sha256": "6c1584e000b2c462c5ced55690e3f62211316a39ef8dd708e2393628f978176a"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_411/hidden_adjudication.json",
+      "sha256": "c08485f96b0a1f1a2580023f162225bbb8d77a8d1acfc39ba75fee164285d476"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_411/naked_codex.search_receipt.json",
+      "sha256": "b524c6fb79673a342ef7489b73ce9a271f2f7dacdc99db688971efc81dd77931"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_411/evox.search_receipt.json",
+      "sha256": "7fd410d7d5ac6977a59979d0e5928f7992979342d769344a753c5d951767cc1d"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_411/sky_evox.search_receipt.json",
+      "sha256": "a19bf14665751a6ab6727ac43c0af180b8a02d3298ad804fc96312a2fa8a354f"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_09/seed_733/hidden_adjudication.json",
+      "sha256": "23c24c2c215deb85d4abb0158fa521741312755436d9c857e4fc3f360fdc7185"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_733/naked_codex.search_receipt.json",
+      "sha256": "b6c4db1487fbd4b4e33fa2daff194ba9ab0602c93fe7e0960ac7f11c0bd3b147"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_733/evox.search_receipt.json",
+      "sha256": "0d6c61a73d54321738c0d15ac648469f054bc2b96184a491293251cbe32fd4d9"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_09/seed_733/sky_evox.search_receipt.json",
+      "sha256": "f1e4661497a0b9a2516de65a7869f9d03a984526f71a6ae52c4e06fb6f262828"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_411/hidden_adjudication.json",
+      "sha256": "3664a940cb75cb8118a7bcf467320531f2cae0c440c24148d28beeaf6a8190e7"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_411/naked_codex.search_receipt.json",
+      "sha256": "f0532b07fe587ed5861a15af1841c439628201406b74f8676cf74ff2c37e70d7"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_411/evox.search_receipt.json",
+      "sha256": "da001d11327b21df696fb84fe3c85d11e1dd4dc6fcd8f2a23b07514f3da8d868"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_411/sky_evox.search_receipt.json",
+      "sha256": "1e29de34e9c626f008bb290dbc2f1f9b2a3b985241805f1e677a3260d2fcc30c"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_10/seed_733/hidden_adjudication.json",
+      "sha256": "69e9e61b41599591f92c363da5d1071640bc8be44de36740f5cbb188f6d03f45"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_733/naked_codex.search_receipt.json",
+      "sha256": "a5000f33287be71dcae7161fd51864c22eff221a7da5baf96ed08d5169e065ed"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_733/evox.search_receipt.json",
+      "sha256": "3169bafeadd5fe54c2d57c9062ea5d2d6179d50a52d863dee7ed6f049f7e767a"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_10/seed_733/sky_evox.search_receipt.json",
+      "sha256": "ff95536134631028b1f5ccf306531253056fdc3926cd50cc145c8eed860f7f09"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_411/hidden_adjudication.json",
+      "sha256": "ad022c5a03ee2d910425a8d49726608e353c228122c383e30996a7e1317f90df"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_411/naked_codex.search_receipt.json",
+      "sha256": "92560edd0158cd404053d47e6c6f71de87e18288af4e3a92da77e9b3410f7a96"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_411/evox.search_receipt.json",
+      "sha256": "efd61d929fccbd95e0bdad85bb15c4e216909ffb346dd41025f63bc7ed5e23dc"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_411/sky_evox.search_receipt.json",
+      "sha256": "25b4da7ad148efd1d524e643dda4f243e0233e5611f45470c40d3c2551f93e94"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_11/seed_733/hidden_adjudication.json",
+      "sha256": "0647a09b3e272e466cd95d85473c736d488dc62792857da2380ee8bf6976490e"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_733/naked_codex.search_receipt.json",
+      "sha256": "c2bcba57770517b4309ceaf6eebd63f6340ac63e93b963d6af0c18203194cddf"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_733/evox.search_receipt.json",
+      "sha256": "2dcb922796fbd124deb1fc48adf91ba48cbc0f9c05844768d984a473b004d816"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_11/seed_733/sky_evox.search_receipt.json",
+      "sha256": "28db77d01caf70d0dc88e5fc57e7ffe39b495c085a2f5350cdfa91671b95b784"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_411/hidden_adjudication.json",
+      "sha256": "01b49149219954a0565026636cb4418f51f674329a144283db359e8473c90a56"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_411/naked_codex.search_receipt.json",
+      "sha256": "7b5118b6b204687448c681fa7833b865195c1c0f0dd1872ccece69bbbd0ccf40"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_411/evox.search_receipt.json",
+      "sha256": "ae805b72fa2d592ecf88a23db02a15c2cf9985827885b15f0cb0fecc764359ac"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_411/sky_evox.search_receipt.json",
+      "sha256": "9372e503527d9d11047d0fe5f320f4981d7dc9ef6d1515824fe4c1ee8302cc7a"
+    },
+    {
+      "kind": "hidden_adjudication",
+      "path": "receipts/execution/instance_12/seed_733/hidden_adjudication.json",
+      "sha256": "80fa6eeafe4588c4621a4be82aecbfcc0ac4640ebb95cc4e122ed0b343968346"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_733/naked_codex.search_receipt.json",
+      "sha256": "a67280d3e16128f135435472f52f2ea2dfc12468e1d32ae8e81258956b806ff7"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_733/evox.search_receipt.json",
+      "sha256": "89b3ad55b4e19f273cc8696945adbfb80c296c15a8830f64b4b06c9e2ea173b6"
+    },
+    {
+      "kind": "search_receipt",
+      "path": "receipts/execution/instance_12/seed_733/sky_evox.search_receipt.json",
+      "sha256": "25acb3ca97fe72366f46bf103fa13f890f506986b283890d8f34463aa756e157"
+    }
+  ],
+  "arm_level_failures": 0,
+  "candidate_manifests_local_only": 72,
+  "experiment_id": "L10M-COMP-2",
+  "hidden_adjudication_receipts": 24,
+  "hidden_results_returned_to_search_blocks": 0,
+  "max_evaluator_attempts": 10,
+  "max_generation_calls": 10,
+  "max_total_tokens": 235474,
+  "model_outputs_committed": false,
+  "orchestration_events": [
+    {
+      "event": "DUPLICATE_PRE_RUN_REQUEST_REJECTED_CREATE_ONCE",
+      "formal_output_mutated": false,
+      "model_calls_started": 0,
+      "request_count": 3,
+      "target": "instance_11/seed_733"
+    }
+  ],
+  "primary_result_sha256": "e4f453faf70b55ea917306bbaf35b19f7654f1c8c6c1f225d8d3391dd9b0c28a",
+  "search_receipts": 72,
+  "status": "COMPLETE"
+}

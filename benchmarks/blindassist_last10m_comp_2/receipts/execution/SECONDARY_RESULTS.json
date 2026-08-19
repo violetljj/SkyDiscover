@@ -1,0 +1,88 @@
+{
+  "arms": {
+    "evox": {
+      "blocks": 24,
+      "mean_behavioral_anytime_auc": 0.005333333333333333,
+      "mean_best_substantive_delta": 0.006666666666666666,
+      "mean_candidate_safe_termination": 0.9989583333333333,
+      "mean_candidate_task_success": 0.9164930555555556,
+      "mean_cost_effectiveness_curve": {
+        "0": 0.0,
+        "100000": 0.002916666666666667,
+        "150000": 0.00375,
+        "200000": 0.005,
+        "250000": 0.006666666666666666,
+        "300000": 0.006666666666666666,
+        "50000": 0.0020833333333333333
+      },
+      "mean_evaluator_attempts": 9,
+      "mean_generation_calls": 10,
+      "mean_tokens": 229407.58333333334,
+      "mean_tokens_to_first_behavioral_pass_when_reached": 118420.81818181818,
+      "primary_behavioral_discoveries": 11,
+      "real_hidden_candidates": 126,
+      "total_tokens": 5505782,
+      "valid_hidden_candidate_rate": 0.5317460317460317
+    },
+    "naked_codex": {
+      "blocks": 24,
+      "mean_behavioral_anytime_auc": 0.002375,
+      "mean_best_substantive_delta": 0.004583333333333333,
+      "mean_candidate_safe_termination": 0.9994791666666667,
+      "mean_candidate_task_success": 0.9010416666666666,
+      "mean_cost_effectiveness_curve": {
+        "0": 0.0,
+        "100000": 0.0016666666666666668,
+        "150000": 0.0025,
+        "200000": 0.00375,
+        "250000": 0.004583333333333333,
+        "300000": 0.004583333333333333,
+        "50000": 0.0008333333333333334
+      },
+      "mean_evaluator_attempts": 10,
+      "mean_generation_calls": 10,
+      "mean_tokens": 224878.625,
+      "mean_tokens_to_first_behavioral_pass_when_reached": 126444.22222222222,
+      "primary_behavioral_discoveries": 9,
+      "real_hidden_candidates": 240,
+      "total_tokens": 5397087,
+      "valid_hidden_candidate_rate": 0.30416666666666664
+    },
+    "sky_evox": {
+      "blocks": 24,
+      "mean_behavioral_anytime_auc": 0.0019166666666666668,
+      "mean_best_substantive_delta": 0.0025,
+      "mean_candidate_safe_termination": 1.0,
+      "mean_candidate_task_success": 0.9098958333333333,
+      "mean_cost_effectiveness_curve": {
+        "0": 0.0,
+        "100000": 0.0004166666666666667,
+        "150000": 0.0016666666666666668,
+        "200000": 0.0025,
+        "250000": 0.0025,
+        "300000": 0.0025,
+        "50000": 0.0
+      },
+      "mean_evaluator_attempts": 9,
+      "mean_generation_calls": 10,
+      "mean_tokens": 227197.91666666666,
+      "mean_tokens_to_first_behavioral_pass_when_reached": 125377,
+      "primary_behavioral_discoveries": 5,
+      "real_hidden_candidates": 124,
+      "total_tokens": 5452750,
+      "valid_hidden_candidate_rate": 0.41935483870967744
+    }
+  },
+  "experiment_id": "L10M-COMP-2",
+  "primary_gate_override_authority": false,
+  "status": "DESCRIPTIVE_SECONDARY_ONLY",
+  "token_grid": [
+    0,
+    50000,
+    100000,
+    150000,
+    200000,
+    250000,
+    300000
+  ]
+}
