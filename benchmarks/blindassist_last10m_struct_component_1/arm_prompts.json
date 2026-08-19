@@ -1,0 +1,6 @@
+{
+  "moves_only": "Modify only propose_moves(observation). It must generate an ordered, duplicate-free set of currently observable motion proposals without memory or hidden topology. Leave progress_contract and every other byte unchanged.",
+  "progress_moves": "Modify only propose_moves(observation) and progress_contract(observation, memory, candidates). Proposals use current observable geometry only; progress uses observation progress and bounded memory to avoid repeating non-progressing candidates. Leave every other byte unchanged.",
+  "progress_only": "Modify only progress_contract(observation, memory, candidates). It must use observation progress and bounded progress memory to avoid repeating non-progressing candidates, return a supplied candidate or None, and contain no action literals. Leave propose_moves and every other byte unchanged.",
+  "raw_control": "Change only the required inert CANDIDATE-TAG comment and leave all executable source byte-for-byte unchanged. This arm is the no-progress-memory, no-explicit-move-proposals control."
+}

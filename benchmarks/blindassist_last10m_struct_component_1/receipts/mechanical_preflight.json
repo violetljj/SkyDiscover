@@ -1,0 +1,16 @@
+{
+  "codex_cli_login": "CHATGPT_AUTHENTICATED",
+  "codex_cli_sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410",
+  "codex_cli_version": "codex-cli 0.148.0",
+  "cohort_manifest_sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68",
+  "consumed_scenario_files_verified": 24,
+  "experiment_id": "L10M-STRUCT-COMPONENT-1",
+  "formal_arm_runs": 0,
+  "four_arm_guard_examples": "PASS",
+  "initial_program_sha256": "d11aadba546a35871e71598b56936db578db9ca102e2d3c49da1f2d7eb7e9cfd",
+  "locked_safety_mutation_rejected": true,
+  "model_calls": 0,
+  "protocol_sha256": "6c0725bf8b89d24f327e9dc40e3760b509e8cd46d3fe024bf8ed487ce1747ba5",
+  "status": "MECHANICAL_PREFLIGHT_PASS",
+  "synthetic_budget_preflight": "PASS"
+}

@@ -1,0 +1,108 @@
+{
+  "experiment_id": "L10M-STRUCT-COMPONENT-1",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
+  "frozen_at": "2026-08-20",
+  "dependency_head": "c189e13",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "evidence_role": "CONSUMED_DEVELOPMENT_MECHANISM_SCREEN_ONLY",
+  "consumed_cohort": {
+    "source_experiment": "L10M-COMP-2",
+    "manifest_path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json",
+    "manifest_sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68",
+    "instance_count": 12,
+    "generation_split": "dev",
+    "consumed_validation_split": "hidden",
+    "fresh_or_blind_claim_authority": false
+  },
+  "experimental_unit": "consumed_instance",
+  "arms": ["raw_control", "progress_only", "moves_only", "progress_moves"],
+  "factor_matrix": {
+    "raw_control": {"progress_memory": false, "move_proposals": false},
+    "progress_only": {"progress_memory": true, "move_proposals": false},
+    "moves_only": {"progress_memory": false, "move_proposals": true},
+    "progress_moves": {"progress_memory": true, "move_proposals": true}
+  },
+  "common_invariants": {
+    "initial_program": "BYTE_IDENTICAL_COMMON_SCAFFOLD",
+    "locked_source": ["module_bytes_outside_admitted_component_functions", "safety_contract", "tracking_contract", "termination_contract", "decide"],
+    "single_common_config_file": true,
+    "same_model_effort_budget_candidate_count_selection_evaluator": true,
+    "only_allowed_differences": "common_inert_candidate_tag_plus_arm_prompt_and_candidate_bodies_for_enabled_component_functions",
+    "candidate_guard_timing": "before_evaluator_import"
+  },
+  "component_capabilities": {
+    "progress_memory": "progress_contract may use observation progress and bounded progress-memory keys to choose only from supplied candidates or terminate; action literals are forbidden",
+    "move_proposals": "propose_moves may use current observation geometry to return ordered motion candidates; memory and progress state are unavailable"
+  },
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "provider_executable": {
+    "path": "E:/codex-tools/bin/codex.exe",
+    "required_version": "codex-cli 0.148.0",
+    "sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410"
+  },
+  "direct_replicates": {
+    "count_per_arm_instance": 6,
+    "local_seeds": [1701, 1702, 1703, 1704, 1705, 1706],
+    "provider_sampling_seed_claimed": false,
+    "aggregation": "best_consumed_validation_primary_value_across_six_fresh_start_candidates",
+    "arm_order": "rotate_by_instance_index_plus_replicate_index"
+  },
+  "generation_ceilings_per_arm_instance_replicate": {
+    "generation_calls": 1,
+    "dev_evaluator_attempts": 1,
+    "consumed_validation_attempts": 1,
+    "total_tokens_input_plus_output": 35000,
+    "provider_retries_after_failed_generation": 0
+  },
+  "selection": {
+    "within_arm_instance": "higher_consumed_validation_substantive_value_then_robust_safe_then_lower_replicate_index",
+    "unsafe_invalid_missing_timeout_or_failed_value": 0.0,
+    "validation_results_returned_to_generation": false
+  },
+  "estimands": {
+    "progress_main": "instance_mean_of_half_times_progress_only_minus_raw_control_plus_progress_moves_minus_moves_only",
+    "moves_main": "instance_mean_of_half_times_moves_only_minus_raw_control_plus_progress_moves_minus_progress_only",
+    "interaction": "instance_mean_of_progress_moves_minus_progress_only_minus_moves_only_plus_raw_control",
+    "simple_arm_contrasts_for_fresh_admission": ["progress_only_minus_raw_control", "moves_only_minus_raw_control", "progress_moves_minus_raw_control"]
+  },
+  "analysis": {
+    "location_statistic": "arithmetic_mean_across_12_consumed_instances",
+    "minimum_meaningful_effect": 0.005,
+    "test": "exact_instance_level_sign_flip",
+    "one_sided_alpha": 0.05,
+    "fresh_admission_familywise_alpha": 0.016666666666666666,
+    "tie_interval_inclusive": [-0.005, 0.005],
+    "factorial_estimands_are_mechanism_screening_evidence_not_fresh_confirmation"
+      : true
+  },
+  "safety_gate": {
+    "candidate_robust_safe": "validity_equals_1_and_task_success_equals_1_and_safe_termination_equals_1",
+    "treatment_arm_robust_safe_instances_equals": 12,
+    "locked_safety_contract_required": true,
+    "unsafe_candidate_primary_value": 0.0
+  },
+  "fresh_admission_gate": {
+    "scope": "at_least_one_of_three_simple_treatment_arm_contrasts",
+    "requirements": [
+      "observed_mean_strictly_greater_than_0.005",
+      "one_sided_exact_sign_flip_p_at_most_0.016666666666666666",
+      "treatment_selected_candidate_robust_safe_on_12_of_12_instances",
+      "every_leave_one_instance_out_mean_strictly_positive"
+    ],
+    "effect": "authorizes_separate_fresh_preregistration_only",
+    "does_not_authorize": ["automatic_fresh_execution", "component_superiority_claim", "retroactive_structured_direct_attribution"]
+  },
+  "failure_and_recovery": {
+    "analysis_population": "intention_to_treat_all_12_consumed_instances",
+    "interrupted_external_call": "in_doubt_and_counted_against_budget",
+    "rerun_after_terminal_or_in_doubt_unit": "forbidden",
+    "task_level_resume": "skip_only_units_with_valid_create_once_terminal_receipts",
+    "iteration_level_resume": "not_applicable_one_generation_call_per_unit",
+    "maximum_lost_work": "one_arm_instance_replicate_call",
+    "concurrent_writers_per_unit": 1,
+    "read_only_progress_summary_required": true
+  },
+  "execution_blockers": [],
+  "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
+}
