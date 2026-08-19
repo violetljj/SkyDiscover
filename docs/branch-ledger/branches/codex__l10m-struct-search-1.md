@@ -64,7 +64,7 @@ evidence.
 ## Important commits
 
 - `ed57e1f`: freeze structured temporal searchability experiment.
-- `pending`: archive the completed searchability result and decision-invariant
+- `7482ba9`: archive the completed searchability result and decision-invariant
   execution audit.
 
 ## Integration notes
