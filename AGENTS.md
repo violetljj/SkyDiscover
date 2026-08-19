@@ -59,6 +59,25 @@ documented in `README.md` or the benchmark's own README.
   useful diagnostics merely to preserve a stronger form of operator blindness
   that the frozen protocol did not require.
 
+## Windows task launcher constraints
+
+- Long-running or concurrent benchmark launchers must not create visible
+  PowerShell or Windows Terminal windows. Use hidden, non-interactive child
+  processes with redirected stdout/stderr (for PowerShell, include
+  `-WindowStyle Hidden`; for `ProcessStartInfo`, set `UseShellExecute = $false`
+  and `CreateNoWindow = $true`).
+- Use one persistent hidden launcher to supervise workers; do not open one
+  foreground terminal per unit or per arm. Record each worker's command, PID,
+  log paths, exit code, and receipt outcome in the task log.
+- Stopping a run must use a controlled cancellation path that drains and
+  records workers before releasing locks. Users must not need to close terminal
+  windows to stop a run; closing a console is treated as an interruption and
+  may yield `STATUS_CONTROL_C_EXIT` without a receipt.
+- Before resuming after interruption, inspect authoritative output roots,
+  receipts, locks, and worker state. Skip sealed receipts, classify units with
+  no receipt as unconsumed/failed according to the frozen protocol, and never
+  overwrite or silently rerun a sealed unit.
+
 ## Validation
 
 Run the narrowest checks that cover the changed surface:
