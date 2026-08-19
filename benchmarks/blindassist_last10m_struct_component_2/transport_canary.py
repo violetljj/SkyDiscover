@@ -39,7 +39,7 @@ def run(manifest_path: Path, output_root: Path) -> dict[str, object]:
     cohort = json.loads(COHORT.read_text(encoding="utf-8"))
     scenario = ROOT / cohort["instances"][0]["dev_path"]
     source = (
-        (HERE / "initial_program.py")
+        (ROOT / "benchmarks/blindassist_last10m_struct_component_1/initial_program.py")
         .read_text(encoding="utf-8")
         .replace("# CANDIDATE-TAG: initial", "# CANDIDATE-TAG: generated", 1)
     )

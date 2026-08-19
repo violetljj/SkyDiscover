@@ -28,7 +28,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/transport_canary.py",
-      "sha256": "570b03472fe92e1b095fa9fffdce810ad162334a74a58a555248531b96c62e18"
+      "sha256": "5dc647151c043f5b1cf825b7ad2e79fbcb8be1a404752aa8b5b643247196080d"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/harness.py",
