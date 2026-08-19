@@ -46,6 +46,10 @@ documented in `README.md` or the benchmark's own README.
 
 Run the narrowest checks that cover the changed surface:
 
+- Treat execution efficiency as a requirement for all work: prefer focused
+  checks and avoid full-suite or full-repository tests unless the change's scope,
+  risk, or an explicit delivery gate genuinely requires them.
+
 - Documentation/configuration-only changes: validate the affected format,
   schema, links, or configuration loading.
 - Isolated Python changes: run the affected tests and relevant format checks.
