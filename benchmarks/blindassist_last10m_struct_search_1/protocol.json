@@ -1,0 +1,99 @@
+{
+  "experiment_id": "L10M-STRUCT-SEARCH-1",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
+  "execution_authority": "user message: execute, 2026-08-19",
+  "frozen_at": "2026-08-19",
+  "dependency_head": "5542cec2ccb6f5a90f7ceaa464e0b023213d1217",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "consumed_development_evidence": ["L10M-COMP-1", "L10M-COMP-2", "L10M-SKY-1", "L10M-DIAG-1", "L10M-DIAG-2"],
+  "experimental_unit": "fresh_instance",
+  "arms": ["naked_structured", "evox_structured", "sky_evox_structured"],
+  "instances": {
+    "count": 12,
+    "generator_seed": "sealed_private_create_once",
+    "candidate_pool_limit": 300,
+    "episodes_per_split": 8,
+    "headroom_rule": {
+      "information_time": "pre_treatment_frozen_initial_program_only",
+      "initial_validity_equals": 1.0,
+      "initial_task_success_equals": 1.0,
+      "initial_safe_termination_equals": 1.0,
+      "development_initial_score_strictly_below": 0.91,
+      "hidden_initial_score_strictly_below": 0.91
+    }
+  },
+  "nested_replicates": {
+    "count_per_instance": 1,
+    "local_seeds": [947],
+    "provider_sampling_seed_claimed": false
+  },
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "provider_executable": {
+    "path": "C:/Users/26442/.codex/.sandbox-bin/codex.exe",
+    "required_version": "codex-cli 0.148.0-alpha.9"
+  },
+  "search_ceilings_per_arm_instance_replicate": {
+    "generation_calls": 6,
+    "dev_evaluator_attempts": 6,
+    "hidden_adjudication_attempts": 6,
+    "total_tokens_input_plus_output": 180000,
+    "provider_retries_per_failed_generation": 1
+  },
+  "hidden_adjudication": {
+    "attempts_per_arm_instance_replicate": 6,
+    "candidate_order": "generation_order",
+    "results_returned_to_search": false,
+    "invalid_missing_failed_timeout_unsafe_value": 0.0
+  },
+  "candidate_language": {
+    "allowed_primitives": ["safety_contract", "tracking_contract", "propose_moves", "progress_contract", "termination_contract", "decide"],
+    "initial_progress_memory": "none",
+    "oracle_implementation_available_to_search": false,
+    "file_network_process_import_capabilities": "forbidden_by_static_guard"
+  },
+  "oracle_isolation": {
+    "forbidden_search_inputs": [
+      "benchmarks/blindassist_last10m_diag_2/policies/structured_temporal_policy.py",
+      "benchmarks/blindassist_last10m_diag_2/receipts/development_audit.json",
+      "instance_07_H_08 step trace",
+      "DIAG-2 failed-action memory implementation"
+    ],
+    "allowed_prior": "names_signatures_and_composition_of_five_structured_contracts_only"
+  },
+  "primary_endpoint": {
+    "arm_score": "best_hidden_substantive_score_delta_with_unsafe_invalid_missing_timeout_or_failure_scored_zero",
+    "absolute_candidate_gate": {
+      "mean_substantive_score_delta_strictly_greater_than": 0.005,
+      "robust_safe_instances_equals": 12
+    },
+    "paired_effects": {
+      "delta_e": "evox_structured_minus_naked_structured",
+      "delta_h": "sky_evox_structured_minus_evox_structured"
+    },
+    "minimum_meaningful_effect": 0.005,
+    "test": "exact_instance_level_sign_flip",
+    "one_sided_alpha": 0.05,
+    "fixed_sequence": ["G0_ABSOLUTE_SEARCHABILITY", "G1_EVOX_INCREMENT", "G2_SKY_INCREMENT"],
+    "tie_interval_inclusive": [-0.005, 0.005]
+  },
+  "failure_semantics": {
+    "analysis_population": "intention_to_treat_all_12_frozen_instances",
+    "invalid_missing_timeout_budget_provider_or_safety_failure_score": 0.0,
+    "interrupted_external_call": "in_doubt_and_counted_against_budget",
+    "rerun_after_terminal_or_in_doubt_unit": "forbidden"
+  },
+  "recovery": {
+    "task_level": "skip_only_units_with_valid_create_once_terminal_receipts",
+    "iteration_level": "checkpoints_written_each_iteration_but_same_unit_resume_not_authorized",
+    "maximum_lost_work": "one_six_call_arm; interruption_seals_arm_as_ITT_failure",
+    "concurrent_writers_per_unit": 1
+  },
+  "hidden_boundary": {
+    "cohort_root": "external_private_path_supplied_by_environment",
+    "search_access": "development_split_only",
+    "adjudication_order": "after_all_three_paired_arms_are_terminal",
+    "results_returned_to_search": false
+  },
+  "claim_ceiling": "AUTOMATED_SEARCH_VALUE_WITHIN_AN_EXPERT_DESIGNED_STRUCTURED_TEMPORAL_LANGUAGE_AND_ONE_FROZEN_L10M_GRAPH_FAMILY_ONLY"
+}

@@ -1,0 +1,16 @@
+{
+  "candidate_guard": "PASS",
+  "checkpoint_interval_iterations": 1,
+  "codex_cli_sha256": "15a13713eb0f59b6f067677c0651b6d5a222b461c5b7f00d87093f88c902bc1a",
+  "codex_cli_version": "codex-cli 0.148.0-alpha.9",
+  "cohort_manifest_sha256": "1916e23601ea7923e9ee09c3b546a3920f92efa15a2db5fd21a01f651f6c0e84",
+  "diag_2_oracle_sha256": "9324e0772f5f4cadf57aa14586f9a74dbaeb0e5c72bd502ee76546058d8af29a",
+  "equal_generation_call_ceiling": 6,
+  "experiment_id": "L10M-STRUCT-SEARCH-1",
+  "initial_program_sha256": "d10dc4b142dd58611aadf4a460c1d123d4622d55953b038eb48f24a0e3c7f155",
+  "instance_count": 12,
+  "oracle_seed_excluded": true,
+  "protocol_sha256": "0f3eb0bc879e7aabe915570c894cc97610bb6fc82feb7425c57afaa66a3c8ff7",
+  "sealed_files_verified": 24,
+  "status": "MECHANICAL_PREFLIGHT_PASS"
+}
