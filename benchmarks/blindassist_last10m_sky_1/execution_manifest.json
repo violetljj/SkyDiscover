@@ -1,0 +1,97 @@
+{
+  "cohort_files_bound_transitively_by": "cohort_manifest.json",
+  "experiment_id": "L10M-SKY-1",
+  "files": [
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/protocol.json",
+      "sha256": "d8676727d64ea6c07ae81a392b616789fd30e56051382efdf8d5956977bf5393"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/cohort_manifest.json",
+      "sha256": "38dce8c12378a0e51734b141a0ba6e824b198a1ec97ee9d7b94df00e083ea170"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/generate_cohort.py",
+      "sha256": "8d045b28794810838f6265a312af79b9638c08d8304894e85de265925f6b9c50"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/evaluator.py",
+      "sha256": "30d1315478bc376a32a59899421b33354740c9adfbba039f71cc761d033a4ba1"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/harness.py",
+      "sha256": "de0f1250b5a921977975e7a851a1b88637c71f147e82fed4957b92a60c0a2509"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/execute.py",
+      "sha256": "a3f192a1e9d88387d0e6f743c1237f38f620a80ec825925756cd6566ad930ea9"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/analysis.py",
+      "sha256": "3fb02edf2c822eba2ca358dc3af50f6c6484695c21c22bb933844094724ae5fa"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/mechanical_preflight.json",
+      "sha256": "3b9d214453b606e8a48f48b22657bf27b478e5cc7a0fed6c0aa60422c26c837f"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/provider_preflight.json",
+      "sha256": "71fd33bb2b58e9f4af2023e049865c213455495ecb828dc59481ca3fa3fe7e3c"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/provider_preflight.py",
+      "sha256": "84c15ad1684495503801d2b79b4762fb2365f2421c4acdee8826af7d7fc6ee18"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/configs/naked_codex.yaml",
+      "sha256": "e8c52201be388549a94cf2477e44bd61cb4b4feda8277c916bbb308dc2dfa4a4"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_sky_1/configs/sky_search.yaml",
+      "sha256": "b256a4768457d79c252bcc82338bd8b270b7f2ac8eab8088764b797c91cadd22"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/initial_program.py",
+      "sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py",
+      "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"
+    },
+    {
+      "path": "skydiscover/execution_budget.py",
+      "sha256": "ce14a56ed8c1a18bdffa50077e3e84181f6d9e8b870b5e209a90b65012ee92cf"
+    },
+    {
+      "path": "skydiscover/llm/codex_cli.py",
+      "sha256": "cf431a5e451dd645568e2a2203db7d03f577957f1eb238e5a9caddf96c7e67b0"
+    },
+    {
+      "path": "skydiscover/evaluation/evaluator.py",
+      "sha256": "bc24aa3f8ecd9d60ef408eb77879edffde99492e1d658f54d4a5c6461ca786c7"
+    },
+    {
+      "path": "skydiscover/search/incumbent_only/database.py",
+      "sha256": "bf526fa64887fc560f80830be030239907bedf0c85dddaa98ec566c22fa4bde9"
+    },
+    {
+      "path": "skydiscover/search/best_of_n/database.py",
+      "sha256": "c0bee8747da16e674f5efd0ca1573c40bb36b6e398b44092633d6995ca709710"
+    },
+    {
+      "path": "skydiscover/search/default_discovery_controller.py",
+      "sha256": "fa03663bb5d063b76df34c30dce14ebfd0291e2fb95cd110a973d4490b964ec3"
+    },
+    {
+      "path": "skydiscover/search/route.py",
+      "sha256": "8837797b2cc5e3f4d3f80768435387ec728489cd4e46970b2c2f4ab0a953608a"
+    },
+    {
+      "path": "skydiscover/config.py",
+      "sha256": "136c53652ea160a96140a367e10e315f3c45685ff7f8500b379a7b1ab7297f08"
+    }
+  ],
+  "frozen_at": "2026-08-19",
+  "hash_algorithm": "sha256",
+  "text_normalization": "crlf_to_lf"
+}

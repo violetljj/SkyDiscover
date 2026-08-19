@@ -1,6 +1,6 @@
 {
   "experiment_id": "L10M-SKY-1",
-  "status": "DESIGN_FROZEN_PENDING_FRESH_COHORT",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
   "frozen_at": "2026-08-19",
   "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
   "consumed_development_evidence": ["L10M-COMP-1", "L10M-COMP-2"],
@@ -21,6 +21,10 @@
       "development_initial_score_strictly_below": 0.91,
       "hidden_initial_score_strictly_below": 0.91
     }
+  },
+  "cohort_manifest": {
+    "path": "benchmarks/blindassist_last10m_sky_1/cohort_manifest.json",
+    "sha256": "38dce8c12378a0e51734b141a0ba6e824b198a1ec97ee9d7b94df00e083ea170"
   },
   "nested_replicates": {
     "count_per_instance": 2,
@@ -86,9 +90,6 @@
     "provider_failure_candidate": 0.0,
     "arm_level_failure": "ten_zero_hidden_opportunities_and_full_resource_accounting"
   },
-  "execution_blockers": [
-    "fresh_cohort_not_materialized",
-    "execution_manifest_not_frozen"
-  ],
+  "execution_blockers": [],
   "execution_manifest": "benchmarks/blindassist_last10m_sky_1/execution_manifest.json"
 }
