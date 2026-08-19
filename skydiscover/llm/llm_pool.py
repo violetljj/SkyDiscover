@@ -66,6 +66,27 @@ class LLMPool:
         model = self._sample_model()
         return await model.generate(system_message, messages, **kwargs)
 
+    async def check_availability(self, timeout: float = 15.0) -> bool:
+        """Probe the first model with a minimal request to check connectivity.
+
+        This is a representative check only: it tests the first configured
+        backend, not the entire pool.  A healthy first backend does not
+        guarantee all backends are reachable (and vice-versa).
+
+        The max_tokens=1 probe verifies endpoint connectivity and auth, not
+        generation correctness.  Reasoning models may return empty content on
+        such minimal requests without raising an error.
+        """
+        try:
+            model = self.models[0]
+            await asyncio.wait_for(
+                model.generate("", [{"role": "user", "content": "ping"}], max_tokens=1),
+                timeout=timeout,
+            )
+            return True
+        except Exception:
+            return False
+
     async def generate_all(
         self, system_message: str, messages: List[Dict[str, Any]], **kwargs
     ) -> List[LLMResponse]:
