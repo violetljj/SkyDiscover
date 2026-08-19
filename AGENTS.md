@@ -26,11 +26,17 @@ documented in `README.md` or the benchmark's own README.
 
 ## Preferred remote execution
 
-- Prefer the AutoDL host at
-  `ssh -p 24564 root@connect.westb.seetacloud.com` as the primary execution
-  worker for suitable SkyDiscover tasks. If it is unavailable, unhealthy, or
-  incompatible with the task, continue on the local machine instead of letting
-  remote setup block useful work.
+- Prefer the AutoDL host most recently designated by the user as the primary
+  execution worker for suitable SkyDiscover tasks. The remote endpoint is
+  mutable infrastructure, not a permanent project constant. The currently
+  designated endpoint is
+  `ssh -p 24564 root@connect.westb.seetacloud.com`; a later endpoint supplied by
+  the user supersedes it. Do not assume a historical host or port is still
+  current, and do not bake it into code as a permanent default. Record the
+  resolved endpoint in task manifests and receipts for provenance. If the
+  current remote is unavailable, unhealthy, or incompatible with the task,
+  continue on the local machine instead of letting remote setup block useful
+  work.
 - Before dispatch, perform a read-only preflight of SSH access, active jobs and
   locks, CPU and memory pressure, disk space, and required runtimes. Do not
   disturb work already running on the host.
