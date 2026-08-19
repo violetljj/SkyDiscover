@@ -70,6 +70,14 @@ documented in `README.md` or the benchmark's own README.
   the worker/dispatch protocol and pass a zero-model-call transport canary.
   Preserve sealed failed generation units and do not resume them merely because
   the transport later becomes available.
+- Treat dependency setup as an environment lifecycle, not an experiment step.
+  The target design is an immutable, content-addressed environment registry
+  keyed by the committed dependency lock, extras, Python/runtime and platform;
+  build and verify each fingerprint once, then reuse it read-only across
+  experiments. Keep each experiment's evaluator workers, logs, checkpoints,
+  receipts, locks, and process groups in its own task root. The current
+  task-local bootstrap is the safe baseline until that shared immutable registry
+  is implemented; do not claim cross-experiment reuse before then.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or

@@ -31,6 +31,9 @@ machine.
   backend only when the remote runtime is actually available.
 - Clarified that the intended next layer is a local-control/remote-evaluation
   transport; this branch does not implement or claim that channel.
+- Recorded the target follow-up design: immutable content-addressed environments
+  reused read-only across experiments, with task-owned execution roots; the
+  current implementation remains task-local.
 
 ## Result and claim ceiling
 
