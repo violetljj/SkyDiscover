@@ -24,6 +24,29 @@ and `configs/`; the documentation site lives in `docs/`.
 Some benchmarks require optional extras. Install only the relevant extra, as
 documented in `README.md` or the benchmark's own README.
 
+## Preferred remote execution
+
+- Prefer the AutoDL host at
+  `ssh -p 24564 root@connect.westb.seetacloud.com` as the primary execution
+  worker for suitable SkyDiscover tasks. If it is unavailable, unhealthy, or
+  incompatible with the task, continue on the local machine instead of letting
+  remote setup block useful work.
+- Before dispatch, perform a read-only preflight of SSH access, active jobs and
+  locks, CPU and memory pressure, disk space, and required runtimes. Do not
+  disturb work already running on the host.
+- Use the remote host's available capacity aggressively when it improves
+  turnaround time: dynamically size parallelism to the process-visible CPU and
+  memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
+  subprocess oversubscription. Preserve enough headroom for supervision,
+  checkpoints, and reliable completion.
+- Isolate each task by project, commit, job ID, working directory, environment,
+  output root, logs, locks, caches, process group, and resource limits. Keep the
+  local workspace authoritative for source control and evidence; bring back and
+  verify required outputs, checkpoints, receipts, and provenance before treating
+  remote execution as complete.
+- Do not leave the rented host idle after its work reaches a terminal state;
+  remind the user to shut it down in the AutoDL console.
+
 ## Working conventions
 
 - Keep changes scoped to the requested task and preserve unrelated worktree
