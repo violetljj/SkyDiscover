@@ -130,7 +130,15 @@
     "port": 24564,
     "remote_root": "/root/skydiscover_runs/l10m_struct_component_2",
     "worker_parallelism_rule": "up_to_process_visible_cpu_with_headroom_and_no_nested_oversubscription",
-    "remote_receipt_authority": "local_controller_validates_and_creates_terminal_receipt"
+    "remote_receipt_authority": "local_controller_validates_and_creates_terminal_receipt",
+    "transport_canary": {
+      "status": "REMOTE_TRANSPORT_CANARY_PASS",
+      "source_commit": "56d743c352e14b3cc9f54f444567b22a27dce3fb",
+      "request_id": "canary-raw-control-0001",
+      "model_calls": 0,
+      "experiment_receipts_created": 0,
+      "remote_manifest_sha256": "de0cea7ca63fb489f6cc2ae4045eb78cd7045dae29b039ebc1186dddf0d92b30"
+    }
   },
   "failure_and_recovery": {
     "create_once": true,
@@ -144,6 +152,6 @@
     "concurrent_writers_per_unit": 1,
     "read_only_progress_summary_required": true
   },
-  "execution_blockers": ["REMOTE_TRANSPORT_CANARY_PENDING"],
+  "execution_blockers": [],
   "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
 }

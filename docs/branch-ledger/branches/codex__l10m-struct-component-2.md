@@ -1,6 +1,6 @@
 # `codex/l10m-struct-component-2`
 
-- Status: `remote_transport_canary_pending_bootstrap`
+- Status: `execution_protocol_frozen_pending_formal_detached_launch`
 - Owner: project work branch
 - Base: `codex/l10m-struct-component-1` at `8859aec`
 - Integration target: `main`, after the full L10M dependency chain
@@ -51,5 +51,7 @@ implementation and hardened execution integrity.
 
 The first local engineering attempt is sealed as `ENGINEERING_ABORT_NO_ESTIMAND`
 after 8 terminal generation units and no factorial block. Those units are not
-rerun. The remote transport implementation has 9 focused tests passing; remote
-bootstrap, verify, and the actual zero-model transport canary remain pending.
+rerun. The remote transport implementation has 9 focused tests passing. Remote
+bootstrap and verify passed for the staged commit, and the zero-model transport
+canary passed with no model calls and no experiment receipts. The formal
+protocol now records the canary and has no execution blockers.

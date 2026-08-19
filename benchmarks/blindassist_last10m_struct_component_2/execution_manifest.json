@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/protocol.json",
-      "sha256": "95a819207f804541c1d5d822aae36ea88f1af37da59b56427c35cfed197c4277"
+      "sha256": "26fac48c0609074a72a29090af0ee167a21618b9cf9ad0d5effecf9ef6d591be"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/README.md",
@@ -44,7 +44,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/execute.py",
-      "sha256": "8ff55896a5eda218d546c78a9c1604f971a94d9f2b9201406dcaaa4e5128152d"
+      "sha256": "1470b1c3b0ba324f85b14b1a79e7245a3382468096a6129e734237ea23f26c74"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/preflight.py",
@@ -52,7 +52,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/receipts/mechanical_preflight.json",
-      "sha256": "b814056322d4f98796a05c775e7a0dd2d3e3aab90eadd7f42b860882c506fc68"
+      "sha256": "1409b50d0bba7154bc4a455cbb2d0b869ca7932412fdbc1425cf0fe0e41d5ef7"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_1/initial_program.py",

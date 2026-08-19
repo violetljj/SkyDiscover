@@ -102,7 +102,7 @@ def init_run(run_root: Path, remote_manifest_path: Path) -> dict[str, Any]:
         "frozen_head": state["head"],
         "frozen_tracked_tree": state["tracked_tree"],
         "exclusive_owner_token": secrets.token_hex(32),
-        "execution_environment": "local_windows",
+        "execution_environment": "local_control_remote_evaluator",
         "maximum_concurrent_blocks": 2,
         "same_instance_blocks_concurrent": False,
     }
