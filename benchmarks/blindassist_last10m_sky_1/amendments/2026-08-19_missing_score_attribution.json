@@ -1,0 +1,41 @@
+{
+  "amendment_id": "L10M-SKY-1-MECHANICAL-1",
+  "experiment_id": "L10M-SKY-1",
+  "created_at": "2026-08-19",
+  "classification": "POST_FREEZE_MECHANICAL_ADJUDICATION_REPAIR",
+  "trigger": {
+    "block": "instance_05/seed_419",
+    "exception": "KeyError: score_attribution",
+    "stage": "hidden_adjudication_before_receipt_creation",
+    "search_receipts_already_create_once": true,
+    "hidden_receipt_created": false,
+    "hidden_results_returned_to_search": false
+  },
+  "frozen_execution_manifest": {
+    "path": "benchmarks/blindassist_last10m_sky_1/execution_manifest.json",
+    "sha256": "443f307cb409168f0cff0a30dc07742d00563be3821969418efee790f5a671ff"
+  },
+  "repair": {
+    "script": "benchmarks/blindassist_last10m_sky_1/amendments/resume_missing_attribution.py",
+    "sha256": "f6f82cf9f9d56c7a64ef9adea74e4a412775049d6efda86bba6c6b26eabc0c20",
+    "only_change": "treat missing or malformed diagnostic score_attribution as an empty object",
+    "unchanged_fields": [
+      "status",
+      "combined_score",
+      "metrics",
+      "candidate_order",
+      "attempt_count",
+      "failure_zero_semantics",
+      "search_budgets",
+      "primary_analysis"
+    ]
+  },
+  "replay_semantics": {
+    "candidate_set": "same create-once candidate manifests",
+    "evaluator": "same execution-manifest-bound deterministic evaluator",
+    "opportunity_count": "unchanged; deterministic replay is not an extra candidate opportunity",
+    "partial_in_memory_results_observed_by_search": false,
+    "partial_hidden_receipt_persisted": false
+  },
+  "claim_authority": "NONE_BEYOND_RESTORING_FROZEN_ADJUDICATION_MECHANICS"
+}
