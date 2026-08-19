@@ -1,0 +1,1242 @@
+{
+  "authority_sha256": {
+    "cohort_manifest": "38dce8c12378a0e51734b141a0ba6e824b198a1ec97ee9d7b94df00e083ea170",
+    "evaluator": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb",
+    "protocol": "ea47d99a7cea48555e47814edf99a392e99414753855f71bab1723db2a2683aa",
+    "runner": "96b20534a6be664bf9d2f8d849490d27e1d065bed928fd4b8d4989734eb2d3b8"
+  },
+  "benchmark_revision": "L10M-ORACLE-3",
+  "candidate_sha256": {
+    "diag_1_policy": "522b4ccc3084110b9c1c03413a28a84a2412a45df6f44554ac19785b2a1b6b9b",
+    "structured_temporal_policy": "9324e0772f5f4cadf57aa14586f9a74dbaeb0e5c72bd502ee76546058d8af29a"
+  },
+  "consumed_hidden_results": [
+    {
+      "hidden_sha256": "e84bd033b3d93e059c2e3979131d76f258ec2a2a295782742d2166830cb0811a",
+      "instance_id": "instance_01",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_01_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.02375,\"delta_instruction\":0.00375,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.02375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.918125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.918125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.327232,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.02375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_01_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_01_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.021875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.021875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.91625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.91625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.269196,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.021875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.914286,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "ce8326a9e81bb3e95a16ab39d489d637ff5e2174f0c6c0fbda86b1cd0bd5c41d",
+      "instance_id": "instance_02",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_02_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=False; BEHAVIORAL_IMPROVEMENT_DETECTED=False; HELDOUT_IMPROVEMENT_DETECTED=False",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.0,\"delta_instruction\":0.0,\"delta_oscillation\":0.0,\"delta_path\":0.0,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.0,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.90625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.90625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.92381,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.0,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": 0.0,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_02_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_02_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=False; BEHAVIORAL_IMPROVEMENT_DETECTED=False; HELDOUT_IMPROVEMENT_DETECTED=False",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":-0.001875,\"delta_instruction\":-0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.0,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":-0.001875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.904375,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.904375,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 4.875,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.879167,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": -0.001875,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": 0.0,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "3a7677779bd69b1be618277231c67c25c405f1f007dd2f0008bdd4992013f591",
+      "instance_id": "instance_03",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_03_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.02375,\"delta_instruction\":0.00375,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.02375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.044494,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.02375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_03_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_03_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.02375,\"delta_instruction\":0.00375,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.02375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.044494,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.02375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "25e88fa3a981963ae501c86971e0e5665a8a08856e8318c0993d2e9685a8bc43",
+      "instance_id": "instance_04",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_04_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.02375,\"delta_instruction\":0.00375,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.02375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.134375,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.02375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_04_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_04_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.02375,\"delta_instruction\":0.00375,\"delta_oscillation\":0.0,\"delta_path\":0.02,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.02375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.134375,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.02375,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.02,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "4d3182adde85b106ef8acae86322f011d3d601825ddb89c84c7270333db98464",
+      "instance_id": "instance_05",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_05_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.908125,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.801042,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_05_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_05_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.92,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.908125,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.92,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.5,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.801042,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "c218fe47399375b39b8269b53cab18ed3118da82d97d8e5a1912aae156d0c3ca",
+      "instance_id": "instance_06",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_06_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.918125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.918125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.060268,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_06_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_06_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.01,\"delta_instruction\":0.0,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.01,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.91625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.91625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.0,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.01,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 1.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "e4bd62382bf7393d2cb69af8a8af1540dc17a5c6098247a1380ae1b5db7ced87",
+      "instance_id": "instance_07",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_07_H_08\",\"valid\":false,\"success\":false,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.083},{\"episode\":\"instance_07_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=False; BEHAVIORAL_IMPROVEMENT_DETECTED=False; HELDOUT_IMPROVEMENT_DETECTED=False",
+            "feedback": "L10M-ORACLE-3 test: 7/8 episodes valid and successful.\nEpisode instance_07_H_08:\n- timeout after 14 steps without valid ARRIVED\n- unsafe forward count: 0\n- wrong-way steps: 0\n- instruction flip rate: 0.083\n- reacquisition not demonstrated\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":-0.02,\"delta_component_sum\":-0.073333,\"delta_instruction\":-0.013125,\"delta_oscillation\":-0.000208,\"delta_path\":0.0,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":-0.04,\"delta_target_switch\":0.0,\"delta_total_score\":-0.894375,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.0,
+          "metrics": {
+            "arrival_quality": 0.875,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 0.0,
+            "combined_score": 0.0,
+            "final_heading_error": 1.125,
+            "heldout_improvement_detected": 0.0,
+            "instruction_count": 5.75,
+            "instruction_flip_rate": 0.010417,
+            "mean_heading_error": 6.617708,
+            "path_efficiency": 0.8125,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": -0.894375,
+            "search_signal_detected": 0.0,
+            "substantive_score_delta": -0.060208,
+            "substantive_score_share": 0.0,
+            "target_switch_count": 0.125,
+            "task_success": 0.875,
+            "timeout_rate": 0.125,
+            "unsafe_forward_count": 0.0,
+            "validity": 0.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_07_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":1.0},{\"episode\":\"instance_07_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_07_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.0125,\"delta_instruction\":0.0,\"delta_oscillation\":-0.0025,\"delta_path\":0.015,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.0125,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.906875,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.906875,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.875,
+            "instruction_flip_rate": 0.125,
+            "mean_heading_error": 6.106548,
+            "path_efficiency": 0.90625,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.0125,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.0125,
+            "substantive_score_share": 1.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "69ec7c2d1ae6cfc690cbacd9c741242041d0a7ab025150136553a3e631358ab0",
+      "instance_id": "instance_08",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_08_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.918125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.918125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.553423,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_08_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_08_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.01,\"delta_instruction\":0.0,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.01,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.91625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.90625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.91625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.497619,
+            "path_efficiency": 0.9375,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.01,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 1.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "be498e1ae35a0beb87a745d0dbf9278cf88a1ae994a0fdcd51406c9db55a50a8",
+      "instance_id": "instance_09",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_09_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.90625,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.90625,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.75,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.737798,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_09_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_09_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.01,\"delta_instruction\":0.0,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.01,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.904375,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.894375,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.904375,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.875,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 5.684226,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.01,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 1.0,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "a9cc2701c6fe5a2574e8004b705b153b6cbf5bc81be1413209872597c08c5a69",
+      "instance_id": "instance_10",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_10_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.035625,\"delta_instruction\":0.005625,\"delta_oscillation\":0.0,\"delta_path\":0.03,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.035625,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.931875,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.931875,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.375,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.653571,
+            "path_efficiency": 1.0,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.035625,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.03,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_10_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_10_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.035625,\"delta_instruction\":0.005625,\"delta_oscillation\":0.0,\"delta_path\":0.03,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.035625,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.931875,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.931875,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.375,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.653571,
+            "path_efficiency": 1.0,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.035625,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.03,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "fd83c7b083cc18943cd2f41efa89b6879edca994fbda2dbbd7773397c3f7306d",
+      "instance_id": "instance_11",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_11_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.333333,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_11_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_11_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.333333,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    },
+    {
+      "hidden_sha256": "1469f72864c2827776ef9c2e2ff1cec2da598498937ff98afb6addc469f35867",
+      "instance_id": "instance_12",
+      "results": {
+        "diag_1_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_12_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.252381,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        },
+        "structured_temporal_policy": {
+          "artifacts": {
+            "episode_summary": "[{\"episode\":\"instance_12_H_04\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_01\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_03\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_08\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_06\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_05\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_02\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"instance_12_H_07\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+            "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=True",
+            "feedback": "L10M-ORACLE-3 test: 8/8 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+            "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.011875,\"delta_instruction\":0.001875,\"delta_oscillation\":0.0,\"delta_path\":0.01,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.011875,\"delta_wrong_way\":0.0}"
+          },
+          "combined_score": 0.908125,
+          "metrics": {
+            "arrival_quality": 1.0,
+            "baseline_score": 0.89625,
+            "behavioral_improvement_detected": 1.0,
+            "combined_score": 0.908125,
+            "final_heading_error": 0.0,
+            "heldout_improvement_detected": 1.0,
+            "instruction_count": 4.625,
+            "instruction_flip_rate": 0.0,
+            "mean_heading_error": 6.252381,
+            "path_efficiency": 0.875,
+            "premature_arrival_count": 0.0,
+            "reacquisition_success": 1.0,
+            "safe_termination": 1.0,
+            "score_delta": 0.011875,
+            "search_signal_detected": 1.0,
+            "substantive_score_delta": 0.01,
+            "substantive_score_share": 0.842105,
+            "target_switch_count": 0.125,
+            "task_success": 1.0,
+            "timeout_rate": 0.0,
+            "unsafe_forward_count": 0.0,
+            "validity": 1.0,
+            "wrong_way_steps": 0.0
+          },
+          "status": "success"
+        }
+      }
+    }
+  ],
+  "decision": {
+    "claim_ceiling": "POST_HOC_CONSUMED_L10M_ORACLE_3_AND_SKY_1_COHORT_ONLY",
+    "search_restart_authorized": true,
+    "success_rules_met": true,
+    "verdict": "STRUCTURED_REPRESENTATION_ROBUST_REACHABILITY_ESTABLISHED"
+  },
+  "development_results": {
+    "diag_1_policy": {
+      "artifacts": {
+        "episode_summary": "[{\"episode\":\"D01_straight_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D02_left_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D03_right_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D04_similar_targets\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D05_glass_decoy\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D06_brief_occlusion\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D07_obstacle_detour\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D08_safety_dip\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D09_moderate_right_shortcut\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D10_moderate_left_shortcut\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+        "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=False",
+        "feedback": "L10M-ORACLE-3 train: 10/10 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+        "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.019,\"delta_instruction\":0.003,\"delta_oscillation\":0.0,\"delta_path\":0.016,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.019,\"delta_wrong_way\":0.0}"
+      },
+      "combined_score": 0.9255,
+      "metrics": {
+        "arrival_quality": 1.0,
+        "baseline_score": 0.9065,
+        "behavioral_improvement_detected": 1.0,
+        "combined_score": 0.9255,
+        "final_heading_error": 0.0,
+        "instruction_count": 4.7,
+        "instruction_flip_rate": 0.0,
+        "mean_heading_error": 5.158333,
+        "path_efficiency": 1.0,
+        "premature_arrival_count": 0.0,
+        "reacquisition_success": 1.0,
+        "safe_termination": 1.0,
+        "score_delta": 0.019,
+        "search_signal_detected": 1.0,
+        "substantive_score_delta": 0.016,
+        "substantive_score_share": 0.842105,
+        "target_switch_count": 0.2,
+        "task_success": 1.0,
+        "timeout_rate": 0.0,
+        "unsafe_forward_count": 0.0,
+        "validity": 1.0,
+        "wrong_way_steps": 0.0
+      },
+      "status": "success"
+    },
+    "structured_temporal_policy": {
+      "artifacts": {
+        "episode_summary": "[{\"episode\":\"D01_straight_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D02_left_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D03_right_entrance\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D04_similar_targets\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D05_glass_decoy\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D06_brief_occlusion\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D07_obstacle_detour\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D08_safety_dip\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D09_moderate_right_shortcut\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0},{\"episode\":\"D10_moderate_left_shortcut\",\"valid\":true,\"success\":true,\"unsafe_forward_count\":0,\"premature_arrival_count\":0,\"wrong_way_steps\":0,\"instruction_flip_rate\":0.0}]",
+        "evaluator_summary": "SEARCH_SIGNAL_DETECTED=True; BEHAVIORAL_IMPROVEMENT_DETECTED=True; HELDOUT_IMPROVEMENT_DETECTED=False",
+        "feedback": "L10M-ORACLE-3 train: 10/10 episodes valid and successful.\nNo oracle optimal action sequence is included in this feedback.",
+        "score_attribution": "{\"delta_arrival\":0.0,\"delta_component_sum\":0.019,\"delta_instruction\":0.003,\"delta_oscillation\":0.0,\"delta_path\":0.016,\"delta_reacquisition\":0.0,\"delta_safety\":0.0,\"delta_success\":0.0,\"delta_target_switch\":0.0,\"delta_total_score\":0.019,\"delta_wrong_way\":0.0}"
+      },
+      "combined_score": 0.9255,
+      "metrics": {
+        "arrival_quality": 1.0,
+        "baseline_score": 0.9065,
+        "behavioral_improvement_detected": 1.0,
+        "combined_score": 0.9255,
+        "final_heading_error": 0.0,
+        "instruction_count": 4.7,
+        "instruction_flip_rate": 0.0,
+        "mean_heading_error": 5.158333,
+        "path_efficiency": 1.0,
+        "premature_arrival_count": 0.0,
+        "reacquisition_success": 1.0,
+        "safe_termination": 1.0,
+        "score_delta": 0.019,
+        "search_signal_detected": 1.0,
+        "substantive_score_delta": 0.016,
+        "substantive_score_share": 0.842105,
+        "target_switch_count": 0.2,
+        "task_success": 1.0,
+        "timeout_rate": 0.0,
+        "unsafe_forward_count": 0.0,
+        "validity": 1.0,
+        "wrong_way_steps": 0.0
+      },
+      "status": "success"
+    }
+  },
+  "experiment_id": "L10M-DIAG-2",
+  "fresh_blind_split_evaluated": false,
+  "search_calls": 0,
+  "summary": {
+    "behavioral_pass_instances": 11,
+    "instance_count": 12,
+    "mean_substantive_score_delta": 0.013541666667,
+    "robust_safe_instances": 12
+  },
+  "target_episode_diagnosis": {
+    "cause": "REPEATED_NON_TRANSITIONING_STEERING_WITHOUT_PROGRESS_CONTRACT",
+    "episode_id": "instance_07_H_08",
+    "traces": {
+      "diag_1_policy": [
+        {
+          "action": "SLOW_DOWN",
+          "bearing": 7.0,
+          "confidence": 0.8,
+          "next_node": "s0",
+          "node": "s0",
+          "progress": 0.0,
+          "stalled": false,
+          "state": "VERIFY",
+          "step": 0
+        },
+        {
+          "action": "VEER_RIGHT",
+          "bearing": 7.0,
+          "confidence": 0.82,
+          "next_node": "turn",
+          "node": "s0",
+          "progress": 0.0,
+          "stalled": false,
+          "state": "APPROACH",
+          "step": 1
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 2
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 3
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 4
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 5
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 6
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 7
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 8
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 9
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 10
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 11
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 12
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 13
+        }
+      ],
+      "structured_temporal_policy": [
+        {
+          "action": "SLOW_DOWN",
+          "bearing": 7.0,
+          "confidence": 0.8,
+          "next_node": "s0",
+          "node": "s0",
+          "progress": 0.0,
+          "stalled": false,
+          "state": "VERIFY",
+          "step": 0
+        },
+        {
+          "action": "VEER_RIGHT",
+          "bearing": 7.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "s0",
+          "progress": 0.0,
+          "stalled": false,
+          "state": "APPROACH",
+          "step": 1
+        },
+        {
+          "action": "VEER_LEFT",
+          "bearing": -9.0,
+          "confidence": 0.9,
+          "next_node": "turn",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": true,
+          "state": "APPROACH",
+          "step": 2
+        },
+        {
+          "action": "FORWARD",
+          "bearing": -9.0,
+          "confidence": 0.82,
+          "next_node": "mid",
+          "node": "turn",
+          "progress": 0.35,
+          "stalled": false,
+          "state": "APPROACH",
+          "step": 3
+        },
+        {
+          "action": "FORWARD",
+          "bearing": 1.0,
+          "confidence": 0.9,
+          "next_node": "goal",
+          "node": "mid",
+          "progress": 0.7,
+          "stalled": false,
+          "state": "APPROACH",
+          "step": 4
+        },
+        {
+          "action": "ARRIVED",
+          "bearing": 0.0,
+          "confidence": 0.96,
+          "next_node": "goal",
+          "node": "goal",
+          "progress": 1.0,
+          "stalled": false,
+          "state": "ARRIVED",
+          "step": 5
+        }
+      ]
+    }
+  }
+}

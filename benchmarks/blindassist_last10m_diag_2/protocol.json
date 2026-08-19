@@ -1,0 +1,17 @@
+{
+  "experiment_id": "L10M-DIAG-2",
+  "purpose": "diagnose the DIAG-1 timeout and test a search-oriented temporal representation",
+  "splits": [
+    "consumed_development_train",
+    "consumed_l10m_sky_1_hidden"
+  ],
+  "fresh_blind_split_access": "forbidden",
+  "search_calls": 0,
+  "frozen_evaluator": "L10M-ORACLE-3",
+  "success_rules": {
+    "behavioral_pass_instances_min": 10,
+    "mean_substantive_score_delta_gt": 0.005,
+    "robust_safe_instances": 12
+  },
+  "claim_ceiling": "POST_HOC_CONSUMED_L10M_ORACLE_3_AND_SKY_1_COHORT_ONLY"
+}
