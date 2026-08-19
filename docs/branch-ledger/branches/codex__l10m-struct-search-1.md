@@ -52,7 +52,7 @@ unconstrained machine discovery.
 
 ## Important commits
 
-- `pending`: freeze structured temporal searchability experiment.
+- `ed57e1f`: freeze structured temporal searchability experiment.
 
 ## Integration notes
 
