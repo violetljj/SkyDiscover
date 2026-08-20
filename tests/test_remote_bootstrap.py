@@ -125,6 +125,26 @@ def test_environment_key_binds_remote_runtime_and_uv_version() -> None:
     assert len({base, different_python, different_uv}) == 3
 
 
+def test_dependency_spec_ignores_non_dependency_project_metadata(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    documents = iter(
+        (
+            b'[project]\nname = "first"\nrequires-python = ">=3.10"\ndependencies = ["numpy"]\n',
+            b'[project]\nname = "second"\nrequires-python = ">=3.10"\ndependencies = ["numpy"]\n',
+            b'[project]\nname = "second"\nrequires-python = ">=3.10"\ndependencies = ["scipy"]\n',
+        )
+    )
+    monkeypatch.setattr(remote_bootstrap, "_git_file_bytes", lambda *args: next(documents))
+
+    first = remote_bootstrap._dependency_spec_sha256(tmp_path, "a" * 40)
+    metadata_only = remote_bootstrap._dependency_spec_sha256(tmp_path, "b" * 40)
+    dependency_change = remote_bootstrap._dependency_spec_sha256(tmp_path, "c" * 40)
+
+    assert first == metadata_only
+    assert first != dependency_change
+
+
 def test_extract_prefixed_json_uses_last_matching_record() -> None:
     output = 'noise\nRESULT={"attempt": 1}\nmore\nRESULT={"attempt": 2}\n'
 
@@ -173,6 +193,7 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
         task_id="trial",
         commit="a" * 40,
         pyproject_sha256="project",
+        dependency_spec_sha256="dependencies",
         lock_sha256="lock",
         environment_key="env123",
         runtime={"python": "3.12.3"},
@@ -224,6 +245,9 @@ def test_bootstrap_stops_before_transfer_when_task_root_is_active(
     monkeypatch.setattr(
         remote_bootstrap, "_git_file_sha256", lambda repo, commit, path: f"hash-{path}"
     )
+    monkeypatch.setattr(
+        remote_bootstrap, "_dependency_spec_sha256", lambda repo, commit: "hash-dependencies"
+    )
 
     def fake_preflight(
         endpoint: RemoteEndpoint, remote_root: str, timeout: int
@@ -231,10 +255,13 @@ def test_bootstrap_stops_before_transfer_when_task_root_is_active(
         active = remote_root.endswith("/active-task")
         return {
             "hostname": "worker",
+            "libc_name": "glibc",
+            "libc_version": "2.35",
             "platform_machine": "x86_64",
             "platform_system": "Linux",
             "python": "3.12.3",
             "python_cache_tag": "cpython-312",
+            "python_executable": "/root/miniconda3/bin/python",
             "python_implementation": "CPython",
             "locks": [f"{remote_root}/active.lock"] if active else [],
             "blocking_locks": [f"{remote_root}/active.lock"] if active else [],

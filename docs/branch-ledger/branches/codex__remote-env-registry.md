@@ -23,8 +23,9 @@ tasks.
 ## Work performed
 
 - Split task-owned source and manifests from the shared dependency registry.
-- Bound environment fingerprints to lockfiles, extras, Python ABI, platform,
-  and a pinned uv version.
+- Bound environment fingerprints to dependency semantics, lockfiles, extras,
+  the Python executable/ABI, libc, platform, and a pinned uv version without
+  invalidating reusable dependencies for unrelated project metadata edits.
 - Installed dependencies with `--no-install-project` so a shared environment
   never points to another task's source checkout.
 - Added atomic environment build locks, verified markers, and cache-hit

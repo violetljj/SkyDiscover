@@ -24,6 +24,11 @@ from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from typing import Any, Mapping, Sequence
 
+try:
+    import tomllib  # type: ignore[import-not-found]
+except ModuleNotFoundError:  # pragma: no cover - Python 3.10 compatibility
+    import tomli as tomllib  # type: ignore[import-not-found,no-redef]
+
 _MANIFEST_PREFIX = "SKYDISCOVER_BOOTSTRAP_MANIFEST="
 _VERIFY_PREFIX = "SKYDISCOVER_BOOTSTRAP_VERIFY="
 _TASK_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
@@ -179,8 +184,8 @@ def _git_commit(repo: Path, revision: str) -> str:
     return completed.stdout.strip()
 
 
-def _git_file_sha256(repo: Path, commit: str, path: str) -> str:
-    """Hash a file exactly as stored in the selected commit."""
+def _git_file_bytes(repo: Path, commit: str, path: str) -> bytes:
+    """Read a file exactly as stored in the selected commit."""
 
     try:
         completed = subprocess.run(
@@ -195,11 +200,54 @@ def _git_file_sha256(repo: Path, commit: str, path: str) -> str:
     if completed.returncode != 0:
         detail = completed.stderr.decode(errors="replace").strip() or "no command output"
         raise BootstrapError(f"failed to read {path} from commit {commit}: {detail}")
-    return hashlib.sha256(completed.stdout).hexdigest()
+    return completed.stdout
+
+
+def _git_file_sha256(repo: Path, commit: str, path: str) -> str:
+    """Hash a file exactly as stored in the selected commit."""
+
+    return hashlib.sha256(_git_file_bytes(repo, commit, path)).hexdigest()
+
+
+def _dependency_spec_sha256(repo: Path, commit: str) -> str:
+    """Hash only dependency-relevant pyproject data for environment reuse."""
+
+    try:
+        document = tomllib.loads(_git_file_bytes(repo, commit, "pyproject.toml").decode("utf-8"))
+    except (UnicodeDecodeError, tomllib.TOMLDecodeError) as exc:
+        raise BootstrapError(f"failed to parse pyproject.toml from commit {commit}: {exc}") from exc
+    project = document.get("project", {})
+    tool_uv = document.get("tool", {}).get("uv", {})
+    dependency_spec = {
+        "build_system": document.get("build-system", {}),
+        "dependency_groups": document.get("dependency-groups", {}),
+        "project": {
+            "dependencies": project.get("dependencies", []),
+            "optional_dependencies": project.get("optional-dependencies", {}),
+            "requires_python": project.get("requires-python"),
+        },
+        "tool_uv": {
+            key: tool_uv.get(key)
+            for key in (
+                "conflicts",
+                "constraint-dependencies",
+                "default-groups",
+                "environments",
+                "override-dependencies",
+                "required-environments",
+                "sources",
+            )
+            if key in tool_uv
+        },
+    }
+    encoded = json.dumps(
+        dependency_spec, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _environment_key(
-    pyproject_sha256: str,
+    dependency_spec_sha256: str,
     lock_sha256: str,
     extras: Sequence[str],
     *,
@@ -209,7 +257,7 @@ def _environment_key(
     payload = json.dumps(
         {
             "extras": sorted(set(extras)),
-            "pyproject_sha256": pyproject_sha256,
+            "dependency_spec_sha256": dependency_spec_sha256,
             "runtime": dict(sorted((runtime or {}).items())),
             "uv_version": uv_version,
             "uv_lock_sha256": lock_sha256,
@@ -378,6 +426,7 @@ blocking_locks = [
 ]
 cpu_max = read_text("/sys/fs/cgroup/cpu.max")
 cpuset = read_text("/sys/fs/cgroup/cpuset.cpus.effective")
+libc_name, libc_version = platform.libc_ver()
 cpu_limits = [value for value in (os.cpu_count(), cpuset_count(cpuset), quota_count(cpu_max)) if value]
 payload = {
     "schema_version": 1,
@@ -386,6 +435,8 @@ payload = {
     "platform": platform.platform(),
     "platform_machine": platform.machine(),
     "platform_system": platform.system(),
+    "libc_name": libc_name,
+    "libc_version": libc_version,
     "python": platform.python_version(),
     "python_cache_tag": sys.implementation.cache_tag,
     "python_implementation": platform.python_implementation(),
@@ -492,6 +543,7 @@ def _install_script(
     task_id: str,
     commit: str,
     pyproject_sha256: str,
+    dependency_spec_sha256: str,
     lock_sha256: str,
     environment_key: str,
     runtime: Mapping[str, Any],
@@ -506,7 +558,7 @@ def _install_script(
         "schema_version": 1,
         "status": "verified",
         "environment_key": environment_key,
-        "pyproject_sha256": pyproject_sha256,
+        "dependency_spec_sha256": dependency_spec_sha256,
         "uv_lock_sha256": lock_sha256,
         "extras": sorted(set(extras)),
         "runtime": dict(sorted(runtime.items())),
@@ -521,6 +573,7 @@ def _install_script(
         "task_id": task_id,
         "source_commit": commit,
         "pyproject_sha256": pyproject_sha256,
+        "dependency_spec_sha256": dependency_spec_sha256,
         "uv_lock_sha256": lock_sha256,
         "extras": sorted(set(extras)),
         "task_root": layout.task_root,
@@ -846,8 +899,29 @@ def _capture_environment_bundle(
     timeout: int,
 ) -> tuple[Path, str]:
     bundle_path, metadata_path = _bundle_paths(bundle_cache, environment_key)
+    if bundle_path.exists() != metadata_path.exists():
+        raise BootstrapError("environment bundle archive and metadata must exist together")
     if bundle_path.is_file() and metadata_path.is_file():
-        return bundle_path, _file_sha256(bundle_path)
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise BootstrapError(
+                f"environment bundle metadata is invalid: {metadata_path}"
+            ) from exc
+        bundle_sha256 = _file_sha256(bundle_path)
+        expected = {
+            "environment_key": environment_key,
+            "remote_root": remote_root,
+            "runtime": dict(sorted(runtime.items())),
+            "uv_version": uv_version,
+            "bundle_sha256": bundle_sha256,
+            "bundle_size_bytes": bundle_path.stat().st_size,
+        }
+        for key, value in expected.items():
+            if metadata.get(key) != value:
+                raise BootstrapError(f"environment bundle metadata mismatch: {key}")
+        _validate_bundle_archive(bundle_path, environment_key)
+        return bundle_path, bundle_sha256
     bundle_cache.mkdir(parents=True, exist_ok=True)
     temporary = bundle_path.with_suffix(bundle_path.suffix + ".tmp")
     environment_relative = posixpath.relpath(layout.environment_root, remote_root)
@@ -920,23 +994,27 @@ def bootstrap(
         raise BootstrapError(f"repository must contain pyproject.toml and uv.lock: {repo}")
     commit = _git_commit(repo, revision)
     pyproject_sha256 = _git_file_sha256(repo, commit, "pyproject.toml")
+    dependency_spec_sha256 = _dependency_spec_sha256(repo, commit)
     lock_sha256 = _git_file_sha256(repo, commit, "uv.lock")
     resolved_uv_version = uv_version or _DEFAULT_UV_VERSION
     host_inspection = preflight(endpoint, remote_root, timeout=min(timeout, 60))
     runtime = {
         key: host_inspection.get(key)
         for key in (
+            "libc_name",
+            "libc_version",
             "platform_machine",
             "platform_system",
             "python",
             "python_cache_tag",
+            "python_executable",
             "python_implementation",
         )
     }
     if any(value in (None, "") for value in runtime.values()):
         raise BootstrapError("remote preflight did not return a complete runtime fingerprint")
     environment_key = _environment_key(
-        pyproject_sha256,
+        dependency_spec_sha256,
         lock_sha256,
         extras,
         runtime=runtime,
@@ -984,6 +1062,7 @@ def bootstrap(
             task_id=task_id,
             commit=commit,
             pyproject_sha256=pyproject_sha256,
+            dependency_spec_sha256=dependency_spec_sha256,
             lock_sha256=lock_sha256,
             environment_key=environment_key,
             runtime=runtime,
@@ -1034,16 +1113,20 @@ def verify(
     task_id = _validate_task_id(task_id)
     commit = _git_commit(repo, revision)
     pyproject_sha256 = _git_file_sha256(repo, commit, "pyproject.toml")
+    dependency_spec_sha256 = _dependency_spec_sha256(repo, commit)
     lock_sha256 = _git_file_sha256(repo, commit, "uv.lock")
     resolved_uv_version = uv_version or _DEFAULT_UV_VERSION
     host_inspection = preflight(endpoint, remote_root, timeout=min(timeout, 60))
     runtime = {
         key: host_inspection.get(key)
         for key in (
+            "libc_name",
+            "libc_version",
             "platform_machine",
             "platform_system",
             "python",
             "python_cache_tag",
+            "python_executable",
             "python_implementation",
         )
     }
@@ -1054,7 +1137,7 @@ def verify(
         task_id,
         commit,
         _environment_key(
-            pyproject_sha256,
+            dependency_spec_sha256,
             lock_sha256,
             extras,
             runtime=runtime,
@@ -1068,6 +1151,7 @@ def verify(
         "task_id": task_id,
         "source_commit": commit,
         "pyproject_sha256": pyproject_sha256,
+        "dependency_spec_sha256": dependency_spec_sha256,
         "uv_lock_sha256": lock_sha256,
         "extras": sorted(set(extras)),
         "source_dir": layout.source_dir,
@@ -1130,7 +1214,7 @@ if isinstance(environment, dict):
     environment_expected = {
         "status": "verified",
         "environment_key": expected["environment_key"],
-        "pyproject_sha256": expected["pyproject_sha256"],
+        "dependency_spec_sha256": expected["dependency_spec_sha256"],
         "uv_lock_sha256": expected["uv_lock_sha256"],
         "extras": expected["extras"],
         "runtime": expected["environment_runtime"],

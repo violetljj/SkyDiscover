@@ -45,8 +45,9 @@ The command:
 2. streams that commit once with `git archive` over SSH;
 3. locates the remote Python installation, including AutoDL Miniconda;
 4. resolves a shared `uv` tool pinned by version;
-5. fingerprints `pyproject.toml`, `uv.lock`, extras, Python ABI, platform, and
-   `uv` version;
+5. fingerprints dependency-relevant `pyproject.toml` fields, `uv.lock`, extras,
+   Python executable/ABI, libc, platform, and `uv` version; unrelated project
+   metadata and entry-point edits do not force a dependency rebuild;
 6. reuses the verified environment for that fingerprint, or runs one guarded
    cold `uv sync --no-install-project` when it is absent; and
 7. atomically writes a remote manifest and a matching local manifest under

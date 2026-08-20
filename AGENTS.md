@@ -71,8 +71,9 @@ documented in `README.md` or the benchmark's own README.
   Preserve sealed failed generation units and do not resume them merely because
   the transport later becomes available.
 - Treat dependency setup as an environment lifecycle, not an experiment step.
-  Use the immutable, content-addressed environment registry keyed by the
-  committed dependency lock, extras, Python/runtime, platform, and uv version;
+  Use the immutable, content-addressed environment registry keyed by dependency
+  semantics, the committed lock, extras, Python executable/ABI, libc, platform,
+  and uv version;
   build and verify each fingerprint once on the persistent data volume, then
   reuse it without another dependency sync across experiments. The shared
   environment installs dependencies only, never a task's project source; each
