@@ -1,5 +1,8 @@
 import importlib.util
+import json
 from pathlib import Path
+
+from skydiscover.config import load_config
 
 CONTRACT_PATH = (
     Path(__file__).resolve().parents[2]
@@ -26,3 +29,17 @@ def test_gc2b_design_is_consistent_and_non_executable() -> None:
     assert not contract["model_calls_authorized"]
     assert not contract["heldout_material_exported_to_sky"]
     assert not blueprint["enabled"]
+
+
+def test_gc2b_formal_config_preserves_frozen_budget_and_authority() -> None:
+    here = CONTRACT_PATH.parent
+    config = load_config(here / "config.yaml")
+    contract = json.loads((here / "protocol_contract.json").read_text(encoding="utf-8"))
+    assert config.max_iterations == contract["generation_attempts_per_replicate"] == 16
+    assert config.search.type == "best_of_n"
+    assert config.search.database.best_of_n == contract["best_of_n"] == 4
+    assert config.max_parallel_iterations == 1
+    assert config.llm.retries == 0
+    assert config.evaluator.max_retries == 0
+    assert not config.evaluator.llm_as_judge
+    assert not config.agentic.enabled
