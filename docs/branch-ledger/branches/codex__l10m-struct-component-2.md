@@ -16,6 +16,7 @@ implementation and hardened execution integrity.
 
 - `benchmarks/blindassist_last10m_struct_component_2/`
 - `tests/benchmarks/test_blindassist_last10m_struct_component_2.py`
+- `AGENTS.md` remote evidence-critical execution constraints
 - this branch record
 
 ## Dependencies and evidence boundary
@@ -37,11 +38,19 @@ implementation and hardened execution integrity.
 - Added the local-control/remote-evaluation data plane: persistent JSONL worker,
   local dispatch journal, idempotency keys, local receipt authority, and a
   zero-model transport canary.
+- Sealed formal attempt 2 with no estimand after finding that confirmed arm
+  failures were journaled as `in_doubt`; none of its units will be reused.
+- Hardened the transport into explicit confirmed-arm, `in_doubt`, and systemic
+  integrity classes, with task-owned remote started/receipt records and
+  create-once replay validation.
+- Added the resulting remote evidence semantics and required multi-case canary
+  to the repository-wide project constraints.
 
 ## Current evidence and claim ceiling
 
-- Validation: `8 passed`; Black and isort checks passed; package import passed;
-  mechanical preflight and regenerated-manifest equality passed.
+- Validation: targeted checks for attempt 3 are in progress; the latest local
+  pass before the final manifest refresh was `9 passed`, with Black, isort, and
+  package import passing.
 - Formal arm calls: zero.
 - Result: not available.
 - Claim ceiling: consumed-development component-screen signal within one L10M
@@ -49,9 +58,7 @@ implementation and hardened execution integrity.
 
 ## Readiness and disposition
 
-The first local engineering attempt is sealed as `ENGINEERING_ABORT_NO_ESTIMAND`
-after 8 terminal generation units and no factorial block. Those units are not
-rerun. The remote transport implementation has 9 focused tests passing. Remote
-bootstrap and verify passed for the staged commit, and the zero-model transport
-canary passed with no model calls and no experiment receipts. The formal
-protocol now records the canary and has no execution blockers.
+The first local engineering attempt and remote formal attempt 2 are sealed as
+`ENGINEERING_ABORT_NO_ESTIMAND`; neither contributes units to attempt 3. The
+attempt-3 protocol uses seeds 1821--1826 and is blocked on an exact-commit,
+multi-case remote transport canary before a new detached formal launch.

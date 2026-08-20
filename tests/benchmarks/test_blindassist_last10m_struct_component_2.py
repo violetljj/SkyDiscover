@@ -81,7 +81,10 @@ def test_protocol_keeps_exact_four_arms_and_original_three_factorial_questions()
         "simple_arm_contrasts_for_fresh_admission",
     }
     assert protocol["component_1_outcomes_in_formal_estimand"] is False
-    assert protocol["direct_replicates"]["local_seeds"] == [1811, 1812, 1813, 1814, 1815, 1816]
+    assert protocol["direct_replicates"]["local_seeds"] == [1821, 1822, 1823, 1824, 1825, 1826]
+    assert set(protocol["direct_replicates"]["local_seeds"]).isdisjoint(
+        {1701, 1702, 1703, 1704, 1705, 1706, 1801, 1811, 1812, 1813, 1814, 1815, 1816}
+    )
     assert set(protocol["direct_replicates"]["local_seeds"]).isdisjoint(
         set(range(1701, 1707)) | {1801}
     )
@@ -99,7 +102,9 @@ def test_execution_manifest_binds_new_engineering_and_unchanged_mechanism_files(
     assert manifest["component_1_results_imported"] is False
 
 
-def test_remote_worker_protocol_canary_is_zero_model_and_returns_evaluator_shape():
+def test_remote_worker_protocol_canary_is_create_once_and_returns_evaluator_shape(
+    tmp_path: Path,
+):
     protocol = json.loads((BENCHMARK / "protocol.json").read_text(encoding="utf-8"))
     cohort = json.loads(
         (ROOT / "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json").read_text(
@@ -120,14 +125,31 @@ def test_remote_worker_protocol_canary_is_zero_model_and_returns_evaluator_shape
         "scenarios": json.loads(scenario.read_text(encoding="utf-8")),
     }
     completed = subprocess.run(
-        [sys.executable, str(BENCHMARK / "remote_worker.py")],
-        input=json.dumps(request) + "\n",
+        [
+            sys.executable,
+            str(BENCHMARK / "remote_worker.py"),
+            "--worker-root",
+            str(tmp_path / "worker"),
+            "--worker-id",
+            "local-canary",
+        ],
+        input=(
+            json.dumps(request)
+            + "\n"
+            + json.dumps(request)
+            + "\n"
+            + json.dumps({**request, "arm": "moves_only"})
+            + "\n"
+        ),
         capture_output=True,
         text=True,
         check=True,
         timeout=60,
     )
-    response = json.loads(completed.stdout.strip())
+    responses = [json.loads(line) for line in completed.stdout.splitlines()]
+    assert responses[0] == responses[1]
+    assert responses[2]["status"] == "SYSTEMIC_INTEGRITY_FAILURE"
+    response = responses[0]
     assert response["status"] == "COMPLETED"
     assert response["request_id"] == "local-worker-canary"
     assert "metrics" in response["result"]
@@ -135,7 +157,7 @@ def test_remote_worker_protocol_canary_is_zero_model_and_returns_evaluator_shape
 
 def test_two_infrastructure_blocks_across_instances_are_complete_case_evaluable(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    for instance, seed in (("instance_01", 1811), ("instance_02", 1811)):
+    for instance, seed in (("instance_01", 1821), ("instance_02", 1821)):
         block = run_root / "units" / instance / f"seed_{seed}"
         for path in block.rglob("*"):
             if path.is_file():
@@ -154,7 +176,7 @@ def test_two_infrastructure_blocks_across_instances_are_complete_case_evaluable(
 
 def test_two_missing_blocks_in_one_instance_fail_five_of_six_gate(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    for seed in (1811, 1812):
+    for seed in (1821, 1822):
         block = run_root / "units" / "instance_01" / f"seed_{seed}"
         for file in block.rglob("*"):
             if file.is_file():
@@ -167,7 +189,7 @@ def test_two_missing_blocks_in_one_instance_fail_five_of_six_gate(tmp_path: Path
 
 def test_terminal_arm_failure_is_retained_as_zero_not_deleted(tmp_path: Path):
     run_root = _full_run(tmp_path)
-    _write_block(run_root, "instance_01", 1811, failed_arm="progress_only")
+    _write_block(run_root, "instance_01", 1821, failed_arm="progress_only")
     result = analysis.analyze(run_root)
     assert result["status"] == "EVALUABLE"
     assert result["complete_blocks"] == 72
@@ -184,15 +206,15 @@ def test_scheduler_pairs_never_share_an_instance():
 
 
 def test_started_validation_without_receipt_is_never_retried(tmp_path: Path):
-    _write_block(tmp_path, "instance_01", 1811)
-    block = tmp_path / "units" / "instance_01" / "seed_1811"
+    _write_block(tmp_path, "instance_01", 1821)
+    block = tmp_path / "units" / "instance_01" / "seed_1821"
     (block / "consumed_validation.json").unlink()
     (block / "validation_started.json").write_text("{}", encoding="utf-8")
     assert (
         execute._block_state(
             tmp_path / "units",
             "instance_01",
-            1811,
+            1821,
             ["raw_control", "progress_only", "moves_only", "progress_moves"],
         )
         == "validation_in_doubt"

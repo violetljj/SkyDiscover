@@ -13,7 +13,19 @@ from typing import Any
 
 
 class RemoteEvaluationError(RuntimeError):
-    """A remote dispatch failed or became in-doubt."""
+    """A confirmed arm-related remote evaluation failure."""
+
+
+class RemoteExecutionAbort(BaseException):
+    """Fail-closed condition that must bypass generic arm-failure handling."""
+
+
+class RemoteInDoubtError(RemoteExecutionAbort):
+    """A dispatch may have been consumed but has no confirmed terminal result."""
+
+
+class RemoteIntegrityError(RemoteExecutionAbort):
+    """A remote response failed systemic integrity validation."""
 
 
 class RemoteEvaluationClient:
@@ -34,6 +46,7 @@ class RemoteEvaluationClient:
         port = str(self.manifest["port"])
         python = f"{self.manifest['venv_dir']}/bin/python"
         script = f"{self.manifest['source_dir']}/benchmarks/blindassist_last10m_struct_component_2/remote_worker.py"
+        worker_root = f"{self.manifest['task_root']}/workers/{self.worker_id}"
         return [
             "ssh",
             "-o",
@@ -50,6 +63,8 @@ class RemoteEvaluationClient:
             python,
             "-u",
             script,
+            "--worker-root",
+            worker_root,
             "--worker-id",
             self.worker_id,
         ]
@@ -111,12 +126,6 @@ class RemoteEvaluationClient:
             response = json.loads(line)
             if response.get("request_id") != request_id:
                 raise RemoteEvaluationError("remote response request id mismatch")
-            if response.get("status") != "COMPLETED":
-                raise RemoteEvaluationError(response.get("error", "remote evaluator failure"))
-            with after.open("x", encoding="utf-8", newline="\n") as handle:
-                json.dump(response, handle, sort_keys=True)
-                handle.write("\n")
-            return response["result"]
         except Exception as exc:
             in_doubt = self.journal_root / f"{request_id}.in_doubt.json"
             if not in_doubt.exists():
@@ -131,7 +140,26 @@ class RemoteEvaluationClient:
                         sort_keys=True,
                     )
                     handle.write("\n")
-            raise RemoteEvaluationError(f"dispatch {request_id} is in_doubt: {exc}") from exc
+            raise RemoteInDoubtError(f"dispatch {request_id} is in_doubt: {exc}") from exc
+        with after.open("x", encoding="utf-8", newline="\n") as handle:
+            json.dump(response, handle, sort_keys=True)
+            handle.write("\n")
+        status = response.get("status")
+        if status == "IN_DOUBT":
+            in_doubt = self.journal_root / f"{request_id}.in_doubt.json"
+            with in_doubt.open("x", encoding="utf-8", newline="\n") as handle:
+                json.dump(response, handle, sort_keys=True)
+                handle.write("\n")
+            raise RemoteInDoubtError(f"remote worker reports dispatch {request_id} in_doubt")
+        if status == "ARM_RELATED_EVALUATOR_FAILURE":
+            raise RemoteEvaluationError(response.get("error", "confirmed remote evaluator failure"))
+        if status != "COMPLETED" or not isinstance(response.get("result"), dict):
+            raise RemoteIntegrityError(f"unexpected remote response status or shape: {status!r}")
+        result = response["result"]
+        encoded = json.dumps(result, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+        if hashlib.sha256(encoded.encode("utf-8")).hexdigest() != response.get("result_sha256"):
+            raise RemoteIntegrityError("remote result hash mismatch")
+        return result
 
     def close(self) -> None:
         if self.process is not None and self.process.poll() is None:

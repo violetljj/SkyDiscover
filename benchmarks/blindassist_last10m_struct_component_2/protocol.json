@@ -3,14 +3,28 @@
   "status": "EXECUTION_PROTOCOL_FROZEN",
   "frozen_at": "2026-08-20",
   "dependency_head": "8859aec",
-  "formal_attempt": 2,
-  "prior_attempt": {
-    "run_root": "E:/SkyDiscover_runs/L10M-STRUCT-COMPONENT-2_20260820",
-    "status": "ENGINEERING_ABORT_NO_ESTIMAND",
-    "terminal_generation_units": 8,
-    "component_1_results_imported": false,
-    "rerun_of_prior_units": false
-  },
+  "formal_attempt": 3,
+  "prior_attempts": [
+    {
+      "run_root": "E:/SkyDiscover_runs/L10M-STRUCT-COMPONENT-2_20260820",
+      "status": "ENGINEERING_ABORT_NO_ESTIMAND",
+      "terminal_generation_units": 8,
+      "complete_factorial_blocks": 0,
+      "component_1_results_imported": false,
+      "rerun_of_prior_units": false,
+      "reason": "adjudication import defect"
+    },
+    {
+      "run_root": "E:/SkyDiscover_runs/L10M-STRUCT-COMPONENT-2-R2_20260820",
+      "status": "ENGINEERING_ABORT_NO_ESTIMAND",
+      "terminal_generation_units": 23,
+      "in_doubt_generation_units": 1,
+      "complete_factorial_blocks": 5,
+      "component_1_results_imported": false,
+      "rerun_of_prior_units": false,
+      "reason": "confirmed remote arm failures were incorrectly journaled as in_doubt"
+    }
+  ],
   "source_experiment": "L10M-STRUCT-COMPONENT-1",
   "source_question": "UNCHANGED_PROGRESS_BY_MOVES_2X2_FACTORIAL",
   "evidence_role": "CONSUMED_DEVELOPMENT_MECHANISM_SCREEN_ONLY",
@@ -45,7 +59,7 @@
   },
   "direct_replicates": {
     "count_per_arm_instance": 6,
-    "local_seeds": [1811, 1812, 1813, 1814, 1815, 1816],
+    "local_seeds": [1821, 1822, 1823, 1824, 1825, 1826],
     "component_1_local_seeds_disjoint": true,
     "provider_sampling_seed_claimed": false,
     "aggregation": "best_consumed_validation_primary_value_across_common_complete_seeds_within_instance",
@@ -132,12 +146,10 @@
     "worker_parallelism_rule": "up_to_process_visible_cpu_with_headroom_and_no_nested_oversubscription",
     "remote_receipt_authority": "local_controller_validates_and_creates_terminal_receipt",
     "transport_canary": {
-      "status": "REMOTE_TRANSPORT_CANARY_PASS",
-      "source_commit": "56d743c352e14b3cc9f54f444567b22a27dce3fb",
-      "request_id": "canary-raw-control-0001",
+      "status": "REMOTE_TRANSPORT_CANARY_PENDING",
+      "required_cases": ["completed_evaluation", "confirmed_arm_failure_not_in_doubt", "create_once_replay"],
       "model_calls": 0,
-      "experiment_receipts_created": 0,
-      "remote_manifest_sha256": "de0cea7ca63fb489f6cc2ae4045eb78cd7045dae29b039ebc1186dddf0d92b30"
+      "experiment_receipts_created": 0
     }
   },
   "failure_and_recovery": {
@@ -152,6 +164,6 @@
     "concurrent_writers_per_unit": 1,
     "read_only_progress_summary_required": true
   },
-  "execution_blockers": [],
+  "execution_blockers": ["REMOTE_TRANSPORT_CANARY_PENDING"],
   "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
 }

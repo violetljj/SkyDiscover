@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/protocol.json",
-      "sha256": "286fd60bd00bb5a9e976dbb2398e5893dbf9969826cd3cd93b2fc97a4cf04f29"
+      "sha256": "097d5486c7380b7911c273f6b42b78413ce9b6a0da10a4a7db9ebb690f09979c"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/README.md",
@@ -16,11 +16,11 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/transport.py",
-      "sha256": "9ff9da5691eaaa7f956cc9a9104e5fa24a6671286e5a68a9e2ad51c52718881a"
+      "sha256": "23283562aff11f3b37482bea499a79b471f336ec0e173bcf3a125d44910da1b1"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/remote_worker.py",
-      "sha256": "b988e4d3cde18456c274988973df4260ffd87106a21afdc5957054d3adaf519e"
+      "sha256": "542d7221984a2971ccfcb18b88b8cdb1ec4818a24feb8699ff020f894ca8d366"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/evaluator.py",
@@ -28,7 +28,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/transport_canary.py",
-      "sha256": "5dc647151c043f5b1cf825b7ad2e79fbcb8be1a404752aa8b5b643247196080d"
+      "sha256": "268a185b05435745f449560c5ab8a58d77477dc1774831b95d139ee5802d44db"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/harness.py",
@@ -52,7 +52,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/receipts/mechanical_preflight.json",
-      "sha256": "5588c1e64d09eec403a66bde429fa4c03556f52ea866962dabae0436a4ad8890"
+      "sha256": "3e78451e221764acdd64b6f91e33933342fcc6370e20453d213eded4582f4abd"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_1/initial_program.py",

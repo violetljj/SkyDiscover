@@ -54,6 +54,44 @@ documented in `README.md` or the benchmark's own README.
 - Keep claims proportional to the evidence. A smoke test, reused task, or single
   benchmark result does not establish general superiority.
 
+## Remote evidence-critical execution
+
+- Keep the control plane local. Source editing, Git, Codex/model calls,
+  experiment scheduling, dispatch journals, evidence aggregation, analysis, and
+  closeout remain on the authoritative local machine. A remote host is an
+  execution-only data plane for already-staged project code and explicitly
+  scoped evaluators.
+- For every remote evaluation, distinguish three outcomes before execution:
+  a confirmed candidate/arm-related evaluator failure, an `in_doubt` dispatch,
+  and a systemic response-integrity failure. Only the first may use a
+  preregistered terminal-arm/ITT-zero rule. An `in_doubt` dispatch makes its
+  paired block incomplete under the frozen missing-block rule, while a systemic
+  integrity failure must fail closed.
+- Do not let a broad `except Exception` or generic fallback convert transport
+  loss, an unverifiable dispatch, an unexpected response status/shape, or a
+  result-hash mismatch into an arm failure or zero score. These conditions must
+  bypass ordinary arm-failure handling and preserve the absence of a terminal
+  experiment receipt.
+- Journal locally before dispatch and after a validated response. Write
+  `in_doubt` only when consumption or terminal state cannot be established;
+  a confirmed remote arm failure must have an `after` record and must not be
+  labeled `in_doubt`. Validate request identity, response request ID, result
+  shape, and result hash before the local controller creates a terminal receipt.
+- Give each formal attempt and each worker a task-owned remote root. The worker
+  must persist create-once `started` and terminal receipt records keyed by an
+  idempotency key, reject reuse of that key with different request identity, and
+  answer receipt/status queries without re-executing the evaluator.
+- Before a formal remote experiment, run a zero-model-call transport canary on
+  the exact staged commit. It must cover a successful evaluation, a confirmed
+  arm failure recorded as `after` but not `in_doubt`, and create-once replay of
+  the original remote receipt. A reachability probe or success-only canary is
+  insufficient.
+- If an engineering defect invalidates an attempt, stop its task-owned
+  processes, seal it as no-estimand, preserve its manifests/journals/receipts,
+  and never resume or mix its units into a later attempt. A later attempt must
+  use a new formal seed namespace and its own manifest, execution units, remote
+  task root, and receipts.
+
 ## Validation
 
 Run the narrowest checks that cover the changed surface:
