@@ -102,6 +102,25 @@ def test_execution_manifest_binds_new_engineering_and_unchanged_mechanism_files(
     assert manifest["component_1_results_imported"] is False
 
 
+def test_formal_closeout_stops_component_route_without_fresh_admission():
+    receipt = json.loads(
+        (BENCHMARK / "receipts/formal_closeout_r3.json").read_text(encoding="utf-8")
+    )
+
+    assert receipt["status"] == "EVALUABLE"
+    assert receipt["complete_blocks"] == 72
+    assert receipt["formal_arm_receipts"] == 288
+    assert receipt["terminal_arm_statuses"] == {"COMPLETED": 288}
+    assert receipt["in_doubt_units"] == 0
+    assert receipt["component_1_results_imported"] is False
+    assert all(
+        estimand["observed_mean"] == 0.0 for estimand in receipt["factorial_estimands"].values()
+    )
+    assert receipt["fresh_execution_authorized"] is False
+    assert receipt["fresh_preregistration_admitted_arms"] == []
+    assert receipt["decision"] == "STOP_STRUCTURED_COMPONENT_ROUTE"
+
+
 def test_remote_worker_protocol_canary_is_create_once_and_returns_evaluator_shape(
     tmp_path: Path,
 ):

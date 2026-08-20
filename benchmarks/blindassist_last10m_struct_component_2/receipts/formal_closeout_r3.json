@@ -1,0 +1,69 @@
+{
+  "arm_summaries": {
+    "moves_only": {
+      "mean_selected_substantive_value": 0.0,
+      "robust_safe_instances": 0
+    },
+    "progress_moves": {
+      "mean_selected_substantive_value": 0.0,
+      "robust_safe_instances": 0
+    },
+    "progress_only": {
+      "mean_selected_substantive_value": 0.0,
+      "robust_safe_instances": 0
+    },
+    "raw_control": {
+      "mean_selected_substantive_value": 0.0,
+      "robust_safe_instances": 0
+    }
+  },
+  "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY",
+  "completed_at_utc": "2026-08-20T05:55:14Z",
+  "complete_blocks": 72,
+  "complete_seeds_per_instance": 6,
+  "component_1_results_imported": false,
+  "decision": "STOP_STRUCTURED_COMPONENT_ROUTE",
+  "evidence_role": "CONSUMED_DEVELOPMENT_MECHANISM_SCREEN_ONLY",
+  "excluded_infrastructure_blocks": 0,
+  "experiment_id": "L10M-STRUCT-COMPONENT-2",
+  "factorial_estimands": {
+    "interaction": {
+      "losses": 0,
+      "observed_mean": 0.0,
+      "one_sided_exact_p": 1.0,
+      "ties": 12,
+      "wins": 0
+    },
+    "moves_main": {
+      "losses": 0,
+      "observed_mean": 0.0,
+      "one_sided_exact_p": 1.0,
+      "ties": 12,
+      "wins": 0
+    },
+    "progress_main": {
+      "losses": 0,
+      "observed_mean": 0.0,
+      "one_sided_exact_p": 1.0,
+      "ties": 12,
+      "wins": 0
+    }
+  },
+  "formal_analysis_sha256": "b0389d86d312a5bc372244ed07d3ec31228c41839ec5051865ce4481b33cb8aa",
+  "formal_arm_receipts": 288,
+  "formal_launch_manifest_sha256": "b5a0ac7d144473a8277a35ef6ed67f5611960744557c024c070370ae4ef3b980",
+  "fresh_execution_authorized": false,
+  "fresh_preregistration_admitted_arms": [],
+  "frozen_commit": "00bd9305cea48e8ee17b92538209232d03367222",
+  "in_doubt_units": 0,
+  "remote_bootstrap_manifest_sha256": "bde1883396a9f1edfda450af04a5c9cd5376343eef8e426aadf8065e0e722e51",
+  "run_execution_closeout_sha256": "baf822269cff8a9a0cf7e419662b8ee4bb7022fd157095668a615560b9b5d388",
+  "run_remote_manifest_sha256": "43bdb14b10c8ad98da83bf8827e565f490a73361743680270f8132c8dd0cf551",
+  "schema_version": 1,
+  "status": "EVALUABLE",
+  "terminal_arm_statuses": {
+    "COMPLETED": 288
+  },
+  "transport_canary_receipt_sha256": "acef338f06e278c04de4db3f229f835141cbc62ea0fb6357a682a0686db505d4",
+  "validation_receipts": 72
+}
