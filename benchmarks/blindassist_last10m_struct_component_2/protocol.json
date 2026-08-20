@@ -146,10 +146,16 @@
     "worker_parallelism_rule": "up_to_process_visible_cpu_with_headroom_and_no_nested_oversubscription",
     "remote_receipt_authority": "local_controller_validates_and_creates_terminal_receipt",
     "transport_canary": {
-      "status": "REMOTE_TRANSPORT_CANARY_PENDING",
+      "status": "REMOTE_TRANSPORT_CANARY_PASS",
       "required_cases": ["completed_evaluation", "confirmed_arm_failure_not_in_doubt", "create_once_replay"],
       "model_calls": 0,
-      "experiment_receipts_created": 0
+      "experiment_receipts_created": 0,
+      "source_commit": "d3876df2c067697e1b5be01586d37189ea1c5c1a",
+      "request_id": "canary-raw-control-0001",
+      "confirmed_failure_request_id": "canary-confirmed-failure-0001",
+      "confirmed_failure_classified_in_doubt": false,
+      "create_once_replay": "PASS",
+      "remote_manifest_sha256": "395f8179c7cd68105d9184e075500b1a45512c88b57ebfd624909c31ba7c6efb"
     }
   },
   "failure_and_recovery": {
@@ -164,6 +170,6 @@
     "concurrent_writers_per_unit": 1,
     "read_only_progress_summary_required": true
   },
-  "execution_blockers": ["REMOTE_TRANSPORT_CANARY_PENDING"],
+  "execution_blockers": [],
   "claim_ceiling": "CONSUMED_DEVELOPMENT_COMPONENT_SCREEN_SIGNAL_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
 }

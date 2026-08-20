@@ -1,6 +1,6 @@
 # `codex/l10m-struct-component-2`
 
-- Status: `attempt_3_remote_canary_pending`
+- Status: `attempt_3_final_exact_commit_canary_pending`
 - Owner: project work branch
 - Base: `codex/l10m-struct-component-1` at `8859aec`
 - Integration target: `main`, after the full L10M dependency chain
@@ -68,3 +68,8 @@ superseded it with `root@connect.westc.seetacloud.com:17611`; read-only prefligh
 passed with 32 visible CPUs, 60 GiB memory, no blocking locks or relevant
 processes, and no existing task root. Exact-commit bootstrap, verify, and the
 multi-case canary remain required before formal launch.
+
+The multi-case zero-model canary passed on commit `d3876df`: completed remote
+evaluation, confirmed arm failure without `in_doubt`, and create-once receipt
+replay all passed. The protocol blocker is cleared; the final metadata commit
+must still be staged and canaried exactly before the detached R3 launch.
