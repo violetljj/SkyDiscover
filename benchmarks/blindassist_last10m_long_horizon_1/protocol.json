@@ -1,6 +1,6 @@
 {
   "experiment_id": "L10M-LONG-HORIZON-1",
-  "status": "DESIGN_FROZEN_PENDING_MECHANICAL_PREFLIGHT",
+  "status": "EXECUTION_PROTOCOL_FROZEN",
   "frozen_at": "2026-08-20",
   "evidence_role": "CONSUMED_DEVELOPMENT_LONG_HORIZON_CALIBRATION_ONLY",
   "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
@@ -90,7 +90,15 @@
     "persistent_worker_channels": true,
     "remote_working_storage": "task_owned_local_nvme",
     "deterministic_content_cache": "sha256_candidate_plus_scenarios_plus_mode_create_once",
-    "transport_canary_required": true
+    "transport_canary_required": true,
+    "pre_freeze_transport_canary": {
+      "status": "REMOTE_TRANSPORT_CANARY_PASS",
+      "source_commit": "8d8fd2beb0359c9da8860ecb3a1257c3b8cd1ca5",
+      "model_calls": 0,
+      "create_once_replay": "PASS",
+      "confirmed_failure_classified_in_doubt": false,
+      "remote_manifest_sha256": "690f75d091a0978d3ee06f38d988733b6930760d8bf85811bfa5b9beadb732e2"
+    }
   },
   "failure_and_recovery": {
     "external_dispatch_journal": "create_before_dispatch_complete_after_response",

@@ -1,0 +1,93 @@
+{
+  "experiment_id": "L10M-LONG-HORIZON-1",
+  "files": [
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/protocol.json",
+      "sha256": "379ed026280381db0d36bae70622f046d6d24b96ad19e045bdfe009a9faaa7dd"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/README.md",
+      "sha256": "b82d8b1968f3757fd9d7343e8f450724fd1394b5d81f961247a6c468a3db442a"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/configs/naked.yaml",
+      "sha256": "540a67d373fd16b416d3d330a62184d2018f17185e24f51f891fdaed4e19661d"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/configs/adaevolve.yaml",
+      "sha256": "124eff5ef9be02d022a2afa9daef9cb99ebc42cf8b322e7369cad697c77c16fd"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/configs/evox.yaml",
+      "sha256": "170604257a8efca447379b9b5a4765b3d2c45aa5818a9fffc526ec2170bafa0c"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/evaluator.py",
+      "sha256": "8b340bb765d0f6188924da921e17e0e53d2b5804cdecf27628262647c7ba23ed"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/harness.py",
+      "sha256": "2e41bc557ae309a2bf3876d5e59d5467fe4430247f087f9b3f219c118bf9fc5b"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/launcher.py",
+      "sha256": "13822b02e151538ad995b015307e528a2da20939d863c1b3870320f833c40f95"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/progress.py",
+      "sha256": "0b0a4afe3cff93796048bbc80d54a23c40818df1d347aee7082ed48a067a4eb7"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/remote_worker.py",
+      "sha256": "ae39dd125fa00b094896c13f33fd49829170a5e182e9226020275a3c9f509fde"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/transport.py",
+      "sha256": "768d2242b168f37d3be89c8d58ac9a2d03f3c0353f8aa67bca0346c2534d1cf9"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_long_horizon_1/receipts/mechanical_preflight.json",
+      "sha256": "bf7b77ea7c77baa9424a7a7c79cce7a4a20dda88d7b14982caf2fccfe6076a56"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json",
+      "sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/initial_program.py",
+      "sha256": "00f4a5491cf10740fb4ceb3b6a0f91d25f5826d2eb929f141f39a17b93757d33"
+    },
+    {
+      "path": "benchmarks/blindassist_last10m_v3/evaluator/evaluator.py",
+      "sha256": "8651fccafe049d66564dfb7f76663c101e37e2d320c5957948a439141558c6cb"
+    },
+    {
+      "path": "skydiscover/evaluation/evaluator.py",
+      "sha256": "42bacfbe551a7a7e0e8c16f2f6bfc38d7a2de93f5b3594302ddf6a08014a0ada"
+    },
+    {
+      "path": "skydiscover/execution_budget.py",
+      "sha256": "52679d8ef039df8b7336cc147b747e12e2f04d849ce0d7b18c8ac5fdc694c572"
+    },
+    {
+      "path": "skydiscover/runner.py",
+      "sha256": "36c74c4624e432648c11c901395267511f5daa1c9f5e2fa7dcca5dfba34627bc"
+    },
+    {
+      "path": "skydiscover/search/adaevolve/controller.py",
+      "sha256": "03ad20c0e70463abb0231ee6cfea01a939ed1905b050f74cb76b08252f3e847e"
+    },
+    {
+      "path": "skydiscover/search/evox/controller.py",
+      "sha256": "7d1980301aa8862de054282fc78055021bc5469d100f2515826ce8887db95218"
+    },
+    {
+      "path": "skydiscover/search/evox/utils/search_scorer.py",
+      "sha256": "b7614249d087d5744ff8908a133831a0a70cf6bab5179829433cc9f5952ea997"
+    }
+  ],
+  "formal_trajectories_observed_before_freeze": 0,
+  "hash_algorithm": "sha256",
+  "status": "EXECUTION_MANIFEST_FROZEN",
+  "text_normalization": "crlf_to_lf"
+}

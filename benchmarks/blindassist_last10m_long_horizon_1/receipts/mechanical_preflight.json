@@ -1,0 +1,33 @@
+{
+  "experiment_id": "L10M-LONG-HORIZON-1",
+  "status": "MECHANICAL_PREFLIGHT_PASS",
+  "model_calls": 0,
+  "focused_tests": {
+    "passed": 73,
+    "command": "uv run pytest tests/test_execution_budget.py tests/search/test_evox.py tests/search/test_adaevolve_multiobjective.py tests/benchmarks/test_blindassist_last10m_long_horizon_1.py -q"
+  },
+  "provider": {
+    "path": "E:/codex-tools/bin/codex.exe",
+    "version": "codex-cli 0.148.0",
+    "sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410",
+    "authentication": "Logged in using ChatGPT"
+  },
+  "remote": {
+    "endpoint": "root@connect.westc.seetacloud.com",
+    "port": 17611,
+    "cpu_count_visible": 32,
+    "memory_limit_bytes": 64424509440,
+    "environment_key": "c203087905460e0b",
+    "source_commit": "8d8fd2beb0359c9da8860ecb3a1257c3b8cd1ca5",
+    "verify_status": "verified"
+  },
+  "transport_canary": {
+    "status": "REMOTE_TRANSPORT_CANARY_PASS",
+    "model_calls": 0,
+    "experiment_receipts_created": 0,
+    "create_once_replay": "PASS",
+    "confirmed_failure_classified_in_doubt": false,
+    "remote_manifest_sha256": "690f75d091a0978d3ee06f38d988733b6930760d8bf85811bfa5b9beadb732e2"
+  },
+  "formal_trajectories_started": 0
+}
