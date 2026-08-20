@@ -1,0 +1,62 @@
+language: python
+max_iterations: 200
+checkpoint_interval: 1
+log_level: INFO
+random_seed: 2201
+max_parallel_iterations: 1
+diff_based_generation: false
+max_solution_length: 30000
+llm:
+  models:
+    - name: codex-cli/gpt-5.6-sol
+      weight: 1.0
+  reasoning_effort: medium
+  max_tokens: 12000
+  timeout: 900
+  retries: 0
+search:
+  type: adaevolve
+  num_context_programs: 4
+  database:
+    population_size: 20
+    num_islands: 2
+    decay: 0.9
+    intensity_min: 0.15
+    intensity_max: 0.5
+    use_adaptive_search: true
+    use_ucb_selection: true
+    use_migration: true
+    use_unified_archive: true
+    migration_interval: 15
+    migration_count: 5
+    fitness_weight: 1.0
+    novelty_weight: 0.0
+    diversity_strategy: code
+    use_dynamic_islands: true
+    max_islands: 5
+    spawn_productivity_threshold: 0.015
+    spawn_cooldown_iterations: 30
+    use_paradigm_breakthrough: true
+    paradigm_window_size: 10
+    paradigm_improvement_threshold: 0.12
+    paradigm_max_uses: 2
+    paradigm_max_tried: 10
+    paradigm_num_to_generate: 3
+    enable_error_retry: false
+    max_error_retries: 0
+prompt:
+  system_message: |-
+    Improve only the Last10mPolicy decide(observation, memory) EVOLVE-BLOCK.
+    Preserve its exact three-value interface and use only the Python standard
+    library. Optimize a conservative, stable, target-driven closed-loop policy.
+    Safety is a hard gate: never trade unsafe motion for efficiency. Do not
+    infer hidden graph topology or an oracle action sequence. Use observations
+    and bounded JSON-serializable memory, avoid left/right oscillation, verify
+    before locking, stop on uncertainty, and reacquire before advancing.
+evaluator:
+  timeout: 120
+  max_retries: 0
+  cascade_evaluation: false
+  inject_evaluator_context: true
+monitor:
+  enabled: false

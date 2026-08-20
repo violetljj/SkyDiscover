@@ -110,8 +110,9 @@ class Evaluator:
                   (the containerized evaluator passes it to evaluate.sh).
         """
         ledger = active_budget()
+        ledger_event_id = None
         if ledger is not None:
-            ledger.start_evaluation(program_id=program_id, mode=mode)
+            ledger_event_id = ledger.start_evaluation(program_id=program_id, mode=mode)
         start_time = time.time()
         label = f" {program_id}" if program_id else ""
 
@@ -155,12 +156,16 @@ class Evaluator:
                 logger.debug(
                     f"Evaluated program{label} in {elapsed:.2f}s: {format_metrics(eval_result.metrics)}"
                 )
+                if ledger is not None and ledger_event_id is not None:
+                    ledger.finish_evaluation(ledger_event_id, outcome="result")
                 return eval_result
 
             except asyncio.TimeoutError:
                 logger.error(
                     f"Program{label} timed out after {time.time() - start_time:.0f}s (limit: {self.config.timeout}s)"
                 )
+                if ledger is not None and ledger_event_id is not None:
+                    ledger.finish_evaluation(ledger_event_id, outcome="timeout")
                 return EvaluationResult(metrics={"error": 0.0, "timeout": True})
 
             except Exception as e:
@@ -178,6 +183,8 @@ class Evaluator:
                     os.unlink(sidecar_path)
 
         logger.error(f"All attempts failed{label}: {last_exception}")
+        if ledger is not None and ledger_event_id is not None:
+            ledger.finish_evaluation(ledger_event_id, outcome="error")
         return EvaluationResult(metrics={"error": 0.0})
 
     async def evaluate_batch(
@@ -202,6 +209,9 @@ class Evaluator:
 
     def close(self) -> None:
         """Remove the dynamically loaded evaluation module from sys.modules."""
+        close_module = getattr(getattr(self, "_eval_module", None), "close", None)
+        if close_module is not None:
+            close_module()
         sys.modules.pop(getattr(self, "_module_name", None), None)
 
     # ------------------------------------------------------------------

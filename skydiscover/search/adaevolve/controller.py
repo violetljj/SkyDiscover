@@ -248,13 +248,22 @@ class AdaEvolveController(DiscoveryController):
                 break
 
             try:
-                await self._run_iteration(iteration, checkpoint_callback)
+                # Save only after end_iteration so UCB, migration, paradigm,
+                # and next-island state describe the same completed prefix as
+                # the solution database.
+                await self._run_iteration(iteration, None)
             except Exception as e:
                 logger.exception(f"Iteration {iteration} failed: {e}")
             finally:
                 # CRITICAL: Tell database iteration is complete
                 # This handles island rotation (UCB) and migration
                 self.database.end_iteration(iteration)
+                if (
+                    checkpoint_callback
+                    and iteration > 0
+                    and iteration % self.config.checkpoint_interval == 0
+                ):
+                    checkpoint_callback(iteration)
 
         logger.info("AdaEvolve completed")
         self.database.log_status()

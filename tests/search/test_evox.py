@@ -4,6 +4,7 @@ from pathlib import Path
 
 import skydiscover.search.route  # noqa: F401,E402
 from skydiscover.config import Config, SearchConfig
+from skydiscover.search.evox.utils.search_scorer import LogWindowScorer
 from skydiscover.search.registry import setup_search
 
 
@@ -55,3 +56,16 @@ def test_setup_search_reads_builtin_strategy_as_utf8(tmp_path):
     )
 
     assert solution == "# curly quote: \u201cstrategy\u201d\n"
+
+
+def test_log_window_scorer_checkpoint_round_trip():
+    scorer = LogWindowScorer("strategy-7")
+    scorer.reset_window(1.25, start_iteration=40)
+    scorer.record_step(1.5)
+    scorer.record_step(1.75)
+
+    restored = LogWindowScorer()
+    restored.load_state_dict(scorer.state_dict())
+
+    assert restored.state_dict() == scorer.state_dict()
+    assert restored.compute_metrics(horizon=20) == scorer.compute_metrics(horizon=20)

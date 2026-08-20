@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import contextvars
+import json
+import os
 from contextlib import contextmanager
 from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Any, Dict, Iterator, Optional
 
 
@@ -39,6 +42,48 @@ class BudgetLedger:
     discarded_generation_calls: int = 0
     stop_reason: Optional[str] = None
     events: list[Dict[str, Any]] = field(default_factory=list)
+    journal_path: Optional[Path] = field(default=None, repr=False, compare=False)
+
+    def __post_init__(self) -> None:
+        if self.journal_path is not None:
+            self.journal_path = Path(self.journal_path)
+
+    def _persist(self) -> None:
+        """Atomically persist accounting before and after external dispatches."""
+        if self.journal_path is None:
+            return
+        self.journal_path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = self.journal_path.with_suffix(self.journal_path.suffix + ".tmp")
+        temporary.write_text(
+            json.dumps(self.to_receipt(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        )
+        os.replace(temporary, self.journal_path)
+
+    @classmethod
+    def from_journal(cls, journal_path: Path | str) -> "BudgetLedger":
+        """Restore a ledger and conservatively seal interrupted dispatches."""
+        path = Path(journal_path)
+        receipt = json.loads(path.read_text(encoding="utf-8"))
+        usage = receipt["usage"]
+        ledger = cls(
+            ceilings=BudgetCeilings(**receipt["ceilings"]),
+            generation_calls=int(usage["generation_calls"]),
+            evaluator_attempts=int(usage["evaluator_attempts"]),
+            input_tokens=int(usage["input_tokens"]),
+            output_tokens=int(usage["output_tokens"]),
+            discarded_generation_calls=int(usage["discarded_generation_calls"]),
+            stop_reason=receipt.get("stop_reason"),
+            events=[dict(event) for event in receipt.get("events", [])],
+            journal_path=path,
+        )
+        changed = False
+        for event in ledger.events:
+            if event.get("status") in {"started", "admitted"}:
+                event["status"] = "in_doubt"
+                changed = True
+        if changed:
+            ledger._persist()
+        return ledger
 
     @property
     def total_tokens(self) -> int:
@@ -51,6 +96,7 @@ class BudgetLedger:
     def _reject(self, reason: str) -> None:
         if self.stop_reason is None:
             self.stop_reason = reason
+        self._persist()
         raise BudgetExceeded(self.stop_reason)
 
     def start_generation(self, *, provider: str, model: str, attempt: int) -> int:
@@ -76,6 +122,7 @@ class BudgetLedger:
                 "output_tokens": 0,
             }
         )
+        self._persist()
         return event_id
 
     def finish_generation(
@@ -90,6 +137,7 @@ class BudgetLedger:
         if error is not None:
             event["status"] = "failed"
             event["error"] = error
+            self._persist()
             return
 
         usage = (metadata or {}).get("codex_usage")
@@ -98,6 +146,7 @@ class BudgetLedger:
             self.discarded_generation_calls += 1
             if self.ceilings.require_token_usage:
                 self._reject("missing_token_usage")
+            self._persist()
             return
 
         input_tokens = int(usage.get("input_tokens") or 0)
@@ -116,6 +165,7 @@ class BudgetLedger:
             self.discarded_generation_calls += 1
             self._reject("token_ceiling_crossed")
         event["status"] = "accepted"
+        self._persist()
 
     def start_evaluation(self, *, program_id: str, mode: str) -> int:
         """Admit and count one evaluator attempt before candidate execution."""
@@ -134,7 +184,17 @@ class BudgetLedger:
                 "status": "admitted",
             }
         )
+        self._persist()
         return event_id
+
+    def finish_evaluation(self, event_id: int, *, outcome: str) -> None:
+        """Record that an admitted evaluator dispatch reached a known outcome."""
+        event = self.events[event_id]
+        if event.get("kind") != "evaluation" or event.get("status") != "admitted":
+            raise ValueError("evaluation event is not open")
+        event["status"] = "completed"
+        event["outcome"] = outcome
+        self._persist()
 
     def to_receipt(self) -> Dict[str, Any]:
         """Return a JSON-serializable immutable snapshot."""

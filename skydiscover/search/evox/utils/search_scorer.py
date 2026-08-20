@@ -45,6 +45,24 @@ class LogWindowScorer:
     def get_start_score(self) -> Optional[float]:
         return self._start_score
 
+    def state_dict(self) -> Dict[str, Any]:
+        """Return the exact active scoring window for checkpointing."""
+        return {
+            "algorithm_id": self.algorithm_id,
+            "start_score": self._start_score,
+            "start_iteration": self._start_iteration,
+            "best_scores": list(self._best_scores),
+        }
+
+    def load_state_dict(self, state: Dict[str, Any]) -> None:
+        """Restore a scoring window without resetting its accumulated steps."""
+        self.algorithm_id = str(state.get("algorithm_id") or "unknown")
+        start_score = state.get("start_score")
+        self._start_score = float(start_score) if start_score is not None else None
+        start_iteration = state.get("start_iteration")
+        self._start_iteration = int(start_iteration) if start_iteration is not None else None
+        self._best_scores = [float(value) for value in state.get("best_scores", [])]
+
     def compute_metrics(
         self,
         start_score: Optional[float] = None,

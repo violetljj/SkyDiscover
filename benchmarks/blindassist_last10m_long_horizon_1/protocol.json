@@ -1,0 +1,113 @@
+{
+  "experiment_id": "L10M-LONG-HORIZON-1",
+  "status": "DESIGN_FROZEN_PENDING_MECHANICAL_PREFLIGHT",
+  "frozen_at": "2026-08-20",
+  "evidence_role": "CONSUMED_DEVELOPMENT_LONG_HORIZON_CALIBRATION_ONLY",
+  "source_family": "L10M-ORACLE-3-GRAPH-FAMILY",
+  "consumed_cohort": {
+    "source_experiment": "L10M-COMP-2",
+    "manifest_path": "benchmarks/blindassist_last10m_comp_2/cohort_manifest.json",
+    "manifest_sha256": "d11a093ab0f303b2e7aa2da0041528d91eddf2c59af4cb6c3508d440e3633e68",
+    "instance_count": 12,
+    "generation_split": "dev",
+    "hidden_or_fresh_access": "FORBIDDEN"
+  },
+  "arms": ["naked", "adaevolve", "evox"],
+  "replicates": {
+    "seeds": [2201, 2202, 2203],
+    "provider_sampling_seed_claimed": false,
+    "total_trajectories": 108,
+    "trajectory_order": "deterministic_round_robin_by_instance_seed_arm"
+  },
+  "horizon": {
+    "solution_candidate_generations": 200,
+    "prefix_observations": [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200],
+    "single_prefix_consistent_trajectory": true,
+    "checkpoint_interval": 1,
+    "maximum_lost_accepted_iterations": 1
+  },
+  "model": "codex-cli/gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "provider_executable": {
+    "path": "E:/codex-tools/bin/codex.exe",
+    "required_version": "codex-cli 0.148.0",
+    "sha256": "2ad2cf8a732da68b8f141634f92db1a03016c5faf533a7225fbc0fb740130410"
+  },
+  "budget_per_trajectory": {
+    "solution_candidate_opportunities": 200,
+    "generation_call_ceiling": {
+      "naked": 200,
+      "adaevolve": 230,
+      "evox": 260
+    },
+    "evaluator_attempt_ceiling": 202,
+    "total_token_ceiling": 9000000,
+    "provider_retries": 0,
+    "evaluator_retries": 0,
+    "evox_extra_calls": "strategy_label_and_meta_evolution_calls_are_intrinsic_overhead_and_reported_separately",
+    "x_axis": "accepted_solution_candidate_generation_not_total_provider_calls"
+  },
+  "primary_outcome": {
+    "metric": "robust_safe_best_so_far_combined_score",
+    "robust_safe": "validity_equals_1_and_task_success_equals_1_and_safe_termination_equals_1",
+    "unsafe_invalid_missing_timeout_or_failed_candidate_value": 0.0,
+    "contrasts": ["adaevolve_minus_naked", "evox_minus_naked"],
+    "reporting": "curves_at_every_10_iteration_prefix_plus_100_to_150_and_150_to_200_marginal_gain"
+  },
+  "continuation_to_400": {
+    "default": "STOP_AT_200",
+    "authorize_matched_all_arm_continuation_only_if": [
+      "at_least_one_adaptive_arm_has_instance_mean_seed_mean_150_to_200_gain_strictly_greater_than_0.0025",
+      "the_same_arm_has_strictly_positive_150_to_200_gain_on_at_least_8_of_12_instance_aggregates",
+      "the_same_arm_is_robust_safe_on_all_12_instance_aggregates_at_200",
+      "complete_200_horizon_cohort_is_evaluable"
+    ],
+    "continuation_prefixes": [250, 300, 400],
+    "no_outcome_dependent_subset_continuation": true
+  },
+  "parallelism": {
+    "independent_unit": "instance_x_seed_x_arm_trajectory",
+    "within_trajectory_iterations": "STRICTLY_SERIAL",
+    "local_llm_call_ceiling": 10,
+    "remote_visible_cpu_expected": 32,
+    "remote_cpu_reserve": 6,
+    "remote_evaluator_process_ceiling": 26,
+    "remote_evaluator_rule": "min_26_visible_cpu_minus_6_memory_safe_capacity",
+    "thread_env": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "remote_execution": {
+    "architecture": "LOCAL_CONTROL_PLANE_REMOTE_EVALUATION_DATA_PLANE",
+    "endpoint": "root@connect.westc.seetacloud.com",
+    "port": 17611,
+    "remote_root": "/root/skydiscover-tasks/l10m-long-horizon-1",
+    "codex_generation_local": true,
+    "local_evidence_authority": true,
+    "persistent_worker_channels": true,
+    "remote_working_storage": "task_owned_local_nvme",
+    "deterministic_content_cache": "sha256_candidate_plus_scenarios_plus_mode_create_once",
+    "transport_canary_required": true
+  },
+  "failure_and_recovery": {
+    "external_dispatch_journal": "create_before_dispatch_complete_after_response",
+    "interrupted_external_call": "in_doubt_and_counted_against_budget_never_automatically_reissued",
+    "resume": "validate_frozen_hashes_and_latest_complete_checkpoint_then_continue_only_when_no_external_call_is_in_doubt",
+    "in_doubt_trajectory": "seal_trajectory_in_doubt_and_do_not_rerun_or_continue",
+    "concurrent_writers_per_trajectory": 1,
+    "terminal_receipts_create_once": true,
+    "read_only_progress_summary_required": true,
+    "sealed_terminal_trajectory_rerun": "FORBIDDEN"
+  },
+  "launch_gates": [
+    "controller_checkpoint_round_trip_tests_pass",
+    "budget_journal_recovery_tests_pass",
+    "remote_environment_exact_commit_verified",
+    "zero_model_call_remote_transport_canary_pass",
+    "local_provider_preflight_matches_frozen_identity"
+  ],
+  "claim_ceiling": "CONSUMED_DEVELOPMENT_HORIZON_BEHAVIOR_WITHIN_ONE_L10M_GRAPH_FAMILY_ONLY"
+}

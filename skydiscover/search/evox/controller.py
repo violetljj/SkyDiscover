@@ -5,10 +5,12 @@ Runs evolution for the main *solution* database while also evolving a
 separate *search* program/database in the same process.
 """
 
+import json
 import logging
 import os
 import tempfile
 import uuid
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -154,24 +156,28 @@ class CoEvolutionController(DiscoveryController):
     ):
         """Run co-evolution of solution programs and search algorithms."""
         self.total_solution_iterations = start_iteration + max_iterations
-        self._max_solution_iterations = max_iterations
+        self._max_solution_iterations = self.total_solution_iterations
 
         if self._switch_interval is None:
-            self._switch_interval = max(1, int(max_iterations * self.DEFAULT_SWITCH_RATIO))
+            self._switch_interval = max(
+                1, int(self.total_solution_iterations * self.DEFAULT_SWITCH_RATIO)
+            )
             logger.debug(f"Switch if {self._switch_interval} iterations of stagnation detected")
 
-        self.start_db_stats = self.database.get_statistics(
-            improvement_threshold=self.DEFAULT_IMPROVEMENT_THRESHOLD
-        )
+        if not hasattr(self, "start_db_stats"):
+            self.start_db_stats = self.database.get_statistics(
+                improvement_threshold=self.DEFAULT_IMPROVEMENT_THRESHOLD
+            )
 
         # Check meta-search LLM availability before starting
         await self._check_meta_llm_availability()
 
-        # Set up search window and labels
-        self._reset_search_window()
-
-        # Generate variation labels for the search algorithm
-        await self._generate_variation_operators()
+        if not getattr(self, "_controller_state_restored", False):
+            # Set up search window and labels only for a fresh trajectory. A
+            # resume must preserve the exact active scoring window and labels.
+            self._reset_search_window()
+            await self._generate_variation_operators()
+        self._controller_state_restored = False
 
         # Run co-evolution
         iteration = start_iteration
@@ -194,7 +200,13 @@ class CoEvolutionController(DiscoveryController):
                         self._restore_fallback_database()
                         continue  # Retry same iteration with restored database
                 else:
-                    self._process_iteration_result(result, iteration, checkpoint_callback)
+                    self._process_iteration_result(result, iteration, None)
+                    # A new database is considered admitted after its first
+                    # successful solution addition. Until then the fallback is
+                    # checkpointed so recovery can preserve rollback semantics.
+                    if self._fallback_database is not None:
+                        self._fallback_database = None
+                        self._fallback_search_code = None
 
                 for _ in range(attempts_used):
                     self._record_search_window_step()
@@ -225,6 +237,13 @@ class CoEvolutionController(DiscoveryController):
                         )
                         self._meta_evolution_failures += 1
 
+                if (
+                    checkpoint_callback
+                    and completed_solution_iter > 0
+                    and completed_solution_iter % self.config.checkpoint_interval == 0
+                ):
+                    checkpoint_callback(completed_solution_iter)
+
             except Exception as e:
                 logger.error(f"Error in iteration {iteration}: {e}", exc_info=True)
                 # Exception from database.add() after a switch: fall back and retry
@@ -243,6 +262,114 @@ class CoEvolutionController(DiscoveryController):
                 self._meta_evolution_failures,
             )
         return self.database.get_best_program()
+
+    def _database_from_code(self, code: str, checkpoint_path: str):
+        """Recreate an evolved solution database and load its frozen programs."""
+        fd, file_path = tempfile.mkstemp(suffix=".py", prefix="evox_checkpoint_search_")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as handle:
+                handle.write(code)
+            database_class, program_class = load_database_from_file(file_path)
+            if not hasattr(database_class, "DIVERGE_LABEL"):
+                database_class.DIVERGE_LABEL = ""
+            if not hasattr(database_class, "REFINE_LABEL"):
+                database_class.REFINE_LABEL = ""
+            database = database_class(self.config.search.type, self.config.search.database)
+            database._program_class = program_class
+            self._assign_labels_to_db(database)
+            database.load(checkpoint_path)
+            self._wrap_add_method(database)
+            database.get_best_program()
+            return database
+        finally:
+            if os.path.exists(file_path):
+                os.unlink(file_path)
+
+    def save_checkpoint_state(self, checkpoint_path: str, iteration: int) -> None:
+        """Persist EvoX meta-evolution state beside the solution checkpoint."""
+        state_dir = Path(checkpoint_path) / "evox_controller"
+        state_dir.mkdir(parents=True, exist_ok=True)
+        search_database_path = state_dir / "search_database"
+        self.search_controller.database.save(str(search_database_path), self._num_search_evolutions)
+
+        fallback_code = self._fallback_search_code
+        if self._fallback_database is not None:
+            if not fallback_code:
+                raise RuntimeError("EvoX fallback database has no matching strategy code")
+            self._fallback_database.save(str(state_dir / "fallback_database"), iteration)
+
+        payload = {
+            "schema_version": 1,
+            "iteration": iteration,
+            "active_search_algorithm_code": self._active_search_algorithm_code,
+            "fallback_search_algorithm_code": fallback_code,
+            "pending_search_result": (
+                asdict(self._pending_search_result) if self._pending_search_result else None
+            ),
+            "best_search_score": self._best_search_score,
+            "num_search_evolutions": self._num_search_evolutions,
+            "switch_interval": self._switch_interval,
+            "stagnant_count": self._stagnant_count,
+            "meta_evolution_failures": self._meta_evolution_failures,
+            "last_tracked_best_score": self._last_tracked_best_score,
+            "diverge_label": self._diverge_label,
+            "refine_label": self._refine_label,
+            "start_db_stats": make_json_serializable(self.start_db_stats),
+            "search_scorer": self.search_scorer.state_dict(),
+        }
+        state_path = state_dir / "state.json"
+        temporary = state_path.with_suffix(".json.tmp")
+        temporary.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        os.replace(temporary, state_path)
+
+    def load_checkpoint_state(self, checkpoint_path: str) -> None:
+        """Restore EvoX strategy, scoring-window, and rollback state exactly."""
+        state_dir = Path(checkpoint_path) / "evox_controller"
+        state_path = state_dir / "state.json"
+        if not state_path.is_file():
+            raise RuntimeError(f"EvoX checkpoint lacks controller state: {state_path}")
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        if state.get("schema_version") != 1:
+            raise RuntimeError("unsupported EvoX controller checkpoint schema")
+
+        self._diverge_label = str(state.get("diverge_label") or "")
+        self._refine_label = str(state.get("refine_label") or "")
+        active_code = str(state["active_search_algorithm_code"])
+        if active_code != self._search_initial_code:
+            self.database = self._database_from_code(active_code, checkpoint_path)
+            if self.evaluator.llm_judge:
+                self.evaluator.llm_judge.database = self.database
+        else:
+            self._assign_labels_to_db(self.database)
+        self._active_search_algorithm_code = active_code
+
+        self.search_controller.database.load(str(state_dir / "search_database"))
+        pending = state.get("pending_search_result")
+        self._pending_search_result = SerializableResult(**pending) if pending else None
+        self._best_search_score = state.get("best_search_score")
+        self._num_search_evolutions = int(state.get("num_search_evolutions", 0))
+        switch_interval = state.get("switch_interval")
+        self._switch_interval = int(switch_interval) if switch_interval is not None else None
+        self._stagnant_count = int(state.get("stagnant_count", 0))
+        self._meta_evolution_failures = int(state.get("meta_evolution_failures", 0))
+        tracked = state.get("last_tracked_best_score")
+        self._last_tracked_best_score = float(tracked) if tracked is not None else None
+        self.start_db_stats = state.get("start_db_stats", {})
+        self.search_scorer.load_state_dict(state.get("search_scorer", {}))
+        self._controller_state_restored = True
+
+        fallback_code = state.get("fallback_search_algorithm_code")
+        if fallback_code:
+            fallback_path = state_dir / "fallback_database"
+            if not fallback_path.is_dir():
+                raise RuntimeError("EvoX checkpoint fallback state is incomplete")
+            self._fallback_search_code = str(fallback_code)
+            self._fallback_database = self._database_from_code(
+                self._fallback_search_code, str(fallback_path)
+            )
+        else:
+            self._fallback_search_code = None
+            self._fallback_database = None
 
     def _should_evolve_search(self) -> bool:
         """Check if it's time to evolve the search algorithm (stagnation-based)."""

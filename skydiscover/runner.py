@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import shutil
 import signal
 import sys
 import time
@@ -140,6 +141,17 @@ class Runner:
 
         # Get the discovery controller
         self.discovery_controller = get_discovery_controller(controller_input)
+
+        # Search methods may own state beyond the solution database (for
+        # example EvoX's strategy database and active scoring window). Restore
+        # that state only after the controller has been constructed.
+        if checkpoint_path and os.path.exists(checkpoint_path):
+            load_controller_state = getattr(
+                self.discovery_controller, "load_checkpoint_state", None
+            )
+            if load_controller_state is not None:
+                load_controller_state(checkpoint_path)
+                self._sync_database()
 
         # Add initial program to database if not resuming
         should_add_initial = (
@@ -414,35 +426,54 @@ class Runner:
     def _save_checkpoint(self, iteration: int) -> None:
         checkpoint_dir = os.path.join(self.output_dir, "checkpoints")
         checkpoint_path = os.path.join(checkpoint_dir, f"checkpoint_{iteration}")
-        os.makedirs(checkpoint_path, exist_ok=True)
+        if os.path.isdir(checkpoint_path):
+            logger.debug(f"Checkpoint already sealed: {checkpoint_path}")
+            return
+        os.makedirs(checkpoint_dir, exist_ok=True)
+        temporary_path = os.path.join(
+            checkpoint_dir, f".checkpoint_{iteration}.{uuid.uuid4().hex}.tmp"
+        )
+        os.makedirs(temporary_path)
 
-        self.database.save(checkpoint_path, iteration)
+        try:
+            self.database.save(temporary_path, iteration)
 
-        best = self._get_best_program()
-        if best:
-            with open(
-                os.path.join(checkpoint_path, f"best_program{self.file_extension}"), "w"
-            ) as f:
-                f.write(best.solution)
-            with open(os.path.join(checkpoint_path, "best_program_info.json"), "w") as f:
-                from skydiscover.search.utils.checkpoint_manager import SafeJSONEncoder
+            save_controller_state = getattr(
+                self.discovery_controller, "save_checkpoint_state", None
+            )
+            if save_controller_state is not None:
+                save_controller_state(temporary_path, iteration)
 
-                json.dump(
-                    {
-                        "id": best.id,
-                        "generation": best.generation,
-                        "iteration": best.iteration_found,
-                        "current_iteration": iteration,
-                        "metrics": best.metrics,
-                        "language": best.language,
-                        "timestamp": best.timestamp,
-                        "saved_at": time.time(),
-                    },
-                    f,
-                    indent=2,
-                    cls=SafeJSONEncoder,
-                )
-            logger.info(f"Checkpoint {iteration}: best={format_metrics(best.metrics)}")
+            best = self._get_best_program()
+            if best:
+                with open(
+                    os.path.join(temporary_path, f"best_program{self.file_extension}"), "w"
+                ) as f:
+                    f.write(best.solution)
+                with open(os.path.join(temporary_path, "best_program_info.json"), "w") as f:
+                    from skydiscover.search.utils.checkpoint_manager import SafeJSONEncoder
+
+                    json.dump(
+                        {
+                            "id": best.id,
+                            "generation": best.generation,
+                            "iteration": best.iteration_found,
+                            "current_iteration": iteration,
+                            "metrics": best.metrics,
+                            "language": best.language,
+                            "timestamp": best.timestamp,
+                            "saved_at": time.time(),
+                        },
+                        f,
+                        indent=2,
+                        cls=SafeJSONEncoder,
+                    )
+                logger.info(f"Checkpoint {iteration}: best={format_metrics(best.metrics)}")
+
+            os.replace(temporary_path, checkpoint_path)
+        except Exception:
+            shutil.rmtree(temporary_path, ignore_errors=True)
+            raise
 
         logger.debug(f"Checkpoint saved to {checkpoint_path}")
 

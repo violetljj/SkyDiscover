@@ -73,3 +73,44 @@ def test_evaluator_attempt_ceiling_is_admitted_before_execution():
     assert ledger.evaluator_attempts == 1
     assert ledger.stop_reason == "evaluator_attempt_ceiling"
     assert ledger.events[0]["program_id"] == "p1"
+
+
+def test_durable_journal_marks_interrupted_dispatches_in_doubt(tmp_path):
+    journal = tmp_path / "budget.json"
+    ledger = BudgetLedger(BudgetCeilings(3, 2, 100), journal_path=journal)
+    ledger.start_generation(provider="codex-cli", model="test", attempt=1)
+    ledger.start_evaluation(program_id="p1", mode="train")
+
+    restored = BudgetLedger.from_journal(journal)
+
+    assert restored.generation_calls == 1
+    assert restored.evaluator_attempts == 1
+    assert [event["status"] for event in restored.events] == ["in_doubt", "in_doubt"]
+    assert [event["status"] for event in BudgetLedger.from_journal(journal).events] == [
+        "in_doubt",
+        "in_doubt",
+    ]
+
+
+def test_durable_journal_records_completion(tmp_path):
+    journal = tmp_path / "budget.json"
+    ledger = BudgetLedger(BudgetCeilings(3, 2, 100), journal_path=journal)
+    event_id = ledger.start_generation(provider="codex-cli", model="test", attempt=1)
+    ledger.finish_generation(event_id, metadata=_usage(20, 5))
+
+    restored = BudgetLedger.from_journal(journal)
+
+    assert restored.total_tokens == 25
+    assert restored.events[0]["status"] == "accepted"
+
+
+def test_durable_journal_records_evaluation_completion(tmp_path):
+    journal = tmp_path / "budget.json"
+    ledger = BudgetLedger(BudgetCeilings(3, 2, 100), journal_path=journal)
+    event_id = ledger.start_evaluation(program_id="p1", mode="train")
+    ledger.finish_evaluation(event_id, outcome="result")
+
+    restored = BudgetLedger.from_journal(journal)
+
+    assert restored.events[0]["status"] == "completed"
+    assert restored.events[0]["outcome"] == "result"
