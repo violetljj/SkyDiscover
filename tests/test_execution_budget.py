@@ -2,12 +2,26 @@
 
 from __future__ import annotations
 
+import json
 from unittest.mock import AsyncMock
 
 import pytest
 
 from skydiscover.execution_budget import BudgetCeilings, BudgetExceeded, BudgetLedger
 from skydiscover.llm.codex_cli import CodexCliLLM
+
+
+def test_durable_generation_journal_marks_pre_and_post_dispatch(tmp_path):
+    journal = tmp_path / "calls.jsonl"
+    ledger = BudgetLedger(BudgetCeilings(1, 1, 100), journal_path=str(journal))
+    event = ledger.start_generation(provider="codex-cli", model="gpt", attempt=1)
+    ledger.finish_generation(
+        event,
+        metadata={"codex_usage": {"input_tokens": 10, "output_tokens": 5}},
+    )
+    records = [json.loads(line) for line in journal.read_text().splitlines()]
+    assert [record["status"] for record in records] == ["started", "accepted"]
+    assert records[0]["event_id"] == records[1]["event_id"] == 0
 
 
 def _codex_stub() -> CodexCliLLM:

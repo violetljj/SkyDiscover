@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 import contextvars
+import json
+import os
 from contextlib import contextmanager
 from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Any, Dict, Iterator, Optional
 
 
@@ -39,6 +42,19 @@ class BudgetLedger:
     discarded_generation_calls: int = 0
     stop_reason: Optional[str] = None
     events: list[Dict[str, Any]] = field(default_factory=list)
+    journal_path: Optional[str] = None
+
+    def _journal(self, event: Dict[str, Any]) -> None:
+        """Durably append a pre/post-dispatch snapshot when a formal run requests it."""
+        if self.journal_path is None:
+            return
+        path = Path(self.journal_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        record = json.dumps(event, sort_keys=True, separators=(",", ":")) + "\n"
+        with path.open("a", encoding="utf-8", newline="\n") as stream:
+            stream.write(record)
+            stream.flush()
+            os.fsync(stream.fileno())
 
     @property
     def total_tokens(self) -> int:
@@ -76,6 +92,7 @@ class BudgetLedger:
                 "output_tokens": 0,
             }
         )
+        self._journal({"event_id": event_id, **self.events[event_id]})
         return event_id
 
     def finish_generation(
@@ -90,6 +107,7 @@ class BudgetLedger:
         if error is not None:
             event["status"] = "failed"
             event["error"] = error
+            self._journal({"event_id": event_id, **event})
             return
 
         usage = (metadata or {}).get("codex_usage")
@@ -97,7 +115,9 @@ class BudgetLedger:
             event["status"] = "discarded_missing_usage"
             self.discarded_generation_calls += 1
             if self.ceilings.require_token_usage:
+                self._journal({"event_id": event_id, **event})
                 self._reject("missing_token_usage")
+            self._journal({"event_id": event_id, **event})
             return
 
         input_tokens = int(usage.get("input_tokens") or 0)
@@ -105,6 +125,7 @@ class BudgetLedger:
         if input_tokens < 0 or output_tokens < 0:
             event["status"] = "discarded_invalid_usage"
             self.discarded_generation_calls += 1
+            self._journal({"event_id": event_id, **event})
             self._reject("invalid_token_usage")
 
         event["input_tokens"] = input_tokens
@@ -114,8 +135,10 @@ class BudgetLedger:
         if self.total_tokens > self.ceilings.total_tokens:
             event["status"] = "discarded_token_ceiling_crossed"
             self.discarded_generation_calls += 1
+            self._journal({"event_id": event_id, **event})
             self._reject("token_ceiling_crossed")
         event["status"] = "accepted"
+        self._journal({"event_id": event_id, **event})
 
     def start_evaluation(self, *, program_id: str, mode: str) -> int:
         """Admit and count one evaluator attempt before candidate execution."""
@@ -134,6 +157,7 @@ class BudgetLedger:
                 "status": "admitted",
             }
         )
+        self._journal({"event_id": event_id, **self.events[event_id]})
         return event_id
 
     def to_receipt(self) -> Dict[str, Any]:

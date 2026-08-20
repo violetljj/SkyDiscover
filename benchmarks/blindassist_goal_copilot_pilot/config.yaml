@@ -1,0 +1,41 @@
+max_iterations: 16
+checkpoint_interval: 1
+log_level: "INFO"
+language: "python"
+file_suffix: ".py"
+max_parallel_iterations: 1
+
+llm:
+  models:
+    - name: "codex-cli/gpt-5.6-sol"
+      weight: 1.0
+  reasoning_effort: "medium"
+  timeout: 900
+  retries: 0
+  retry_delay: 0
+  codex_executable: "E:/codex-tools/bin/codex.exe"
+
+search:
+  type: "best_of_n"
+  database:
+    best_of_n: 4
+  num_context_programs: 2
+
+prompt:
+  system_message: "You improve a bounded deterministic closed-loop policy. Follow the task prompt and return a complete candidate file only."
+
+evaluator:
+  timeout: 30
+  max_retries: 0
+  cascade_evaluation: false
+  inject_evaluator_context: false
+  llm_as_judge: false
+
+agentic:
+  enabled: false
+
+monitor:
+  enabled: false
+
+diff_based_generation: false
+max_solution_length: 65536
