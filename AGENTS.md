@@ -84,6 +84,10 @@ documented in `README.md` or the benchmark's own README.
   registry, hydrate it from the locally hash-verified bundle instead of repeating
   a cold package sync. Reject bundles with a runtime, root, fingerprint, hash, or
   archive-member mismatch.
+- When bootstrap or dispatch code renders a remote shell/Python script, test the
+  rendered payload itself and pass a zero-work remote syntax/marker canary before
+  a formal run may depend on it. A local source-level test alone does not prove
+  that nested quoting, heredocs, or escape sequences survive rendering.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
@@ -94,6 +98,10 @@ documented in `README.md` or the benchmark's own README.
   local workspace authoritative for source control and evidence; bring back and
   verify required outputs, checkpoints, receipts, and provenance before treating
   remote execution as complete.
+- For immutable remote evidence containing many small files, create one
+  task-owned archive on the remote, record its member count and SHA-256, transfer
+  that single archive, and verify both locally before remote cleanup. Do not use
+  recursive SCP as the routine evidence transport for high-file-count trees.
 - Assume the remote host is shared with other projects. Never install packages
   into global Python/Conda environments, mutate global shell startup files, or
   share writable pip/uv caches, temporary roots, ports, locks, or process groups.
