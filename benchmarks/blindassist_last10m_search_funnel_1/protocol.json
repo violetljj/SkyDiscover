@@ -1,0 +1,36 @@
+{
+  "experiment_id": "L10M-SEARCH-FUNNEL-1",
+  "status": "RECEIPT_ONLY_DIAGNOSTIC_FROZEN",
+  "source_experiment": "L10M-SKY-1",
+  "evidence_role": "CONSUMED_POSTHOC_DIAGNOSTIC_ONLY",
+  "model_calls": 0,
+  "evaluator_calls": 0,
+  "arms": ["naked_codex", "sky_search"],
+  "expected_instances": 12,
+  "expected_seeds": [419, 811],
+  "expected_candidates_per_arm_block": 10,
+  "primary_mechanism_arm": "sky_search",
+  "selection_loss_signal": {
+    "minimum_mean_oracle_minus_retained_hidden_value": 0.005,
+    "minimum_positive_gap_blocks": 6,
+    "requires_at_least_one_robust_safe_positive_candidate": true
+  },
+  "candidate_scarcity_signal": {
+    "maximum_blocks_with_any_robust_safe_positive_candidate": 5
+  },
+  "decision_order": [
+    "SELECTION_RETENTION_SIGNAL",
+    "CANDIDATE_QUALITY_SCARCITY_SIGNAL",
+    "MIXED_OR_UNRESOLVED"
+  ],
+  "lineage_analysis": "DESCRIPTIVE_PARENT_TO_CHILD_DEV_AND_HIDDEN_CONVERSION_ONLY",
+  "forbidden_actions": [
+    "new_model_call",
+    "new_evaluator_call",
+    "hidden_rerun",
+    "receipt_mutation",
+    "fresh_or_blind_claim",
+    "structured_route_reopening"
+  ],
+  "claim_ceiling": "RECEIPT_ONLY_MECHANISM_LOCALIZATION_ON_THE_CONSUMED_L10M_SKY_1_COHORT"
+}
