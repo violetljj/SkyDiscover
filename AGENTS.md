@@ -71,13 +71,13 @@ documented in `README.md` or the benchmark's own README.
   Preserve sealed failed generation units and do not resume them merely because
   the transport later becomes available.
 - Treat dependency setup as an environment lifecycle, not an experiment step.
-  The target design is an immutable, content-addressed environment registry
-  keyed by the committed dependency lock, extras, Python/runtime and platform;
-  build and verify each fingerprint once, then reuse it read-only across
-  experiments. Keep each experiment's evaluator workers, logs, checkpoints,
-  receipts, locks, and process groups in its own task root. The current
-  task-local bootstrap is the safe baseline until that shared immutable registry
-  is implemented; do not claim cross-experiment reuse before then.
+  Use the immutable, content-addressed environment registry keyed by the
+  committed dependency lock, extras, Python/runtime, platform, and uv version;
+  build and verify each fingerprint once on the persistent data volume, then
+  reuse it without another dependency sync across experiments. The shared
+  environment installs dependencies only, never a task's project source; each
+  task runs its own staged frozen commit. Keep evaluator workers, logs,
+  checkpoints, receipts, locks, and process groups in the task root.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or
@@ -91,9 +91,11 @@ documented in `README.md` or the benchmark's own README.
 - Assume the remote host is shared with other projects. Never install packages
   into global Python/Conda environments, mutate global shell startup files, or
   share writable pip/uv caches, temporary roots, ports, locks, or process groups.
-  Use the bootstrap tool's task-owned tool environment and cache, and remove or
-  terminate only exact resources created by the current task; never perform
-  broad cleanup or kill processes belonging to another project.
+  Shared SkyDiscover tools, dependency caches, and verified environments must be
+  fingerprint-owned under the project registry and protected by atomic build
+  locks; mutable execution state remains task-owned. Remove or terminate only
+  exact resources whose ownership is established; never perform broad cleanup or
+  kill processes belonging to another project.
 - For iterative or high-frequency evaluation, do not use a fresh SSH/SCP session
   for every operation or repeatedly transfer the repository or Git bundle. Stage
   the frozen code, protocol, and environment once, then use a persistent SSH

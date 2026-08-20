@@ -26,6 +26,7 @@ from typing import Any, Mapping, Sequence
 _MANIFEST_PREFIX = "SKYDISCOVER_BOOTSTRAP_MANIFEST="
 _VERIFY_PREFIX = "SKYDISCOVER_BOOTSTRAP_VERIFY="
 _TASK_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
+_DEFAULT_UV_VERSION = "0.12.5"
 
 
 class BootstrapError(RuntimeError):
@@ -53,11 +54,16 @@ class RemoteEndpoint:
 
 @dataclass(frozen=True)
 class BootstrapLayout:
-    """Content-addressed paths owned by one remote bootstrap task."""
+    """Task-owned source paths plus one shared immutable environment."""
 
     task_root: str
     source_dir: str
+    environment_root: str
     venv_dir: str
+    environment_manifest_path: str
+    tools_dir: str
+    uv_cache_dir: str
+    build_lock_dir: str
     manifest_path: str
 
 
@@ -191,11 +197,20 @@ def _git_file_sha256(repo: Path, commit: str, path: str) -> str:
     return hashlib.sha256(completed.stdout).hexdigest()
 
 
-def _environment_key(pyproject_sha256: str, lock_sha256: str, extras: Sequence[str]) -> str:
+def _environment_key(
+    pyproject_sha256: str,
+    lock_sha256: str,
+    extras: Sequence[str],
+    *,
+    runtime: Mapping[str, Any] | None = None,
+    uv_version: str = _DEFAULT_UV_VERSION,
+) -> str:
     payload = json.dumps(
         {
             "extras": sorted(set(extras)),
             "pyproject_sha256": pyproject_sha256,
+            "runtime": dict(sorted((runtime or {}).items())),
+            "uv_version": uv_version,
             "uv_lock_sha256": lock_sha256,
         },
         sort_keys=True,
@@ -209,12 +224,20 @@ def _layout(
     task_id: str,
     commit: str,
     environment_key: str,
+    *,
+    uv_version: str = _DEFAULT_UV_VERSION,
 ) -> BootstrapLayout:
     task_root = posixpath.join(remote_root, task_id)
+    environment_root = posixpath.join(remote_root, "_environments", environment_key)
     return BootstrapLayout(
         task_root=task_root,
         source_dir=posixpath.join(task_root, "source", commit),
-        venv_dir=posixpath.join(task_root, "venvs", environment_key),
+        environment_root=environment_root,
+        venv_dir=posixpath.join(environment_root, "venv"),
+        environment_manifest_path=posixpath.join(environment_root, "verified.json"),
+        tools_dir=posixpath.join(remote_root, "_tools", environment_key, f"uv-{uv_version}"),
+        uv_cache_dir=posixpath.join(remote_root, "_uv-cache", environment_key),
+        build_lock_dir=posixpath.join(remote_root, "_environment-locks", environment_key),
         manifest_path=posixpath.join(task_root, "manifests", f"{commit}-{environment_key}.json"),
     )
 
@@ -275,6 +298,7 @@ import os
 import platform
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 
@@ -341,7 +365,14 @@ blocking_locks = [
     for path in locks
     if not any(
         marker in path
-        for marker in ("/venvs/", "/uv-cache/", "/bootstrap-tools/")
+        for marker in (
+            "/venvs/",
+            "/uv-cache/",
+            "/bootstrap-tools/",
+            "/_environments/",
+            "/_tools/",
+            "/_uv-cache/",
+        )
     )
 ]
 cpu_max = read_text("/sys/fs/cgroup/cpu.max")
@@ -352,7 +383,11 @@ payload = {
     "status": "reachable",
     "hostname": platform.node(),
     "platform": platform.platform(),
+    "platform_machine": platform.machine(),
+    "platform_system": platform.system(),
     "python": platform.python_version(),
+    "python_cache_tag": sys.implementation.cache_tag,
+    "python_implementation": platform.python_implementation(),
     "python_executable": os.environ["PYTHON_BIN"],
     "cpu_count_host": os.cpu_count(),
     "cpu_count_visible": min(cpu_limits) if cpu_limits else None,
@@ -457,11 +492,25 @@ def _install_script(
     commit: str,
     pyproject_sha256: str,
     lock_sha256: str,
+    environment_key: str,
+    runtime: Mapping[str, Any],
     extras: Sequence[str],
     uv_version: str | None,
 ) -> str:
-    uv_requirement = "uv" if uv_version is None else f"uv=={uv_version}"
+    resolved_uv_version = uv_version or _DEFAULT_UV_VERSION
+    uv_requirement = f"uv=={resolved_uv_version}"
     uv_extra_args = " ".join(f"--extra {shlex.quote(extra)}" for extra in extras)
+    environment_seed = {
+        "schema_version": 1,
+        "status": "verified",
+        "environment_key": environment_key,
+        "pyproject_sha256": pyproject_sha256,
+        "uv_lock_sha256": lock_sha256,
+        "extras": sorted(set(extras)),
+        "runtime": dict(sorted(runtime.items())),
+        "uv_version": resolved_uv_version,
+        "venv_dir": layout.venv_dir,
+    }
     manifest_seed = {
         "schema_version": 1,
         "status": "ready",
@@ -474,31 +523,112 @@ def _install_script(
         "extras": sorted(set(extras)),
         "task_root": layout.task_root,
         "source_dir": layout.source_dir,
+        "environment_key": environment_key,
+        "environment_runtime": dict(sorted(runtime.items())),
+        "environment_uv_version": resolved_uv_version,
+        "environment_root": layout.environment_root,
+        "environment_manifest_path": layout.environment_manifest_path,
         "venv_dir": layout.venv_dir,
-        "tools_dir": posixpath.join(layout.task_root, "bootstrap-tools"),
-        "uv_cache_dir": posixpath.join(layout.task_root, "uv-cache"),
+        "tools_dir": layout.tools_dir,
+        "uv_cache_dir": layout.uv_cache_dir,
         "manifest_path": layout.manifest_path,
     }
     shell_header = f"""
 set -eu
 {_python_locator_shell()}
 mkdir -p {shlex.quote(posixpath.dirname(layout.manifest_path))}
-TASK_TOOLS_DIR={shlex.quote(posixpath.join(layout.task_root, "bootstrap-tools"))}
-export UV_CACHE_DIR={shlex.quote(posixpath.join(layout.task_root, "uv-cache"))}
-mkdir -p "$UV_CACHE_DIR"
+TASK_TOOLS_DIR={shlex.quote(layout.tools_dir)}
+export UV_CACHE_DIR={shlex.quote(layout.uv_cache_dir)}
+ENVIRONMENT_ROOT={shlex.quote(layout.environment_root)}
+ENVIRONMENT_MANIFEST={shlex.quote(layout.environment_manifest_path)}
+ENVIRONMENT_BUILD_LOCK={shlex.quote(layout.build_lock_dir)}
+VENV_DIR={shlex.quote(layout.venv_dir)}
+mkdir -p "$UV_CACHE_DIR" "$(dirname "$TASK_TOOLS_DIR")" "$(dirname "$ENVIRONMENT_ROOT")" "$(dirname "$ENVIRONMENT_BUILD_LOCK")"
 if [ ! -x "$TASK_TOOLS_DIR/bin/uv" ]; then
+  if ! mkdir "$TASK_TOOLS_DIR.build-lock" 2>/dev/null; then
+    echo "uv tool installation is already active: $TASK_TOOLS_DIR.build-lock" >&2
+    exit 26
+  fi
+  trap 'rm -rf -- "$TASK_TOOLS_DIR"; rmdir "$TASK_TOOLS_DIR.build-lock" 2>/dev/null || true' EXIT HUP INT TERM
   "$PYTHON_BIN" -m venv "$TASK_TOOLS_DIR"
   "$TASK_TOOLS_DIR/bin/python" -m pip install --disable-pip-version-check {shlex.quote(uv_requirement)}
+  trap - EXIT HUP INT TERM
+  rmdir "$TASK_TOOLS_DIR.build-lock"
 fi
 UV_BIN="$TASK_TOOLS_DIR/bin/uv"
 if [ ! -x "$UV_BIN" ]; then
-  echo "task-local uv installation did not produce an executable at $UV_BIN" >&2
+  echo "shared uv installation did not produce an executable at $UV_BIN" >&2
   exit 21
 fi
-export UV_PROJECT_ENVIRONMENT={shlex.quote(layout.venv_dir)}
-"$UV_BIN" sync --frozen --quiet --python "$PYTHON_BIN" --project {shlex.quote(layout.source_dir)} {uv_extra_args}
+export SKYDISCOVER_ENVIRONMENT_SEED={shlex.quote(json.dumps(environment_seed, sort_keys=True))}
+export SKYDISCOVER_ENVIRONMENT_MANIFEST="$ENVIRONMENT_MANIFEST"
+ENVIRONMENT_REUSED=0
+if [ -f "$ENVIRONMENT_MANIFEST" ]; then
+  "$PYTHON_BIN" - <<'PY'
+import json
+import os
+import sys
+from pathlib import Path
+
+expected = json.loads(os.environ["SKYDISCOVER_ENVIRONMENT_SEED"])
+path = Path(os.environ["SKYDISCOVER_ENVIRONMENT_MANIFEST"])
+try:
+    actual = json.loads(path.read_text(encoding="utf-8"))
+except (OSError, json.JSONDecodeError):
+    raise SystemExit(1)
+for key, value in expected.items():
+    if actual.get(key) != value:
+        raise SystemExit(1)
+if not (Path(expected["venv_dir"]) / "bin" / "python").is_file():
+    raise SystemExit(1)
+PY
+  ENVIRONMENT_REUSED=1
+else
+  if ! mkdir "$ENVIRONMENT_BUILD_LOCK" 2>/dev/null; then
+    echo "environment build is already active: $ENVIRONMENT_BUILD_LOCK" >&2
+    exit 25
+  fi
+  cleanup_environment_build() {{
+    status=$?
+    trap - EXIT HUP INT TERM
+    if [ "$status" -ne 0 ]; then
+      rm -rf -- "$VENV_DIR"
+    fi
+    rmdir "$ENVIRONMENT_BUILD_LOCK" 2>/dev/null || true
+    exit "$status"
+  }}
+  trap cleanup_environment_build EXIT HUP INT TERM
+  rm -rf -- "$VENV_DIR"
+  export UV_PROJECT_ENVIRONMENT="$VENV_DIR"
+  "$UV_BIN" sync --frozen --quiet --no-install-project --python "$PYTHON_BIN" --project {shlex.quote(layout.source_dir)} {uv_extra_args}
+  export SKYDISCOVER_UV_BIN="$UV_BIN"
+  "$PYTHON_BIN" - <<'PY'
+import datetime
+import json
+import os
+import subprocess
+from pathlib import Path
+
+manifest = json.loads(os.environ["SKYDISCOVER_ENVIRONMENT_SEED"])
+manifest["completed_at_utc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+manifest["uv"] = subprocess.run(
+    [os.environ["SKYDISCOVER_UV_BIN"], "--version"],
+    text=True,
+    capture_output=True,
+    check=True,
+).stdout.strip()
+path = Path(os.environ["SKYDISCOVER_ENVIRONMENT_MANIFEST"])
+path.parent.mkdir(parents=True, exist_ok=True)
+temporary = path.with_suffix(path.suffix + ".tmp")
+temporary.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+os.replace(temporary, path)
+PY
+  trap - EXIT HUP INT TERM
+  rmdir "$ENVIRONMENT_BUILD_LOCK"
+fi
 export SKYDISCOVER_MANIFEST_SEED={shlex.quote(json.dumps(manifest_seed, sort_keys=True))}
 export SKYDISCOVER_UV_BIN="$UV_BIN"
+export SKYDISCOVER_ENVIRONMENT_REUSED="$ENVIRONMENT_REUSED"
 export SKYDISCOVER_MANIFEST_PREFIX={shlex.quote(_MANIFEST_PREFIX)}
 "$PYTHON_BIN" - <<'PY'
 """
@@ -556,6 +686,7 @@ manifest.update(
         "environment_python": subprocess.run(
             [str(venv_python), "--version"], text=True, capture_output=True, check=True
         ).stdout.strip(),
+        "environment_reused": os.environ["SKYDISCOVER_ENVIRONMENT_REUSED"] == "1",
         "uv": subprocess.run(
             [os.environ["SKYDISCOVER_UV_BIN"], "--version"],
             text=True,
@@ -610,8 +741,34 @@ def bootstrap(
     commit = _git_commit(repo, revision)
     pyproject_sha256 = _git_file_sha256(repo, commit, "pyproject.toml")
     lock_sha256 = _git_file_sha256(repo, commit, "uv.lock")
-    environment_key = _environment_key(pyproject_sha256, lock_sha256, extras)
-    layout = _layout(remote_root, task_id, commit, environment_key)
+    resolved_uv_version = uv_version or _DEFAULT_UV_VERSION
+    host_inspection = preflight(endpoint, remote_root, timeout=min(timeout, 60))
+    runtime = {
+        key: host_inspection.get(key)
+        for key in (
+            "platform_machine",
+            "platform_system",
+            "python",
+            "python_cache_tag",
+            "python_implementation",
+        )
+    }
+    if any(value in (None, "") for value in runtime.values()):
+        raise BootstrapError("remote preflight did not return a complete runtime fingerprint")
+    environment_key = _environment_key(
+        pyproject_sha256,
+        lock_sha256,
+        extras,
+        runtime=runtime,
+        uv_version=resolved_uv_version,
+    )
+    layout = _layout(
+        remote_root,
+        task_id,
+        commit,
+        environment_key,
+        uv_version=resolved_uv_version,
+    )
 
     inspection = preflight(endpoint, layout.task_root, timeout=min(timeout, 60))
     if inspection.get("blocking_locks") or inspection.get("relevant_processes"):
@@ -632,8 +789,10 @@ def bootstrap(
             commit=commit,
             pyproject_sha256=pyproject_sha256,
             lock_sha256=lock_sha256,
+            environment_key=environment_key,
+            runtime=runtime,
             extras=extras,
-            uv_version=uv_version,
+            uv_version=resolved_uv_version,
         ),
         timeout=timeout,
     )
@@ -656,6 +815,7 @@ def verify(
     *,
     revision: str = "HEAD",
     extras: Sequence[str] = ("dev",),
+    uv_version: str | None = None,
     timeout: int = 60,
 ) -> dict[str, Any]:
     """Verify a bootstrapped environment without mutating it."""
@@ -666,11 +826,32 @@ def verify(
     commit = _git_commit(repo, revision)
     pyproject_sha256 = _git_file_sha256(repo, commit, "pyproject.toml")
     lock_sha256 = _git_file_sha256(repo, commit, "uv.lock")
+    resolved_uv_version = uv_version or _DEFAULT_UV_VERSION
+    host_inspection = preflight(endpoint, remote_root, timeout=min(timeout, 60))
+    runtime = {
+        key: host_inspection.get(key)
+        for key in (
+            "platform_machine",
+            "platform_system",
+            "python",
+            "python_cache_tag",
+            "python_implementation",
+        )
+    }
+    if any(value in (None, "") for value in runtime.values()):
+        raise BootstrapError("remote preflight did not return a complete runtime fingerprint")
     layout = _layout(
         remote_root,
         task_id,
         commit,
-        _environment_key(pyproject_sha256, lock_sha256, extras),
+        _environment_key(
+            pyproject_sha256,
+            lock_sha256,
+            extras,
+            runtime=runtime,
+            uv_version=resolved_uv_version,
+        ),
+        uv_version=resolved_uv_version,
     )
     expected = {
         "endpoint": endpoint.target,
@@ -681,6 +862,10 @@ def verify(
         "uv_lock_sha256": lock_sha256,
         "extras": sorted(set(extras)),
         "source_dir": layout.source_dir,
+        "environment_key": posixpath.basename(layout.environment_root),
+        "environment_runtime": dict(sorted(runtime.items())),
+        "environment_uv_version": resolved_uv_version,
+        "environment_manifest_path": layout.environment_manifest_path,
         "venv_dir": layout.venv_dir,
         "manifest_path": layout.manifest_path,
     }
@@ -723,6 +908,29 @@ if isinstance(manifest, dict):
     for key, value in expected.items():
         if manifest.get(key) != value:
             issues.append(f"manifest_mismatch:{key}")
+environment_path = Path(expected["environment_manifest_path"])
+environment = None
+if not environment_path.is_file():
+    issues.append("environment_manifest_missing")
+else:
+    try:
+        environment = json.loads(environment_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        issues.append("environment_manifest_invalid")
+if isinstance(environment, dict):
+    environment_expected = {
+        "status": "verified",
+        "environment_key": expected["environment_key"],
+        "pyproject_sha256": expected["pyproject_sha256"],
+        "uv_lock_sha256": expected["uv_lock_sha256"],
+        "extras": expected["extras"],
+        "runtime": expected["environment_runtime"],
+        "uv_version": expected["environment_uv_version"],
+        "venv_dir": expected["venv_dir"],
+    }
+    for key, value in environment_expected.items():
+        if environment.get(key) != value:
+            issues.append(f"environment_manifest_mismatch:{key}")
 source = Path(expected["source_dir"])
 if not source.is_dir():
     issues.append("source_missing")
@@ -737,6 +945,8 @@ if not venv_python.is_file():
 else:
     result = subprocess.run(
         [str(venv_python), "-c", "import skydiscover"],
+        cwd=source,
+        env={**os.environ, "PYTHONPATH": str(source), "PYTHONDONTWRITEBYTECODE": "1"},
         text=True,
         capture_output=True,
         check=False,
@@ -813,6 +1023,7 @@ def build_parser() -> argparse.ArgumentParser:
     verify_parser.add_argument("--task-id", default="skydiscover")
     verify_parser.add_argument("--revision", default="HEAD")
     verify_parser.add_argument("--extra", action="append", dest="extras")
+    verify_parser.add_argument("--uv-version")
     verify_parser.add_argument("--timeout", type=int, default=60)
     return parser
 
@@ -864,6 +1075,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.task_id,
                 revision=args.revision,
                 extras=args.extras or ("dev",),
+                uv_version=args.uv_version,
                 timeout=args.timeout,
             )
     except (BootstrapError, ValueError) as exc:

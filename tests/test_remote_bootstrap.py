@@ -92,7 +92,11 @@ def test_layout_is_content_addressed() -> None:
     )
 
     assert layout.source_dir.endswith(f"/trial-01/source/{'a' * 40}")
-    assert layout.venv_dir.endswith("/trial-01/venvs/env123")
+    assert layout.environment_root.endswith("/_environments/env123")
+    assert layout.venv_dir.endswith("/_environments/env123/venv")
+    assert layout.environment_manifest_path.endswith("/_environments/env123/verified.json")
+    assert layout.tools_dir.endswith("/_tools/env123/uv-0.12.5")
+    assert layout.uv_cache_dir.endswith("/_uv-cache/env123")
     assert layout.manifest_path.endswith(f"/trial-01/manifests/{'a' * 40}-env123.json")
 
 
@@ -103,6 +107,20 @@ def test_environment_key_is_order_independent_and_extra_sensitive() -> None:
 
     assert first == reordered
     assert first != different
+
+
+def test_environment_key_binds_remote_runtime_and_uv_version() -> None:
+    base = _environment_key(
+        "project", "lock", ["dev"], runtime={"python": "3.12.3"}, uv_version="0.12.5"
+    )
+    different_python = _environment_key(
+        "project", "lock", ["dev"], runtime={"python": "3.13.1"}, uv_version="0.12.5"
+    )
+    different_uv = _environment_key(
+        "project", "lock", ["dev"], runtime={"python": "3.12.3"}, uv_version="0.13.0"
+    )
+
+    assert len({base, different_python, different_uv}) == 3
 
 
 def test_extract_prefixed_json_uses_last_matching_record() -> None:
@@ -140,6 +158,7 @@ def test_preflight_builds_remote_python_without_formatting_it(
     assert 'if path.name != "uv.lock"' in captured_script
     assert '"blocking_locks": blocking_locks' in captured_script
     assert '"/uv-cache/"' in captured_script
+    assert '"/_uv-cache/"' in captured_script
     assert result["endpoint"] == "root@example.test"
 
 
@@ -153,6 +172,8 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
         commit="a" * 40,
         pyproject_sha256="project",
         lock_sha256="lock",
+        environment_key="env123",
+        runtime={"python": "3.12.3"},
         extras=("dev",),
         uv_version=None,
     )
@@ -162,6 +183,9 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
     assert "SKYDISCOVER_BOOTSTRAP_MANIFEST=" in script
     assert "TASK_TOOLS_DIR=" in script
     assert "UV_CACHE_DIR=" in script
+    assert "--no-install-project" in script
+    assert "ENVIRONMENT_REUSED=1" in script
+    assert "/_environments/env123/verified.json" in script
     assert "pip install --user" not in script
 
 
@@ -174,16 +198,24 @@ def test_bootstrap_stops_before_transfer_when_task_root_is_active(
     monkeypatch.setattr(
         remote_bootstrap, "_git_file_sha256", lambda repo, commit, path: f"hash-{path}"
     )
-    monkeypatch.setattr(
-        remote_bootstrap,
-        "preflight",
-        lambda endpoint, remote_root, timeout: {
+
+    def fake_preflight(
+        endpoint: RemoteEndpoint, remote_root: str, timeout: int
+    ) -> dict[str, object]:
+        active = remote_root.endswith("/active-task")
+        return {
             "hostname": "worker",
-            "locks": [f"{remote_root}/active.lock"],
-            "blocking_locks": [f"{remote_root}/active.lock"],
+            "platform_machine": "x86_64",
+            "platform_system": "Linux",
+            "python": "3.12.3",
+            "python_cache_tag": "cpython-312",
+            "python_implementation": "CPython",
+            "locks": [f"{remote_root}/active.lock"] if active else [],
+            "blocking_locks": [f"{remote_root}/active.lock"] if active else [],
             "relevant_processes": [],
-        },
-    )
+        }
+
+    monkeypatch.setattr(remote_bootstrap, "preflight", fake_preflight)
 
     def unexpected_transfer(*args: object, **kwargs: object) -> None:
         raise AssertionError("archive transfer must not start while a task lock exists")

@@ -2,7 +2,8 @@
 
 SkyDiscover treats AutoDL endpoints as mutable execution infrastructure. The
 local checkout remains authoritative; the remote host receives a content-addressed
-archive of one Git commit plus a lockfile-backed environment.
+archive of one Git commit and resolves its dependencies from a shared
+content-addressed environment registry.
 
 ## Configure the current endpoint
 
@@ -32,7 +33,7 @@ container runtime.
 
 ## Bootstrap
 
-Create or refresh an isolated environment for a task:
+Stage a task and resolve its dependency environment:
 
 ```powershell
 uv run skydiscover-remote-bootstrap bootstrap --task-id campaign-r4 --extra dev
@@ -43,10 +44,33 @@ The command:
 1. resolves the requested local Git commit;
 2. streams that commit once with `git archive` over SSH;
 3. locates the remote Python installation, including AutoDL Miniconda;
-4. creates a task-local bootstrap-tools environment and installs `uv` there;
-5. runs `uv sync --frozen` in a content-addressed virtual environment; and
-6. atomically writes a remote manifest and a matching local manifest under
+4. resolves a shared `uv` tool pinned by version;
+5. fingerprints `pyproject.toml`, `uv.lock`, extras, Python ABI, platform, and
+   `uv` version;
+6. reuses the verified environment for that fingerprint, or runs one guarded
+   cold `uv sync --no-install-project` when it is absent; and
+7. atomically writes a remote manifest and a matching local manifest under
    `.runs/remote-bootstrap/`.
+
+Use the default `/root/autodl-tmp/skydiscover` root on AutoDL so the registry is
+stored on the persistent XFS data volume rather than the small overlay system
+disk. Reusable dependencies and mutable task state are separated:
+
+```text
+/root/autodl-tmp/skydiscover/
+  _environments/<fingerprint>/venv
+  _environments/<fingerprint>/verified.json
+  _environment-locks/<fingerprint>
+  _tools/<fingerprint>/uv-<version>
+  _uv-cache/<fingerprint>
+  <task-id>/source/<commit>
+  <task-id>/manifests/<commit>-<fingerprint>.json
+```
+
+The shared environment contains dependencies only. SkyDiscover itself is loaded
+from each task's staged frozen source, so reuse cannot silently substitute code
+from an earlier task. A hit is recorded as `environment_reused: true` in the
+task manifest.
 
 Use repeated `--extra` arguments for additional project extras. Use
 `--uv-version` when a protocol requires a specifically frozen `uv` release.
