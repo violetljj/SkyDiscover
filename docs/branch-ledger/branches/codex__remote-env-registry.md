@@ -29,6 +29,8 @@ tasks.
   never points to another task's source checkout.
 - Added atomic environment build locks, verified markers, and cache-hit
   provenance.
+- Added a local content-addressed tar bundle for hydrating an empty compatible
+  AutoDL registry without repeating a cold dependency sync.
 - Moved the documented AutoDL default to the persistent
   `/root/autodl-tmp/skydiscover` data volume.
 

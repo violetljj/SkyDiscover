@@ -78,6 +78,11 @@ documented in `README.md` or the benchmark's own README.
   environment installs dependencies only, never a task's project source; each
   task runs its own staged frozen commit. Keep evaluator workers, logs,
   checkpoints, receipts, locks, and process groups in the task root.
+- Preserve the machine-owned portable bundle for every verified environment
+  fingerprint. When a new compatible AutoDL instance has an empty persistent
+  registry, hydrate it from the locally hash-verified bundle instead of repeating
+  a cold package sync. Reject bundles with a runtime, root, fingerprint, hash, or
+  archive-member mismatch.
 - Use the remote host's available capacity aggressively when it improves
   turnaround time: dynamically size parallelism to the process-visible CPU and
   memory limits, keep useful workers busy, and avoid nested BLAS, OpenMP, or

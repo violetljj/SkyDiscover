@@ -1,7 +1,9 @@
 """Focused tests for the remote bootstrap controller."""
 
+import io
 import json
 import subprocess
+import tarfile
 from pathlib import Path
 
 import pytest
@@ -174,6 +176,7 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
         lock_sha256="lock",
         environment_key="env123",
         runtime={"python": "3.12.3"},
+        bundle_hydrated=False,
         extras=("dev",),
         uv_version=None,
     )
@@ -187,6 +190,29 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
     assert "ENVIRONMENT_REUSED=1" in script
     assert "/_environments/env123/verified.json" in script
     assert "pip install --user" not in script
+
+
+def test_bundle_validation_accepts_only_fingerprint_owned_paths(tmp_path: Path) -> None:
+    bundle = tmp_path / "env123.tar.gz"
+    with tarfile.open(bundle, "w:gz") as archive:
+        payload = b"{}\n"
+        member = tarfile.TarInfo("_environments/env123/verified.json")
+        member.size = len(payload)
+        archive.addfile(member, io.BytesIO(payload))
+
+    remote_bootstrap._validate_bundle_archive(bundle, "env123")
+
+
+def test_bundle_validation_rejects_path_escape(tmp_path: Path) -> None:
+    bundle = tmp_path / "unsafe.tar.gz"
+    with tarfile.open(bundle, "w:gz") as archive:
+        payload = b"bad"
+        member = tarfile.TarInfo("../outside")
+        member.size = len(payload)
+        archive.addfile(member, io.BytesIO(payload))
+
+    with pytest.raises(BootstrapError, match="unsafe member"):
+        remote_bootstrap._validate_bundle_archive(bundle, "env123")
 
 
 def test_bootstrap_stops_before_transfer_when_task_root_is_active(

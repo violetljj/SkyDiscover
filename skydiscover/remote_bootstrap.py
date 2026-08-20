@@ -18,6 +18,7 @@ import shlex
 import shutil
 import subprocess
 import sys
+import tarfile
 import textwrap
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
@@ -494,6 +495,7 @@ def _install_script(
     lock_sha256: str,
     environment_key: str,
     runtime: Mapping[str, Any],
+    bundle_hydrated: bool,
     extras: Sequence[str],
     uv_version: str | None,
 ) -> str:
@@ -528,6 +530,7 @@ def _install_script(
         "environment_uv_version": resolved_uv_version,
         "environment_root": layout.environment_root,
         "environment_manifest_path": layout.environment_manifest_path,
+        "environment_bundle_hydrated": bundle_hydrated,
         "venv_dir": layout.venv_dir,
         "tools_dir": layout.tools_dir,
         "uv_cache_dir": layout.uv_cache_dir,
@@ -717,6 +720,182 @@ def _write_json_atomic(path: Path, payload: Mapping[str, Any]) -> None:
     os.replace(temporary, path)
 
 
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _bundle_paths(bundle_cache: Path, environment_key: str) -> tuple[Path, Path]:
+    return (
+        bundle_cache / f"{environment_key}.tar.gz",
+        bundle_cache / f"{environment_key}.json",
+    )
+
+
+def _validate_bundle_archive(bundle_path: Path, environment_key: str) -> None:
+    allowed = {
+        f"_environments/{environment_key}",
+        f"_tools/{environment_key}",
+    }
+    try:
+        with tarfile.open(bundle_path, "r:gz") as archive:
+            members = archive.getmembers()
+    except (OSError, tarfile.TarError) as exc:
+        raise BootstrapError(f"environment bundle is invalid: {bundle_path}: {exc}") from exc
+    if not members:
+        raise BootstrapError(f"environment bundle is empty: {bundle_path}")
+    for member in members:
+        normalized = member.name.removeprefix("./").rstrip("/")
+        if not any(normalized == root or normalized.startswith(f"{root}/") for root in allowed):
+            raise BootstrapError(f"environment bundle has an unsafe member: {member.name}")
+        if member.issym() or member.islnk():
+            target = member.linkname
+            safe_runtime_link = target.startswith("/root/miniconda3/bin/python")
+            if (target.startswith("/") and not safe_runtime_link) or ".." in PurePosixPath(
+                target
+            ).parts:
+                raise BootstrapError(
+                    f"environment bundle has an unsafe link target: {member.name} -> {target}"
+                )
+
+
+def _remote_file_exists(
+    endpoint: RemoteEndpoint,
+    path: str,
+    *,
+    timeout: int,
+) -> bool:
+    command = build_ssh_command(endpoint, f"test -f {shlex.quote(path)}")
+    try:
+        completed = subprocess.run(command, capture_output=True, timeout=timeout, check=False)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        raise BootstrapError(f"remote existence check failed: {exc}") from exc
+    if completed.returncode not in {0, 1}:
+        detail = completed.stderr.decode(errors="replace").strip() or "no command output"
+        raise BootstrapError(f"remote existence check failed ({completed.returncode}): {detail}")
+    return completed.returncode == 0
+
+
+def _hydrate_environment_bundle(
+    endpoint: RemoteEndpoint,
+    remote_root: str,
+    layout: BootstrapLayout,
+    bundle_cache: Path,
+    environment_key: str,
+    runtime: Mapping[str, Any],
+    uv_version: str,
+    *,
+    timeout: int,
+) -> bool:
+    if _remote_file_exists(
+        endpoint,
+        layout.environment_manifest_path,
+        timeout=min(timeout, 60),
+    ):
+        return False
+    bundle_path, metadata_path = _bundle_paths(bundle_cache, environment_key)
+    if not bundle_path.is_file() or not metadata_path.is_file():
+        return False
+    try:
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise BootstrapError(f"environment bundle metadata is invalid: {metadata_path}") from exc
+    expected = {
+        "environment_key": environment_key,
+        "remote_root": remote_root,
+        "runtime": dict(sorted(runtime.items())),
+        "uv_version": uv_version,
+    }
+    for key, value in expected.items():
+        if metadata.get(key) != value:
+            raise BootstrapError(f"environment bundle metadata mismatch: {key}")
+    if metadata.get("bundle_sha256") != _file_sha256(bundle_path):
+        raise BootstrapError("environment bundle hash mismatch")
+    _validate_bundle_archive(bundle_path, environment_key)
+    prepare = f"mkdir -p {shlex.quote(remote_root)} && tar -xzf - -C {shlex.quote(remote_root)}"
+    command = build_ssh_command(endpoint, prepare)
+    try:
+        with bundle_path.open("rb") as bundle:
+            completed = subprocess.run(
+                command,
+                stdin=bundle,
+                capture_output=True,
+                timeout=timeout,
+                check=False,
+            )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        raise BootstrapError(f"environment bundle upload failed or timed out: {exc}") from exc
+    if completed.returncode != 0:
+        detail = completed.stderr.decode(errors="replace").strip() or "no command output"
+        raise BootstrapError(f"environment bundle upload failed ({completed.returncode}): {detail}")
+    return True
+
+
+def _capture_environment_bundle(
+    endpoint: RemoteEndpoint,
+    remote_root: str,
+    layout: BootstrapLayout,
+    bundle_cache: Path,
+    environment_key: str,
+    runtime: Mapping[str, Any],
+    uv_version: str,
+    *,
+    timeout: int,
+) -> tuple[Path, str]:
+    bundle_path, metadata_path = _bundle_paths(bundle_cache, environment_key)
+    if bundle_path.is_file() and metadata_path.is_file():
+        return bundle_path, _file_sha256(bundle_path)
+    bundle_cache.mkdir(parents=True, exist_ok=True)
+    temporary = bundle_path.with_suffix(bundle_path.suffix + ".tmp")
+    environment_relative = posixpath.relpath(layout.environment_root, remote_root)
+    tools_relative = posixpath.relpath(posixpath.dirname(layout.tools_dir), remote_root)
+    if any(".." in PurePosixPath(path).parts for path in (environment_relative, tools_relative)):
+        raise BootstrapError("environment bundle paths escaped the remote registry root")
+    command = build_ssh_command(
+        endpoint,
+        "tar -czf - "
+        f"-C {shlex.quote(remote_root)} "
+        f"{shlex.quote(environment_relative)} {shlex.quote(tools_relative)}",
+    )
+    try:
+        with temporary.open("wb") as output:
+            completed = subprocess.run(
+                command,
+                stdout=output,
+                stderr=subprocess.PIPE,
+                timeout=timeout,
+                check=False,
+            )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        temporary.unlink(missing_ok=True)
+        raise BootstrapError(f"environment bundle capture failed or timed out: {exc}") from exc
+    if completed.returncode != 0:
+        temporary.unlink(missing_ok=True)
+        detail = completed.stderr.decode(errors="replace").strip() or "no command output"
+        raise BootstrapError(
+            f"environment bundle capture failed ({completed.returncode}): {detail}"
+        )
+    os.replace(temporary, bundle_path)
+    _validate_bundle_archive(bundle_path, environment_key)
+    bundle_sha256 = _file_sha256(bundle_path)
+    _write_json_atomic(
+        metadata_path,
+        {
+            "schema_version": 1,
+            "environment_key": environment_key,
+            "remote_root": remote_root,
+            "runtime": dict(sorted(runtime.items())),
+            "uv_version": uv_version,
+            "bundle_sha256": bundle_sha256,
+            "bundle_size_bytes": bundle_path.stat().st_size,
+        },
+    )
+    return bundle_path, bundle_sha256
+
+
 def bootstrap(
     endpoint: RemoteEndpoint,
     repo: Path,
@@ -726,6 +905,7 @@ def bootstrap(
     revision: str = "HEAD",
     extras: Sequence[str] = ("dev",),
     uv_version: str | None = None,
+    bundle_cache: Path | None = None,
     manifest_out: Path | None = None,
     timeout: int = 1800,
 ) -> dict[str, Any]:
@@ -777,6 +957,22 @@ def bootstrap(
             "for the existing task to reach a terminal state"
         )
 
+    resolved_bundle_cache = (
+        bundle_cache.resolve()
+        if bundle_cache is not None
+        else (repo / ".runs" / "remote-environments").resolve()
+    )
+    bundle_hydrated = _hydrate_environment_bundle(
+        endpoint,
+        remote_root,
+        layout,
+        resolved_bundle_cache,
+        environment_key,
+        runtime,
+        resolved_uv_version,
+        timeout=timeout,
+    )
+
     # This is intentionally a one-time streamed deployment, not a per-evaluation
     # SSH/SCP workflow.
     _stream_git_archive(endpoint, repo, commit, layout.source_dir, timeout=timeout)
@@ -791,6 +987,7 @@ def bootstrap(
             lock_sha256=lock_sha256,
             environment_key=environment_key,
             runtime=runtime,
+            bundle_hydrated=bundle_hydrated,
             extras=extras,
             uv_version=resolved_uv_version,
         ),
@@ -799,6 +996,18 @@ def bootstrap(
     manifest = _extract_prefixed_json(completed.stdout, _MANIFEST_PREFIX)
     if manifest.get("hostname") != inspection.get("hostname"):
         raise BootstrapError("remote host identity changed between preflight and bootstrap")
+    bundle_path, bundle_sha256 = _capture_environment_bundle(
+        endpoint,
+        remote_root,
+        layout,
+        resolved_bundle_cache,
+        environment_key,
+        runtime,
+        resolved_uv_version,
+        timeout=timeout,
+    )
+    manifest["environment_bundle_path"] = str(bundle_path.resolve())
+    manifest["environment_bundle_sha256"] = bundle_sha256
     destination = manifest_out or (
         repo / ".runs" / "remote-bootstrap" / f"{task_id}-{commit[:12]}.json"
     )
@@ -1014,6 +1223,7 @@ def build_parser() -> argparse.ArgumentParser:
     bootstrap_parser.add_argument("--revision", default="HEAD")
     bootstrap_parser.add_argument("--extra", action="append", dest="extras")
     bootstrap_parser.add_argument("--uv-version")
+    bootstrap_parser.add_argument("--bundle-cache", type=Path)
     bootstrap_parser.add_argument("--manifest-out", type=Path)
     bootstrap_parser.add_argument("--timeout", type=int, default=1800)
 
@@ -1064,6 +1274,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 revision=args.revision,
                 extras=args.extras or ("dev",),
                 uv_version=args.uv_version,
+                bundle_cache=args.bundle_cache,
                 manifest_out=args.manifest_out,
                 timeout=args.timeout,
             )

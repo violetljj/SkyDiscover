@@ -72,6 +72,14 @@ from each task's staged frozen source, so reuse cannot silently substitute code
 from an earlier task. A hit is recorded as `environment_reused: true` in the
 task manifest.
 
+After the first compatible cold build, bootstrap also saves a validated portable
+bundle under `.runs/remote-environments/<fingerprint>.tar.gz`. On a later AutoDL
+instance with an empty data volume, the tool verifies the bundle hash and member
+paths, streams that single archive, and hydrates the same registry path before
+running verification. This avoids another PyPI resolution and per-package cold
+sync. Use `--bundle-cache <path>` to place these machine-owned bundles outside
+the repository's default `.runs/` location.
+
 Use repeated `--extra` arguments for additional project extras. Use
 `--uv-version` when a protocol requires a specifically frozen `uv` release.
 Bootstrap is infrastructure preparation only: it does not start an experiment,
