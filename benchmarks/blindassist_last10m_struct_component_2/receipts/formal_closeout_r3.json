@@ -57,6 +57,11 @@
   "frozen_commit": "00bd9305cea48e8ee17b92538209232d03367222",
   "in_doubt_units": 0,
   "remote_bootstrap_manifest_sha256": "bde1883396a9f1edfda450af04a5c9cd5376343eef8e426aadf8065e0e722e51",
+  "remote_worker_evidence_archive": {
+    "members": 2818,
+    "sha256": "dbd7a822a2c84e7eeee2bf5fdb1aea4fa16c1c33a162e235fc91aff5d7c55e3a",
+    "size_bytes": 113946
+  },
   "run_execution_closeout_sha256": "baf822269cff8a9a0cf7e419662b8ee4bb7022fd157095668a615560b9b5d388",
   "run_remote_manifest_sha256": "43bdb14b10c8ad98da83bf8827e565f490a73361743680270f8132c8dd0cf551",
   "schema_version": 1,

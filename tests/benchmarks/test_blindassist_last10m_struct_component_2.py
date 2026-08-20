@@ -112,6 +112,7 @@ def test_formal_closeout_stops_component_route_without_fresh_admission():
     assert receipt["formal_arm_receipts"] == 288
     assert receipt["terminal_arm_statuses"] == {"COMPLETED": 288}
     assert receipt["in_doubt_units"] == 0
+    assert receipt["remote_worker_evidence_archive"]["members"] == 2818
     assert receipt["component_1_results_imported"] is False
     assert all(
         estimand["observed_mean"] == 0.0 for estimand in receipt["factorial_estimands"].values()

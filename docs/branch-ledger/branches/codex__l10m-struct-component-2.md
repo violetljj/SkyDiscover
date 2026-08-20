@@ -73,7 +73,9 @@ The first local engineering attempt and remote formal attempt 2 remain sealed as
 only seeds 1821--1826 and its own create-once manifests, units, journals,
 receipts, and remote worker records. The durable run remains under
 `E:/SkyDiscover_runs/l10m-struct-component-2/r3/formal-00bd930`; its analysis
-SHA-256 is recorded in `receipts/formal_closeout_r3.json`.
+SHA-256 is recorded in `receipts/formal_closeout_r3.json`. The 2,818 remote
+worker/manifests archive members were transferred locally as one verified tar
+archive (SHA-256 `dbd7a822a2c84e7eeee2bf5fdb1aea4fa16c1c33a162e235fc91aff5d7c55e3a`).
 
 No fresh run, component follow-up, prompt strengthening, or additional
 Structured search is admitted by this result. The route is terminal unless a
