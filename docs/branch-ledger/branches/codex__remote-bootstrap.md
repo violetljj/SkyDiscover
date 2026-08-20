@@ -1,11 +1,11 @@
 # `codex/remote-bootstrap`
 
-- Status: `ready_for_review`
+- Status: `integrated`
 - Owner: project work branch
 - Base: `main` at `1b34d32543ab2060d7abf8be7e6dbcb2c3375678`
-- Head reviewed for this record: `b82cba6` (supervised remote execution policy)
+- Head reviewed for this record: `92c22cc` (completed remote workflow policy)
 - Integration target: `main`
-- Integrated commit: `not integrated`
+- Integrated commit: `92c22cc` (fast-forwarded into `main`)
 
 ## Purpose
 
@@ -59,8 +59,15 @@ it does not establish remote experiment reliability or scientific performance.
 
 ## Integration notes
 
-Integrate the focused implementation and documentation into `main` after review.
-Keep remote validation directories, manifests, and caches outside the repository;
-they are task-owned execution evidence, not source changes. A future evaluator
-transport should land as a separate focused component and pass a zero-model-call
-transport canary before formal use.
+Fast-forwarded the focused implementation and documentation into `main` after
+review and repeated the targeted validation on the integrated tree. Keep remote
+validation directories, manifests, and caches outside the repository; they are
+task-owned execution evidence, not source changes. A future evaluator transport
+should land as a separate focused component and pass a zero-model-call transport
+canary before formal use.
+
+## Final disposition
+
+Integrated into `main` at `92c22cc`. The source branch is retained as historical
+delivery context; no active experiment should switch commits until its own safe
+checkpoint or next run.
