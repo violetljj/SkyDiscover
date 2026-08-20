@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "enabled": false,
+  "reason": "FORMAL_RUN_SEAL_NOT_PRESENT",
+  "runtime": "best_of_n",
+  "max_iterations": 16,
+  "best_of_n": 4,
+  "max_parallel_iterations": 1,
+  "generation_retries": 0,
+  "evaluator_retries": 0,
+  "checkpoint_interval": 1,
+  "model_provider": "UNFROZEN_NO_EXECUTION",
+  "agentic": false,
+  "llm_as_judge": false,
+  "diff_based_generation": false,
+  "max_solution_length": 65536
+}

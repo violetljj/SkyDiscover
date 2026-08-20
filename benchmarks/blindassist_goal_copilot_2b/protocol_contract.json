@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "protocol_id": "GOAL-COPILOT-2B",
+  "status": "DESIGN_ONLY_SEARCH_AND_MODEL_CALLS_NOT_AUTHORIZED",
+  "blindassist_protocol_sha256": "509ccf975265ec6cdc0338086b5a0fc1cb0b20ccaa9fc3ba6dc58f7dc45abeac",
+  "frozen_starting_policy_sha256": "24d4e57374dd99363700ae881d18db536e48ec5f79f39e95c5b873e96edbc3a1",
+  "sky_authority": "CANDIDATE_PROPOSAL_AND_SEARCH_ONLY",
+  "blindassist_authority": "TASK_NOISE_HIDDEN_EVALUATOR_SAFETY_WINNER_LOCK_ACCEPTANCE",
+  "search_runtime_if_later_authorized": "skydiscover.search.best_of_n",
+  "replicates": [
+    {"id": "replicate_1", "seed": 4201},
+    {"id": "replicate_2", "seed": 7307}
+  ],
+  "generation_attempts_per_replicate": 16,
+  "generation_attempts_total": 32,
+  "generation_retries": 0,
+  "evaluator_retries": 0,
+  "best_of_n": 4,
+  "parallel_iterations": 1,
+  "candidate_source_bytes_max": 65536,
+  "candidate_ast_nodes_max": 4000,
+  "heldout_material_exported_to_sky": false,
+  "provider_frozen": false,
+  "bundle_frozen": false,
+  "formal_run_seal_present": false,
+  "model_calls_authorized": false,
+  "search_authorized": false,
+  "claim_ceiling": "symbolic_consumed_task_noise_robust_search_protocol_design_only"
+}
