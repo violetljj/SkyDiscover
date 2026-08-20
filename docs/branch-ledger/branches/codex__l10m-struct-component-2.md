@@ -1,6 +1,6 @@
 # `codex/l10m-struct-component-2`
 
-- Status: `execution_protocol_frozen_pending_formal_detached_launch`
+- Status: `blocked_pending_designated_autodl_endpoint_availability`
 - Owner: project work branch
 - Base: `codex/l10m-struct-component-1` at `8859aec`
 - Integration target: `main`, after the full L10M dependency chain
@@ -48,9 +48,8 @@ implementation and hardened execution integrity.
 
 ## Current evidence and claim ceiling
 
-- Validation: targeted checks for attempt 3 are in progress; the latest local
-  pass before the final manifest refresh was `9 passed`, with Black, isort, and
-  package import passing.
+- Validation: attempt-3 local checks passed (`9 passed`), with Black, isort,
+  package import, regenerated-manifest validation, and Git diff checks passing.
 - Formal arm calls: zero.
 - Result: not available.
 - Claim ceiling: consumed-development component-screen signal within one L10M
@@ -61,4 +60,7 @@ implementation and hardened execution integrity.
 The first local engineering attempt and remote formal attempt 2 are sealed as
 `ENGINEERING_ABORT_NO_ESTIMAND`; neither contributes units to attempt 3. The
 attempt-3 protocol uses seeds 1821--1826 and is blocked on an exact-commit,
-multi-case remote transport canary before a new detached formal launch.
+multi-case remote transport canary before a new detached formal launch. The
+designated AutoDL endpoint `root@connect.westb.seetacloud.com:24564` refused the
+SSH banner connection on two independent 2026-08-20 probes, so no bootstrap,
+remote evaluator, formal R3 run root, or R3 model call was created.
