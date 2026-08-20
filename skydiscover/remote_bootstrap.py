@@ -676,7 +676,7 @@ manifest["uv"] = subprocess.run(
 path = Path(os.environ["SKYDISCOVER_ENVIRONMENT_MANIFEST"])
 path.parent.mkdir(parents=True, exist_ok=True)
 temporary = path.with_suffix(path.suffix + ".tmp")
-temporary.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+temporary.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\\n", encoding="utf-8")
 os.replace(temporary, path)
 PY
   trap - EXIT HUP INT TERM

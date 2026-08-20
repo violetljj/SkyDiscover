@@ -210,6 +210,7 @@ def test_install_script_preserves_remote_python_dict_literals() -> None:
     assert "--no-install-project" in script
     assert "ENVIRONMENT_REUSED=1" in script
     assert "/_environments/env123/verified.json" in script
+    assert 'sort_keys=True) + "\\n", encoding="utf-8")' in script
     assert "pip install --user" not in script
 
 
