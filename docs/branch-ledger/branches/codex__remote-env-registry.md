@@ -1,10 +1,10 @@
 # `codex/remote-env-registry`
 
-- Status: `validated_ready_for_integration`
+- Status: `integrated`
 - Owner: project work branch
 - Base: `origin/main` at `4817547`
 - Integration target: `main`
-- Integrated commit: `not integrated`
+- Integrated commit: `bae6923` (fast-forwarded to `main`)
 
 ## Purpose
 
@@ -60,5 +60,6 @@ tasks.
 ## Readiness and disposition
 
 Live build, empty-registry hydration, hot reuse, and read-only verification all
-passed. Ready for integration after exact engineering backup cleanup and final
-pre-push parity checks.
+passed. Exact engineering backups were removed after restoring the reusable
+caches. The branch was fast-forwarded to `main`; the durable local bundle and
+manifests remain outside Git as machine-owned bootstrap evidence.
