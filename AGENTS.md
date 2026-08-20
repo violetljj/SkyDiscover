@@ -101,6 +101,21 @@ documented in `README.md` or the benchmark's own README.
   per-iteration payload, such as the candidate hash and code, seed, and request
   identifier, and use keepalives plus bounded reconnection to recover the same
   remote job.
+- Do not leave remote work unsupervised. After launch, confirm startup health and
+  maintain a read-only progress view backed by authoritative worker processes,
+  journals, receipts, checkpoints, logs, and artifact timestamps. For long work,
+  report completed/total/percent, active unit and iteration when observable,
+  last confirmed activity and age, failures by class, and an evidence-based ETA
+  or `unknown`. Emit user-facing updates on material progress, stage changes,
+  abnormalities, major ETA changes, handoff, and terminal completion rather than
+  narrating unchanged polls.
+- Treat loss of console output or an SSH timeout as a diagnostic event, not proof
+  that the remote job stopped. Check the owned process group, heartbeat,
+  journal, receipt, checkpoint, and artifact growth before intervening. Monitoring
+  must not mutate evaluator state or consume extra attempts; never duplicate or
+  restart a possibly active unit merely because a control connection dropped.
+  Supervise every remote job to a verified terminal receipt or an explicit
+  handoff, then stop its exact task-owned workers and verify resource release.
 - Journal each external dispatch before sending it and after completion, assign
   an idempotency key, and create evaluation receipts atomically. After a channel
   loss, query the existing remote job and receipt before taking further action.

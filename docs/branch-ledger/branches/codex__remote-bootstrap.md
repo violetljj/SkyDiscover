@@ -34,6 +34,9 @@ machine.
 - Recorded the target follow-up design: immutable content-addressed environments
   reused read-only across experiments, with task-owned execution roots; the
   current implementation remains task-local.
+- Added the operating requirement that remote jobs remain under read-only,
+  evidence-backed supervision through a verified terminal receipt or explicit
+  handoff; monitoring and durable evaluator transport remain follow-up work.
 
 ## Result and claim ceiling
 
