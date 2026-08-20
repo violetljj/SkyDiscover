@@ -60,7 +60,7 @@ mechanism localization on the consumed L10M-SKY-1 cohort.
 
 ## Important commits
 
-- Pending delivery commit.
+- `77d195d`: implement, validate, and archive the receipt-only search-funnel audit.
 
 ## Readiness and disposition
 
