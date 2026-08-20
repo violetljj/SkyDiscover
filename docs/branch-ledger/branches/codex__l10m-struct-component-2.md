@@ -1,6 +1,6 @@
 # `codex/l10m-struct-component-2`
 
-- Status: `blocked_pending_designated_autodl_endpoint_availability`
+- Status: `attempt_3_remote_canary_pending`
 - Owner: project work branch
 - Base: `codex/l10m-struct-component-1` at `8859aec`
 - Integration target: `main`, after the full L10M dependency chain
@@ -63,4 +63,8 @@ attempt-3 protocol uses seeds 1821--1826 and is blocked on an exact-commit,
 multi-case remote transport canary before a new detached formal launch. The
 designated AutoDL endpoint `root@connect.westb.seetacloud.com:24564` refused the
 SSH banner connection on two independent 2026-08-20 probes, so no bootstrap,
-remote evaluator, formal R3 run root, or R3 model call was created.
+remote evaluator, formal R3 run root, or R3 model call was created. The user then
+superseded it with `root@connect.westc.seetacloud.com:17611`; read-only preflight
+passed with 32 visible CPUs, 60 GiB memory, no blocking locks or relevant
+processes, and no existing task root. Exact-commit bootstrap, verify, and the
+multi-case canary remain required before formal launch.

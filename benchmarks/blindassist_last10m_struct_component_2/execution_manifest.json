@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/protocol.json",
-      "sha256": "097d5486c7380b7911c273f6b42b78413ce9b6a0da10a4a7db9ebb690f09979c"
+      "sha256": "abdcca339b803b878d24685207c9f2315325fe0779eda1fc48db287518678f67"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/README.md",
@@ -52,7 +52,7 @@
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_2/receipts/mechanical_preflight.json",
-      "sha256": "3e78451e221764acdd64b6f91e33933342fcc6370e20453d213eded4582f4abd"
+      "sha256": "6815e6f96833536799ce0e526158dc4ad4f8e8f1a972f25ae1cb0ab71824233b"
     },
     {
       "path": "benchmarks/blindassist_last10m_struct_component_1/initial_program.py",
