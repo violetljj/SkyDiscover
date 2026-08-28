@@ -1,10 +1,10 @@
 # `codex/blindassist-tool-bridge`
 
-- Status: `ready_for_review`
+- Status: `integrated`
 - Owner: project work branch
 - Base: `main` at `c475ed4009071159b4d5b777715f1af9202cebba`
 - Integration target: `main`
-- Integrated commit: `not integrated`
+- Integrated commit: `9f91581` (fast-forwarded into `main`)
 
 ## Purpose
 
@@ -52,9 +52,10 @@ security sandbox for malicious code and makes no scientific-performance claim.
 
 ## Integration notes
 
-Ready to integrate into `main`. A zero-model-call consumer transport probe is
-required before any formal consumer run.
+Fast-forwarded into `main` after focused validation. A zero-model-call consumer
+transport probe remains required before any formal consumer run.
 
 ## Final disposition
 
-Ready for review and integration.
+Integrated into `main` at `9f91581`; the source branch is retained as delivery
+history.
