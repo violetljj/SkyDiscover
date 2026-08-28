@@ -1,6 +1,6 @@
 # `codex/blindassist-tool-bridge`
 
-- Status: `active`
+- Status: `ready_for_review`
 - Owner: project work branch
 - Base: `main` at `c475ed4009071159b4d5b777715f1af9202cebba`
 - Integration target: `main`
@@ -23,26 +23,38 @@ into BlindAssist.
 
 ## Work performed
 
-- In progress.
+- Added a manifest-driven `skydiscover-assist` CLI that fixes consumer inputs,
+  output, working directory, launcher, and evaluator timeout before launch.
+- Added a standard-library worker and SkyDiscover-side proxy so a consumer
+  evaluator runs in its own interpreter and returns one JSON result document.
+- Added path ownership checks, a zero-model-call evaluator import probe, focused
+  tests, packaging entrypoint, and user documentation.
 
 ## Result and claim ceiling
 
-Not yet validated. The intended result is local dependency and output isolation,
-not scientific performance or production sandboxing against malicious code.
+The bridge imported the real BlindAssist C29 evaluator through BlindAssist's GPU
+launcher without installing SkyDiscover in that environment. This establishes
+the dependency and output boundary for cooperative evaluators; it is not a
+security sandbox for malicious code and makes no scientific-performance claim.
 
 ## Validation and evidence
 
-- Not run.
+- `uv run pytest tests/test_assist.py tests/test_cli_positional_paths.py -q`:
+  10 passed.
+- Focused Black and isort checks passed.
+- `uv run skydiscover-assist --help` passed.
+- `uv build` produced both wheel and source distribution.
+- Real BlindAssist C29 `check` transport probe passed with no model call.
 
 ## Important commits
 
-- None yet.
+- `8392124`: add isolated consumer assist bridge.
 
 ## Integration notes
 
-Review the transport seam and focused tests before integration. A zero-model-call
-consumer transport probe is required before any formal consumer run.
+Ready to integrate into `main`. A zero-model-call consumer transport probe is
+required before any formal consumer run.
 
 ## Final disposition
 
-Active.
+Ready for review and integration.
