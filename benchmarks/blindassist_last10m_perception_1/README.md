@@ -56,5 +56,18 @@ proposal even though portal-set truth was retained in `0/2` frames. Requiring a
 center-and-approach observation to preserve or increase normalized target scale
 changed that sequence from `SET_VALUED -> COMMIT` to
 `SET_VALUED -> SET_VALUED`, eliminating this observed false commit. It did not
-recover the correct door bank, so policy search remains blocked by the proposal
-representation rather than evaluator or controller mechanics.
+recover the correct door bank.
+
+`evidence/functional_portal_set_confirmation.json` records the successor
+information representation. Without OCR, repeated door-post lattices and
+paired vertical handles are fused into a top-three functional entrance set. On
+a separately frozen six-building confirmation cohort, portal truth was retained
+at top-one in `5/6` frames and top-three in `6/6`; the preregistered `>=4/6`
+top-three gate passed. The current-image proposal layer is therefore no longer
+the search blocker for glass entrances.
+
+Policy search is still not authorized: these six images are independent frames,
+not a real ordered or commanded episode, and target-entity identity remains a
+separate prerequisite. The next admissible episode must feed the top-three
+functional portal proposals into the scale-gated temporal belief after an
+independent target lock. No old oracle benchmark is needed or consulted.

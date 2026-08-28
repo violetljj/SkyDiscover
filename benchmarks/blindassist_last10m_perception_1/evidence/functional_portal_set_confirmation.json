@@ -1,0 +1,32 @@
+{
+  "schema": "blindassist-l10-functional-portal-set-confirmation-v1",
+  "observation_authority": "BLINDASSIST_REAL_CURRENT_IMAGE_PROPOSALS",
+  "scientific_use": "PROPOSAL_LAYER_PASSED_ORDERED_EPISODE_STILL_REQUIRED",
+  "representation": "DUAL_FAMILY_FUNCTIONAL_PORTAL_SET",
+  "mechanisms": [
+    "REPEATED_POST_LATTICE",
+    "PAIRED_VERTICAL_HANDLE_APERTURE"
+  ],
+  "ocr_calls": 0,
+  "fresh_confirmation": {
+    "frames": 6,
+    "top1_truth_retention": 5,
+    "top3_truth_retention": 6,
+    "stored_top10_membership": 50,
+    "stored_top10_candidates": 60,
+    "top3_membership": 14,
+    "top3_candidates": 18,
+    "frozen_gate": "top3_truth_retention_at_least_4_of_6",
+    "gate_passed": true
+  },
+  "hashes": {
+    "algorithm_sha256": "2cf6b0d80a5691150f6a70e9a45e2a6136e87480b4e06fa1fa82ea470386ba61",
+    "source_protocol_sha256": "d44eaa6cb5e8c6661c4c26394953d81c789fea02a959ed92582254c48c7e1337",
+    "source_audit_sha256": "b431f7c5685757e0471c0ab3deff5f0702b49908d2b9ae814bf65946a1026fa9",
+    "source_manifest_sha256": "8d5b8c244cbcd14e6b9ddc474d7db1e1edd6b755f0d538a063c33d9a5de79e20",
+    "result_sha256": "3628b3a5799a214b741c7b374a037c51481252027044a64e84ae217c05e7c36f"
+  },
+  "search_authorized": false,
+  "next_required_authority": "A frozen ordered or commanded-view real episode with separate target-entity lock and top-three functional portal proposals entering the scale-gated temporal belief.",
+  "claim_scope": "Fresh current-image glass-entrance proposal retention only. This is not target identity, access, traversability, temporal tracking, active-view causality, guidance, arrival, benefit, or safety."
+}

@@ -26,8 +26,12 @@ without carrying forward the obsolete oracle benchmark contract.
 The evaluator, policy interface, hard false-commit/arrival gates, and explicit
 AdaEvolve Pareto objectives are implemented. The first real perception prefix
 is also recorded: a scale-consistency gate removes one observed false commit,
-but portal truth remains absent from both candidate sets. Scientific search is
-therefore not authorized; the proposal representation must change first.
+but portal truth remains absent from both candidate sets. The replacement
+dual-family functional portal-set representation then passed a separate frozen
+six-building current-image gate at top-one `5/6` and top-three `6/6`, with zero
+OCR calls. The proposal layer is ready for episode export; scientific policy
+search remains unauthorized until a genuinely ordered or commanded real
+episode couples a separate target-entity lock to the scale-gated belief.
 
 ## Validation
 
@@ -37,4 +41,5 @@ therefore not authorized; the proposal representation must change first.
 ## Integration notes
 
 Integrate only after the BlindAssist exporter supplies at least one frozen
-`BLINDASSIST_REAL_PERCEPTION` episode with source/model/protocol/backend hashes.
+`BLINDASSIST_REAL_PERCEPTION` ordered or commanded episode with source,
+protocol, algorithm, and any applicable backend hashes.
