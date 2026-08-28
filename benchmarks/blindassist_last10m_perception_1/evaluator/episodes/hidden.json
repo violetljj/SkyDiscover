@@ -1,0 +1,84 @@
+[
+  {
+    "id": "mechanics-safety-veto-then-disambiguate",
+    "observation_authority": "MECHANICS_FIXTURE",
+    "start": "veto",
+    "max_steps": 7,
+    "nodes": [
+      {
+        "id": "veto",
+        "perception_state": "SET_VALUED",
+        "candidates": [
+          {"track_id": "door-left", "box_cx": 0.39, "box_cy": 0.62, "box_area": 0.13, "edge_score": 0.59},
+          {"track_id": "door-right", "box_cx": 0.64, "box_cy": 0.61, "box_area": 0.12, "edge_score": 0.58}
+        ],
+        "selected_track_id": null,
+        "last_bearing": -0.11,
+        "consecutive_hits": 1,
+        "lost_steps": 0,
+        "scale_change": 0.0,
+        "safe_to_approach": false,
+        "handoff_ready": false,
+        "truth_visible": true,
+        "truth_in_candidate_set": true,
+        "selected_track_is_truth": false,
+        "arrival_truth": false,
+        "transitions": {"HOLD": "clear"}
+      },
+      {
+        "id": "clear",
+        "perception_state": "SET_VALUED",
+        "candidates": [
+          {"track_id": "door-left", "box_cx": 0.39, "box_cy": 0.62, "box_area": 0.13, "edge_score": 0.59},
+          {"track_id": "door-right", "box_cx": 0.64, "box_cy": 0.61, "box_area": 0.12, "edge_score": 0.58}
+        ],
+        "selected_track_id": null,
+        "last_bearing": -0.11,
+        "consecutive_hits": 1,
+        "lost_steps": 0,
+        "scale_change": 0.0,
+        "safe_to_approach": true,
+        "handoff_ready": false,
+        "truth_visible": true,
+        "truth_in_candidate_set": true,
+        "selected_track_is_truth": false,
+        "arrival_truth": false,
+        "transitions": {"CENTER_AND_APPROACH": "commit"}
+      },
+      {
+        "id": "commit",
+        "perception_state": "COMMIT",
+        "candidates": [{"track_id": "door-left", "box_cx": 0.48, "box_cy": 0.65, "box_area": 0.27, "edge_score": 0.72}],
+        "selected_track_id": "door-left",
+        "last_bearing": -0.02,
+        "consecutive_hits": 2,
+        "lost_steps": 0,
+        "scale_change": 1.08,
+        "safe_to_approach": true,
+        "handoff_ready": false,
+        "truth_visible": true,
+        "truth_in_candidate_set": true,
+        "selected_track_is_truth": true,
+        "arrival_truth": false,
+        "transitions": {"TRACK": "arrive"}
+      },
+      {
+        "id": "arrive",
+        "perception_state": "COMMIT",
+        "candidates": [{"track_id": "door-left", "box_cx": 0.50, "box_cy": 0.67, "box_area": 0.46, "edge_score": 0.75}],
+        "selected_track_id": "door-left",
+        "last_bearing": 0.0,
+        "consecutive_hits": 3,
+        "lost_steps": 0,
+        "scale_change": 0.70,
+        "safe_to_approach": true,
+        "handoff_ready": true,
+        "truth_visible": true,
+        "truth_in_candidate_set": true,
+        "selected_track_is_truth": true,
+        "arrival_truth": true,
+        "transitions": {}
+      }
+    ]
+  }
+]

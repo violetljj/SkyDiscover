@@ -1,0 +1,56 @@
+language: python
+max_iterations: 20
+checkpoint_interval: 5
+log_level: "INFO"
+random_seed: 42
+max_parallel_iterations: 1
+diff_based_generation: false
+max_solution_length: 20000
+
+llm:
+  models:
+    - name: "codex-cli/gpt-5.6-sol"
+      weight: 1.0
+  reasoning_effort: "medium"
+  max_tokens: 10000
+  timeout: 900
+  retries: 1
+  retry_delay: 5
+
+search:
+  type: "adaevolve"
+  database:
+    population_size: 10
+    archive_size: 30
+    pareto_objectives:
+      - task_success
+      - commit_precision
+      - truth_retention
+      - reacquisition_success
+      - instruction_count
+    higher_is_better:
+      task_success: true
+      commit_precision: true
+      truth_retention: true
+      reacquisition_success: true
+      instruction_count: false
+    pareto_objectives_weight: 0.5
+  num_context_programs: 3
+
+prompt:
+  system_message: |-
+    Improve only decide(observation, memory). Observations are outputs of the
+    BlindAssist perception and temporal-belief stack, never oracle identity.
+    Optimize correct portal commitment, truth retention, reacquisition,
+    handoff quality, and instruction economy. A false TRACK or ARRIVED is a
+    hard failure. SET_VALUED must trigger an information-gaining view rather
+    than a forced choice. Preserve the interface and standard-library-only code.
+
+evaluator:
+  timeout: 60
+  max_retries: 0
+  cascade_evaluation: false
+  inject_evaluator_context: true
+
+monitor:
+  enabled: false

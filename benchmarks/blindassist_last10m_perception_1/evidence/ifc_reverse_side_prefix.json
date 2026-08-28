@@ -1,0 +1,49 @@
+{
+  "schema": "blindassist-l10-real-perception-prefix-v1",
+  "observation_authority": "BLINDASSIST_REAL_PERCEPTION",
+  "scientific_use": "BLOCK_SEARCH_PROPOSAL_TRUTH_NOT_RETAINED",
+  "target_id": "international-finance-centre",
+  "transition_authority": "ORDERED_REVERSE_SIDE_PROXY_NOT_COMMANDED_ACTION",
+  "source_manifest_sha256": "a2c19fbb16325be4f9dc95567fd4819d7a3071fc5de5141b7273cba86dcfd02d",
+  "source_audit_sha256": "e99e8f5a969b0fbdaa233510c620327925702181a6c000438c5928f73e103384",
+  "base_protocol_sha256": "7bac5601e0b1c022b7badcf8eaf433fa9adda768d96f571de470eee8ee61d2a2",
+  "perception_result_sha256": "4562009edb5b3e150644dfc4a727bfd907135b13757bb8f046a7606da4d1e0c8",
+  "backend_receipts": {
+    "encoder_sha256": "c8bc0070bb8df64684ddb003ab76431f5843bbf0a6a11c3783541955b191f643",
+    "encoder_selected_device": "cpu",
+    "encoder_reason": "CPU_FASTER_MEASURED",
+    "grounder_sha256": "936c0f0069e3ed0fee29735870d793fe8bda726ef5bcfed8982510c419d148f8",
+    "grounder_selected_device": "cuda"
+  },
+  "ocr_calls": 0,
+  "observations": [
+    {
+      "frame_index": 1,
+      "perception_state": "SET_VALUED",
+      "action": "CENTER_AND_APPROACH",
+      "candidate_count": 1,
+      "candidate_box_normalized_xyxy": [0.004734, 0.013301, 0.996241, 0.99239],
+      "candidate_edge_score": 0.252007,
+      "truth_in_candidate_set": false,
+      "reason": "FIRST_TARGET_BOUND_CANDIDATE_REQUIRES_ACTIVE_CONFIRMATION"
+    },
+    {
+      "frame_index": 2,
+      "perception_state": "SET_VALUED",
+      "action": "CENTER_AND_APPROACH",
+      "candidate_count": 1,
+      "candidate_box_normalized_xyxy": [0.177224, 0.528989, 0.866552, 0.997205],
+      "candidate_edge_score": 0.468533,
+      "truth_in_candidate_set": false,
+      "reason": "ACTIVE_CLOSER_VIEW_DID_NOT_INCREASE_TARGET_SCALE"
+    }
+  ],
+  "result": {
+    "truth_retained_frames": 0,
+    "false_commit_before_scale_gate": 1,
+    "false_commit_after_scale_gate": 0,
+    "search_authorized": false,
+    "next_information_change": "Replace the generic box proposal source with a portal-set representation before policy search. Do not tune support-ray or policy thresholds on this consumed prefix."
+  },
+  "claim_scope": "Two-frame reverse-side real-perception prefix only. The scale-consistency gate prevents this observed false commit; it does not locate the correct portal or establish active-view causality, arrival, benefit, or safety."
+}
