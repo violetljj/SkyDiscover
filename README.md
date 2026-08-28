@@ -25,6 +25,11 @@ See the getting started page for quickstart guides for each.
 
 > 🚧 This project is under active development.
 
+To use SkyDiscover as an isolated auxiliary tool for another repository, see
+the [consumer assist bridge](docs/consumer-assist-bridge.md). The bridge keeps
+the consumer evaluator in its own Python environment and writes results outside
+the SkyDiscover checkout.
+
 
 ## SkyDiscover Optimize
 

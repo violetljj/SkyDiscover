@@ -103,6 +103,7 @@ disallow_incomplete_defs = true
 skydiscover-run = "skydiscover.cli:main"
 skydiscover-viewer = "skydiscover.extras.monitor.viewer:main"
 skydiscover-remote-bootstrap = "skydiscover.remote_bootstrap:main"
+skydiscover-assist = "skydiscover.assist:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
