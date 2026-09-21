@@ -2,9 +2,9 @@
 
 from pathlib import Path
 
-import skydiscover.search.route  # noqa: F401,E402
-from skydiscover.config import Config, SearchConfig
-from skydiscover.search.registry import setup_search
+import skydiscover.optimize.search.route  # noqa: F401,E402
+from skydiscover.optimize.config import Config, SearchConfig
+from skydiscover.optimize.search.registry import setup_search
 
 
 class TestSwitchIntervalConfig:
@@ -27,17 +27,18 @@ class TestRepoRootResolution:
         return (
             Path(__file__).resolve().parent.parent.parent
             / "skydiscover"
+            / "optimize"
             / "search"
             / "evox"
             / "utils"
             / "variation_operator_generator.py"
         )
 
-    def test_parents4_is_repo_root(self):
-        assert (self._vog_path().parents[4] / "pyproject.toml").exists()
+    def test_parents5_is_repo_root(self):
+        assert (self._vog_path().parents[5] / "pyproject.toml").exists()
 
-    def test_parents3_is_not_repo_root(self):
-        assert not (self._vog_path().parents[3] / "pyproject.toml").exists()
+    def test_parents4_is_not_repo_root(self):
+        assert not (self._vog_path().parents[4] / "pyproject.toml").exists()
 
 
 def test_setup_search_reads_builtin_strategy_as_utf8(tmp_path):
@@ -48,9 +49,17 @@ def test_setup_search_reads_builtin_strategy_as_utf8(tmp_path):
     _, solution = setup_search(
         initial_program_path=str(initial),
         evaluation_file=str(
-            root / "skydiscover" / "search" / "evox" / "database" / "search_strategy_evaluator.py"
+            root
+            / "skydiscover"
+            / "optimize"
+            / "search"
+            / "evox"
+            / "database"
+            / "search_strategy_evaluator.py"
         ),
-        config_path=str(root / "skydiscover" / "search" / "evox" / "config" / "search.yaml"),
+        config_path=str(
+            root / "skydiscover" / "optimize" / "search" / "evox" / "config" / "search.yaml"
+        ),
         output_dir=str(tmp_path / "outputs"),
     )
 

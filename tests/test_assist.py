@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from skydiscover.assist import JOB_SCHEMA, AssistError, _validate_forwarded_args, load_job
+from skydiscover.assist import JOB_SCHEMA, AssistError, _run, _validate_forwarded_args, load_job
 from skydiscover.evaluation import subprocess_proxy
 
 
@@ -97,3 +97,19 @@ def test_job_rejects_output_inside_skydiscover_checkout(tmp_path: Path) -> None:
 def test_forwarded_args_cannot_override_manifest_paths(argument: str) -> None:
     with pytest.raises(AssistError, match="owned by the assist manifest"):
         _validate_forwarded_args([argument])
+
+
+def test_run_uses_relocated_evaluator_and_cli(tmp_path, monkeypatch):
+    job = load_job(_write_consumer_files(tmp_path / "consumer"))
+    calls = []
+
+    def capture(command, **kwargs):
+        calls.append((command, kwargs))
+        return subprocess.CompletedProcess(command, 0)
+
+    monkeypatch.setattr(subprocess, "run", capture)
+    assert _run(job, []) == 0
+    command, kwargs = calls[0]
+    assert command[2] == "skydiscover.optimize.cli"
+    assert Path(command[4]).is_file()
+    assert Path(kwargs["env"]["SKYDISCOVER_ASSIST_WORKER"]).is_file()

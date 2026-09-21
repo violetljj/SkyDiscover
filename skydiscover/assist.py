@@ -112,7 +112,7 @@ def load_job(manifest: Path, evaluator_launcher: Optional[str] = None) -> Assist
 
 
 def _worker_path() -> Path:
-    return Path(__file__).resolve().parent / "evaluation" / "subprocess_worker.py"
+    return Path(__file__).resolve().parent / "optimize" / "evaluation" / "subprocess_worker.py"
 
 
 def _probe(job: AssistJob) -> dict[str, Any]:
@@ -167,11 +167,11 @@ def _run(job: AssistJob, extra_args: Sequence[str]) -> int:
             "SKYDISCOVER_ASSIST_EVALUATOR_TIMEOUT_S": str(job.evaluator_timeout_s),
         }
     )
-    proxy = Path(__file__).resolve().parent / "evaluation" / "subprocess_proxy.py"
+    proxy = Path(__file__).resolve().parent / "optimize" / "evaluation" / "subprocess_proxy.py"
     command = [
         sys.executable,
         "-m",
-        "skydiscover.cli",
+        "skydiscover.optimize.cli",
         str(job.initial_program),
         str(proxy),
         "--config",
